@@ -70,3 +70,15 @@ NOTIC: [2048] Declaration of Common\Model\NewsModel::find() should be compatible
 ERR: 1146:Table 'alumni.alumni_news' doesn't exist
  [ SQLËØ≠Âè• ] : SHOW COLUMNS FROM `alumni_news`
 
+[ 2017-12-26T18:07:59+08:00 ] ::1 /index.php?c=index&a=getCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::error() should be compatible with that of Think\Controller::error() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Home\Controller\CommonController.class.php Á¨¨ 24 Ë°å.
+NOTIC: [2048] Declaration of Common\Model\NewsModel::find() should be compatible with that of Think\Model::find() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Common\Model\NewsModel.class.php Á¨¨ 9 Ë°å.
+NOTIC: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] ”…”⁄¡¨Ω”∑Ω‘⁄“ª∂Œ ±º‰∫Û√ª”–’˝»∑¥∏¥ªÚ¡¨Ω”µƒ÷˜ª˙√ª”–∑¥”¶£¨¡¨Ω”≥¢ ‘ ß∞‹°£
+ (trying to connect via tcp://47.94.99.203:3306) D:\Software\PhpStudy\PhpStudy\WWW\Alumni\ThinkPHP\Library\Think\Db\Driver.class.php Á¨¨ 103 Ë°å.
+
