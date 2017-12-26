@@ -1,0 +1,72 @@
+[ 2017-12-26T12:44:01+08:00 ] ::1 /index.php?c=index&a=getCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Home\Controller\CommonController.class.php 第 24 行.
+NOTIC: [2048] Declaration of Common\Model\NewsModel::find() should be compatible with Think\Model::find($options = Array) D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Common\Model\NewsModel.class.php 第 9 行.
+
+[ 2017-12-26T15:06:30+08:00 ] ::1 /index.php?c=index&a=getCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::error() should be compatible with that of Think\Controller::error() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Home\Controller\CommonController.class.php 第 24 行.
+NOTIC: [2048] Declaration of Common\Model\NewsModel::find() should be compatible with that of Think\Model::find() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Common\Model\NewsModel.class.php 第 9 行.
+ERR: 1146:Table 'alumni.alumni_news' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `alumni_news`
+
+[ 2017-12-26T15:06:32+08:00 ] ::1 /index.php?c=detail&id=24
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::error() should be compatible with that of Think\Controller::error() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Home\Controller\CommonController.class.php 第 24 行.
+NOTIC: [2048] Declaration of Common\Model\NewsModel::find() should be compatible with that of Think\Model::find() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Common\Model\NewsModel.class.php 第 9 行.
+ERR: 1146:Table 'alumni.alumni_news' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `alumni_news`
+ERR: 1146:Table 'alumni.alumni_news' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `alumni_news`
+
+[ 2017-12-26T15:28:40+08:00 ] ::1 /index.php?c=index&a=getCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::error() should be compatible with that of Think\Controller::error() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Home\Controller\CommonController.class.php 第 24 行.
+NOTIC: [2048] Declaration of Common\Model\NewsModel::find() should be compatible with that of Think\Model::find() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Common\Model\NewsModel.class.php 第 9 行.
+ERR: 1146:Table 'alumni.alumni_news' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `alumni_news`
+
+[ 2017-12-26T15:35:33+08:00 ] ::1 /index.php?c=index&a=getCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::error() should be compatible with that of Think\Controller::error() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Home\Controller\CommonController.class.php 第 24 行.
+NOTIC: [2048] Declaration of Common\Model\NewsModel::find() should be compatible with that of Think\Model::find() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Common\Model\NewsModel.class.php 第 9 行.
+ERR: 1146:Table 'alumni.alumni_news' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `alumni_news`
+
+[ 2017-12-26T15:37:11+08:00 ] ::1 /index.php?c=index&a=getCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001507s ]
+NOTIC: [2048] Declaration of Home\Controller\CommonController::error() should be compatible with that of Think\Controller::error() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Home\Controller\CommonController.class.php 第 24 行.
+NOTIC: [2048] Declaration of Common\Model\NewsModel::find() should be compatible with that of Think\Model::find() D:\Software\PhpStudy\PhpStudy\WWW\Alumni\Application\Common\Model\NewsModel.class.php 第 9 行.
+ERR: 1146:Table 'alumni.alumni_news' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `alumni_news`
+
