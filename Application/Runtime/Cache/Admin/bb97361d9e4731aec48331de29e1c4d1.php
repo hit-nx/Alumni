@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>sing后台管理平台</title>
+    <title>宁熙后台管理平台</title>
     <!-- Bootstrap Core CSS -->
     <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
 
@@ -48,7 +48,7 @@
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     
-    <a class="navbar-brand" >singcms内容管理平台</a>
+    <a class="navbar-brand" >宁熙内容管理平台</a>
   </div>
   <!-- Top Menu Items -->
   <ul class="nav navbar-right top-nav">
@@ -166,8 +166,6 @@
 
 </script>
 <script src="/Public/js/admin/common.js"></script>
-
-
 
 </body>
 

@@ -36,7 +36,7 @@ class MenuController extends CommonController {
         }
         //echo "welcome to singcms";
     }
-
+ 
     public function index() {
         $data = array();
         if(isset($_REQUEST['type']) && in_array($_REQUEST['type'], array(0,1))) {

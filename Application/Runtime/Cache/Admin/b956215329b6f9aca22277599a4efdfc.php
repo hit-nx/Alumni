@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -195,8 +194,6 @@
     }
 </script>
 <script src="/Public/js/admin/common.js"></script>
-
-
 
 </body>
 

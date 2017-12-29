@@ -10,12 +10,10 @@
   <meta name="author" content="">
   <link rel="icon" href="">
 
-  <title>singcms内容管理平台</title>
+  <title>宁熙内容管理平台</title>
 
   <!-- Bootstrap core CSS -->
   <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="signin.css" rel="stylesheet">
 
 
 

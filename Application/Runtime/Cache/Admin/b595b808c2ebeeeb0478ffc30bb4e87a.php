@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>sing后台管理平台</title>
+    <title>宁熙后台管理平台</title>
     <!-- Bootstrap Core CSS -->
     <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
 
@@ -49,7 +49,7 @@
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     
-    <a class="navbar-brand" >singcms内容管理平台</a>
+    <a class="navbar-brand" >宁熙内容管理平台</a>
   </div>
   <!-- Top Menu Items -->
   <ul class="nav navbar-right top-nav">
@@ -92,18 +92,13 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    您好<?php echo getLoginUsername()?>!欢迎使用singcms内容管理平台
+                    您好 <?php echo getLoginUsername()?>! 欢迎使用哈尔滨工业大学(威海) 校友会 管理平台
                 </h1>
-                <ol class="breadcrumb">
-                    <li class="active">
-                        <i class="fa fa-dashboard"></i> 平台整理指标
-                    </li>
-                </ol>
             </div>
         </div>
 
 
-        <div class="row">
+<!--         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -192,7 +187,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -208,8 +203,6 @@
     <!-- /#wrapper -->
 
 <script src="/Public/js/admin/common.js"></script>
-
-
 
 </body>
 

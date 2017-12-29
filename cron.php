@@ -20,7 +20,7 @@ define('APP_DEBUG',True);
 
 define('APP_CRONTAB', 1);
 if(!$argv || count($argv) < 4) {
-	die("parmas_is_error");
+ 	// die("parmas_is_error");
 }
 
 $dir = dirname(__FILE__);
