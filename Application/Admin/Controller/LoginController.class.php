@@ -9,7 +9,7 @@ class LoginController extends Controller {
 
     public function index(){
         if(session('adminUser')) {
-           // $this->redirect('/admin.php?c=index');
+           $this->redirect('/admin.php?c=index');
         }
         // admin.php?c=index
         $this->display();
