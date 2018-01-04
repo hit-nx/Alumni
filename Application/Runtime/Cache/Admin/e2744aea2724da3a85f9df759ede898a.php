@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>sing后台管理平台</title>
+    <title>宁熙后台管理平台</title>
     <!-- Bootstrap Core CSS -->
     <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
 
@@ -48,7 +48,7 @@
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     
-    <a class="navbar-brand" >singcms内容管理平台</a>
+    <a class="navbar-brand" >宁熙内容管理平台</a>
   </div>
   <!-- Top Menu Items -->
   <ul class="nav navbar-right top-nav">
@@ -88,91 +88,96 @@
     <div class="container-fluid">
 
       <!-- Page Heading -->
-      <div class="row">
-        <div class="col-lg-12">
+      <!--<div class="row">-->
+        <!--<div class="col-lg-12">-->
 
-          <ol class="breadcrumb">
-            <li>
-              <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=content">文章管理</a>
-            </li>
-            <li class="active">
-              <i class="fa fa-edit"></i> 文章添加
-            </li>
-          </ol>
-        </div>
-      </div>
+          <!--<ol class="breadcrumb">-->
+            <!--<li>-->
+              <!--<i class="fa fa-dashboard"></i>  <a href="/admin.php?c=content">文章管理</a>-->
+            <!--</li>-->
+            <!--<li class="active">-->
+              <!--<i class="fa fa-edit"></i> 文章添加-->
+            <!--</li>-->
+          <!--</ol>-->
+        <!--</div>-->
+      <!--</div>-->
       <!-- /.row -->
 
       <div class="row">
         <div class="col-lg-6">
 
           <form class="form-horizontal" id="singcms-form">
+            <!--<div class="form-group">-->
+              <!--<label for="inputname" class="col-sm-2 control-label">标题:</label>-->
+              <!--<div class="col-sm-5">-->
+                <!--<input type="text" name="title" class="form-control" id="inputname" placeholder="请填写标题">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+              <!--<label for="inputname" class="col-sm-2 control-label">短标题:</label>-->
+              <!--<div class="col-sm-5">-->
+                <!--<input type="text" name="small_title" class="form-control" id="inputname" placeholder="请填写短标题">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+              <!--<label for="inputname" class="col-sm-2 control-label">缩图:</label>-->
+              <!--<div class="col-sm-5">-->
+                <!--<input id="file_upload"  type="file" multiple="true" >-->
+                <!--<img style="display: none" id="upload_org_code_img" src="" width="150" height="150">-->
+                <!--<input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="">-->
+              <!--</div>-->
+            <!--</div>-->
             <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">标题:</label>
+              <label for="inputname" class="col-sm-2 control-label">内容名称：</label>
               <div class="col-sm-5">
-                <input type="text" name="title" class="form-control" id="inputname" placeholder="请填写标题">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">短标题:</label>
-              <div class="col-sm-5">
-                <input type="text" name="small_title" class="form-control" id="inputname" placeholder="请填写短标题">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">缩图:</label>
-              <div class="col-sm-5">
-                <input id="file_upload"  type="file" multiple="true" >
-                <img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
-                <input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">标题颜色:</label>
-              <div class="col-sm-5">
-                <select class="form-control" name="title_font_color">
-                  <option value="">==请选择颜色==</option>
-                    <?php if(is_array($titleFontColor)): foreach($titleFontColor as $key=>$color): ?><option value="<?php echo ($key); ?>"><?php echo ($color); ?></option><?php endforeach; endif; ?>
+                <select class="form-control"  id="editor_item" name="catid" item="content">
+                  <?php if(is_array($catid)): foreach($catid as $key=>$content): ?><option  value="<?php echo ($content["content_id"]); ?>" id="inputname"><?php echo ($content["content_name"]); ?></option><?php endforeach; endif; ?>
+                    <?php if(is_array($webSiteMenu)): foreach($webSiteMenu as $key=>$menu): ?><option value="<?php echo ($menu["content_id"]); ?>"><?php echo ($menu["content_name"]); ?></option><?php endforeach; endif; ?>
                 </select>
               </div>
             </div>
-            <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">所属栏目:</label>
-              <div class="col-sm-5">
-                <select class="form-control" name="catid">
+            <!--<div class="form-group">-->
+              <!--<label for="inputname" class="col-sm-2 control-label">所属栏目:</label>-->
+              <!--<div class="col-sm-5">-->
+                <!--<select class="form-control" name="catid">-->
 
-                  <?php if(is_array($webSiteMenu)): foreach($webSiteMenu as $key=>$sitenav): ?><option value="<?php echo ($sitenav["menu_id"]); ?>"><?php echo ($sitenav["name"]); ?></option><?php endforeach; endif; ?>
-                </select>
-              </div>
-            </div>
+                  <!--<?php if(is_array($webSiteMenu)): foreach($webSiteMenu as $key=>$sitenav): ?>-->
+                    <!--<option value="<?php echo ($sitenav["menu_id"]); ?>"><?php echo ($sitenav["name"]); ?></option>-->
+                  <!--<?php endforeach; endif; ?>-->
+                <!--</select>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+              <!--<label for="inputname" class="col-sm-2 control-label">来源:</label>-->
+              <!--<div class="col-sm-5">-->
+                <!--<select class="form-control" name="copyfrom">-->
+                  <!--<?php if(is_array($copyfrom)): foreach($copyfrom as $key=>$cfrom): ?>-->
+
+                    <!--<option value="<?php echo ($key); ?>"><?php echo ($cfrom); ?></option>-->
+                  <!--<?php endforeach; endif; ?>-->
+                <!--</select>-->
+              <!--</div>-->
+            <!--</div>-->
 
             <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">来源:</label>
-              <div class="col-sm-5">
-                <select class="form-control" name="copyfrom">
-                  <?php if(is_array($copyfrom)): foreach($copyfrom as $key=>$cfrom): ?><option value="<?php echo ($key); ?>"><?php echo ($cfrom); ?></option><?php endforeach; endif; ?>
-                </select>
+              <label for="editor_singcms" class="col-sm-2 control-label">内容:</label>
+              <div class="col-sm-5" id="inputPassword3">
+                  <?php if(is_array($webContent)): foreach($webContent as $key=>$content): ?><textarea class="input js-editor" id="editor_singcms" rows="20" name="content" value="<?php echo ($content["content"]); ?>"><?php echo ($content["content"]); ?></textarea><?php endforeach; endif; ?>
               </div>
             </div>
-
-            <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">内容:</label>
-              <div class="col-sm-5">
-                <textarea class="input js-editor" id="editor_singcms" name="content" rows="20" ></textarea>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">描述:</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" name="description" id="inputPassword3" placeholder="描述">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">关键字:</label>
-              <div class="col-sm-5">
-                <input type="text" class="form-control" name="keywords" id="inputPassword3" placeholder="请填写关键词">
-              </div>
-            </div>
+            <!--<div class="form-group">-->
+              <!--<label for="inputPassword3" class="col-sm-2 control-label">描述:</label>-->
+              <!--<div class="col-sm-9">-->
+                <!--<input type="text" class="form-control" name="description" id="inputPassword3" placeholder="描述">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+              <!--<label for="inputPassword3" class="col-sm-2 control-label">关键字:</label>-->
+              <!--<div class="col-sm-5">-->
+                <!--<input type="text" class="form-control" name="keywords" id="inputPassword3" placeholder="请填写关键词">-->
+              <!--</div>-->
+            <!--</div>-->
 
 
             <div class="form-group">
@@ -211,7 +216,8 @@
   KindEditor.ready(function(K) {
     window.editor = K.create('#editor_singcms',{
       uploadJson : '/admin.php?c=image&a=kindupload',
-      afterBlur : function(){this.sync();}, //
+      afterBlur : function(){this.sync();},
+      //
     });
   });
 </script>

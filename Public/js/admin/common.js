@@ -22,13 +22,23 @@ $("#singcms-button-submit").click(function(){
     $.post(url,postData,function(result){
         if(result.status == 1) {
             //成功
-            return dialog.success(result.message,jump_url);
+            return dialog.success(result.message,url);
         }else if(result.status == 0) {
             // 失败
             return dialog.error(result.message);
         }
     },"JSON");
 });
+/**
+ *下拉菜单改变函数
+ */
+$("#editor_item").change(function () {
+    var data = $('select  option:selected').val();
+    url = SCOPE.save_url+'&id='+data;
+    console.log(data);
+    window.location.href=url;
+});
+
 /*
 编辑模型
  */

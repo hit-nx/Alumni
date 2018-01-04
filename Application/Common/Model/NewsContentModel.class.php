@@ -10,7 +10,7 @@ class NewsContentModel extends Model {
     private $_db = '';
 
     public function __construct() {
-        $this->_db = M('news_content');
+        $this->_db = M('content');
     }
     public function insert($data=array()){
         if(!$data || !is_array($data)) {
@@ -37,10 +37,24 @@ class NewsContentModel extends Model {
             $data['content'] = htmlspecialchars($data['content']);
         }
 
-        return $this->_db->where('news_id='.$id)->save($data);
+        return $this->_db->where('content_id='.$id)->save($data);
     }
 
+    public function getBarMenus() {
+        $data = array();
 
-
-
+        $res = $this->_db->where($data)
+//            ->order('content_id desc')
+            ->select();
+        return $res;
+    }
+    public function getContent($post) {
+        $data = array(
+           'content_id'=> $post,
+        );
+        $res = $this->_db->where($data)
+//            ->order('content_id desc')
+            ->select();
+        return $res;
+    }
 }
