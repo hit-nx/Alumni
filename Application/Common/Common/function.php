@@ -51,18 +51,19 @@ function showKind($status,$data) {
     exit(json_encode(array('error'=>1,'message'=>'上传失败')));
 }
 function getLoginUsername() {
-    return $_SESSION['adminUser']['username'] ? $_SESSION['adminUser']['username']: '';
+    return $_SESSION['users']['userid'] ? $_SESSION['users']['userid']: '';
 }
-function getCatName($navs, $id) {
+function getColumnName($navs, $id) {
     foreach($navs as $nav) {
-        $navList[$nav['menu_id']] = $nav['name'];
+
+        $navList[$nav['columns_id']] = $nav['column_name'];
     }
     return isset($navList[$id]) ? $navList[$id] : '';
 }
-function getCopyFromById($id) {
-    $copyFrom = C("COPY_FROM");
-    return $copyFrom[$id] ? $copyFrom[$id] : '';
-}
+//function getCopyFromById($id) {
+//    $copyFrom = C("COPY_FROM");
+//    return $copyFrom[$id] ? $copyFrom[$id] : '';
+//}
 function isThumb($thumb) {
     if($thumb) {
         return '<span style="color:red">有</span>';

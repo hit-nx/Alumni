@@ -6,17 +6,17 @@ use Think\Model;
  * 文章内容content model操作
  * @author  singwa
  */
-class NewsContentModel extends Model {
+class ArticleContentModel extends Model {
     private $_db = '';
 
     public function __construct() {
-            $this->_db = M('news_content');
+        $this->_db = M('articles');
+    }
+    public function insert($data=array()){
+        if(!$data || !is_array($data)) {
+            return 0;
         }
-        public function insert($data=array()){
-            if(!$data || !is_array($data)) {
-                return 0;
-            }
-        $data['create_time'] = time();
+        $data['PublishDate'] = time();
         if(isset($data['content']) && $data['content']) {
             $data['content'] = htmlspecialchars($data['content']);
         }
@@ -24,9 +24,9 @@ class NewsContentModel extends Model {
 
     }
     public function find($id) {
-        return $this->_db->where('news_id='.$id)->find();
+        return $this->_db->where('ArticleID='.$id)->find();
     }
-    public function updateNewsById($id, $data) {
+    public function updateArticleById($id, $data) {
         if(!$id || !is_numeric($id) ) {
             throw_exception("ID不合法");
         }
@@ -37,7 +37,7 @@ class NewsContentModel extends Model {
             $data['content'] = htmlspecialchars($data['content']);
         }
 
-        return $this->_db->where('news_id='.$id)->save($data);
+        return $this->_db->where('ArticleID='.$id)->save($data);
     }
 
 

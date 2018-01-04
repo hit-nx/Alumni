@@ -44,14 +44,11 @@ $('.singcms-table #singcms-edit').on('click',function(){
  */
 $('.singcms-table #singcms-delete').on('click',function(){
     var id = $(this).attr('attr-id');
-    var a = $(this).attr("attr-a");
     var message = $(this).attr("attr-message");
     var url = SCOPE.set_status_url;
 
     data = {};
-    data['id'] = id;
-    data['status'] = -1;
-
+    data['ArticleID'] = id;
     layer.open({
         type : 0,
         title : '是否提交？',
