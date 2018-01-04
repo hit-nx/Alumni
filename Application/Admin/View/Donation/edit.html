@@ -1,0 +1,93 @@
+
+<include file="Index/header" />
+<body>
+
+<div id="wrapper">
+
+    <include file="Index/nav"/>
+
+    <div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=donation">捐赠管理</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-edit"></i> 编辑
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-6">
+
+                <form class="form-horizontal" id="singcms-form">
+                    <div class="form-group">
+                        <label for="inputname" class="col-sm-2 control-label">捐赠人名或组织:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="name" class="form-control" id="inputname" placeholder="请填写捐赠人名或组织名" value="{$juan.name}">
+                        </div>
+                    </div>
+
+                   
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">捐赠金额:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="amount" id="inputPassword3" placeholder="请填写捐赠金额" value="{$juan.amount}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">捐赠日期:</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="date" id="inputPassword3" placeholder="捐赠日期如xxxx-xx-xx" value="{$juan.date}">
+                        </div>
+                    </div>
+                    
+                   
+
+                   
+                    <input type="hidden" name="donationid" value="{$juan.donationid}"/>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-default" id="singcms-button-submit">修改</button>
+                    </div>
+                </div>
+                </form>
+
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<!-- Morris Charts JavaScript -->
+<script>
+
+    var SCOPE = {
+        'save_url' : '/admin.php?c=donation&a=add',
+        'jump_url' : '/admin.php?c=donation',
+        'savee_url' : '/admin.php?c=donation&a=save',
+    }
+</script>
+<include file="Index/footer" />
+
+
+
+
+
