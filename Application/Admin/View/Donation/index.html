@@ -1,0 +1,82 @@
+
+
+<include file="Index/header" />
+<body>
+
+<div id="wrapper">
+
+    <include file="Index/nav"/>
+
+
+<div id="page-wrapper">
+<?php
+  $juan = D("Donation")->getAdminDonation();
+  $username = getLoginUsername();
+  foreach($juan as $k=>$v) {
+    if($v['c'] == 'admin' && $username != 'admin') {
+      unset($juan[$k]);
+    }
+  }
+  $index = 'index';
+?>
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <ul >
+      
+       
+      <div>
+          <button  id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加 </button>
+        </div>
+    <br>
+
+      <table class="table table-bordered table-hover singcms-table" >
+        <thead>
+           <tr>
+               
+               <th>捐赠人或组织</th>
+               <th>捐赠金额</th>
+               <th>捐赠日期</th>
+               <th>修改</th>
+               <th>删除</th>
+               
+           </tr>
+           </thead> 
+ <volist name="juan" id="juan">
+  <tr>
+    <th>{$juan.name}</th>
+    <th>{$juan.amount}</th>
+    <th>{$juan.date}</th>
+    <th><span class="glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$juan.donationid}"></span> </th>
+    <th><a href="javascript:void(0)" attr-id="{$juan.donationid}" id="singcms-delete"  attr-a="donations" attr-message="删除">删除</a></th>
+  </tr></volist>
+  </table>
+      
+
+    </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+<!-- Morris Charts JavaScript -->
+
+</div>
+    <!-- /#wrapper -->
+<script>
+
+    var SCOPE = {
+        'add_url' : '/admin.php?c=donation&a=add',
+        'edit_url' : '/admin.php?c=donation&a=edit',
+        'set_status_url' : '/admin.php?c=donation&a=setStatus',
+        'listorder_url' : '/admin.php?c=donation&a=listorder',
+      
+
+    }
+</script>
+<include file="Index/footer" />
