@@ -58,9 +58,15 @@
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo getLoginUsername()?> <b class="caret"></b></a>
       <ul class="dropdown-menu">
+<<<<<<< HEAD
 <!--         <li>
           <a href="/admin.php?c=admin&a=personal"><i class="fa fa-fw fa-user"></i> 个人中心</a>
         </li> -->
+=======
+        <li>
+          <a href="/admin.php?c=admin&a=personal"><i class="fa fa-fw fa-user"></i> 个人中心</a>
+        </li>
+>>>>>>> c916837cb09ff75f56e531ff53c216cf9c1e81d8
        
         <li class="divider"></li>
         <li>
