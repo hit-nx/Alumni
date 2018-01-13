@@ -79,7 +79,8 @@ $('.singcms-table #singcms-delete').on('click',function(){
     var url = SCOPE.set_status_url;
 
     data = {};
-    data['ArticleID'] = id;
+    data['id'] = id;
+    data['status'] = -1;
     layer.open({
         type : 0,
         title : '是否提交？',
