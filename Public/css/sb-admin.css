@@ -8,6 +8,7 @@
 
 body {
     margin-top: 100px;
+    /*background-color: #fff;*/
     background-color: #222;
 }
 
@@ -171,7 +172,23 @@ ul.alert-dropdown {
 .huge {
     font-size: 40px;
 }
+.panel-blue {
+    border-color: #2e7fb8;
+}
 
+.panel-blue > .panel-heading {
+    border-color: #2e7fb8;
+    color: #fff;
+    background-color: #2e7fb8;
+}
+
+.panel-blue > a {
+    color: #2e7fb8;
+}
+
+.panel-blue > a:hover {
+    color: #3175c8;
+}
 .panel-green {
     border-color: #5cb85c;
 }
