@@ -39,21 +39,29 @@
                <th>捐赠人或组织</th>
                <th>捐赠金额</th>
                <th>捐赠日期</th>
-               <th>修改</th>
-               <th>删除</th>
+               <th>操作</th>
+
                
            </tr>
-           </thead> 
- <volist name="juan" id="juan">
-  <tr>
-    <th>{$juan.name}</th>
-    <th>{$juan.amount}</th>
-    <th>{$juan.date}</th>
-    <th><span class="glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$juan.donationid}"></span> </th>
-    <th><a href="javascript:void(0)" attr-id="{$juan.donationid}" id="singcms-delete"  attr-a="donations" attr-message="删除">删除</a></th>
-  </tr></volist>
-  </table>
-      
+           </thead>
+          <volist name="menus" id="menu">
+              <tr>
+                  <th>{$menu.name}</th>
+                  <th>{$menu.amount}</th>
+                  <th>{$menu.date}</th>
+                  <th><span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$menu.donationid}" ></span>
+                      <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$menu.donationid}"  attr-message="删除">
+                          <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                      </a>
+                  </th>
+
+              </tr></volist>
+      </table>
+                    <nav>
+                        <ul class="pagination">
+                            {$pageRes}
+                        </ul>
+                    </nav>
 
     </ul>
             </div>

@@ -28,6 +28,15 @@ class DonationController extends CommonController {
         // $this->assign('pageRes', $pageRes);
         // $this->assign('juan',$donation);
 
+        $data=array();
+        $page=$_REQUEST['p']?$_REQUEST['p']:1;
+        $pageSize=$_REQUEST['pageSize']?$_REQUEST['pageSize']:10;
+        $menus=D("Donation")->getMenus($data,$page,$pageSize);
+        $menusCount=D("Donation")->getMenusCount($data);
+        $res=new \Think\Page($menusCount,$pageSize);
+        $pageRes=$res->show();
+        $this->assign('pageRes',$pageRes);
+        $this->assign('menus',$menus);
 
         $this->display();
     }
