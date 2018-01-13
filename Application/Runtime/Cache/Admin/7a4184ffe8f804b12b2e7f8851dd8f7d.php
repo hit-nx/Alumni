@@ -135,8 +135,7 @@
                             <table class="table table-bordered table-hover singcms-table">
                                 <thead>
                                 <tr>
-                                    <th id="singcms-checkbox-all" width="10"><input type="checkbox"/></th>
-                                    <th>id</th>
+                                    <!--<th width="14">排序</th>-->
                                     <th>标题</th>
                                     <th>来源</th>
                                     <th>栏目</th>
@@ -147,8 +146,9 @@
                                 </thead>
                                 <tbody>
                                 <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$new): $mod = ($i % 2 );++$i;?><tr>
-                                        <td><input type="checkbox" name="pushcheck" value="<?php echo ($new["ArticleID"]); ?>"></td>
-                                        <td><?php echo ($new["articleid"]); ?></td>
+                                        <!--<td><input type="checkbox" name="pushcheck" value="<?php echo ($new["ArticleID"]); ?>"></td>-->
+                                        <!--<td><?php echo ($new["articleid"]); ?></td>-->
+                                        <!--<td><input size=4 type='text'  name='listorder[<?php echo ($new["articleid"]); ?>]' value="<?php echo ($new["listorder"]); ?>"/></td>-->
                                         <td><?php echo ($new["title"]); ?></td>
                                         <td><?php echo ($new["source"]); ?></td>
                                         <td><?php echo (getColumnName($webSiteMenu,$new["columnid"])); ?></td>
@@ -170,18 +170,7 @@
                                 </ul>
 
                             </nav>
-                            <div>
-                                <button  id="button-listorder" type="button" class="btn btn-primary dropdown-toggle" ><span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span>更新排序</button>
-                            </div>
                         </form>
-                        <div class="input-group">
-                            <select class="form-control" name="position_id" id="select-push">
-                                <option value="0">请选择推荐位进行推送</option>
-                                <?php if(is_array($positions)): foreach($positions as $key=>$position): ?><option value="<?php echo ($position["id"]); ?>"><?php echo ($position["name"]); ?></option><?php endforeach; endif; ?>
-                            </select>
-                            <button id="singcms-push" type="button" class="btn btn-primary">推送</button>
-                        </div>
-
                     </div>
                 </div>
 
