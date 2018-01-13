@@ -69,7 +69,7 @@ class ContentController extends CommonController {
 
         try {
             $newsContentData['content'] = $data['content'];
-            $condId = D("NewsContent")->updateNewsById($newsId, $newsContentData);
+            $condId = D("Content")->updateNewsById($newsId, $newsContentData);
             if($condId === false) {
                 return show(0, '更新失败');
             }
