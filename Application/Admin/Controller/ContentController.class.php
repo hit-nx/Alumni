@@ -63,11 +63,12 @@ class ContentController extends CommonController {
 //        }
 
 
-        $content=D("NewsContent")->getContent(1);
-        $menu=D("NewsContent")->getBarMenus();
+        $content=D("Content")->getContent(1);
+        $menu=D("Content")->getBarMenus(1);
 
         if($_GET){
-            $content=D("NewsContent")->getContent($_GET['id']);
+            $content=D("Content")->getContent($_GET['id']);
+            $menu=D("Content")->getBarMenus($_GET['id']);
         }
         $this->assign('webContent',$content);
         $this->assign('catid',$content);
