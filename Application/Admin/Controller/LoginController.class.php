@@ -11,7 +11,6 @@ class LoginController extends Controller {
         if(session('adminUser')) {
            $this->redirect('/admin.php?c=index');
         }
-        // admin.php?c=index
         $this->display();
     }
 

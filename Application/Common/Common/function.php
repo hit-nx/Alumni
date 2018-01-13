@@ -13,6 +13,7 @@ function show($status, $message, $data=array()) {
 
     exit(json_encode($reuslt));
 }
+
 function getMd5Password($password) {
     return md5($password . C('MD5_PRE'));
 }
@@ -51,7 +52,7 @@ function showKind($status,$data) {
     exit(json_encode(array('error'=>1,'message'=>'上传失败')));
 }
 function getLoginUsername() {
-    return $_SESSION['users']['userid'] ? $_SESSION['users']['userid']: '';
+    return $_SESSION['adminUser']['username'] ? $_SESSION['adminUser']['username']: '';
 }
 function getColumnName($navs, $id) {
     foreach($navs as $nav) {

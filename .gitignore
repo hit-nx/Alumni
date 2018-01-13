@@ -1,2 +1,4 @@
 
 *.log
+Application/Common/Conf/db.php
+.idea/*
