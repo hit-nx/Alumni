@@ -52,7 +52,7 @@ function showKind($status,$data) {
     exit(json_encode(array('error'=>1,'message'=>'上传失败')));
 }
 function getLoginUsername() {
-    return $_SESSION['users']['userid'] ? $_SESSION['users']['userid']: '';
+    return $_SESSION['adminUser']['username'] ? $_SESSION['adminUser']['username']: '';
 }
 function getColumnName($navs, $id) {
     foreach($navs as $nav) {

@@ -10,16 +10,12 @@ class NewsContentModel extends Model {
     private $_db = '';
 
     public function __construct() {
-<<<<<<< HEAD
-            $this->_db = M('news_content');
-=======
         $this->_db = M('content');
     }
     public function insert($data=array()){
         if(!$data || !is_array($data)) {
             return 0;
->>>>>>> 389a632908e0f04bab4ae460e5e3e9098b924e6e
-        }
+        }s
         public function insert($data=array()){
             if(!$data || !is_array($data)) {
                 return 0;
