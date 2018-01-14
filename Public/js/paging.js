@@ -1,6 +1,6 @@
 (function($, window, document, undefined) {
 	//定义分页类
-	function paging(element, options) {
+	function Paging(element, options) {
 		this.element = element;
 		//传入形参
 		this.options = {
@@ -135,7 +135,7 @@
 					}
 				})
 			}
-		})
+		});
 	}
 
 

@@ -3,77 +3,88 @@
 <include file="Index/header" />
 <body>
 
-<div id="wrapper">
+  <div id="wrapper">
 
     <include file="Index/nav"/>
 
 
-<div id="page-wrapper">
-<?php
-  $juan = D("Donation")->getAdminDonation();
-  $username = getLoginUsername();
-  foreach($juan as $k=>$v) {
-    if($v['c'] == 'admin' && $username != 'admin') {
+    <div id="page-wrapper">
+      <?php
+      $juan = D("Donation")->getAdminDonation();
+      $username = getLoginUsername();
+      foreach($juan as $k=>$v) {
+      if($v['c'] == 'admin' && $username != 'admin') {
       unset($juan[$k]);
     }
   }
   $index = 'index';
-?>
-    <div class="container-fluid">
+  ?>
+  <div class="container-fluid">
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <ul >
-      
-       
-      <div>
-          <button  id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加 </button>
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=donation">捐赠管理</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-table"></i>捐赠列表
+                </li>
+            </ol>
         </div>
-    <br>
+      <div class="col-lg-12">
+        <ul>
+          <div>
+            <button  id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                添加 
+            </button>
+          </div>
+          <br>
+          <table class="table table-bordered table-hover singcms-table" >
+            <thead>
+             <tr>
 
-      <table class="table table-bordered table-hover singcms-table" >
-        <thead>
-           <tr>
-               
                <th>捐赠人或组织</th>
                <th>捐赠金额</th>
                <th>捐赠日期</th>
                <th>操作</th>
 
                
-           </tr>
+             </tr>
            </thead>
-          <volist name="menus" id="menu">
-              <tr>
-                  <th>{$menu.name}</th>
-                  <th>{$menu.amount}</th>
-                  <th>{$menu.date}</th>
-                  <th><span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$menu.donationid}" ></span>
-                      <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$menu.donationid}"  attr-message="删除">
-                          <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-                      </a>
-                  </th>
+           <volist name="menus" id="menu">
+            <tr>
+              <th>{$menu.name}</th>
+              <th>{$menu.amount}</th>
+              <th>{$menu.date}</th>
+              <th><span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$menu.donationid}" ></span>
+                <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$menu.donationid}"  attr-message="删除">
+                  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                </a>
+              </th>
+            </tr>
+          </volist>
+          </table>
+          <nav>
+            <div id="page" class="page_div"></div>
+          </nav>
 
-              </tr></volist>
-      </table>
-                    <nav>
-                      <div id="page" class="page_div"></div>
-                    </nav>
-
-    </ul>
-            </div>
-        </div>
-
+        </ul>
+      </div>
     </div>
-    <!-- /.container-fluid -->
+
+  </div>
+  <!-- /.container-fluid -->
 
 </div>
 <!-- /#page-wrapper -->
 <!-- Morris Charts JavaScript -->
 
 </div>
-    <!-- /#wrapper -->
+<!-- /#wrapper -->
 <script>
 
   $("#page").paging({
@@ -86,10 +97,10 @@
   })
 
   var SCOPE = {
-      'add_url' : '/admin.php?c=donation&a=add',
-      'edit_url' : '/admin.php?c=donation&a=edit',
-      'set_status_url' : '/admin.php?c=donation&a=setStatus',
-      'listorder_url' : '/admin.php?c=donation&a=listorder',
+    'add_url' : '/admin.php?c=donation&a=add',
+    'edit_url' : '/admin.php?c=donation&a=edit',
+    'set_status_url' : '/admin.php?c=donation&a=setStatus',
+    'listorder_url' : '/admin.php?c=donation&a=listorder',
   }
 </script>
 <include file="Index/footer" />

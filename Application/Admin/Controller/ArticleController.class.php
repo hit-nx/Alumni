@@ -109,7 +109,7 @@ class ArticleController extends CommonController {
         $this->assign('Source', C("COPY_FROM"));
         $this->assign('Keywords',$article['keywords']);
         $this->assign('PictureURL',$article['PictureURL']);
-        $this->assign('Content',$article['Content']);
+        $this->assign('Content',$article['content']);
 
         $this->display();
     }

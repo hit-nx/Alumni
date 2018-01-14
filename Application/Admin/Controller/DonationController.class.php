@@ -21,6 +21,8 @@ class DonationController extends CommonController {
             'pageRows' => $menusCount
         );
         $this->assign('page', $pageData);
+
+        
         $this->assign('menus',$menus);
         $this->display();
     }

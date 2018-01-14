@@ -13,7 +13,7 @@
 
                     <ol class="breadcrumb">
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=content">文章管理</a>
+                            <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=article">文章管理</a>
                         </li>
                         <li class="active">
                             <i class="fa fa-table"></i>文章列表
@@ -120,7 +120,7 @@
         callback: function(num) {
             window.location.href = '/admin.php?c=article&p=' + num;
         }
-    })
+    });
     var SCOPE = {
         'edit_url' : '/admin.php?c=article&a=edit',
         'add_url' : '/admin.php?c=article&a=add',
@@ -128,6 +128,6 @@
         'sing_news_view_url' : '/index.php?c=view',
         'listorder_url' : '/admin.php?c=article&a=listorder',
         'push_url' : '/admin.php?c=article&a=push',
-    }
+    };
 </script>
 <include file="Index/footer" />
