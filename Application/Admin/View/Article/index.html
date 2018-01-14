@@ -91,7 +91,7 @@
                             <nav>
 
                                 <ul >
-                                    {$pageres}
+                                    <div id="page" class="page_div"></div>
                                 </ul>
 
                             </nav>
@@ -113,6 +113,14 @@
 </div>
 <!-- /#wrapper -->
 <script>
+    $("#page").paging({
+        pageNo: {$page.pageNow},
+        totalPage: {$page.pageTotal},
+        totalSize: {$page.pageRows},
+        callback: function(num) {
+            window.location.href = '/admin.php?c=article&p=' + num;
+        }
+    })
     var SCOPE = {
         'edit_url' : '/admin.php?c=article&a=edit',
         'add_url' : '/admin.php?c=article&a=add',

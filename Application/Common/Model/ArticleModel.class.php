@@ -21,7 +21,7 @@ class ArticleModel extends Model {
         if(!is_array($data) || !$data) {
             return 0;
         }
-        $data['PublishDate']  = time();
+        // $data['PublishDate']  = time();
         $data['PublishUserID'] =  getLoginUsername();
         return $this->_db->add($data);
     }

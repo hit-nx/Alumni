@@ -15,15 +15,18 @@ class AlumnisController extends CommonController {
         $conds = array();
 
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
-        $pageSize = 4;
+        $pageSize = 10;
 
         $alumnis = D("Alumnis")->getAlumnis($conds,$page,$pageSize);
         $count = D("Alumnis")->getAlumnisCount($conds);
 
-        $res  =  new \Think\Page($count,$pageSize);
-        $pageres = $res->show();
-
-        $this->assign('pageres',$pageres);
+        // 分页部分 使用插件
+        $pageData = array(
+            'pageNow' => $page,
+            'pageTotal' =>  ceil($count / $pageSize),
+            'pageRows' => $count
+        );
+        $this->assign('page', $pageData);
         $this->assign('alumnis',$alumnis);
 
         $this->assign('webSiteMenu',D("Menu")->getBarMenus());

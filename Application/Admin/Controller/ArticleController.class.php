@@ -27,11 +27,14 @@ class ArticleController extends CommonController {
 
         $article = D("Article")->getArticle($conds,$page,$pageSize);
         $count = D("Article")->getArticleCount($conds);
-
-        $res  =  new \Think\Page($count,$pageSize);
-        $pageres = $res->show();
-        //$positions = D("Position")->getNormalPositions();
-        $this->assign('pageres',$pageres);
+        
+        // 分页部分 使用插件
+        $pageData = array(
+            'pageNow' => $page,
+            'pageTotal' =>  ceil($count / $pageSize),
+            'pageRows' => $count
+        );
+        $this->assign('page', $pageData);
         $this->assign('article',$article);
         //$this->assign('positions', $positions);
 
@@ -43,9 +46,7 @@ class ArticleController extends CommonController {
             if(!isset($_POST['Title']) || !$_POST['Title']) {
                 return show(0,'标题不存在');
             }
-//            if(!isset($_POST['small_title']) || !$_POST['small_title']) {
-//                return show(0,'短标题不存在');
-//            }
+
             if(!isset($_POST['ColumnID']) || !$_POST['ColumnID']) {
                 return show(0,'文章栏目不存在');
             }

@@ -8,36 +8,20 @@ class DonationController extends CommonController {
     
     public function index(){
 
-        // $data = array();
-        // // if(isset($_REQUEST['type']) && in_array($_REQUEST['type'], array(0,1))) {
-        // //     $data['type'] = intval($_REQUEST['type']);
-        // //     $this->assign('type',$data['type']);
-        // // }else{
-        // //     $this->assign('type',-100);
-        // // }
-        // /**
-        //  * 分页操作逻辑
-        //  */
-        // $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
-        // $pageSize = $_REQUEST['pageSize'] ? $_REQUEST['pageSize'] : 3;
-        // $donation = D("Donation")->getDonations($data,$page,$pageSize);
-        // $donationCount = D("Donation")->getDonationsCount($data);
-
-        // $res = new \Think\Page($donationCount, $pageSize);
-        // $pageRes = $res->show();
-        // $this->assign('pageRes', $pageRes);
-        // $this->assign('juan',$donation);
-
         $data=array();
         $page=$_REQUEST['p']?$_REQUEST['p']:1;
         $pageSize=$_REQUEST['pageSize']?$_REQUEST['pageSize']:10;
         $menus=D("Donation")->getMenus($data,$page,$pageSize);
         $menusCount=D("Donation")->getMenusCount($data);
-        $res=new \Think\Page($menusCount,$pageSize);
-        $pageRes=$res->show();
-        $this->assign('pageRes',$pageRes);
-        $this->assign('menus',$menus);
 
+        // 分页部分 使用插件
+        $pageData = array(
+            'pageNow' => $page,
+            'pageTotal' =>  ceil($menusCount / $pageSize),
+            'pageRows' => $menusCount
+        );
+        $this->assign('page', $pageData);
+        $this->assign('menus',$menus);
         $this->display();
     }
     public function add(){
