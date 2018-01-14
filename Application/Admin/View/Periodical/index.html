@@ -38,8 +38,8 @@
                   <th>ID</th>
                   <th>标题</th>
                   <th>时间</th>
-                  <th>附件路径</th>
-                  <th>状态</th>
+                  <!-- <th>附件路径</th>
+                  <th>状态</th> -->
                   <th>操作</th>
                 </tr>
                 </thead>
@@ -49,11 +49,11 @@
                     <td>{$periodical.periodicalid}</td>
                     <td>{$periodical.title}</td>
                     <td>{$periodical.time|date="Y-m-d H:i",###}</td>
-                    <td>{$periodical.path}</td>
+                    <!-- <td>{$periodical.path}</td>
                     <td>
                       <span  attr-status="<if condition="$periodical['status'] eq 1">0<else/>1</if>"  attr-id="{$periodical.periodicalid}" class="sing_cursor singcms-on-off" id="singcms-on-off" >{$periodical.status|status}
                       </span>
-                    </td>
+                    </td> -->
                     <td>
                      <!--  <span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$periodical.periodicalid}" >
                       </span> -->
