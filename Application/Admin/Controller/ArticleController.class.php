@@ -14,12 +14,13 @@ class ArticleController extends CommonController {
         $conds = array();
         $title = $_GET['title'];
         if($title) {
-            $conds['Title'] = $title;
-            $this->assign("title",$conds['Title']);
+            $conds['title'] = $title;
+            $this->assign("title",$conds['title']);
         }
+
         if($_GET['columnid']) {
-            $conds['ColumnID'] = intval($_GET['columnid']);
-            $this->assign('columnid',$conds['ColumnID']);
+            $conds['columnid'] = intval($_GET['columnid']);
+            $this->assign('columnid',$conds['columnid']);
         }
 
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
