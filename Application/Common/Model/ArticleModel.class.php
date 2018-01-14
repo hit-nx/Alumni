@@ -14,7 +14,7 @@ class ArticleModel extends Model {
     }
     public function select($data = array(), $limit = 100) {
         $conditions = $data;
-        $list = $this->_db->where($conditions)->order('ArticleID desc')->limit($limit)->select();
+        $list = $this->_db->where($conditions)->order('articleid desc')->limit($limit)->select();
         return $list;
     }
     public function insert($data = array()) {
@@ -27,17 +27,17 @@ class ArticleModel extends Model {
     }
     public function getArticle($data,$page,$pageSize=10) {
         $conditions = $data;
-        if(isset($data['Title']) && $data['Title']) {
-            $conditions['Title'] = array('like','%'.$data['Title'].'%');
+        if(isset($data['title']) && $data['title']) {
+            $conditions['title'] = array('like','%'.$data['title'].'%');
         }
-        if(isset($data['ColumnID']) && $data['ColumnID'])  {
-            $conditions['ColumnID'] = intval($data['ColumnID']);
+        if(isset($data['columnid']) && $data['columnid'])  {
+            $conditions['columnid'] = intval($data['columnid']);
         }
 //        $conditions['status'] = array('neq',-1);
 
         $offset = ($page - 1) * $pageSize;
         $list = $this->_db->where($conditions)
-            ->order('ArticleID')
+            ->order('articleid')
             ->limit($offset,$pageSize)
             ->select();
 
@@ -51,8 +51,8 @@ class ArticleModel extends Model {
         if(isset($data['title']) && $data['title']) {
             $conditions['title'] = array('like','%'.$data['title'].'%');
         }
-        if(isset($data['ColumnID']) && $data['ColumnID'])  {
-            $conditions['ColumnID'] = intval($data['ColumnID']);
+        if(isset($data['columnid']) && $data['columnid'])  {
+            $conditions['columnid'] = intval($data['columnid']);
         }
 //        $conditions['status'] = array('neq',-1);
 
@@ -60,7 +60,7 @@ class ArticleModel extends Model {
     }
 
     public function find($id) {
-        $data = $this->_db->where('ArticleID='.$id)->find();
+        $data = $this->_db->where('articleid='.$id)->find();
         return $data;
     }
 
@@ -72,14 +72,14 @@ class ArticleModel extends Model {
             throw_exception('更新数据不合法');
         }
 
-        return $this->_db->where('ArticleID='.$id)->save($data);
+        return $this->_db->where('articleid='.$id)->save($data);
     }
 
     public function DeleteById($id) {
         if(!$id){
             return show(0,"id不存在");
         }else{
-            $this->_db->where('ArticleID='.$id)->delete();
+            $this->_db->where('articleid='.$id)->delete();
             return show(1,"操作成功！");
         }
     }
@@ -98,7 +98,7 @@ class ArticleModel extends Model {
 
         $data = array(
 
-            'ArticleID' => array('in',implode(',', $articleIds)),
+            'articleid' => array('in',implode(',', $articleIds)),
         );
 
         return $this->_db->where($data)->select();
@@ -111,7 +111,7 @@ class ArticleModel extends Model {
      * @return array
      */
     public function getRank($data = array(), $limit = 100) {
-        $list = $this->_db->where($data)->order('VisitCount desc,ArticleID desc ')->limit($limit)->select();
+        $list = $this->_db->where($data)->order('VisitCount desc,articleid desc ')->limit($limit)->select();
         return $list;
     }
 
@@ -125,7 +125,7 @@ class ArticleModel extends Model {
         }
 
         $data['count'] = $count;
-        return $this->_db->where('ArticleID='.$id)->save($data);
+        return $this->_db->where('articleid='.$id)->save($data);
 
     }
 
