@@ -102,16 +102,6 @@ function todelete(url, data) {
 }
 
 /**
- *下拉菜单改变函数
- */
-$("#editor_item").change(function () {
-    var data = $('select  option:selected').val();
-    url = SCOPE.save_url+'&id='+data;
-    console.log(data);
-    window.location.href=url;
-});
-
-/**
  * 排序操作 
  */
 $('#button-listorder').click(function() {
