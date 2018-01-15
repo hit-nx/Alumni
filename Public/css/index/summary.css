@@ -1,0 +1,33 @@
+.summary
+{
+    width: 380px;
+    height: 180px;
+    padding: 20px;
+    position: absolute;
+    left: 180px;
+    bottom: -20px;
+    background: linear-gradient(to right, rgba(13,24,79,0.85), rgba(13,24,79,0.25));
+}
+.s_title
+{
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    width: 300px;
+    height: 20px;
+    float: left;
+    padding-bottom: 20px;
+}
+.s_writer
+{
+    font-size: 15px;
+    color: #fff;
+    line-height: 40px;
+}
+.s_article
+{
+    font-size: 15px;
+    text-indent: 30px;
+    line-height: 20px;
+    color: #fff;
+}
