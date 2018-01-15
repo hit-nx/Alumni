@@ -1,8 +1,9 @@
-  <include file="Index/header" />
+<include file="Index/header" />
 <body>
 <div id="wrapper">
 
   <include file="Index/nav"/>
+
   <div id="page-wrapper">
 
     <div class="container-fluid" >
@@ -10,7 +11,6 @@
       <!-- Page Heading -->
       <div class="row">
         <div class="col-lg-12">
-
           <ol class="breadcrumb">
             <li>
               <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=alumnis">校友会管理</a>
@@ -28,6 +28,7 @@
           添加 
         </button>
       </div>
+      <br>
       <div class="row">
         <div class="col-lg-6">
           <div class="table-responsive">
@@ -35,7 +36,6 @@
               <table class="table table-bordered table-hover singcms-table">
                 <thead>
                 <tr>
-                  <th>ID</th>
                   <th>标题</th>
                   <th>时间</th>
                   <th>显示</th>
@@ -45,7 +45,6 @@
                 <tbody>
                 <volist name="alumnis" id="alumni">
                   <tr>
-                    <td>{$alumni.alumnis_id}</td>
                     <td>{$alumni.title}</td>
                     <td>{$alumni.createtime|date="Y-m-d H:i",###}</td>
                     <td>
@@ -59,12 +58,6 @@
                         <span class="glyphicon glyphicon-remove-circle" aria-hidden="true">
                         </span>
                       </a>
-<!--                       <a 
-                      target="_blank" 
-                      href="/index.php?c=detail&a=view&id={$alumni.alumnis_id}" 
-                      class="sing_cursor glyphicon glyphicon-eye-open" 
-                      aria-hidden="true" >
-                      </a> -->
                     </td>
                   </tr>
                 </volist>

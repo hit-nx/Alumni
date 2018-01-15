@@ -15,7 +15,7 @@ class PeriodicalController extends CommonController {
         $conds = array();
 
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
-        $pageSize = 4;
+        $pageSize = 10;
 
         $periodical = D("Periodical")->getPeriodical($conds,$page,$pageSize);
         $count = D("Periodical")->getPeriodicalCount($conds);
@@ -23,13 +23,11 @@ class PeriodicalController extends CommonController {
         $pageData = array(
             'pageNow' => $page,
             'pageTotal' =>  ceil($count / $pageSize),
-            'pageRows' => $count，
+            'pageRows' => $count
         );
 
         $this->assign('page', $pageData);
         $this->assign('periodical',$periodical);
-
-        $this->assign('webSiteMenu',D("Menu")->getBarMenus());
 
         $this->display();
     }
@@ -55,8 +53,7 @@ class PeriodicalController extends CommonController {
             }
 
         }else {
-            $webSiteMenu = D("Menu")->getBarMenus();
-            $this->assign('webSiteMenu', $webSiteMenu);
+
             $this->display();
         }
     }
@@ -75,24 +72,6 @@ class PeriodicalController extends CommonController {
             return show(0, $e->getMessage());
         }
     }
-
-    // public function edit() {
-    //     $alumni_id = $_GET['id'];
-    //     if(!$alumni_id) {
-    //         // 执行跳转
-    //         $this->redirect('/admin.php?c=alumnis');
-    //     }
-    //     $alumni = D("Alumnis")->find($alumni_id);
-    //     if(!$alumni) {
-    //         $this->redirect('/admin.php?c=alumnis');
-    //     }
-
-    //     $webSiteMenu = D("Menu")->getBarMenus();
-    //     $this->assign('webSiteMenu', $webSiteMenu);
-    //     $this->assign('alumni',$alumni);
-    //     $this->display();
-    // }
-
 
     public function setStatus() {
         try {
@@ -137,43 +116,5 @@ class PeriodicalController extends CommonController {
             return show(0, $e->getMessage());
         }
         return show(0,'排序数据失败',array('jump_url' => $jumpUrl));
-    }
-
-    public function push() {
-        $jumpUrl = $_SERVER['HTTP_REFERER'];
-        $positonId = intval($_POST['position_id']);
-        $newsId = $_POST['push'];
-
-        if(!$newsId || !is_array($newsId)) {
-            return show(0, '请选择推荐的文章ID进行推荐');
-
-        }
-        if(!$positonId) {
-            return show(0, '没有选择推荐位');
-        }
-        try {
-            $news = D("News")->getNewsByNewsIdIn($newsId);
-            if (!$news) {
-                return show(0, '没有相关内容');
-            }
-
-            foreach ($news as $new) {
-                $data = array(
-                    'position_id' => $positonId,
-                    'title' => $new['title'],
-                    'thumb' => $new['thumb'],
-                    'news_id' => $new['news_id'],
-                    'status' => 1,
-                    'create_time' => $new['create_time'],
-                );
-                $position = D("PositionContent")->insert($data);
-            }
-        }catch(Exception $e) {
-            return show(0, $e->getMessage());
-        }
-
-        return show(1, '推荐成功',array('jump_url'=>$jumpUrl));
-
-
     }
 }

@@ -37,51 +37,42 @@ class ArticleController extends CommonController {
         );
         $this->assign('page', $pageData);
         $this->assign('article',$article);
-        //$this->assign('positions', $positions);
-
+        
         $this->assign('webSiteMenu',D("Column")->getBarMenus());
         $this->display();
     }
     public function add(){
         if($_POST) {
-            if(!isset($_POST['Title']) || !$_POST['Title']) {
+            if(!isset($_POST['title']) || !$_POST['title']) {
                 return show(0,'标题不存在');
             }
-
-            if(!isset($_POST['ColumnID']) || !$_POST['ColumnID']) {
+            if(!isset($_POST['columnid']) || !$_POST['columnid']) {
                 return show(0,'文章栏目不存在');
             }
-            if(!isset($_POST['Keywords']) || !$_POST['Keywords']) {
+            if(!isset($_POST['source']) || !$_POST['source']) {
+                return show(0,'来源不存在');
+            }
+            if(!isset($_POST['keywords']) || !$_POST['keywords']) {
                 return show(0,'关键字不存在');
             }
-            if(!isset($_POST['Content']) || !$_POST['Content']) {
+            if(!isset($_POST['content']) || !$_POST['content']) {
                 return show(0,'content不存在');
             }
-            if($_POST['ArticleID']) {
+            if($_POST['articleid']) {
                 return $this->save($_POST);
             }
-            $articleId = D("Article")->insert($_POST);
-            if($articleId) {
-//                $articleContentData['content'] = $_POST['content'];
-//                $articleContentData['ArticleID'] = $articleId;
-//                $cId = D("article")->insert($articleContentData);
-//                if($cId){
-//                    return show(1,'新增成功');
-//                }else{
-//                    return show(1,'主表插入成功，副表插入失败');
-//                }
-                return show(1,'操作成功！');
+
+            if(D("Article")->insert($_POST)) {
+                return show(1,'新增成功！');
 
             }else{
-                return show(0,'操作失败！');
+                return show(0,'新增失败！');
             }
 
         }else {
             $webSiteMenu = D("Column")->getBarMenus();
-            $titleFontColor = C("TITLE_FONT_COLOR");
             $copyFrom = C("COPY_FROM");
             $this->assign('webSiteMenu', $webSiteMenu);
-            $this->assign('titleFontColor', $titleFontColor);
             $this->assign('Source', $copyFrom);
             $this->display();
         }
@@ -99,38 +90,33 @@ class ArticleController extends CommonController {
         if(!$article) {
             $this->redirect('/admin.php?c=article');
         }
-//        $articleContent = D("ArticleContent")->find($articleId);
-//        if($articleContent) {
-//            $article['content'] = $articleContent['content'];
-//        }
+
         $webSiteMenu = D("Column")->getBarMenus();
 
+        $this->assign('articleId', $articleId);
         $this->assign("Title",$article['title']);
         $this->assign('webSiteMenu', $webSiteMenu);
-        $this->assign('Source', C("COPY_FROM"));
+        $this->assign('Source', $article['source']);
         $this->assign('Keywords',$article['keywords']);
-        $this->assign('PictureURL',$article['PictureURL']);
+        $this->assign('PictureURL',$article['picture_url']);
         $this->assign('Content',$article['content']);
 
         $this->display();
     }
 
     public function save($data) {
-        $articleId = $data['ArticleID'];
-        unset($data['ArticleID']);
+        $articleId = $data['articleid'];
+        unset($data['articleid']);
 
         try {
             $id = D("Article")->updateById($articleId, $data);
-            $articleContentData['content'] = $data['content'];
-            $condId = D("articleContent")->updateArticleById($articleId, $articleContentData);
-            if($id === false || $condId === false) {
+            if($id === false) {
                 return show(0, '更新失败');
             }
             return show(1, '更新成功');
         }catch(Exception $e) {
             return show(0, $e->getMessage());
         }
-
     }
     public function setStatus() {
         try {
@@ -141,9 +127,9 @@ class ArticleController extends CommonController {
                 }
                 $res = D("Article")->DeleteById($id);
                 if ($res) {
-                    return show(1, '操作成功');
+                    return show(1, '删除成功');
                 } else {
-                    return show(0, '操作失败');
+                    return show(0, '删除失败');
                 }
             }
             return show(0, '没有提交的内容');
@@ -176,41 +162,4 @@ class ArticleController extends CommonController {
         return show(0,'排序数据失败',array('jump_url' => $jumpUrl));
     }
 
-    public function push() {
-        $jumpUrl = $_SERVER['HTTP_REFERER'];
-        $positonId = intval($_POST['position_id']);
-        $articleId = $_POST['push'];
-
-        if(!$articleId || !is_array($articleId)) {
-            return show(0, '请选择推荐的文章ID进行推荐');
-
-        }
-        if(!$positonId) {
-            return show(0, '没有选择推荐位');
-        }
-        try {
-            $article = D("Article")->getArticleByNewsIdIn($articleId);
-            if (!$article) {
-                return show(0, '没有相关内容');
-            }
-
-            foreach ($article as $newarticle) {
-                    $data = array(
-                    'position_id' => $positonId,
-                    'title' => $newarticle['title'],
-                    'thumb' => $newarticle['thumb'],
-                    'ArticleID' => $newarticle['ArticleID'],
-                    //'status' => 1,
-                    'PublishDate' => $newarticle['PublishDate'],
-                );
-                $position = D("PositionContent")->insert($data);
-            }
-        }catch(Exception $e) {
-            return show(0, $e->getMessage());
-        }
-
-        return show(1, '推荐成功',array('jump_url'=>$jumpUrl));
-
-
-    }
 }
