@@ -25,7 +25,9 @@ class ArticleModel extends Model {
         $data['PublishUserID'] =  getLoginUsername();
         return $this->_db->add($data);
     }
+
     public function getArticle($data,$page,$pageSize=10) {
+        
         $conditions = $data;
         if(isset($data['title']) && $data['title']) {
             $conditions['title'] = array('like','%'.$data['title'].'%');
@@ -33,6 +35,10 @@ class ArticleModel extends Model {
         if(isset($data['columnid']) && $data['columnid'])  {
             $conditions['columnid'] = intval($data['columnid']);
         }
+
+        // if(isset($data['column_parentid']) && $data['column_parentid'])  {
+        //     $conditions['column_parentid'] = intval($data['column_parentid']);
+        // }
 //        $conditions['status'] = array('neq',-1);
 
         $offset = ($page - 1) * $pageSize;

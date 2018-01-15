@@ -77,7 +77,7 @@ class ColumnModel extends  Model {
         return $this->_db->where($data)->order('columns_id desc')->select();
     }
 
-    public function getBarMenus() {
+    public function getColumn() {
         $data = array(
 //            'type' => 0,
         'column_type'=>1,
@@ -87,5 +87,23 @@ class ColumnModel extends  Model {
             ->order('columns_id desc')
             ->select();
         return $res;
+    }
+    //获取主栏目法；
+    public function getParentColumn($data){
+        $conditions = $data;
+        // if(isset($data['title']) && $data['title']) {
+        //     $conditions['title'] = array('like','%'.$data['title'].'%');
+        // }
+        
+        if(isset($data['columnid']) && $data['columnid'])  {
+            $conditions['columnid'] = intval($data['columnid']);
+        }
+//        $conditions['status'] = array('neq',-1);
+
+        $list = $this->_db->where($conditions)
+            ->order('columnid')
+            ->select();
+
+        return $list;
     }
 }

@@ -23,6 +23,11 @@ class ArticleController extends CommonController {
             $this->assign('columnid',$conds['columnid']);
         }
 
+        if($_GET['column_parentid']) {
+            $conds['column_parentid'] = intval($_GET['column_parentid']);
+            $this->assign('column_parentid',$conds['column_parentid']);
+        }
+
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
         $pageSize = 10;
 
@@ -35,10 +40,12 @@ class ArticleController extends CommonController {
             'pageTotal' =>  ceil($count / $pageSize),
             'pageRows' => $count
         );
+
         $this->assign('page', $pageData);
         $this->assign('article',$article);
         
-        $this->assign('webSiteMenu',D("Column")->getBarMenus());
+        $this->assign('webSiteMenu',D("Column")->getColumn());
+
         $this->display();
     }
     public function add(){

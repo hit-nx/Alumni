@@ -1,4 +1,4 @@
-<include file="Index/header" />
+ <include file="Index/header" />
 <body>
 <div id="wrapper">
 
@@ -31,9 +31,20 @@
                 <form action="/admin.php" method="get">
                     <div class="col-md-3">
                         <div class="input-group">
-                            <span class="input-group-addon">栏目</span>
+                            <span class="input-group-addon">主栏目</span>
                             <select class="form-control" name="columnid">
-                                <option value='' >全部分类</option>
+                                <option value='' >分类</option>
+                                <foreach name="webSiteMenuParent" item="sitenav">
+                                    <option value="{$sitenav.columns_id}" >{$sitenav.column_name}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">子栏目</span>
+                            <select class="form-control" name="column_parentid">
+                                <option value='' >分类</option>
                                 <foreach name="webSiteMenu" item="sitenav">
                                     <option value="{$sitenav.columns_id}" >{$sitenav.column_name}</option>
                                 </foreach>
