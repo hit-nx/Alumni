@@ -135,8 +135,12 @@
                             <table class="table table-bordered table-hover singcms-table">
                                 <thead>
                                 <tr>
+<<<<<<< HEAD
                                     <th id="singcms-checkbox-all" width="10"><input type="checkbox"/></th>
                                     <th>id</th>
+=======
+                                    <!--<th width="14">排序</th>-->
+>>>>>>> 88f76fd7ffbc937ad817f7577ceb0e21d4bbf894
                                     <th>标题</th>
                                     <th>来源</th>
                                     <th>栏目</th>
@@ -147,8 +151,14 @@
                                 </thead>
                                 <tbody>
                                 <?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$new): $mod = ($i % 2 );++$i;?><tr>
+<<<<<<< HEAD
                                         <td><input type="checkbox" name="pushcheck" value="<?php echo ($new["ArticleID"]); ?>"></td>
                                         <td><?php echo ($new["articleid"]); ?></td>
+=======
+                                        <!--<td><input type="checkbox" name="pushcheck" value="<?php echo ($new["ArticleID"]); ?>"></td>-->
+                                        <!--<td><?php echo ($new["articleid"]); ?></td>-->
+                                        <!--<td><input size=4 type='text'  name='listorder[<?php echo ($new["articleid"]); ?>]' value="<?php echo ($new["listorder"]); ?>"/></td>-->
+>>>>>>> 88f76fd7ffbc937ad817f7577ceb0e21d4bbf894
                                         <td><?php echo ($new["title"]); ?></td>
                                         <td><?php echo ($new["source"]); ?></td>
                                         <td><?php echo (getColumnName($webSiteMenu,$new["columnid"])); ?></td>
@@ -170,6 +180,7 @@
                                 </ul>
 
                             </nav>
+<<<<<<< HEAD
                             <div>
                                 <button  id="button-listorder" type="button" class="btn btn-primary dropdown-toggle" ><span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span>更新排序</button>
                             </div>
@@ -182,6 +193,9 @@
                             <button id="singcms-push" type="button" class="btn btn-primary">推送</button>
                         </div>
 
+=======
+                        </form>
+>>>>>>> 88f76fd7ffbc937ad817f7577ceb0e21d4bbf894
                     </div>
                 </div>
 

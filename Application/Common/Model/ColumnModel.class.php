@@ -79,8 +79,8 @@ class ColumnModel extends  Model {
 
     public function getBarMenus() {
         $data = array(
-//            'status' => 1,
 //            'type' => 0,
+        'column_type'=>1,
         );
 
         $res = $this->_db->where($data)

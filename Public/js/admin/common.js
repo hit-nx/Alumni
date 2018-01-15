@@ -11,14 +11,12 @@ $("#button-add").click(function(){
  */
 $("#singcms-button-submit").click(function(){
     var data = $("#singcms-form").serializeArray();
-    var postData = {};
+    postData = {};
     $(data).each(function(i){
        postData[this.name] = this.value;
     });
     console.log(postData);
     // 将获取到的数据post给服务器
-
-
     // url = SCOPE.save_url;
     // jump_url = SCOPE.jump_url;
     // $.post(url,postData,function(result){
@@ -31,7 +29,6 @@ $("#singcms-button-submit").click(function(){
     //     }
     // },"JSON");
 
-    // 通过Ajax方法
     $.ajax({
         type: "POST",
         url: SCOPE.save_url,
@@ -40,7 +37,7 @@ $("#singcms-button-submit").click(function(){
         success: function(result){
             if(result.status == 1) {
                 //成功
-                return dialog.success(result.message,SCOPE.save_url);
+                return dialog.success(result.message,SCOPE.jump_url);
             }else if(result.status == 0) {
                 // 失败
                 return dialog.error(result.message);
@@ -50,16 +47,6 @@ $("#singcms-button-submit").click(function(){
             alert("网络连接错误！");
     }});
 });
-/**
- *下拉菜单改变函数
- */
-$("#editor_item").change(function () {
-    var data = $('select  option:selected').val();
-    url = SCOPE.save_url+'&id='+data;
-    console.log(data);
-    window.location.href=url;
-});
-
 /*
 编辑模型
  */
@@ -75,11 +62,14 @@ $('.singcms-table #singcms-edit').on('click',function(){
  */
 $('.singcms-table #singcms-delete').on('click',function(){
     var id = $(this).attr('attr-id');
+    var a = $(this).attr("attr-a");
     var message = $(this).attr("attr-message");
     var url = SCOPE.set_status_url;
 
     data = {};
-    data['ArticleID'] = id;
+    data['id'] = id;
+    data['status'] = -1;
+
     layer.open({
         type : 0,
         title : '是否提交？',
@@ -110,6 +100,16 @@ function todelete(url, data) {
         }
     ,"JSON");
 }
+
+/**
+ *下拉菜单改变函数
+ */
+$("#editor_item").change(function () {
+    var data = $('select  option:selected').val();
+    url = SCOPE.save_url+'&id='+data;
+    console.log(data);
+    window.location.href=url;
+});
 
 /**
  * 排序操作 

@@ -15,15 +15,18 @@ class AlumnisController extends CommonController {
         $conds = array();
 
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
-        $pageSize = 4;
+        $pageSize = 10;
 
         $alumnis = D("Alumnis")->getAlumnis($conds,$page,$pageSize);
         $count = D("Alumnis")->getAlumnisCount($conds);
 
-        $res  =  new \Think\Page($count,$pageSize);
-        $pageres = $res->show();
-
-        $this->assign('pageres',$pageres);
+        // 分页部分 使用插件
+        $pageData = array(
+            'pageNow' => $page,
+            'pageTotal' =>  ceil($count / $pageSize),
+            'pageRows' => $count
+        );
+        $this->assign('page', $pageData);
         $this->assign('alumnis',$alumnis);
 
         $this->assign('webSiteMenu',D("Menu")->getBarMenus());
@@ -100,76 +103,14 @@ class AlumnisController extends CommonController {
                 }
                 $res = D("Alumnis")->updateStatusById($id, $status);
                 if ($res) {
-                    return show(1, '操作成功');
+                    return show(1, '删除成功');
                 } else {
-                    return show(0, '操作失败');
+                    return show(0, '删除失败');
                 }
             }
             return show(0, '没有提交的内容');
         }catch(Exception $e) {
             return show(0, $e->getMessage());
         }
-    }
-
-    public function listorder() {
-        $listorder = $_POST['listorder'];
-        $jumpUrl = $_SERVER['HTTP_REFERER'];
-        $errors = array();
-        try {
-            if ($listorder) {
-                foreach ($listorder as $newsId => $v) {
-                    // 执行更新
-                    $id = D("News")->updateNewsListorderById($newsId, $v);
-                    if ($id === false) {
-                        $errors[] = $newsId;
-                    }
-                }
-                if ($errors) {
-                    return show(0, '排序失败-' . implode(',', $errors), array('jump_url' => $jumpUrl));
-                }
-                return show(1, '排序成功', array('jump_url' => $jumpUrl));
-            }
-        }catch (Exception $e) {
-            return show(0, $e->getMessage());
-        }
-        return show(0,'排序数据失败',array('jump_url' => $jumpUrl));
-    }
-
-    public function push() {
-        $jumpUrl = $_SERVER['HTTP_REFERER'];
-        $positonId = intval($_POST['position_id']);
-        $newsId = $_POST['push'];
-
-        if(!$newsId || !is_array($newsId)) {
-            return show(0, '请选择推荐的文章ID进行推荐');
-
-        }
-        if(!$positonId) {
-            return show(0, '没有选择推荐位');
-        }
-        try {
-            $news = D("News")->getNewsByNewsIdIn($newsId);
-            if (!$news) {
-                return show(0, '没有相关内容');
-            }
-
-            foreach ($news as $new) {
-                $data = array(
-                    'position_id' => $positonId,
-                    'title' => $new['title'],
-                    'thumb' => $new['thumb'],
-                    'news_id' => $new['news_id'],
-                    'status' => 1,
-                    'create_time' => $new['create_time'],
-                );
-                $position = D("PositionContent")->insert($data);
-            }
-        }catch(Exception $e) {
-            return show(0, $e->getMessage());
-        }
-
-        return show(1, '推荐成功',array('jump_url'=>$jumpUrl));
-
-
     }
 }

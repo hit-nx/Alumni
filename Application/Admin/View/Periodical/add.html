@@ -8,51 +8,50 @@
 
     <div class="container-fluid">
 
-
       <!-- Page Heading -->
       <div class="row">
         <div class="col-lg-12">
 
           <ol class="breadcrumb">
             <li>
-              <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=content">内容管理</a>
+              <i class="fa fa-dashboard"></i>  
+              <a href="/admin.php?c=periodical">通讯录管理</a>
             </li>
             <li class="active">
-              <i class="fa fa-edit"></i> 内容管理
+              <i class="fa fa-edit"></i> 
+              通讯录添加
             </li>
           </ol>
         </div>
       </div>
-    
       <!-- /.row -->
+
       <div class="row">
         <div class="col-lg-6">
 
           <form class="form-horizontal" id="singcms-form">
-
             <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">内容名称：</label>
+              <label for="inputname" class="col-sm-2 control-label">标题:</label>
               <div class="col-sm-5">
-                <select class="form-control"  id="editor_item" name="catid" item="content">
-                  <foreach name="catid" item="content">
-                  <option  value="{$content.content_id}" id="inputname">{$content.content_name}</option>
-                  </foreach>
-                    <foreach name="webSiteMenu" item="menu">
-                      <option value="{$menu.content_id}">{$menu.content_name}</option>
-                    </foreach>
-                </select>
+                <input type="text" name="title" class="form-control" id="inputname" placeholder="请填写通讯录标题">
               </div>
             </div>
-
 
             <div class="form-group">
-              <label for="editor_singcms" class="col-sm-2 control-label">内容:</label>
-              <div class="col-sm-5" id="inputPassword3">
-                  <foreach name="webContent" item="content">
-                <textarea class="input js-editor" id="editor_singcms" rows="20" name="content" value="{$content.content}">{$content.content}</textarea>
-                  </foreach>
+              <label for="inputname" class="col-sm-2 control-label">文件:</label>
+              <div class="col-sm-5">
+                <input id="file_upload"  type="file" multiple="true" >
+                <img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
+                <input id="file_upload_image" name="path" type="hidden" multiple="true" value="">
               </div>
             </div>
+
+           <!--  <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">内容:</label>
+              <div class="col-sm-5">
+                <textarea class="input js-editor" id="editor_ningxi" name="content" rows="20" ></textarea>
+              </div>
+            </div> -->
 
 
 
@@ -78,22 +77,21 @@
 </div>
 <script>
   var SCOPE = {
-    'save_url' : '/admin.php?c=content&a=index',
-    'jump_url' : '/admin.php?c=content',
+    'save_url' : '/admin.php?c=periodical&a=add',
+    'jump_url' : '/admin.php?c=periodical',
     'ajax_upload_image_url' : '/admin.php?c=image&a=ajaxuploadimage',
     'ajax_upload_swf' : '/Public/js/party/uploadify.swf',
   };
 
 </script>
 <!-- /#wrapper -->
-<script src="/Public/js/admin/image.js"></script>
+<script src="/Public/js/admin/appendix.js"></script>
 <script>
   // 6.2
   KindEditor.ready(function(K) {
-    window.editor = K.create('#editor_singcms',{
+    window.editor = K.create('#editor_ningxi',{
       uploadJson : '/admin.php?c=image&a=kindupload',
-      afterBlur : function(){this.sync();},
-      //
+      afterBlur : function(){this.sync();}, //
     });
   });
 </script>

@@ -11,32 +11,7 @@ use Think\Exception;
  */
 class ContentController extends CommonController {
 
-//    public function index() {
-////        $conds = array();
-////        $title = $_GET['title'];
-////        if($title) {
-////            $conds['title'] = $title;
-////        }
-////        if($_GET['catid']) {
-////            $conds['catid'] = intval($_GET['catid']);
-////        }
-////
-////        $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
-////        $pageSize = 10;
-////
-////        $news = D("News")->getNews($conds,$page,$pageSize);
-////        $count = D("News")->getNewsCount($conds);
-////
-////        $res  =  new \Think\Page($count,$pageSize);
-////        $pageres = $res->show();
-////        $positions = D("Position")->getNormalPositions();
-////        $this->assign('pageres',$pageres);
-////        $this->assign('news',$news);
-////        $this->assign('positions', $positions);
-////
-////        $this->assign('webSiteMenu',D("Menu")->getBarMenus());
-//        $this->display();
-//    }
+
     public function index(){
         if($_POST) {
 
@@ -50,24 +25,14 @@ class ContentController extends CommonController {
 
             return $this->save($_POST);
         }
-   //     else {
-//
-//            $webSiteMenu = D("Menu")->getBarMenus();
-//
-//            $titleFontColor = C("TITLE_FONT_COLOR");
-//            $copyFrom = C("COPY_FROM");
-//            $this->assign('webSiteMenu', $webSiteMenu);
-//            $this->assign('titleFontColor', $titleFontColor);
-//            $this->assign('copyfrom', $copyFrom);
-//            $this->display();
-//        }
 
 
-        $content=D("NewsContent")->getContent(1);
-        $menu=D("NewsContent")->getBarMenus();
+        $content=D("Content")->getContent(1);
+        $menu=D("Content")->getBarMenus(1);
 
         if($_GET){
-            $content=D("NewsContent")->getContent($_GET['id']);
+            $content=D("Content")->getContent($_GET['id']);
+            $menu=D("Content")->getBarMenus($_GET['id']);
         }
         $this->assign('webContent',$content);
         $this->assign('catid',$content);
@@ -104,7 +69,7 @@ class ContentController extends CommonController {
 
         try {
             $newsContentData['content'] = $data['content'];
-            $condId = D("NewsContent")->updateNewsById($newsId, $newsContentData);
+            $condId = D("Content")->updateNewsById($newsId, $newsContentData);
             if($condId === false) {
                 return show(0, '更新失败');
             }

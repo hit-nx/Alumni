@@ -3,36 +3,37 @@ namespace Common\Model;
 use Think\Model;
 
 /**
- * 校友会内容model操作
- * @author  MrssiP
+ * 校友会通讯录model操作
+ * @author  LRyan
  */
-class AlumnisModel extends Model {
+class PeriodicalModel extends Model {
     private $_db = '';
 
     public function __construct() {
-        $this->_db = M('alumnis');
+        $this->_db = M('periodical');
     }
     public function select($data = array(), $limit = 100) {
 
         $conditions = $data;
-        $list = $this->_db->where($conditions)->order('alumnis_id desc')->limit($limit)->select();
+        $list = $this->_db->where($conditions)->order('periodicalid desc')->limit($limit)->select();
         return $list;
+
     }
     public function insert($data = array()) {
         if(!is_array($data) || !$data) {
             return 0;
         }
-        $data['createtime'] = time();
+        $data['time']  = time();
         $data['status'] = 1;
         return $this->_db->add($data);
     }
-    public function getAlumnis($data,$page,$pageSize=10) {
+    public function getPeriodical($data,$page,$pageSize=4) {
         $conditions = $data;
         $conditions['status'] = array('neq',-1);
 
         $offset = ($page - 1) * $pageSize;
         $list = $this->_db->where($conditions)
-            ->order('alumnis_id')
+            ->order('periodicalid')
             ->limit($offset,$pageSize)
             ->select();
 
@@ -41,7 +42,7 @@ class AlumnisModel extends Model {
     }
 
 
-    public function getAlumnisCount($data = array()){
+    public function getPeriodicalCount($data = array()){
         $conditions = $data;
         $conditions['status'] = array('neq',-1);
 
@@ -49,7 +50,7 @@ class AlumnisModel extends Model {
     }
 
     public function find($id) {
-        $data = $this->_db->where('alumnis_id='.$id)->find();
+        $data = $this->_db->where('periodicalid='.$id)->find();
         return $data;
     }
 
@@ -61,7 +62,7 @@ class AlumnisModel extends Model {
             throw_exception('更新数据不合法');
         }
 
-        return $this->_db->where('alumnis_id='.$id)->save($data);
+        return $this->_db->where('periodicalid='.$id)->save($data);
     }
 
     public function updateStatusById($id, $status) {
@@ -73,18 +74,18 @@ class AlumnisModel extends Model {
         }
         $data['status'] = $status;
 
-        return $this->_db->where('alumnis_id='.$id)->save($data);
+        return $this->_db->where('periodicalid='.$id)->save($data);
     }
 
 
-    public function getNewsByNewsIdIn($alumnisIds) {
-        if(!is_array($alumnisIds)) {
+    public function getNewsByNewsIdIn($periodicalIds) {
+        if(!is_array($periodicalIds)) {
             throw_exception("参数不合法");
         }
 
         $data = array(
 
-            'alumnis_id' => array('in',implode(',', $alumnisIds)),
+            'periodicalid' => array('in',implode(',', $periodicalIds)),
         );
 
         return $this->_db->where($data)->select();
@@ -101,7 +102,7 @@ class AlumnisModel extends Model {
         }
 
         $data['count'] = $count;
-        return $this->_db->where('alumnis_id='.$id)->save($data);
+        return $this->_db->where('periodicalid='.$id)->save($data);
 
     }
 
