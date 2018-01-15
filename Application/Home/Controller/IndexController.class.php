@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 use Think\Exception;
 
-class IndexController extends CommonController {
+class IndexController2 extends CommonController {
     public function index($type=''){
         //获取排行
         $rankNews = $this->getRank();

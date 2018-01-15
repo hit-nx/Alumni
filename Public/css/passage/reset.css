@@ -1,0 +1,22 @@
+footer ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input {margin:0;padding:0; }
+footer {font-size: 12px; }
+footer img,button {border :none; }
+footer li {list-style:none; }
+footer input,select,textarea{outline:none;border:none;background:none; }
+footer textarea{resize:none;}
+footer a {text-decoration:none; }
+
+/*清浮动*/
+.clearfix:after {content :"";display:block;clear:both; }
+.clearfix{zoom: 1;}
+/*选择符:after{
+            content:".";
+            clear:both;
+            display:block;
+            height:0;
+            overflow:hidden;
+            visibility:hidden;
+              }
+*//*浮动*/
+.fl{float:left;}
+.fr{float:right;}

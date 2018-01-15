@@ -1,0 +1,129 @@
+footer{
+    width: 100%;
+    height: 360px;
+    background-color: rgb(13,24,78);
+}
+.wrap3{
+    width: 1300px;
+    height: 360px;
+    box-sizing: border-box;
+    padding-top: 50px;
+    margin: 0 auto;
+    position: relative;
+    color: #878BB0;
+    background-color: rgb(13,24,78);
+    font-size: 16px;
+}
+.wrap3 p{
+    display: inline-block;
+    box-sizing: border-box;
+    padding-top: 90px;
+    height: 238px;
+    width: 500px;
+    background-image: url(../../images/index/logo.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 15px;
+    color: #878BB0;
+    line-height: 30px;
+    margin-right: 50px;
+    font-weight: 500;
+    float: left;
+}
+.connect{
+    display: inline-block;
+    width: 220px;
+    height: 260px;
+    background-image: url(../../images/index/erweima.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 150px;
+    padding-top: 0px;
+    float: left;
+}
+.wrap3 dt{
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+.wrap3 dd{
+    color: #878BB0;
+    font-size: 15px;
+    line-height: 30px;
+}
+.webs{
+    display: inline-block;
+    margin-left: 50px;
+    float: left;
+}
+.webs dd{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    width: auto;
+    padding-left: 15px;
+    background-image: url(../../images/index/whitetrangle.jpg);
+    background-position: 0 6px;
+    background-repeat: no-repeat;
+}
+.others{
+    margin-left: 100px;
+    display: inline-block;
+}
+.otherweb{
+    margin-top: 25px;
+    display: block;
+    height: 42px;
+    width: 200px;
+    background-color: #504F4D;
+    background-image: url(../../images/index/trangle.jpg);
+    background-repeat: no-repeat;
+    background-position:170px 13px;
+    line-height: 42px;
+    font-size: 16px;
+    padding-top: 6px;
+}
+.otherweb a{
+    color: #878BB0;
+}
+.otherweb:hover a{
+    color: white;
+}
+.otherweb ul{
+    display: none;
+}
+.otherweb li{
+    display: block;
+    height: 42px;
+    width: 200px;
+    line-height: 42px;
+    padding-left: 20px;
+    font-size: 16px;
+    background-color: #504F4D;
+}
+
+
+
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input {margin:0;padding:0; }
+body {font-size: 12px; }
+img,button {border :none; }
+li {list-style:none; }
+input,select,textarea{outline:none;border:none;background:none; }
+textarea{resize:none;}
+a {text-decoration:none; }
+
+/*清浮动*/
+.clearfix:after {content :"";display:block;clear:both; }
+.clearfix{zoom: 1;}
+/*选择符:after{
+            content:".";
+            clear:both;
+            display:block;
+            height:0;
+            overflow:hidden;
+            visibility:hidden;
+              }
+*//*浮动*/
+.fl{float:left;}
+.fr{float:right;}
