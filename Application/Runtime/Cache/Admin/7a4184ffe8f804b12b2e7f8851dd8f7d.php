@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?> <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,12 +24,14 @@
     <link rel="stylesheet" href="/Public/css/sing/common.css" />
     <link rel="stylesheet" href="/Public/css/party/bootstrap-switch.css" />
     <link rel="stylesheet" type="text/css" href="/Public/css/party/uploadify.css">
+    <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
 
     <!-- jQuery -->
     <script src="/Public/js/jquery.js"></script>
     <script src="/Public/js/bootstrap.min.js"></script>
     <script src="/Public/js/dialog/layer.js"></script>
     <script src="/Public/js/dialog.js"></script>
+    <script src="/Public/js/paging.js"></script>
     <script type="text/javascript" src="/Public/js/party/jquery.uploadify.js"></script>
 
 </head>
@@ -92,7 +94,7 @@
 
                     <ol class="breadcrumb">
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=content">文章管理</a>
+                            <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=article">文章管理</a>
                         </li>
                         <li class="active">
                             <i class="fa fa-table"></i>文章列表
@@ -101,16 +103,27 @@
                 </div>
             </div>
             <!-- /.row -->
-            <div >
-                <button  id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加 </button>
+            <div>
+                <button  id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加 
+                </button>
             </div>
+            <br>
             <div class="row">
                 <form action="/admin.php" method="get">
                     <div class="col-md-3">
                         <div class="input-group">
-                            <span class="input-group-addon">栏目</span>
+                            <span class="input-group-addon">主栏目</span>
                             <select class="form-control" name="columnid">
-                                <option value='' >全部分类</option>
+                                <option value='' >分类</option>
+                                <?php if(is_array($webSiteMenuParent)): foreach($webSiteMenuParent as $key=>$sitenav): ?><option value="<?php echo ($sitenav["columns_id"]); ?>" ><?php echo ($sitenav["column_name"]); ?></option><?php endforeach; endif; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">子栏目</span>
+                            <select class="form-control" name="column_parentid">
+                                <option value='' >分类</option>
                                 <?php if(is_array($webSiteMenu)): foreach($webSiteMenu as $key=>$sitenav): ?><option value="<?php echo ($sitenav["columns_id"]); ?>" ><?php echo ($sitenav["column_name"]); ?></option><?php endforeach; endif; ?>
                             </select>
                         </div>
@@ -166,7 +179,7 @@
                             <nav>
 
                                 <ul >
-                                    <?php echo ($pageres); ?>
+                                    <div id="page" class="page_div"></div>
                                 </ul>
 
                             </nav>
@@ -188,6 +201,14 @@
 </div>
 <!-- /#wrapper -->
 <script>
+    $("#page").paging({
+        pageNo: <?php echo ($page["pageNow"]); ?>,
+        totalPage: <?php echo ($page["pageTotal"]); ?>,
+        totalSize: <?php echo ($page["pageRows"]); ?>,
+        callback: function(num) {
+            window.location.href = '/admin.php?c=article&p=' + num;
+        }
+    });
     var SCOPE = {
         'edit_url' : '/admin.php?c=article&a=edit',
         'add_url' : '/admin.php?c=article&a=add',
@@ -195,7 +216,7 @@
         'sing_news_view_url' : '/index.php?c=view',
         'listorder_url' : '/admin.php?c=article&a=listorder',
         'push_url' : '/admin.php?c=article&a=push',
-    }
+    };
 </script>
 <script src="/Public/js/admin/common.js"></script>
 

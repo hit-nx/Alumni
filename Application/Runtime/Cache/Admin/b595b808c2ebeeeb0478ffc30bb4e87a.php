@@ -24,12 +24,14 @@
     <link rel="stylesheet" href="/Public/css/sing/common.css" />
     <link rel="stylesheet" href="/Public/css/party/bootstrap-switch.css" />
     <link rel="stylesheet" type="text/css" href="/Public/css/party/uploadify.css">
+    <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
 
     <!-- jQuery -->
     <script src="/Public/js/jquery.js"></script>
     <script src="/Public/js/bootstrap.min.js"></script>
     <script src="/Public/js/dialog/layer.js"></script>
     <script src="/Public/js/dialog.js"></script>
+    <script src="/Public/js/paging.js"></script>
     <script type="text/javascript" src="/Public/js/party/jquery.uploadify.js"></script>
 
 </head>
@@ -98,9 +100,9 @@
         </div>
 
 
-<!--         <div class="row">
+        <div class="row">
             <div class="col-lg-3 col-md-6">
-                <div class="panel panel-primary">
+                <div class="panel panel-blue">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
@@ -108,17 +110,17 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge"><?php echo ($admincount); ?></div>
-                                <div>今日登录用户数</div>
+                                <div>文章管理</div>
                             </div>
                         </div>
                     </div>
-                    
+                    <a href="/admin.php?c=article&a=index">
                         <div class="panel-footer">
-                            <span class="pull-left"></span>
+                            <span class="pull-left">查看</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
-                    
+                    </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -130,7 +132,7 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge"><?php echo ($newscount); ?></div>
-                                <div>文章数量</div>
+                                <div>内容管理</div>
                             </div>
                         </div>
                     </div>
@@ -152,15 +154,15 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge"><?php echo ($news["count"]); ?></div>
-                                <div>文章最大阅读数</div>
+                                <div>捐赠管理</div>
                             </div>
                         </div>
                     </div>
-                    <a target="_blank" href="/index.php?c=detail&id=<?php echo ($news["news_id"]); ?>">
+                    <a href="/admin.php?c=donation&a=index">
                         <div class="panel-footer">
-                            <span class="pull-left"></span>
+                            <span class="pull-left">查看</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"><?php echo ($news["title"]); ?></div>
+                            <div class="clearfix"></div>
                         </div>
                     </a>
                 </div>
@@ -174,11 +176,11 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge"><?php echo ($positioncount); ?></div>
-                                <div>推荐位数</div>
+                                <div>校友会管理</div>
                             </div>
                         </div>
                     </div>
-                    <a href="/admin.php?c=position">
+                    <a href="/admin.php?c=alumnis">
                         <div class="panel-footer">
                             <span class="pull-left">查看</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -188,7 +190,7 @@
                 </div>
             </div>
         </div>
- -->
+
 
 
 

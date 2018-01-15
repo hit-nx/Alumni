@@ -21,7 +21,7 @@ $(function() {
                 $("#upload_org_code_img").attr("src",obj.data);
                 $("#file_upload_image").attr('value',obj.data);
 
-            
+        
             }else{
                 alert('上传失败');
             }
