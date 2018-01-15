@@ -28,6 +28,7 @@
           添加 
         </button>
       </div>
+      <br>
       <div class="row">
         <div class="col-lg-6">
           <div class="table-responsive">
@@ -93,19 +94,22 @@
 </div>
 <!-- /#wrapper -->
 <script>
-  // $("#page").paging({
-  //   pageNo: {$page.pageNow},
-  //   totalPage: {$page.pageTotal},
-  //   totalSize: {$page.pageRows},
-  //   callback: function(num) {
-  //     window.location.href = '/admin.php?c=periodical&p=' + num;
-  //   }
-  // })
+  
   var SCOPE = {
     'edit_url' : '/admin.php?c=periodical&a=edit',
     'add_url' : '/admin.php?c=periodical&a=add',
     'set_status_url' : '/admin.php?c=periodical&a=setStatus',
     'sing_news_view_url' : '/index.php?c=view',
   }
+  
+  $("#page").paging({
+    pageNo: {$page.pageNow},
+    totalPage: {$page.pageTotal},
+    totalSize: {$page.pageRows},
+    callback: function(num) {
+      window.location.href = '/admin.php?c=periodical&p=' + num;
+    }
+  });
+
 </script>
 <include file="Index/footer" />

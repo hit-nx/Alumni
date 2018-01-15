@@ -22,7 +22,7 @@ class AlumnisModel extends Model {
         if(!is_array($data) || !$data) {
             return 0;
         }
-        $data['createtime']  = date("Y-m-d H:i:s",time());
+        $data['createtime'] = time();
         $data['status'] = 1;
         return $this->_db->add($data);
     }
