@@ -23,7 +23,7 @@ class PeriodicalController extends CommonController {
         $pageData = array(
             'pageNow' => $page,
             'pageTotal' =>  ceil($count / $pageSize),
-            'pageRows' => $count，
+            'pageRows' => $count,
         );
 
         $this->assign('page', $pageData);

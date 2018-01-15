@@ -7,7 +7,6 @@ use Think\Controller;
 class IndexController extends CommonController {
     
     public function index(){
-
         // $news = D('News')->maxcount();
         // $newscount = D('News')->getNewsCount(array('status'=>1));
         // $positionCount = D('Position')->getCount(array('status'=>1));
