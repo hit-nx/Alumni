@@ -13,4 +13,5 @@ return array(
         4 => '中央纪委监察部网站',
         5 => '凤凰江苏'
     ),
+    'VAR_SESSION_ID' => 'session_id',//配置sessionid;
 );

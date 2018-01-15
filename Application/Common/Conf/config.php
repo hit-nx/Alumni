@@ -8,4 +8,6 @@ return array(
     'LOAD_EXT_CONFIG' => 'db',
     'MD5_PRE' => 'ningxi',
     'HTML_FILE_SUFFIX' => '.html',
+    
+    'VAR_SESSION_ID' => 'session_id',//配置sessionid;
 );
