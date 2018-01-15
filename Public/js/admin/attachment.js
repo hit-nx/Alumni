@@ -1,15 +1,12 @@
-/**
- * 图片上传功能
- */
 $(function() {
-    $('#file_upload').uploadify({
+    $('#attachment_upload').uploadify({
         'swf'      : SCOPE.ajax_upload_swf,
         'uploader' : SCOPE.ajax_upload_image_url,
-        'buttonText': '上传文件',
-        'fileTypeDesc': '通讯录文件',
+        'buttonText': '上传附件',
+        'fileTypeDesc': '文章附件',
         'fileObjName' : 'file',
         //允许上传的文件后缀
-        'fileTypeExts': '*.pdf',
+        'fileTypeExts': '*.doc; *.xlsx; *.pdf',
         'onUploadSuccess' : function(file,data,response) {
             // response true ,false
             if(response) {
@@ -18,10 +15,9 @@ $(function() {
                 console.log(data);
                 $('#' + file.id).find('.data').html(' 上传完毕');
 
-                $("#upload_org_code_img").attr("src",obj.data);
-                $("#file_upload_image").attr('value',obj.data);
+                $("#upload_org_code_atm").attr("src",obj.data);
+                $("#file_upload_attachment").attr('value',obj.data);
 
-            
             }else{
                 alert('上传失败');
             }
