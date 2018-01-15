@@ -6,7 +6,7 @@ $(function() {
         'swf'      : SCOPE.ajax_upload_swf,
         'uploader' : SCOPE.ajax_upload_image_url,
         'buttonText': '上传文件',
-        'fileTypeDesc': 'Image Files',
+        'fileTypeDesc': '通讯录文件',
         'fileObjName' : 'file',
         //允许上传的文件后缀
         'fileTypeExts': '*.pdf',
