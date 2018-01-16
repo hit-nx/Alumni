@@ -2,148 +2,133 @@
 <body>
 <div id="wrapper">
 
-    <include file="Index/nav"/>
-    <div id="page-wrapper">
+  <include file="Index/nav"/>
+  <div id="page-wrapper">
 
-        <div class="container-fluid" >
+	<div class="container-fluid" >
 
-            <!-- Page Heading -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <ol class="breadcrumb">
-                        <li>
-                            <i class="fa fa-dashboard"></i>  
-                            <a href="/admin.php?c=article">文章管理</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-table"></i>文章列表
-                        </li>
-                    </ol>
-                </div>
-            </div>
-            <!-- /.row -->
-            <div>
-                <button  id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加 
-                </button>
-            </div>
-            <br>
-            <div class="row">
-                <form action="/admin.php" method="get">
-<!--                     <div class="col-md-3">
-                        <div class="input-group">
-                            <span class="input-group-addon">主栏目</span>
-                            <select class="form-control" name="columnid">
-                                <option value='-1' ><?php echo getColumnName()?></option>
-                                <foreach name="webSiteMenuParent" item="sitenav">
-                                    <option value="{$sitenav.columns_id}" >{$sitenav.column_name}</option>
-                                </foreach>
-                            </select>
-                        </div>
-                    </div> -->
-                    <div class="col-md-3">
-                        <div class="input-group">
-                            <span class="input-group-addon">栏目</span>
-                            <select class="form-control" name="columnid">
-                                <option value='' >请选择栏目</option>
-                                <foreach name="webSiteMenu" item="sitenav">
-                                    <option value="{$sitenav.column_id}" >{$sitenav.column_name}</option>
-                                </foreach>
-                            </select>
-                        </div>
-                    </div>
-                    <input type="hidden" name="c" value="article"/>
-                    <input type="hidden" name="a" value="index"/>
-                    <div class="col-md-3">
-                        <div class="input-group">
-                            <input class="form-control" name="title" type="text" placeholder="文章标题" value="{$title}"/>
-                            <span class="input-group-btn">
-                                <button id="sub_data" type="submit" class="btn btn-primary">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3></h3>
-                    <div class="table-responsive">
-                        <form id="singcms-listorder">
-                            <table class="table table-bordered table-hover singcms-table">
-                                <thead>
-                                <tr>
-                                    <!--<th width="14">排序</th>-->
-                                    <th>标题</th>
-                                    <th>来源</th>
-                                    <th>栏目</th>
-                                    <th>封面图</th>
-                                    <th>时间</th>
-                                    <th>操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <volist name="articles" id="article">
-                                    <tr>
-                                        <!--<td><input type="checkbox" name="pushcheck" value="{$new.ArticleID}"></td>-->
-                                        <!--<td>{$new.articleid}</td>-->
-                                        <!--<td><input size=4 type='text'  name='listorder[{$new.articleid}]' value="{$new.listorder}"/></td>-->
-                                        <td>{$article.title}</td>
-                                        <td>{$article.source}</td>
-                                        <td>{$article.columnid|getColumnName=$webSiteMenu,###}</td>
-                                        <td>{$article.picture_url|isThumb}</td>
-                                        <td>{$article.publishdate}</td>
-                                        <td>
-                                            <span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$article.articleid}" ></span>
-                                            <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$article.articleid}"  attr-message="删除">
-                                                <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </volist>
+	  <!-- Page Heading -->
+	  <div class="row">
+		  <div class="col-lg-12">
+			  <ol class="breadcrumb">
+				  <li>
+					  <i class="fa fa-dashboard"></i>  
+					  <a href="/admin.php?c=article">文章管理</a>
+				  </li>
+				  <li class="active">
+					  <i class="fa fa-table"></i>文章列表
+				  </li>
+			  </ol>
+		  </div>
+	  </div>
+	  <!-- /.row -->
+	  <div>
+		  <button  id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加 
+		  </button>
+	  </div>
+	  <br>
+	  <div class="row">
+		  <form action="/admin.php" method="get">
+			  <div class="col-md-3">
+				  <div class="input-group">
+					  <span class="input-group-addon">栏目</span>
+					  <select class="form-control" name="columnid">
+						  <option value='' >请选择栏目</option>
+						  <foreach name="webSiteMenu" item="sitenav">
+							  <option value="{$sitenav.column_id}" <if condition="$sitenav.column_id eq $columnid">selected="selected"</if>>{$sitenav.column_name}</option>
+						  </foreach>
+					  </select>
+				  </div>
+			  </div>
+			  <input type="hidden" name="c" value="article"/>
+			  <input type="hidden" name="a" value="index"/>
+			  <div class="col-md-3">
+				  <div class="input-group">
+					  <input class="form-control" name="title" type="text" placeholder="文章标题" value="{$title}"/>
+					  <span class="input-group-btn">
+						  <button id="sub_data" type="submit" class="btn btn-primary">
+							  <i class="glyphicon glyphicon-search"></i>
+						  </button>
+					  </span>
+				  </div>
+			  </div>
+		  </form>
+	  </div>
+	  <br>
+	  <div class="row">
+		  <div class="col-lg-6">
+			  <div class="table-responsive">
+				  <form id="singcms-listorder">
+					  <table class="table table-bordered table-hover singcms-table">
+						<thead>
+						  <tr>
+							  <!--<th width="14">排序</th>-->
+							  <th>标题</th>
+							  <th>来源</th>
+							  <th>栏目</th>
+							  <th>封面图</th>
+							  <th>时间</th>
+							  <th>操作</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <volist name="articles" id="article">
+							  <tr>
+								  <!--<td><input type="checkbox" name="pushcheck" value="{$new.ArticleID}"></td>-->
+								  <!--<td>{$new.articleid}</td>-->
+								  <!--<td><input size=4 type='text'  name='listorder[{$new.articleid}]' value="{$new.listorder}"/></td>-->
+								  <td>{$article.title}</td>
+								  <td>{$article.source}</td>
+								  <td>{$article.columnid|getColumnName=$webSiteMenu,###}</td>
+								  <td>{$article.picture_url|isThumb}</td>
+								  <td>{$article.publishdate}</td>
+								  <td>
+									  <span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$article.articleid}" ></span>
+									  <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$article.articleid}"  attr-message="删除">
+										  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+									  </a>
+								  </td>
+							  </tr>
+						  </volist>
+						</tbody>
+					  </table>
+					  <nav>
 
-                                </tbody>
-                            </table>
-                            <nav>
+						  <ul >
+							  <div id="page" class="page_div"></div>
+						  </ul>
 
-                                <ul >
-                                    <div id="page" class="page_div"></div>
-                                </ul>
+					  </nav>
+				  </form>
+			  </div>
+		  </div>
 
-                            </nav>
-                        </form>
-                    </div>
-                </div>
+	  </div>
+	  <!-- /.row -->
+	</div>
+	<!-- /.container-fluid -->
 
-            </div>
-            <!-- /.row -->
-
-
-
-        </div>
-        <!-- /.container-fluid -->
-
-    </div>
-    <!-- /#page-wrapper -->
+  </div>
+  <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->
 <script>
-    $("#page").paging({
-        pageNo: {$page.pageNow},
-        totalPage: {$page.pageTotal},
-        totalSize: {$page.pageRows},
-        callback: function(num) {
-            window.location.href = '/admin.php?c=article&p=' + num;
-        }
-    });
-    var SCOPE = {
-        'edit_url' : '/admin.php?c=article&a=edit',
-        'add_url' : '/admin.php?c=article&a=add',
-        'set_status_url' : '/admin.php?c=article&a=setStatus',
-        'sing_news_view_url' : '/index.php?c=view',
-        'listorder_url' : '/admin.php?c=article&a=listorder',
-        'push_url' : '/admin.php?c=article&a=push',
-    };
+	$("#page").paging({
+		pageNo: {$page.pageNow},
+		totalPage: {$page.pageTotal},
+		totalSize: {$page.pageRows},
+		callback: function(num) {
+			window.location.href = '/admin.php?c=article&p=' + num;
+		}
+	});
+	var SCOPE = {
+		'edit_url' : '/admin.php?c=article&a=edit',
+		'add_url' : '/admin.php?c=article&a=add',
+		'set_status_url' : '/admin.php?c=article&a=setStatus',
+		'sing_news_view_url' : '/index.php?c=view',
+		'listorder_url' : '/admin.php?c=article&a=listorder',
+		'push_url' : '/admin.php?c=article&a=push',
+	};
 </script>
 <include file="Index/footer" />

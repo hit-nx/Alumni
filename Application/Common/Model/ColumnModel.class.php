@@ -75,14 +75,6 @@ class ColumnModel extends  Model {
         return $res;
     }
 
-    public function getColumnById($id) {
-        $data = array(
-            'column_id'=>$id,
-        );
-
-        $res = $this->_db->where($data)->select();
-        return $res;
-    }
 
     //获取主栏目法；
     public function getParentColumn($data){

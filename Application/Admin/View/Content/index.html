@@ -31,27 +31,21 @@
           <form class="form-horizontal" id="singcms-form">
 
             <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">内容名称：</label>
+              <label for="inputname" class="col-sm-2 control-label">内容标题：</label>
               <div class="col-sm-5">
-                <select class="form-control"  id="editor_item" name="catid" item="content">
-                  <foreach name="catid" item="content">
-                    <option  value="{$content.content_id}" id="inputname">{$content.content_name}
-                    </option>
-                  </foreach>
+                <select class="form-control"  id="editor_item" name="id">
                   <foreach name="webSiteMenu" item="menu">
-                    <option value="{$menu.content_id}">{$menu.content_name}</option>
+                    <option value="{$menu.content_id}" 
+                    <if condition="$menu.content_id eq $Content['content_id']">selected="selected"</if>>{$menu.content_name}</option>
                   </foreach>
                 </select>
               </div>
             </div>
 
-
             <div class="form-group">
-              <label for="editor_singcms" class="col-sm-2 control-label">内容:</label>
+              <label for="editor_singcms" class="col-sm-2 control-label">内容：</label>
               <div class="col-sm-5" id="inputPassword3">
-                  <foreach name="webContent" item="content">
-                <textarea class="input js-editor" id="editor_singcms" rows="20" name="content" value="{$content.content}">{$content.content}</textarea>
-                  </foreach>
+                <textarea class="input js-editor" id="editor_singcms" rows="20" name="content" >{$Content.content}</textarea>
               </div>
             </div>
 

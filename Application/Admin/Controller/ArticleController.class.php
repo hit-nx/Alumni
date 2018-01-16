@@ -12,9 +12,8 @@ class ArticleController extends CommonController {
 
     public function index() {
         $conds = array();
-        $title = $_GET['title'];
-        if($title) {
-            $conds['title'] = $title;
+        if($_GET['title']) {
+            $conds['title'] = $_GET['title'];
             $this->assign("title",$conds['title']);
         }
 
@@ -100,12 +99,11 @@ class ArticleController extends CommonController {
         }
 
         $webSiteMenu = D("Column")->getColumn();
-        $column = D("Column")->getColumnById($article['columnid']);
 
         $this->assign('articleId', $articleId);
         $this->assign("Title",$article['title']);
         $this->assign('webSiteMenu', $webSiteMenu);
-        $this->assign('Column', $column);
+        $this->assign('ColumnId', $article['columnid']);
         $this->assign('Source', $article['source']);
         $this->assign('Keywords',$article['keywords']);
         $this->assign('PictureURL',$article['picture_url']);
