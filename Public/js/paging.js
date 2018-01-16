@@ -119,24 +119,5 @@
 		return new Paging($(this), options);
 	}
 
-	function ajaxTest(num) {
-		$.ajax({
-			url: SCOPE.page_url + '& p=' + num,
-			type: "get",
-			data: {},
-			dataType: "json",
-			success: function(data) {
-				$("#page").paging({
-				    pageNo: {$page.pageNow},
-				    totalPage: {$page.pageTotal},
-				    totalSize: {$page.pageRows},
-					callback: function(num) {
-						ajaxTest(num)
-					}
-				})
-			}
-		});
-	}
-
 
 })(jQuery, window, document);

@@ -35,11 +35,12 @@
               <div class="col-sm-5">
                 <select class="form-control"  id="editor_item" name="catid" item="content">
                   <foreach name="catid" item="content">
-                  <option  value="{$content.content_id}" id="inputname">{$content.content_name}</option>
+                    <option  value="{$content.content_id}" id="inputname">{$content.content_name}
+                    </option>
                   </foreach>
-                    <foreach name="webSiteMenu" item="menu">
-                      <option value="{$menu.content_id}">{$menu.content_name}</option>
-                    </foreach>
+                  <foreach name="webSiteMenu" item="menu">
+                    <option value="{$menu.content_id}">{$menu.content_name}</option>
+                  </foreach>
                 </select>
               </div>
             </div>

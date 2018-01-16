@@ -18,20 +18,21 @@ class ArticleController extends CommonController {
             $this->assign("title",$conds['title']);
         }
 
+        // if($_GET['column_parentid']) {
+        //     $conds['column_parentid'] = intval($_GET['column_parentid']);
+
+        //     $this->assign('parentColumn',$conds['column_parentid']);
+        // }
+
         if($_GET['columnid']) {
             $conds['columnid'] = intval($_GET['columnid']);
             $this->assign('columnid',$conds['columnid']);
         }
 
-        if($_GET['column_parentid']) {
-            $conds['column_parentid'] = intval($_GET['column_parentid']);
-            $this->assign('column_parentid',$conds['column_parentid']);
-        }
-
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
         $pageSize = 10;
 
-        $article = D("Article")->getArticle($conds,$page,$pageSize);
+        $articles = D("Article")->getArticle($conds,$page,$pageSize);
         $count = D("Article")->getArticleCount($conds);
         
         // 分页部分 使用插件
@@ -42,7 +43,7 @@ class ArticleController extends CommonController {
         );
 
         $this->assign('page', $pageData);
-        $this->assign('article',$article);
+        $this->assign('articles',$articles);
         
         $this->assign('webSiteMenu',D("Column")->getColumn());
 
@@ -77,8 +78,8 @@ class ArticleController extends CommonController {
             }
 
         }else {
-            $webSiteMenu = D("Column")->getBarMenus();
-            $copyFrom = C("COPY_FROM");
+            $webSiteMenu = D("Column")->getColumn();
+
             $this->assign('webSiteMenu', $webSiteMenu);
             $this->assign('Source', $copyFrom);
             $this->display();
@@ -98,11 +99,13 @@ class ArticleController extends CommonController {
             $this->redirect('/admin.php?c=article');
         }
 
-        $webSiteMenu = D("Column")->getBarMenus();
+        $webSiteMenu = D("Column")->getColumn();
+        $column = D("Column")->getColumnById($article['columnid']);
 
         $this->assign('articleId', $articleId);
         $this->assign("Title",$article['title']);
         $this->assign('webSiteMenu', $webSiteMenu);
+        $this->assign('Column', $column);
         $this->assign('Source', $article['source']);
         $this->assign('Keywords',$article['keywords']);
         $this->assign('PictureURL',$article['picture_url']);
