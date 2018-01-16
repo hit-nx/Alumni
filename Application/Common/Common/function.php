@@ -17,9 +17,7 @@ function show($status, $message, $data=array()) {
 function getMd5Password($password) {
     return md5($password . C('MD5_PRE'));
 }
-function getMenuType($type) {
-    return $type == 1 ? '后台菜单' : '前端导航';
-}
+
 function status($status) {
     if($status == 0) {
         $str = '关闭';
@@ -30,6 +28,7 @@ function status($status) {
     }
     return $str;
 }
+
 function getAdminMenuUrl($nav) {
     $url = '/admin.php?c='.$nav['c'].'&a='.$nav['a'];
     if($nav['f']=='index') {
@@ -57,7 +56,7 @@ function getLoginUsername() {
 function getColumnName($navs, $id) {
     foreach($navs as $nav) {
 
-        $navList[$nav['columns_id']] = $nav['column_name'];
+        $navList[$nav['column_id']] = $nav['column_name'];
     }
     return isset($navList[$id]) ? $navList[$id] : '';
 }

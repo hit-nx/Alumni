@@ -8,7 +8,6 @@ class ColumnModel extends  Model {
         $this->_db = M('Columns');
     }
 
-
     public function insert($data = array()) {
         if(!$data || !is_array($data)) {
             return 0;
@@ -31,7 +30,7 @@ class ColumnModel extends  Model {
         if(!$id || !is_numeric($id)) {
             return array();
         }
-        return $this->_db->where('columns_id='.$id)->find();
+        return $this->_db->where('column_id='.$id)->find();
     }
     public function updateMenuById($id, $data) {
         if(!$id || !is_numeric($id)) {
@@ -42,7 +41,7 @@ class ColumnModel extends  Model {
             throw_exception('更新的数据不合法');
         }
 
-        return $this->_db->where('columns_id='.$id)->save($data);
+        return $this->_db->where('column_id='.$id)->save($data);
 
     }
 
@@ -55,37 +54,44 @@ class ColumnModel extends  Model {
         }
 
         $data['status'] = $status;
-        return $this->_db->where('columns_id='.$id)->save($data);
+        return $this->_db->where('column_id='.$id)->save($data);
     }
-//    public function updateMenuListorderById($id, $listorder) {
-//        if(!$id || !is_numeric($id)) {
-//            throw_exception('ID不合法');
-//        }
-//
-//        $data = array(
-//            'listorder' => intval($listorder),
-//        );
-//
-//        return $this->_db->where('menu_id='.$id)->save($data);
-//    }
 
     public function getAdminMenus() {
         $data = array(
 
         );
 
-        return $this->_db->where($data)->order('columns_id desc')->select();
+        return $this->_db->where($data)->order('column_id desc')->select();
     }
 
-    public function getBarMenus() {
+    public function getColumn() {
         $data = array(
-//            'type' => 0,
-        'column_type'=>1,
+            'column_type'=>1,
+            'column_parentid' => array('neq',0)
         );
 
-        $res = $this->_db->where($data)
-            ->order('columns_id desc')
-            ->select();
+        $res = $this->_db->where($data)->order('column_id')->select();
         return $res;
+    }
+
+
+    //获取主栏目法；
+    public function getParentColumn($data){
+        $conditions = $data;
+        // if(isset($data['title']) && $data['title']) {
+        //     $conditions['title'] = array('like','%'.$data['title'].'%');
+        // }
+        
+        if(isset($data['columnid']) && $data['columnid'])  {
+            $conditions['columnid'] = intval($data['columnid']);
+        }
+//        $conditions['status'] = array('neq',-1);
+
+        $list = $this->_db->where($conditions)
+            ->order('columnid')
+            ->select();
+
+        return $list;
     }
 }

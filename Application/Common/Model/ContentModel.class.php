@@ -27,7 +27,7 @@ class ContentModel extends Model {
 
         }
     public function find($id) {
-            return $this->_db->where('news_id='.$id)->find();
+            return $this->_db->where('content_id='.$id)->find();
         }
     public function updateNewsById($id, $data) {
             if(!$id || !is_numeric($id) ) {
@@ -43,23 +43,10 @@ class ContentModel extends Model {
             return $this->_db->where('content_id='.$id)->save($data);
         }
 
-    public function getBarMenus($id) {
-            $data = array(
-                'content_id' => array('neq',$id),
-            );
+    public function getBarMenus() {
+            $data = array();
 
-            $res = $this->_db->where($data)
-//            ->order('content_id desc')
-                ->select();
-            return $res;
-        }
-    public function getContent($post) {
-            $data = array(
-                'content_id'=> $post,
-            );
-            $res = $this->_db->where($data)
-//            ->order('content_id desc')
-                ->select();
+            $res = $this->_db->where($data)->select();
             return $res;
         }
 

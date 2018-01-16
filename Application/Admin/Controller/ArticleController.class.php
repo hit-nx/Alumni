@@ -12,11 +12,16 @@ class ArticleController extends CommonController {
 
     public function index() {
         $conds = array();
-        $title = $_GET['title'];
-        if($title) {
-            $conds['title'] = $title;
+        if($_GET['title']) {
+            $conds['title'] = $_GET['title'];
             $this->assign("title",$conds['title']);
         }
+
+        // if($_GET['column_parentid']) {
+        //     $conds['column_parentid'] = intval($_GET['column_parentid']);
+
+        //     $this->assign('parentColumn',$conds['column_parentid']);
+        // }
 
         if($_GET['columnid']) {
             $conds['columnid'] = intval($_GET['columnid']);
@@ -26,7 +31,7 @@ class ArticleController extends CommonController {
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
         $pageSize = 10;
 
-        $article = D("Article")->getArticle($conds,$page,$pageSize);
+        $articles = D("Article")->getArticle($conds,$page,$pageSize);
         $count = D("Article")->getArticleCount($conds);
         
         // 分页部分 使用插件
@@ -35,10 +40,12 @@ class ArticleController extends CommonController {
             'pageTotal' =>  ceil($count / $pageSize),
             'pageRows' => $count
         );
+
         $this->assign('page', $pageData);
-        $this->assign('article',$article);
+        $this->assign('articles',$articles);
         
-        $this->assign('webSiteMenu',D("Column")->getBarMenus());
+        $this->assign('webSiteMenu',D("Column")->getColumn());
+
         $this->display();
     }
     public function add(){
@@ -70,8 +77,8 @@ class ArticleController extends CommonController {
             }
 
         }else {
-            $webSiteMenu = D("Column")->getBarMenus();
-            $copyFrom = C("COPY_FROM");
+            $webSiteMenu = D("Column")->getColumn();
+
             $this->assign('webSiteMenu', $webSiteMenu);
             $this->assign('Source', $copyFrom);
             $this->display();
@@ -91,11 +98,12 @@ class ArticleController extends CommonController {
             $this->redirect('/admin.php?c=article');
         }
 
-        $webSiteMenu = D("Column")->getBarMenus();
+        $webSiteMenu = D("Column")->getColumn();
 
         $this->assign('articleId', $articleId);
         $this->assign("Title",$article['title']);
         $this->assign('webSiteMenu', $webSiteMenu);
+        $this->assign('ColumnId', $article['columnid']);
         $this->assign('Source', $article['source']);
         $this->assign('Keywords',$article['keywords']);
         $this->assign('PictureURL',$article['picture_url']);
