@@ -41,7 +41,7 @@
     text-align: center;
 }
 
-#headerMenu ul li a:link,a:visited
+#headerMenu ul li a
 {
     display:block;
     line-height: 37px;
