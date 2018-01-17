@@ -7,7 +7,7 @@ header{
 .title{
 	width: 1000px;
 	height: 165px;
-	background-image: url(/Public/images/detailedList/头部.png);
+	background-image: url(/Public/images/simpleList/头部.png);
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-color:  rgb(13,24,78);
@@ -89,7 +89,7 @@ a:visited{
 	height: 233px;
 	box-sizing: border-box;
 	text-align: center;
-	background-image: url(/Public/images/detailedList/back.jfif);
+	background-image: url(/Public/images/simpleList/back.jfif);
 	background-position: 50% 50%;
 	background-size:cover;
 	position: relative;
@@ -232,7 +232,6 @@ p{
 	position: absolute;
 	top:225px;
 	right: 20px;
-	color: #000;
 }
 /*热点新闻*/
 .hot{
@@ -245,7 +244,7 @@ p{
 	width: 300px;
 	height: 25px;
 	background-color: #E4E4E4;
-	background-image: url(/Public/images/detailedList/hoticon.png);
+	background-image: url(/Public/images/simpleList/hoticon.png);
 	background-repeat: no-repeat;
 	background-position: 8px 7px;
 	border-bottom: 4px #0D184E solid;
@@ -312,7 +311,7 @@ p{
 }
 .good{
 	display: block;
-	background-image: url(/Public/images/detailedList/good.png);
+	background-image: url(/Public/images/simpleList/good.png);
 	background-position: 3px 2px;
 	background-repeat: no-repeat;
 	float: left;
@@ -324,7 +323,6 @@ p{
 }
 /*新闻概要*/
 .main{
-	margin-top: 60px;
 	height: 900px;
 	width: 600px;
 	float: left;
@@ -376,7 +374,7 @@ p{
 }
 /*分页*/
 .change{
-	float: left;
+    float: left;
 	width: 600px;
 	height: 70px;
 	padding-left: 100px;
@@ -421,7 +419,7 @@ footer{
 	padding-top: 90px;
 	height: 238px;
 	width: 350px;
-	background-image: url(/Public/images/detailedList/hit.jpg);
+	background-image: url(/Public/images/simpleList/hit.jpg);
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	font-size: 15px;
@@ -435,7 +433,7 @@ footer{
 	display: inline-block;
 	width: 220px;
 	height: 238px;
-	background-image: url(/Public/images/detailedList/二维码.jpg);
+	background-image: url(/Public/images/simpleList/二维码.jpg);
 	background-repeat: no-repeat;
 	background-position: 0 140px;
 	padding-top: 5px;
@@ -464,7 +462,7 @@ footer{
 	line-height: 30px;
 	width: 85px;
 	padding-left: 15px;
-	background-image: url(/Public/images/detailedList/白三角.jpg);
+	background-image: url(/Public/images/simpleList/白三角.jpg);
 	background-position: 0 6px;
 	background-repeat: no-repeat;
 }
@@ -478,7 +476,7 @@ footer{
 	height: 42px;
 	width: 200px;
 	background-color: #504F4D;
-	background-image: url(/Public/images/detailedList/三角.jpg);
+	background-image: url(/Public/images/simpleList/三角.jpg);
 	background-repeat: no-repeat;
 	background-position:170px 13px;
 	line-height: 42px;

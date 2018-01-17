@@ -19,36 +19,36 @@
     <div class="b-img">
         <a href="#" style="background:url(/Public/images/index/1.jpg) center no-repeat;">
             <div class="summary">
-                <p class="s_title">文章标题</p>
-                <p class="s_writer">图/文 作者</p>
+                <p class="s_title">{$campusNews[0]['title']}</p>
+                <p class="s_writer"></p>
                 <p class="s_article">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
             </div>
         </a>
         <a href="#" style="background:url(/Public/images/index/2.jpg) center no-repeat;">
             <div class="summary">
-                <p class="s_title">文章标题</p>
-                <p class="s_writer">图/文 作者</p>
+                <p class="s_title">{$alumniNews[0]['title']}</p>
+                <p class="s_writer"></p>
                 <p class="s_article">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
             </div>
         </a>
         <a href="#" style="background:url(/Public/images/index/3.jpg) center no-repeat;">
             <div class="summary">
-                <p class="s_title">文章标题</p>
-                <p class="s_writer">图/文 作者</p>
+                <p class="s_title">{$noticeNews[0]['title']}</p>
+                <p class="s_writer"></p>
                 <p class="s_article">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
             </div>
         </a>
         <a href="#" style="background:url(/Public/images/index/4.jpg) center no-repeat;">
             <div class="summary">
-                <p class="s_title">文章标题</p>
-                <p class="s_writer">图/文 作者</p>
+                <p class="s_title">{$campusNews[1]['title']}</p>
+                <p class="s_writer"></p>
                 <p class="s_article">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
             </div>
         </a>
         <a href="#" style="background:url(/Public/images/index/5.jpg) center no-repeat;">
             <div class="summary">
-                <p class="s_title">文章标题</p>
-                <p class="s_writer">图/文 作者</p>
+                <p class="s_title">{$alumniNews[1]['title']}</p>
+                <p class="s_writer"></p>
                 <p class="s_article">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
             </div>
         </a>
@@ -64,7 +64,7 @@
     <div class="blockscenter">
         <div class="block1">
              <h1 class="newsweihai">校区新闻</h1>
-                <a href="" class="b1link">+更多</a>
+                <a href="" class="/index.php?c=simpleList&columnid=3">+更多</a>
                 <table class="blocktable">
                      <tr>
                          <td width="400px" class="buttomline"><a href="/index.php?c=passage&articleid={$campusNews[0]['articleid']}" class="blocklinktext">{$campusNews[0]['title']}</a></td>
@@ -102,7 +102,7 @@
         </div>
         <div class="block3">
             <h1 class="newsalumnus">校友新闻</h1>
-            <a href="" class="b3link">+更多</a>
+            <a href="" class="/index.php?c=simpleList&columnid=2">+更多</a>
             <table class="blocktable">
                 <tr>
                     <td width="561.5px" class="buttomline"><a href="/index.php?c=passage&articleid={$alumniNews[0]['articleid']}" class="blocklinktext">{$alumniNews[0]['title']}</a></td>
@@ -140,7 +140,7 @@
         </div>
         <div class="block2">
             <h1 class="infos">通知公告</h1>
-            <a href="" class="b2link">+更多</a>
+            <a href="" class="/index.php?c=simpleList&columnid=4">+更多</a>
             <table class="blocktable">
                 <tr>
                     <td width="561.5px" class="buttomline"><a href="/index.php?c=passage&articleid={$noticeNews[0]['articleid']}" class="blocklinktext">{$noticeNews[0]['title']}</a></td>

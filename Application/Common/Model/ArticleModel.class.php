@@ -142,5 +142,41 @@ class ArticleModel extends Model {
         return $this->_db->where($data)->order('VisitCount desc')->limit(1)->find();
     }
 
+    public function getDisplayedNews($columns_id){
+
+        if(!is_array($columns_id)) {
+            throw_exception("参数不合法");
+        }
+
+        $data = array(
+
+            'columnid' => array('in',implode(',', $columns_id)),'picture_url != ""'
+        );
+
+        return $this->_db->where($data)->order('articleid desc')->limit(2)->select();
+
+    }
+
+    public function getNewsList($columns_id){
+
+        if(!is_array($columns_id)) {
+            throw_exception("参数不合法");
+        }
+
+        $data = array(
+
+            'columnid' => array('in',implode(',', $columns_id)),
+        );
+
+        return $this->_db->where($data)->order('articleid desc')->select();
+
+    }
+
+    public function getNewsByColumnId($columns_id){
+
+        return $this->_db->where('columnid = '.$columns_id)->order('articleid desc')->select();
+
+    }
+
 
 }

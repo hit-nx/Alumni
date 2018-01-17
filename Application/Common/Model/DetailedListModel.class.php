@@ -15,11 +15,11 @@ class DetailedListModel extends Model {
 
     public function getChildColumns($columnid) {
 
-    	$this->_db_columns = M('columns');
+    	$this->_db = M('columns');
 
-    	$childColumns = $this->_db_columns->where('column_parentid = '.$columnid)->select();
+    	$list = $this->_db->where('column_parentid = '.$columnid)->select();
 
-    	return $childColumns;
+    	return $list;
 
     	// $this->_db = M('articles');
 
@@ -27,14 +27,15 @@ class DetailedListModel extends Model {
      //    return $list;
     }
 
-    public function getDonationList() {
+    public function getChildColumnsId($columnid) {
 
-    	$this->_db = M('donations');
+    	$this->_db = M('columns');
 
-        $list = $this->_db->where()->select();
-        
-        return $list;
+    	$list = $this->_db->where('column_parentid = '.$columnid)->getField('column_id',true);
+
+    	return $list;
     }
+
 
     
 }

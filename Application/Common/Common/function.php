@@ -112,6 +112,11 @@ function msubstr($str, $start=0, $length, $charset="utf-8", $suffix=true)
     return $slice;
 }
 
+function getColumnNameById($id){
+    $column = D("Column")->find($id);
+    return  $column['column_name'];
+}
+
 
 
 

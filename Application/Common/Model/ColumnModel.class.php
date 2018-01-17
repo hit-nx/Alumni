@@ -26,12 +26,15 @@ class ColumnModel extends  Model {
         $data['status'] = array('neq',-1);
         return $this->_db->where($data)->count();
     }
+    
+    //根据id得到栏目
     public function find($id){
         if(!$id || !is_numeric($id)) {
             return array();
         }
         return $this->_db->where('column_id='.$id)->find();
     }
+
     public function updateMenuById($id, $data) {
         if(!$id || !is_numeric($id)) {
             throw_exception('ID不合法');
@@ -91,6 +94,14 @@ class ColumnModel extends  Model {
         $list = $this->_db->where($conditions)
             ->order('columnid')
             ->select();
+
+        return $list;
+    }
+
+    //获取子栏目
+    public function getChildColumns($columnid) {
+
+        $list = $this->_db->where('column_parentid = '.$columnid)->select();
 
         return $list;
     }
