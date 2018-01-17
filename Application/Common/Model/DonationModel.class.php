@@ -17,15 +17,21 @@ public function insert($data = array()) {
     }
 
     public function getDonations($data,$page,$pageSize=10) {
-        
+        $conditions = $data;
+        if(isset($data['name']) && $data['name']) {
+            $conditions['name'] = array('like','%'.$data['name'].'%');
+        }
         $offset = ($page - 1) * $pageSize;
-        $list = $this->_db->where($data)->order('donationid desc')->limit($offset,$pageSize)->select();
+        $list = $this->_db->where($conditions)->order('donationid desc')->limit($offset,$pageSize)->select();
         return $list;
     }
 
     public function getDonationsCount($data= array()) {
-       
-        return $this->_db->where($data)->count();
+        $conditions = $data;
+        if(isset($data['name']) && $data['name']) {
+            $conditions['name'] = array('like','%'.$data['name'].'%');
+        }
+        return $this->_db->where($conditions)->count();
     }
     public function find($id){
         if(!$id || !is_numeric($id)) {

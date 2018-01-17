@@ -29,10 +29,12 @@
 	  <br>
 	  <div class="row">
 		  <form action="/admin.php" method="get">
+			  <input type="hidden" name="c" value="article"/>
+			  <input type="hidden" name="a" value="index"/>
 			  <div class="col-md-3">
 				  <div class="input-group">
 					  <span class="input-group-addon">栏目</span>
-					  <select class="form-control" name="columnid">
+					  <select id="columnid" class="form-control" name="columnid">
 						  <option value='' >请选择栏目</option>
 						  <foreach name="webSiteMenu" item="sitenav">
 							  <option value="{$sitenav.column_id}" <if condition="$sitenav.column_id eq $columnid">selected="selected"</if>>{$sitenav.column_name}</option>
@@ -40,11 +42,10 @@
 					  </select>
 				  </div>
 			  </div>
-			  <input type="hidden" name="c" value="article"/>
-			  <input type="hidden" name="a" value="index"/>
+
 			  <div class="col-md-3">
 				  <div class="input-group">
-					  <input class="form-control" name="title" type="text" placeholder="文章标题" value="{$title}"/>
+					  <input id="title" class="form-control" name="title" type="text" placeholder="文章标题" value="{$title}"/>
 					  <span class="input-group-btn">
 						  <button id="sub_data" type="submit" class="btn btn-primary">
 							  <i class="glyphicon glyphicon-search"></i>
@@ -119,7 +120,9 @@
 		totalPage: {$page.pageTotal},
 		totalSize: {$page.pageRows},
 		callback: function(num) {
-			window.location.href = '/admin.php?c=article&p=' + num;
+			var columnid = $("#columnid").val();
+			var title = $("#title").val(); 
+			window.location.href = '/admin.php?c=article&p=' + num + "&columnid=" +columnid+ "&title=" + title;
 		}
 	});
 	var SCOPE = {
