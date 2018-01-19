@@ -1,0 +1,224 @@
+<include file="Index/header"/>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- 以最高版本ie渲染，chrome版本为1开启chrome frame -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 适应屏幕宽度 -->
+	<link href="/Public/css/detailedList/horizontal.css"  rel="stylesheet" type="text/css" />
+	<link href="/Public/css/detailedList/dentalListStyle.css" rel="stylesheet" type="text/css" />
+	<link href="/Public/css/detailedList/reset.css"  rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="/Public/js/alumni/listIndex.js"></script>
+	<title></title>
+</head>
+<body>
+
+		<div class=toppic>
+			<span class="black"></span>
+			<h1>——— {$currentColumn.column_name} ———</h1>
+		</div>
+	<div class=wrap2>
+		<p><img src="/Public/images/detailedList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="#">{$currentColumn.column_name}</a></p>
+		<ul class=class>
+
+            <foreach name="childColumns" item = "childColumnsItems">
+			
+			<li><a href="/index.php?c=simpleList&columnid={$childColumnsItems.column_id}">{$childColumnsItems.column_name}</a></li>
+
+            </foreach>
+
+		</ul>
+		<div class=news>
+			<div class=new1>
+				<img src="{$getDisplayedNews[0]['picture_url']}">
+				<div class="cont fr">
+					<span class="label fl"><?php echo getColumnNameById($getDisplayedNews[0]['columnid']) ?></span>
+					<span class="time fl">{$getDisplayedNews[0]['publishdate']}</span>
+					<a class="fl cont_title" href="/index.php?c=passage&articleid={$getDisplayedNews[0]['articleid']}">{$getDisplayedNews[0]['title']}</a>
+					<p class=fl>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp党的十九大报告指出，“创新是引领发展的第一动力，是建设现代化经济体系的战略支撑”。创新不仅要瞄准世界科技前沿，强化基础研究，还要是实现科技成果的转化，让研究成果转化为现实的生产力。</p>
+					<a class=go href="">查看详情>></a>
+				</div>
+			</div>
+			<div class=new2>
+				<img src="{$getDisplayedNews[1]['picture_url']}">
+				<div class="cont fl">
+					<span class="label fl"><?php echo getColumnNameById($getDisplayedNews[1]['columnid']) ?></span>
+					<span class="time fl">2017-11-16</span>
+					<a class="fl cont_title" href="/index.php?c=passage&articleid={$getDisplayedNews[1]['articleid']}">{$getDisplayedNews[1]['title']}</a>
+					<p class=fl>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp党的十九大报告指出，“创新是引领发展的第一动力，是建设现代化经济体系的战略支撑”。创新不仅要瞄准世界科技前沿，强化基础研究，还要是实现科技成果的转化，让研究成果转化为现实的生产力。</p>
+					<a class=go href="">查看详情>></a>
+				</div>
+			</div>
+		</div>
+		<div class=hot>
+			<h4>热点新闻</h4>
+			<ul>
+				<span class=first>
+					<img class=fl src="img/book.png">
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<p class="fl words">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp峥嵘三十载，桃李遍五洲。哈工大（威海）自建校以来，已...</p>
+					<span class="time1 fl">2017-11-16</span>
+					<p class=good>666</p>
+				</span>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class=main>
+			<span class=line1></span>
+			<span class=line2></span>
+			<span class=line3></span>
+			<span class=line4></span>
+			<h1>新闻概要</h1>
+			<ul>
+				<li>
+					<div class=time_area>
+						<!--年月-->
+						<span class=time_month><?php echo substr($getNewsList[0]['publishdate'],0,7) ?><br></span>
+						<!--日-->
+						<span class=time_date><?php echo substr($getNewsList[0]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+						<!--标题-->
+					<a href="/index.php?c=passage&articleid={$getNewsList[0]['articleid']}" name=title>{$getNewsList[0]['title']}</a>
+					    <!--内容-->
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					    <!--分区-->
+					<span class=label name=label><?php echo getColumnNameById($getNewsList[0]['columnid']) ?></span>
+				</div>
+				</li>
+
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($getNewsList[1]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($getNewsList[1]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid={$getNewsList[1]['articleid']}" name=title>{$getNewsList[1]['title']}</a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($getNewsList[1]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($getNewsList[2]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($getNewsList[2]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid={$getNewsList[2]['articleid']}" name=title>{$getNewsList[2]['title']}</a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($getNewsList[2]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($getNewsList[3]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($getNewsList[3]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid={$getNewsList[3]['articleid']}" name=title>{$getNewsList[3]['title']}</a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($getNewsList[3]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($getNewsList[4]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($getNewsList[4]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid={$getNewsList[4]['articleid']}" name=title>{$getNewsList[4]['title']}</a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($getNewsList[4]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($getNewsList[5]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($getNewsList[5]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid={$getNewsList[5]['articleid']}" name=title>{$getNewsList[5]['title']}</a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($getNewsList[5]['columnid']) ?></span>
+				</div>
+				</li>
+			</ul>
+		</div>
+		<div class=change>
+			<a href="">首页</a>
+			<a href="">上一页</a>
+			<a class="page checked" href="">1</a>
+			<a class=page href="">2</a>
+			<a class=page href="">3</a>
+			<a class=page href="">4</a>
+			<a href="">下一页</a>
+			<a href="">尾页</a>
+		</div>
+	</div>
+</body>
+</html>
+<include file="Index/footet"/>

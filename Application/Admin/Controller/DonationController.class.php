@@ -11,8 +11,8 @@ class DonationController extends CommonController {
         $data=array();
         $page=$_REQUEST['p']?$_REQUEST['p']:1;
         $pageSize=$_REQUEST['pageSize']?$_REQUEST['pageSize']:10;
-        $menus=D("Donation")->getMenus($data,$page,$pageSize);
-        $menusCount=D("Donation")->getMenusCount($data);
+        $menus=D("Donation")->getDonations($data,$page,$pageSize);
+        $menusCount=D("Donation")->getDonationsCount($data);
 
         // 分页部分 使用插件
         $pageData = array(

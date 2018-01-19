@@ -50,8 +50,11 @@ function showKind($status,$data) {
     }
     exit(json_encode(array('error'=>1,'message'=>'上传失败')));
 }
-function getLoginUsername() {
+function getLoginUserName() {
     return $_SESSION['adminUser']['username'] ? $_SESSION['adminUser']['username']: '';
+}
+function getLoginUserId() {
+    return $_SESSION['adminUser']['userid'] ? $_SESSION['adminUser']['userid']: '';
 }
 function getColumnName($navs, $id) {
     foreach($navs as $nav) {
@@ -110,6 +113,11 @@ function msubstr($str, $start=0, $length, $charset="utf-8", $suffix=true)
     $slice = join("",array_slice($match[0], $start, $length));
     if($suffix) return $slice."…";
     return $slice;
+}
+
+function getColumnNameById($id){
+    $column = D("Column")->find($id);
+    return  $column['column_name'];
 }
 
 

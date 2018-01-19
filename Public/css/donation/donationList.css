@@ -1,0 +1,279 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: #F4F4F4;
+}
+.top
+{
+	height: 100px;
+	width: 100%;
+	background-image: url(/Public/images/donation/top.png);
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+
+}
+.topimage
+{
+	height: 233px;
+	width: 100%;
+	background-image: url(/Public/images/donation/topimage.jpg);
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	text-align: center;
+	color: #0d184e;
+	line-height: 233px;
+	font-size:30px; 
+}
+.nav
+{
+	height: 38px;
+	width: 530px;
+	margin:5px auto;
+	border-bottom: solid 1px #7A7A7A;
+	line-height: 38px;
+	text-align: center;
+	font-weight: lighter;
+	color: #000000;
+}
+a
+{
+	color: #8F8F8F;
+	text-align: center;
+	text-decoration: none;
+}
+.menu1
+{
+	height: 40px;
+	width:90px ;
+	line-height:40px;
+	text-align: center;
+	font-size:15px; 
+	float: left;
+	margin-left:20px; 
+}
+.menu2
+{
+	height: 40px;
+	width:90px ;
+	line-height:40px;
+	text-align: center;
+	font-size:15px; 
+	float: left;
+	margin-left:45px; 
+
+}
+.menu3
+{
+	height: 40px;
+	width:90px ;
+	line-height: 40px;
+	text-align: center;
+	color:#4C4C4C;font-size:20px;
+	float: left;
+	margin-left:45px; 
+	border-bottom: solid 2px black;
+}
+.menu4
+{
+	height:40px;
+	width:90px ;
+	line-height: 40px;
+	text-align: center;
+	font-size:15px; 
+	float: left;
+	margin-left:45px; 
+
+}
+/*.menu1:hover*/
+/*{*/
+	/*color:#4C4C4C;font-size:20px;*/
+	/*border-bottom: solid 2px black;*/
+/*}*/
+/*.menu2:hover*/
+/*{*/
+	/*border-bottom: solid 2px black;*/
+	/*color:#4C4C4C;font-size:20px;*/
+/*}*/
+/*.menu3:hover*/
+/*{*/
+	/*border-bottom: solid 2px black;*/
+	/*color:#4C4C4C;font-size:20px;*/
+/*}*/
+/*.menu4:hover*/
+/*{*/
+	/*border-bottom: solid 2px black;*/
+	/*color:#4C4C4C;font-size:20px;*/
+/*}*/
+.searchfix
+{
+	width: 350px;
+	height: 27px;
+	margin-top: 50px;
+	margin-left: 65%;
+}
+.search
+{
+	border:solid 1px #9B9B9B;
+	border-radius: 5px;
+	width:300px;height:25px;
+	font-size:15px;color:black;
+	background: transparent;
+	vertical-align:middle;
+	margin-left: 40px;
+}
+
+//搜索框默认值
+input::input-placeholder{color: #929292 ;} /* 有些资料显示需要写，有些显示不需要，但是在编辑器webstorm中该属性不被识别 */
+::-webkit-input-placeholder { /* WebKit browsers */ 
+color:  #929292 ; 
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color:  #929292 ; 
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #929292; 
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color:#929292 ; 
+}
+.mirror
+{
+	border-radius: 3px;
+	width:26px;height:28px;
+	background:url(/Public/images/donation/search.png);
+	border:solid 1px #9B9B9B;
+	background-size: 28px 28px;
+	background-repeat: no-repeat;
+	vertical-align:middle;
+	margin-left: -30px;
+}
+.form
+{
+	width:1000px;
+	margin: 50px auto 50px auto;
+	text-align: center;
+	border-radius: 10px;
+	font-size:15px; 
+	height:40px;
+}
+td
+{
+	height:40px;
+}
+th
+{
+
+	height: 40px;
+	width: 366px;
+	color: white;
+	background-color: #19376D;
+	border-color: #19376D;
+	font-size:18px; 
+}
+.tr1
+{
+	background-color: #FFFFFF;
+}
+.tr2
+{
+	background-color: #F2F2F2;
+}
+.thleft
+{
+	border-radius: 30px 0 0 0;
+	border:solid 1px #19376D;
+}
+.thright
+{
+	border-radius: 0 30px 0 0;
+	border:solid 1px #19376D;
+}
+.digg
+{
+	width: 1000px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	margin: 30px auto;
+}
+.page
+{
+	display: block;
+	width: 35px;
+	height: 35px;
+	border:solid 1px black;
+	background-color:#FFFFFF;
+	border-radius: 6px;
+	color: black;
+	float: left; 
+	text-align: center;
+	margin-left: 20px;
+}
+.points
+{
+	width: 35px;
+	height: 35px;
+	border:solid 1px black;
+	background-color:#FFFFFF;
+	border-radius: 6px;
+	color: black;
+	float: left; 
+	text-align: center;
+	margin-left: 20px;
+}
+.mainpage1
+{
+	display: block;
+	width: 60px;
+	height: 35px;
+	border:solid 1px black;
+	background-color:#FFFFFF;
+	border-radius: 6px;
+	color: black; 
+	float: left;
+	margin-left: 80px;
+}
+.mainpage2
+{
+	display: block;
+	width: 50px;
+	height: 35px;
+	border:solid 1px black;
+	background-color:#FFFFFF;
+	border-radius: 6px;
+	color: black; 
+	float: left;
+	margin-left: 20px;
+
+}
+.mainpage3
+{
+	display: block;
+	width: 60px;
+	height: 35px;
+	border:solid 1px black;
+	background-color:#FFFFFF;
+	border-radius: 6px;
+	color: black; 
+	float: left;
+	margin-left: 20px;
+}
+.information
+{
+	width: 150px;
+	height: 35px;
+	margin-left: 20px;
+	float: left;
+
+}
+/*.bottom*/
+/*{*/
+	/*height: 300px;*/
+	/*width: 100%;*/
+	/*background-image: url(../image/bottom.png);*/
+	/*background-repeat:no-repeat;*/
+	/*background-size: 100% 100%;*/
+	/*margin-top:80px;*/
+/*}*/
+
