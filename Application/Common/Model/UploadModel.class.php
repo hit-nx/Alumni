@@ -6,7 +6,7 @@ use Think\Model;
  * 上传图片类
  * @author  singwa
  */
-class UploadImageModel extends Model {
+class UploadModel extends Model {
     private $_uploadObj = '';
     private $_uploadImageData = '';
 
@@ -19,9 +19,22 @@ class UploadImageModel extends Model {
         $this->_uploadObj->subName = date(Y) . '/' . date(m) .'/' . date(d);
     }
 
-    public function upload() {
+    public function fileUpload() {
         $res = $this->_uploadObj->upload();
 
+        if($res) {
+            // foreach ($res as $key => $value) {
+            //     $key['path'] = '/' .self::UPLOAD . '/' . $key['savepath'] . $key['savename'];
+            // }
+            return $res;
+            // return '/' .self::UPLOAD . '/' . $res['imgFile']['savepath'] . $res['imgFile']['savename'];
+        }else{
+            return false;
+        }
+    }
+
+    public function upload() {
+        $res = $this->_uploadObj->upload();
         if($res) {
             return '/' .self::UPLOAD . '/' . $res['imgFile']['savepath'] . $res['imgFile']['savename'];
         }else{
@@ -29,12 +42,8 @@ class UploadImageModel extends Model {
         }
     }
 
-    public function imageUpload() {
-        $res = $this->_uploadObj->upload();
-        if($res) {
-            return '/' .self::UPLOAD . '/' . $res['file']['savepath'] . $res['file']['savename'];
-        }else{
-            return false;
-        }
+    public function getPath($info){
+        return '/' .self::UPLOAD . '/' . $info['savepath'] . $info['savename'];
     }
+
 }

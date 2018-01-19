@@ -3,7 +3,7 @@
 <div id="wrapper">
 
   <include file="Index/nav"/>
-  <script src="/Public/js/kindeditor/kindeditor-all.js"></script>
+
   <div id="page-wrapper">
 
     <div class="container-fluid">
@@ -79,20 +79,9 @@
   var SCOPE = {
     'save_url' : '/admin.php?c=periodical&a=add',
     'jump_url' : '/admin.php?c=periodical',
-    'ajax_upload_image_url' : '/admin.php?c=image&a=ajaxuploadimage',
-    'ajax_upload_swf' : '/Public/js/party/uploadify.swf',
   };
 
 </script>
 <!-- /#wrapper -->
-<script src="/Public/js/admin/appendix.js"></script>
-<script>
-  // 6.2
-  KindEditor.ready(function(K) {
-    window.editor = K.create('#editor_ningxi',{
-      uploadJson : '/admin.php?c=image&a=kindupload',
-      afterBlur : function(){this.sync();}, //
-    });
-  });
-</script>
+<script src="/Public/js/admin/upload.js"></script>
 <include file="Index/footer" />

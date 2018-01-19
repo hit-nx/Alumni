@@ -22,7 +22,7 @@ class ArticleModel extends Model {
             return 0;
         }
         // $data['PublishDate']  = time();
-        $data['PublishUserID'] =  getLoginUsername();
+        $data['PublishUserID'] =  getLoginUserId();
         return $this->_db->add($data);
     }
 
@@ -90,13 +90,6 @@ class ArticleModel extends Model {
         }
     }
 
-//    public function updateArticleListorderById($id, $listorder) {
-//        if(!$id || !is_numeric($id)) {
-//            throw_exception('ID不合法');
-//        }
-//        $data = array('listorder'=>intval($listorder));
-//        return $this->_db->where('ArticleID='.$id)->save($data);
-//    }
     public function getArticleByNewsIdIn($articleIds) {
         if(!is_array($articleIds)) {
             throw_exception("参数不合法");

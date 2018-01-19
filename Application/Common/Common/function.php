@@ -50,8 +50,11 @@ function showKind($status,$data) {
     }
     exit(json_encode(array('error'=>1,'message'=>'上传失败')));
 }
-function getLoginUsername() {
+function getLoginUserName() {
     return $_SESSION['adminUser']['username'] ? $_SESSION['adminUser']['username']: '';
+}
+function getLoginUserId() {
+    return $_SESSION['adminUser']['userid'] ? $_SESSION['adminUser']['userid']: '';
 }
 function getColumnName($navs, $id) {
     foreach($navs as $nav) {
