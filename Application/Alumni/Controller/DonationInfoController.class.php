@@ -8,7 +8,7 @@ class DonationInfoController extends CommonController {
 
     	$contentid = $_GET['contentid']; 
 
-        $donationInfo = D("Conetnt")->find($contentid);
+        $donationInfo = D("Content")->find($contentid);
 
         $this->assign("donationInfo",$donationInfo);
 

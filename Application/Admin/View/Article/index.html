@@ -81,7 +81,7 @@
 								  <td>{$article.source}</td>
 								  <td>{$article.columnid|getColumnName=$webSiteMenu,###}</td>
 								  <td>{$article.picture_url|isThumb}</td>
-								  <td>{$article.publishdate}</td>
+								  <td><?php echo date("Y-m-d", $article['publishdate'])?></td>
 								  <td>
 									  <span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$article.articleid}" ></span>
 									  <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$article.articleid}"  attr-message="删除">

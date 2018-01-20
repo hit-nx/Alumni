@@ -9,12 +9,21 @@ class DonationModel extends  Model {
     }
 
 
-public function insert($data = array()) {
+
+    public function insert($data = array()) {
         if(!$data || !is_array($data)) {
             return 0;
         }
         return $this->_db->add($data);
     }
+
+    // public function uuu(){
+    //     $articles = $this->_db->select();
+    //     for ($i = 600; $i < 780; $i++) { 
+    //         $articles[$i]['date'] = strtotime($articles[$i]['date']);
+    //         M('donations_copy')->field('date')->data($articles[$i])->add();
+    //     }
+    // }
 
     public function getDonations($data,$page,$pageSize=10) {
         $conditions = $data;

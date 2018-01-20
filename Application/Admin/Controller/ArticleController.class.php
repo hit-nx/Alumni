@@ -35,15 +35,14 @@ class ArticleController extends CommonController {
 
         $articles = D("Article")->getArticle($conds,$page,$pageSize);
         $count = D("Article")->getArticleCount($conds);
-        
+
         // 分页部分 使用插件
         $pageData = array(
             'pageNow' => $page,
             'pageTotal' =>  ceil($count / $pageSize),
             'pageRows' => $count
         );
-
-        $this->assign('page', $pageData);
+        $this->assign('page', $pageData);        
         $this->assign('articles',$articles);
         
         $this->assign('webSiteMenu',D("Column")->getColumn());
