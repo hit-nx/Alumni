@@ -28,14 +28,13 @@ class DetailedListController extends CommonController {
 
         //获取热点新闻
         $hotNewsList = D("Article")->getMoreHotNewsList($childColumnsId);
-        echo $hotNewsList[1]["title"];
 
-        // $this->assign("childColumns",$childColumns);
-        // $this->assign("currentColumn",$currentColumn);
-        // $this->assign("getDisplayedNews",$getDisplayedNews);
-        // $this->assign("getNewsList",$getNewsList);
+        $this->assign("childColumns",$childColumns);
+        $this->assign("currentColumn",$currentColumn);
+        $this->assign("getDisplayedNews",$getDisplayedNews);
+        $this->assign("getNewsList",$getNewsList);
 
-        // $this->display("detailedList");
+        $this->display("detailedList");
     }
 
 }
