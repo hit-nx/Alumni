@@ -113,5 +113,12 @@ class PeriodicalModel extends Model {
         return $this->_db->where($data)->order('count desc')->limit(1)->find();
     }
 
+    public function getCommunicationList(){
+
+        $list = $this->_db->where()->order('periodicalid')->select();
+        
+        return $list;
+    }
+
 
 }

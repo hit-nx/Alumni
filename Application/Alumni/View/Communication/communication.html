@@ -14,17 +14,9 @@
 	</head>
 	<body>
 
-		<div class="ahead">——————&nbsp;&nbsp;&nbsp;校友组织&nbsp;&nbsp;&nbsp;——————</div>
+		<div class="ahead">——————&nbsp;&nbsp;&nbsp;校友通讯&nbsp;&nbsp;&nbsp;——————</div>
 
-		<div>
-			<ul class="class">
-				<li><a href="/index.php?c=organization&contentid=1">校友会简介</a></li>
-				<li><a href="/index.php?c=organization&contentid=2">组织机构</a></li>
-				<li><a href="/index.php?c=organization&contentid=3">规章制度</a></li>
-				<li><a href="/index.php?c=organization&contentid=4">校友创业导师</a></li>
-				<li><a href="/index.php?c=organization&a=organizationList">地方校友组织</a></li>
-			</ul>			
-		</div>
+
 
 		<br>
 		<br>
@@ -32,16 +24,16 @@
 
 <table class="form" cellspacing="0" cellpadding="0">
 	<tr>
-		<th>组织名称</th>
-<!-- 		<th class="thleft">组织名称</th>
+		<th>通讯录期刊</th>
+<!-- 	<th class="thleft">组织名称</th>
 		<th class="thright">详细信息</th> -->
 	</tr>
 
 	<!-- 生成表格，白色底纹class=tr1 灰色底纹class=tr2 -->
 
-	<foreach name="otherOrganizations" item = "otherOrganizationsItems">
+	<foreach name="getCommunicationList" item = "getCommunicationListItems">
 		<tr class="tr1">
-			<td><a href="/index.php?c=organization&a=otherOrganizationInfo&alumnis_id={$otherOrganizationsItems.alumnis_id}">{$otherOrganizationsItems.title}</a></td>
+			<td><a href="{$getCommunicationListItems.path}">{$getCommunicationListItems.title}</a></td>
 		</tr>
 	</foreach>
 </table>

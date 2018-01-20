@@ -112,5 +112,19 @@ class AlumnisModel extends Model {
         return $this->_db->where($data)->order('count desc')->limit(1)->find();
     }
 
+    public function getOtherOrganizations(){
+
+        $list = $this->_db->where()->select();
+
+        return $list;
+    }
+
+    public function getOrganizationContent($id){
+
+        $list = $this->_db->where('alumnis_id='.$id)->find();
+
+        return $list;
+
+    }
 
 }

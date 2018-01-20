@@ -172,4 +172,5 @@ class ArticleModel extends Model {
 	}
 
 
+
 }

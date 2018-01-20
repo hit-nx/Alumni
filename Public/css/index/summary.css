@@ -27,7 +27,10 @@
 .s_article
 {
     font-size: 15px;
-    text-indent: 30px;
-    line-height: 20px;
+/*    text-indent: 30px;
+    line-height: 20px;*/
+    width: 400px;
+    height: 80px;
+    overflow: hidden;
     color: #fff;
 }

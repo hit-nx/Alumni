@@ -19,5 +19,4 @@ class OrganizationModel extends Model {
         return $list;
     }
 
-    
 }
