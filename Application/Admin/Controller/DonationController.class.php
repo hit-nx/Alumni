@@ -36,6 +36,8 @@ class DonationController extends CommonController {
             }
             if(!isset($_POST['date']) || !$_POST['date']) {
                 return show(0,'捐赠日期不能为空');
+            }else{
+                $_POST['date'] = strtotime($_POST['date']);
             }
             
             if($_POST['donationid']) {

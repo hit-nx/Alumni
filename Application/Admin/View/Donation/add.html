@@ -1,9 +1,9 @@
-<!-- <include file="Index/header" /> -->
+<include file="Index/header" />
 <body>
 
 <div id="wrapper">
 
-    <!-- <include file="Index/nav"/> -->
+    <include file="Index/nav"/>
 
     <div id="page-wrapper">
 
@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label for="inputPassword3" class="col-sm-2 control-label">捐赠日期</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" name="date" id="inputPassword3" placeholder="捐赠日期如xxxx-xx-xx">
+                            <input type="date" class="form-control date" name="date" id="inputPassword3">
                         </div>
                     </div>
 
@@ -71,7 +71,10 @@
 </div>
 <!-- /#wrapper -->
 <!-- Morris Charts JavaScript -->
-<!-- <script>
+<script>
+    $(".date").change(function(){
+        $(".date").attr("value",$(this).val()); //赋值
+    });
 
     var SCOPE = {
         'save_url' : '/admin.php?c=donation&a=add',
@@ -79,7 +82,7 @@
     }
 </script>
 <include file="Index/footer" />
- -->
+
 
 
 
