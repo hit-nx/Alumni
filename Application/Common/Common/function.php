@@ -28,7 +28,10 @@ function status($status) {
     }
     return $str;
 }
-
+function getAuthorName($id){
+    $author = M("users")->where('userid = '.$id)->find();
+    return $author['username'];
+}
 function getAdminMenuUrl($nav) {
     $url = '/admin.php?c='.$nav['c'].'&a='.$nav['a'];
     if($nav['f']=='index') {

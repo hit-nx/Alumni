@@ -26,6 +26,9 @@ class DetailedListController extends CommonController {
         //新闻列表内容
         $getNewsList = D("Article")->getNewsList($childColumnsId);
 
+        //获取热点新闻
+        $hotNewsList = D("Article")->getMoreHotNewsList($childColumnsId);
+
         $this->assign("childColumns",$childColumns);
         $this->assign("currentColumn",$currentColumn);
         $this->assign("getDisplayedNews",$getDisplayedNews);

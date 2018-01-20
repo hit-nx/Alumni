@@ -6,15 +6,19 @@ use Think\Exception;
 class PassageController extends CommonController {
     public function index(){
 
-    $getArticleId = $_GET['articleid'];
+	    $getArticleId = $_GET['articleid'];
 
-    $articleInfo = D("Passage")->getArticleInfo($getArticleId);
+	    $articleInfo = D("Passage")->getArticleInfo($getArticleId);
 
-    $this->assign("articleInfo",$articleInfo);
+	    $this->assign("articleInfo",$articleInfo);
 
+		$this->display("passage");
+    }
 
-
-        $this->display("passage");
+    public function like(){
+    	$articleid = $_POST['articleid'];
+    	D("Passage")->like($articleid);
+    	return "";
     }
 
 }

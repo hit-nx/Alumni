@@ -29,7 +29,11 @@
 	<div class="room">
 		<div class="content">
 			<p class="name">{$articleInfo.title}</p>
+<<<<<<< HEAD
 			<P class="writer"><br>【来源：{$articleInfo.source} 】 浏览量：{$articleInfo.visitcount}<br><br></P>
+=======
+			<P class="writer"><br>【 作者：{$articleInfo.authorid|getAuthorName} 来源：{$articleInfo.source} 】 浏览量：{$articleInfo.visitcount}<br><br></P>
+>>>>>>> 57aead5fde85080fe686b52ae6eb45fe45bf54fc
 
 			{$articleInfo.content}
 
@@ -68,7 +72,8 @@
 
 			<div class="like">
 				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
-				<p id="like_number">66</p>
+				<p id="like_number">{$articleInfo.likecount}</p>
+				<input type="hidden" id="articleid" value="{$articleInfo.articleid}"></input>
 			</div>
 
 		<div class="fanpage">
