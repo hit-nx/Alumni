@@ -80,7 +80,6 @@ class ArticleController extends CommonController {
             if($info['attachment_url']) {
                 $_POST['attachment_url'] = D("Upload")->getPath($info['attachment_url']);
             }
-
             if(D("Article")->insert($_POST)) {
                 return show(1,'新增成功！');
             }else{
@@ -99,6 +98,7 @@ class ArticleController extends CommonController {
     public function edit() {
 
         $articleId = $_GET['id'];
+
         if(!$articleId) {
             // 执行跳转
             $this->redirect('/admin.php?c=article');
@@ -119,6 +119,7 @@ class ArticleController extends CommonController {
         $this->assign('Keywords',$article['keywords']);
         $this->assign('picture_url',$article['picture_url']);
         $this->assign('Content',$article['content']);
+        $this->assign('attachment_url',$article['attachment_url']);
 
         $this->display();
     }

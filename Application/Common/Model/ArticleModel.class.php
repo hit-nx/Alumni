@@ -21,7 +21,7 @@ class ArticleModel extends Model {
         if(!is_array($data) || !$data) {
             return 0;
         }
-        // $data['PublishDate']  = time();
+        $data['publishdate']  = time();
         $data['PublishUserID'] =  getLoginUserId();
         return $this->_db->add($data);
     }
@@ -43,7 +43,7 @@ class ArticleModel extends Model {
 
         $offset = ($page - 1) * $pageSize;
         $list = $this->_db->where($conditions)
-            ->order('articleid')
+            ->order('articleid desc')
             ->limit($offset,$pageSize)
             ->select();
 

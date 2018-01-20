@@ -32,7 +32,7 @@ class AlumnisModel extends Model {
 
         $offset = ($page - 1) * $pageSize;
         $list = $this->_db->where($conditions)
-            ->order('alumnis_id')
+            ->order('alumnis_id desc')
             ->limit($offset,$pageSize)
             ->select();
 

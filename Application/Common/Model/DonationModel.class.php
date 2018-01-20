@@ -13,6 +13,7 @@ public function insert($data = array()) {
         if(!$data || !is_array($data)) {
             return 0;
         }
+ //如果捐赠时间是时间戳的话加=>       $data['date']  = time();
         return $this->_db->add($data);
     }
 

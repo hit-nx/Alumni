@@ -33,7 +33,7 @@ class PeriodicalModel extends Model {
 
         $offset = ($page - 1) * $pageSize;
         $list = $this->_db->where($conditions)
-            ->order('periodicalid')
+            ->order('periodicalid desc')
             ->limit($offset,$pageSize)
             ->select();
 
