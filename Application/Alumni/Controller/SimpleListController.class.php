@@ -23,31 +23,14 @@ class SimpleListController extends CommonController {
         //根据栏目id获取文章
         $newsList = D("Article")->getNewsByColumnId($columnid);
 
+        //获取热点新闻
+        $hotNewsList = D("Article")->getHotNewsList($columnid);
 
-        // //获取当前父栏目的子栏目
-        // $childColumns = D("DetailedList")->getChildColumns($columnid);
-
-        // //获取当前的父栏目
-        // $currentColumn = D("Column")->find($columnid);
-
-        // //获取当前父栏目的子栏目的id
-        // $childColumnsId = D("DetailedList")->getChildColumnsId($columnid);
-
-        // //新闻展示内容
-        // $getDisplayedNews = D("Article")->getDisplayedNews($childColumnsId);
-
-        // //新闻列表内容
-        // $getNewsList = D("Article")->getNewsList($childColumnsId);
 
         $this->assign("currentColumn",$currentColumn);
         $this->assign("parentColumn",$parentColumn);
         $this->assign("brotherColumn",$brotherColumn);
         $this->assign("newsList",$newsList);
-
-        // $this->assign("childColumns",$childColumns);
-        // $this->assign("currentColumn",$currentColumn);
-        // $this->assign("getDisplayedNews",$getDisplayedNews);
-        // $this->assign("getNewsList",$getNewsList);
 
         $this->display("simpleList");
     }

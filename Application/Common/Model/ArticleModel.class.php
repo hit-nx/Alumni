@@ -22,7 +22,7 @@ class ArticleModel extends Model {
             return 0;
         }
         $data['publishdate']  = time();
-        $data['PublishUserID'] =  getLoginUserId();
+        $data['authorid'] =  getLoginUserId();
         return $this->_db->add($data);
     }
 
@@ -166,9 +166,21 @@ class ArticleModel extends Model {
 	}
 
 	public function getNewsByColumnId($columns_id){
-
 		return $this->_db->where('columnid = '.$columns_id)->order('articleid desc')->select();
+	}
 
+	public function getHotNewsList($columns_id){
+
+		return $this->_db->where('columnid = '.$columns_id)->order('VisitCount desc')->limit(10)->select();
+	}
+
+	public function getMoreHotNewsList($columns_id){
+
+		$data = array(
+			'columnid' => array('in',implode(',', $columns_id)),
+		);
+
+		return $this->_db->where($data)->order('VisitCount desc')->limit(10)->select();
 	}
 
 

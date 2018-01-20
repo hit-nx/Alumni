@@ -13,6 +13,19 @@ function  likeit() {
         document.getElementById('like_number').innerText = parseInt(document.getElementById('like_number').innerText) + 1;
         Toblue();
         like = true;
+        postData = {};
+        postData['articleid'] = $("#articleid").val();
+        console.log(postData);
+        $.ajax({
+            type: "POST",
+            url: "/index.php?c=passage&a=like",
+            dataType: "json",
+            data: postData,
+            success: function(result){
+            },
+            error: function(){
+        }});
+
     }
 }
 
