@@ -42,7 +42,6 @@
 					  </select>
 				  </div>
 			  </div>
-
 			  <div class="col-md-3">
 				  <div class="input-group">
 					  <input id="title" class="form-control" name="title" type="text" placeholder="文章标题" value="{$title}"/>
@@ -82,7 +81,7 @@
 								  <td>{$article.source}</td>
 								  <td>{$article.columnid|getColumnName=$webSiteMenu,###}</td>
 								  <td>{$article.picture_url|isThumb}</td>
-								  <td>{$article.publishdate}</td>
+								  <td>{$article.publishdate|date="Y-m-d",###}</td>
 								  <td>
 									  <span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$article.articleid}" ></span>
 									  <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$article.articleid}"  attr-message="删除">
@@ -130,8 +129,6 @@
 		'add_url' : '/admin.php?c=article&a=add',
 		'set_status_url' : '/admin.php?c=article&a=setStatus',
 		'sing_news_view_url' : '/index.php?c=view',
-		'listorder_url' : '/admin.php?c=article&a=listorder',
-		'push_url' : '/admin.php?c=article&a=push',
 	};
 </script>
 <include file="Index/footer" />

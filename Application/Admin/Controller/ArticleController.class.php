@@ -4,11 +4,13 @@
  */
 namespace Admin\Controller;
 use Think\Exception;
+use Think\Upload;
 
 /**
  * 文章内容管理
  */
 class ArticleController extends CommonController {
+
 
     public function index() {
         $conds = array();
@@ -33,15 +35,14 @@ class ArticleController extends CommonController {
 
         $articles = D("Article")->getArticle($conds,$page,$pageSize);
         $count = D("Article")->getArticleCount($conds);
-        
+
         // 分页部分 使用插件
         $pageData = array(
             'pageNow' => $page,
             'pageTotal' =>  ceil($count / $pageSize),
             'pageRows' => $count
         );
-
-        $this->assign('page', $pageData);
+        $this->assign('page', $pageData);        
         $this->assign('articles',$articles);
         
         $this->assign('webSiteMenu',D("Column")->getColumn());
@@ -49,7 +50,9 @@ class ArticleController extends CommonController {
         $this->display();
     }
     public function add(){
+
         if($_POST) {
+
             if(!isset($_POST['title']) || !$_POST['title']) {
                 return show(0,'标题不存在');
             }
@@ -69,9 +72,15 @@ class ArticleController extends CommonController {
                 return $this->save($_POST);
             }
 
+            $info = D("Upload")->fileUpload();
+            if($info['picture_url']) {
+                $_POST['picture_url'] = D("Upload")->getPath($info['picture_url']);
+            }
+            if($info['attachment_url']) {
+                $_POST['attachment_url'] = D("Upload")->getPath($info['attachment_url']);
+            }
             if(D("Article")->insert($_POST)) {
                 return show(1,'新增成功！');
-
             }else{
                 return show(0,'新增失败！');
             }
@@ -80,7 +89,7 @@ class ArticleController extends CommonController {
             $webSiteMenu = D("Column")->getColumn();
 
             $this->assign('webSiteMenu', $webSiteMenu);
-            $this->assign('Source', $copyFrom);
+
             $this->display();
         }
     }
@@ -88,6 +97,7 @@ class ArticleController extends CommonController {
     public function edit() {
 
         $articleId = $_GET['id'];
+
         if(!$articleId) {
             // 执行跳转
             $this->redirect('/admin.php?c=article');
@@ -106,8 +116,9 @@ class ArticleController extends CommonController {
         $this->assign('ColumnId', $article['columnid']);
         $this->assign('Source', $article['source']);
         $this->assign('Keywords',$article['keywords']);
-        $this->assign('PictureURL',$article['picture_url']);
+        $this->assign('picture_url',$article['picture_url']);
         $this->assign('Content',$article['content']);
+        $this->assign('attachment_url',$article['attachment_url']);
 
         $this->display();
     }
@@ -115,6 +126,14 @@ class ArticleController extends CommonController {
     public function save($data) {
         $articleId = $data['articleid'];
         unset($data['articleid']);
+        
+        $info = D("Upload")->fileUpload();
+        if($info['picture_url']) {
+            $data['picture_url'] = D("Upload")->getPath($info['picture_url']);
+        }
+        if($info['attachment_url']) {
+            $data['attachment_url'] = D("Upload")->getPath($info['attachment_url']);
+        }
 
         try {
             $id = D("Article")->updateById($articleId, $data);

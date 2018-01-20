@@ -36,11 +36,9 @@
 						</div>
 
 						<div class="form-group">
-							<label for="inputname" class="col-sm-2 control-label">缩图:</label>
+							<label for="inputname" class="col-sm-2 control-label">首页图:</label>
 							<div class="col-sm-5">
-								<input id="file_upload"  type="file" multiple="true" >
-								<img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
-								<input id="file_upload_image" name="picture_url" type="hidden" multiple="true" value="{$PictureURL}">
+								<input accept="image/*" name="picture_url" type="file" multiple="true" value="{$picture_url}">
 							</div>
 						</div>
 
@@ -79,6 +77,13 @@
 							<label for="inputPassword3" class="col-sm-2 control-label">关键字:</label>
 							<div class="col-sm-5">
 								<input type="text" class="form-control" name="keywords" value='{$Keywords}' id="inputPassword3" placeholder="请填写关键词">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="inputname1" class="col-sm-2 control-label">附件:</label>
+							<div class="col-sm-5">
+								<input name="attachment_url" type="file" multiple="true" value="{$attachment_url}">
 							</div>
 						</div>
 
