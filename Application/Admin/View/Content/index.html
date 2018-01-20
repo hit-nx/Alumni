@@ -4,6 +4,7 @@
 
   <include file="Index/nav"/>
   <script src="/Public/js/kindeditor/kindeditor-all.js"></script>
+
   <div id="page-wrapper">
 
     <div class="container-fluid">
@@ -31,9 +32,9 @@
           <form class="form-horizontal" id="singcms-form">
 
             <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">内容标题：</label>
+              <label for="inputname" class="col-sm-2 control-label">标题：</label>
               <div class="col-sm-5">
-                <select class="form-control"  id="editor_item" name="id">
+                <select class="form-control"  id="editor-item" name="id">
                   <foreach name="webSiteMenu" item="menu">
                     <option value="{$menu.content_id}" 
                     <if condition="$menu.content_id eq $Content['content_id']">selected="selected"</if>>{$menu.content_name}</option>
@@ -75,18 +76,20 @@
   var SCOPE = {
     'save_url' : '/admin.php?c=content&a=index',
     'jump_url' : '/admin.php?c=content',
-    'ajax_upload_image_url' : '/admin.php?c=image&a=ajaxuploadimage',
-    'ajax_upload_swf' : '/Public/js/party/uploadify.swf',
   };
+  $("#editor-item").change(function () {
+    var data = $('select option:selected').val();
+    url = SCOPE.save_url+'&id='+data;
+    window.location.href = url;
+  });
 
 </script>
 <!-- /#wrapper -->
-<script src="/Public/js/admin/image.js"></script>
 <script>
   // 6.2
   KindEditor.ready(function(K) {
     window.editor = K.create('#editor_singcms',{
-      uploadJson : '/admin.php?c=image&a=kindupload',
+      uploadJson : '/admin.php?c=upload&a=kindupload',
       afterBlur : function(){this.sync();},
       //
     });
