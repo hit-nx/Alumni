@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-
+    <link rel="stylesheet" type="text/css" href="/Public/css/organization/AlumniOrganization.css" />
 	<link href="/Public/css/passage/passage.css"  rel="stylesheet" type="text/css" />
 	<link href="/Public/css/passage/style.css" rel="stylesheet" type="text/css" />
 	<link href="/Public/css/passage/reset.css"  rel="stylesheet" type="text/css" />
@@ -14,26 +14,22 @@
 </head>
 <body>
 
-	<div>
-		<img src="/Public/images/passage/headimg.png" id="head_img">
-	</div>
+	<div class="ahead">——————&nbsp;&nbsp;&nbsp;{$parentColumn.column_name}&nbsp;&nbsp;&nbsp;——————</div>
+
 	<div style="text-align: center;">
-		<div class="head">
-			<ul>
-				<li><a href="#">校友新闻</a> </li>
-				<li><a href="#">校区新闻</a> </li>
-				<li><a href="#">通知公告</a> </li>
-			</ul>
+		<div class="class">
+			<foreach name="brotherColumn" item = "brotherColumnItems">
+			
+			<li><a href="/index.php?c=simpleList&columnid={$brotherColumnItems.column_id}">{$brotherColumnItems.column_name}</a></li>
+
+            </foreach>
 		</div>
 	</div>
 	<div class="room">
 		<div class="content">
 			<p class="name">{$articleInfo.title}</p>
-<<<<<<< HEAD
-			<P class="writer"><br>【来源：{$articleInfo.source} 】 浏览量：{$articleInfo.visitcount}<br><br></P>
-=======
+
 			<P class="writer"><br>【 作者：{$articleInfo.authorid|getAuthorName} 来源：{$articleInfo.source} 】 浏览量：{$articleInfo.visitcount}<br><br></P>
->>>>>>> 57aead5fde85080fe686b52ae6eb45fe45bf54fc
 
 			{$articleInfo.content}
 

@@ -27,5 +27,15 @@ class PassageModel extends Model {
         $this->_db->where('articleid = '.$articleid)->save($list);
         return $list;
     }
+
+    public function getArticleById($id){
+
+        $list = $this->_db->where('articleid = '.$id)->find();
+
+        return $list;
+
+    }
+
+
     
 }

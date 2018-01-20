@@ -123,7 +123,7 @@ p{
 	display: block;
 	margin: 15px auto 35px auto;
 	border-top: 2px #797979 solid;
-	width: 535px;
+	width: 1000px;
 	height: 50px;
 	font-size: 16px;
 	line-height: 50px;
@@ -133,6 +133,10 @@ p{
 	display: inline-block;
 	width: 70px;
 	margin: 0px 50px;
+}
+
+.class li:hover{
+	border-bottom: solid 5px #0D184E;
 }
 /*新闻部分*/
 .news{	
