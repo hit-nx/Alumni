@@ -155,7 +155,8 @@
 }
 .alumnustext{
     width: 220px;
-    height: 200px;
+    height: 110px;
+    overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
     position: absolute;

@@ -18,7 +18,6 @@
 		<div class=toppic>
 			<span class="black"></span>
 			<h1>——— {$parentColumn.column_name} ———</h1>
-			<h3>News</h3>
 		</div>
 	<div class=wrap2>
 		<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html">{$parentColumn.column_name}</a>><a href="#">{$currentColumn.column_name}</a></p>
@@ -113,67 +112,67 @@
 			<ul>
 				<li>
 					<div class=time_area>
-						<span class=time_month><?php echo substr($newsList[0]['publishdate'],0,7) ?><br></span>
-						<span class=time_date><?php echo substr($newsList[0]['publishdate'],8,2) ?>日</span>
+						<span class=time_month><?php $time = date("Y-m-d",$newsList[0]['publishdate']); echo substr($time,0,7)?><br></span>
+						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
 					</div>
 					<div class=word1 id=word1>
 					<a href="/index.php?c=passage&articleid={$newsList[0]['articleid']}" name=title>{$newsList[0]['title']}</a>
-					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<p name=content><?php echo $contentes = strip_tags($newsList[0]['content']) ?></p>
 					<span class=label name=label><?php echo getColumnNameById($newsList[0]['columnid']) ?></span>
 				</div>
 				</li>
 				<li>
 					<div class=time_area>
-						<span class=time_month><?php echo substr($newsList[1]['publishdate'],0,7) ?><br></span>
-						<span class=time_date><?php echo substr($newsList[1]['publishdate'],8,2) ?>日</span>
+						<span class=time_month><?php $time = date("Y-m-d",$newsList[1]['publishdate']); echo substr($time,0,7)?><br></span>
+						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
 					</div>
 					<div class=word1 id=word1>
 					<a href="/index.php?c=passage&articleid={$newsList[1]['articleid']}" name=title>{$newsList[1]['title']}</a>
-					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<p name=content><?php echo $contentes = strip_tags($newsList[1]['content']) ?></p>
 					<span class=label name=label><?php echo getColumnNameById($newsList[1]['columnid']) ?></span>
 				</div>
 				</li>
 				<li>
 					<div class=time_area>
-						<span class=time_month><?php echo substr($newsList[2]['publishdate'],0,7) ?><br></span>
-						<span class=time_date><?php echo substr($newsList[2]['publishdate'],8,2) ?>日</span>
+						<span class=time_month><?php $time = date("Y-m-d",$newsList[2]['publishdate']); echo substr($time,0,7)?><br></span>
+						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
 					</div>
 					<div class=word1 id=word1>
 					<a href="/index.php?c=passage&articleid={$newsList[2]['articleid']}" name=title>{$newsList[2]['title']}</a>
-					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<p name=content><?php echo $contentes = strip_tags($newsList[2]['content']) ?></p>
 					<span class=label name=label><?php echo getColumnNameById($newsList[2]['columnid']) ?></span>
 				</div>
 				</li>
 				<li>
 					<div class=time_area>
-						<span class=time_month><?php echo substr($newsList[3]['publishdate'],0,7) ?><br></span>
-						<span class=time_date><?php echo substr($newsList[3]['publishdate'],8,2) ?>日</span>
+						<span class=time_month><?php $time = date("Y-m-d",$newsList[3]['publishdate']); echo substr($time,0,7)?><br></span>
+						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
 					</div>
 					<div class=word1 id=word1>
 					<a href="/index.php?c=passage&articleid={$newsList[3]['articleid']}" name=title>{$newsList[3]['title']}</a>
-					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<p name=content><?php echo $contentes = strip_tags($newsList[3]['content']) ?></p>
 					<span class=label name=label><?php echo getColumnNameById($newsList[3]['columnid']) ?></span>
 				</div>
 				</li>
 				<li>
 					<div class=time_area>
-						<span class=time_month><?php echo substr($newsList[4]['publishdate'],0,7) ?><br></span>
-						<span class=time_date><?php echo substr($newsList[4]['publishdate'],8,2) ?>日</span>
+						<span class=time_month><?php $time = date("Y-m-d",$newsList[4]['publishdate']); echo substr($time,0,7)?><br></span>
+						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
 					</div>
 					<div class=word1 id=word1>
 					<a href="/index.php?c=passage&articleid={$newsList[4]['articleid']}" name=title>{$newsList[4]['title']}</a>
-					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<p name=content><?php echo $contentes = strip_tags($newsList[4]['content']) ?></p>
 					<span class=label name=label><?php echo getColumnNameById($newsList[4]['columnid']) ?></span>
 				</div>
 				</li>
 				<li>
 					<div class=time_area>
-						<span class=time_month><?php echo substr($newsList[5]['publishdate'],0,7) ?><br></span>
-						<span class=time_date><?php echo substr($newsList[5]['publishdate'],8,2) ?>日</span>
+						<span class=time_month><?php $time = date("Y-m-d",$newsList[5]['publishdate']); echo substr($time,0,7)?><br></span>
+						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
 					</div>
 					<div class=word1 id=word1>
 					<a href="/index.php?c=passage&articleid={$newsList[5]['articleid']}" name=title>{$newsList[5]['title']}</a>
-					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<p name=content><?php echo $contentes = strip_tags($newsList[5]['content']) ?></p>
 					<span class=label name=label><?php echo getColumnNameById($newsList[5]['columnid']) ?></span>
 				</div>
 				</li>

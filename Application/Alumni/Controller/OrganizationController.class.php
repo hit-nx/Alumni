@@ -15,4 +15,15 @@ class OrganizationController extends CommonController {
         $this->display("organization");
     }
 
+    public function organizationList(){
+
+        // $contentid = $_GET['contentid']; 
+
+        // $organizationInfo = D("Organization")->getOrganizationInfo($contentid);
+
+        // $this->assign("organizationInfo",$organizationInfo);
+
+        $this->display("organizationList");
+    }
+
 }

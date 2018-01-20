@@ -6,9 +6,9 @@ use Think\Exception;
 class DonationInfoController extends CommonController {
     public function index(){
 
-    	$contentid = $_GET['contentid']; 
+    	$contentid = $_GET['content_id']; 
 
-        $donationInfo = D("Conetnt")->find($contentid);
+        $donationInfo = D("Content")->find($contentid);
 
         $this->assign("donationInfo",$donationInfo);
 

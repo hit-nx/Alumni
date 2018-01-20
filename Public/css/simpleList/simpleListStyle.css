@@ -363,6 +363,8 @@ p{
 	font-weight: normal;
 }
 .word1 p{
+	height: 40px;
+	overflow: hidden;
 	margin-top: 10px;
 	font-size: 15px;
 	width: 400px;

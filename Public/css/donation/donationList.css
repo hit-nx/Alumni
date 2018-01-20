@@ -151,7 +151,7 @@ color:#929292 ;
 .form
 {
 	width:1000px;
-	margin: 50px auto 50px auto;
+	margin: 50px auto 40px auto;
 	text-align: center;
 	border-radius: 10px;
 	font-size:15px; 
@@ -267,13 +267,4 @@ th
 	float: left;
 
 }
-/*.bottom*/
-/*{*/
-	/*height: 300px;*/
-	/*width: 100%;*/
-	/*background-image: url(../image/bottom.png);*/
-	/*background-repeat:no-repeat;*/
-	/*background-size: 100% 100%;*/
-	/*margin-top:80px;*/
-/*}*/
 
