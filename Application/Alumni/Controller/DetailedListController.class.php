@@ -33,6 +33,7 @@ class DetailedListController extends CommonController {
         $this->assign("currentColumn",$currentColumn);
         $this->assign("getDisplayedNews",$getDisplayedNews);
         $this->assign("getNewsList",$getNewsList);
+        $this->assign("hotNewsList",$hotNewsList);
 
         $this->display("detailedList");
     }

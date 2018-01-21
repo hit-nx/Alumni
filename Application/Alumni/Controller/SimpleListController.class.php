@@ -31,6 +31,7 @@ class SimpleListController extends CommonController {
         $this->assign("parentColumn",$parentColumn);
         $this->assign("brotherColumn",$brotherColumn);
         $this->assign("newsList",$newsList);
+        $this->assign("hotNewsList",$hotNewsList);
 
         $this->display("simpleList");
     }
