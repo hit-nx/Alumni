@@ -20,7 +20,10 @@
 			<h1>——— {$parentColumn.column_name} ———</h1>
 		</div>
 	<div class=wrap2>
-		<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html">{$parentColumn.column_name}</a>><a href="#">{$currentColumn.column_name}</a></p>
+		<div class="position">
+			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html">{$parentColumn.column_name}</a>><a href="#">{$currentColumn.column_name}</a></p>
+		</div>
+		
 		<ul class=class>
 
             <foreach name="brotherColumn" item = "brotherColumnItems">

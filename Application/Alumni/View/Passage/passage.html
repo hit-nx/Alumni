@@ -33,54 +33,24 @@
 
 			{$articleInfo.content}
 
-			<div class="share">
-				<div class="for">
-					<img src="/Public/images/passage/fenxiang.png"   >
-					<P>分享到：</P>
-				</div>
-				<div class="share-content">
-					<a href="#">
-						<img src="/Public/images/passage/qq.png" >
-						QQ
-					</a>
-					<a href="#">
-						<img src="/Public/images/passage/wechat.png" >
-						微信
-					</a>
-					<a href="#">
-						<img src="/Public/images/passage/blog.png ">
-						微博
-					</a>
-					<a href="#">
-						<img src="/Public/images/passage/more.png" style="margin-top: 15px" >
-						更多
-					</a>
-				</div>
-			</div>
+		</div>
 
-			<div  class="down">
+		<div class="passageBottom">
+
+			<div class="down">
 				<a herf="">
 					<img src="/Public/images/passage/download.png" >
 
-					<p>下载附件</p>
+					<span>下载附件</span>
 				</a>
 			</div>
-
 			<div class="like">
 				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
-				<p id="like_number">{$articleInfo.likecount}</p>
-				<input type="hidden" id="articleid" value="{$articleInfo.articleid}"></input>
+				<span id="like_number">{$articleInfo.likecount}</span>
+				<input type="hidden" id="articleid" value="{$articleInfo.articleid}"/>
 			</div>
-
-		<div class="fanpage">
-				<a href="#" class="previous"><-上一页</a> 
-				<a href="#" class="next">下一页-></a> 
-				
-			</div>
-
 		</div>
 
-	</div>
 </body>
 </html>
 <include file="Index/footer" />
