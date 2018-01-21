@@ -8,10 +8,13 @@
 	<link href="/Public/css/detailedList/horizontal.css"  rel="stylesheet" type="text/css" />
 	<link href="/Public/css/detailedList/dentalListStyle.css" rel="stylesheet" type="text/css" />
 	<link href="/Public/css/detailedList/reset.css"  rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
 
-    <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+
+  <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
 	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="/Public/js/alumni/listIndex.js"></script>
+  <script src="/Public/js/paging.js"></script>
 	<title></title>
 </head>
 <body>
@@ -132,92 +135,41 @@
 			<span class=line4></span>
 			<h1>新闻概要</h1>
 			<ul>
-				<li>
-					<div class=time_area>
-						<!--年月-->
-						<span class=time_month><?php $time = date("Y-m-d",$getNewsList[0]['publishdate']); echo substr($time,0,7) ?><br></span>
-						<!--日-->
-						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-					</div>
-					<div class=word1 id=word1>
-						<!--标题-->
-					<a href="/index.php?c=passage&articleid={$getNewsList[0]['articleid']}" name=title>{$getNewsList[0]['title']}</a>
-					    <!--内容-->
-					<p name=content><?php echo $contentes = strip_tags($getNewsList[0]['content']) ?></p>
-					    <!--分区-->
-					<span class=label name=label><?php echo getColumnNameById($getNewsList[0]['columnid']) ?></span>
-				</div>
-				</li>
-
-				<li>
-					<div class=time_area>
-						<span class=time_month><?php $time = date("Y-m-d",$getNewsList[1]['publishdate']); echo substr($time,0,7) ?><br></span>
-						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-					</div>
-					<div class=word1 id=word1>
-					<a href="/index.php?c=passage&articleid={$getNewsList[1]['articleid']}" name=title>{$getNewsList[1]['title']}</a>
-					<p name=content><?php echo $contentes = strip_tags($getNewsList[1]['content']) ?></p>
-					<span class=label name=label><?php echo getColumnNameById($getNewsList[1]['columnid']) ?></span>
-				</div>
-				</li>
-
-				<li>
-					<div class=time_area>
-						<span class=time_month><?php $time = date("Y-m-d",$getNewsList[2]['publishdate']); echo substr($time,0,7) ?><br></span>
-						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-					</div>
-					<div class=word1 id=word1>
-					<a href="/index.php?c=passage&articleid={$getNewsList[2]['articleid']}" name=title>{$getNewsList[2]['title']}</a>
-					<p name=content><?php echo $contentes = strip_tags($getNewsList[2]['content']) ?></p>
-					<span class=label name=label><?php echo getColumnNameById($getNewsList[2]['columnid']) ?></span>
-				</div>
-				</li>
-				<li>
-					<div class=time_area>
-						<span class=time_month><?php $time = date("Y-m-d",$getNewsList[3]['publishdate']); echo substr($time,0,7) ?><br></span>
-						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-					</div>
-					<div class=word1 id=word1>
-					<a href="/index.php?c=passage&articleid={$getNewsList[3]['articleid']}" name=title>{$getNewsList[3]['title']}</a>
-					<p name=content><?php echo $contentes = strip_tags($getNewsList[3]['content']) ?></p>
-					<span class=label name=label><?php echo getColumnNameById($getNewsList[3]['columnid']) ?></span>
-				</div>
-				</li>
-				<li>
-					<div class=time_area>
-						<span class=time_month><?php $time = date("Y-m-d",$getNewsList[4]['publishdate']); echo substr($time,0,7) ?><br></span>
-						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-					</div>
-					<div class=word1 id=word1>
-					<a href="/index.php?c=passage&articleid={$getNewsList[4]['articleid']}" name=title>{$getNewsList[4]['title']}</a>
-					<p name=content><?php echo $contentes = strip_tags($getNewsList[4]['content']) ?></p>
-					<span class=label name=label><?php echo getColumnNameById($getNewsList[4]['columnid']) ?></span>
-				</div>
-				</li>
-				<li>
-					<div class=time_area>
-						<span class=time_month><?php $time = date("Y-m-d",$getNewsList[5]['publishdate']); echo substr($time,0,7) ?><br></span>
-						<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-					</div>
-					<div class=word1 id=word1>
-					<a href="/index.php?c=passage&articleid={$getNewsList[5]['articleid']}" name=title>{$getNewsList[5]['title']}</a>
-					<p name=content><?php echo $contentes = strip_tags($getNewsList[5]['content']) ?></p>
-					<span class=label name=label><?php echo getColumnNameById($getNewsList[5]['columnid']) ?></span>
-				</div>
-				</li>
+				<volist name="getNewsList" id="news">
+					<li>
+						<div class=time_area>
+							<!--年月-->
+							<span class=time_month><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7) ?><br></span>
+							<!--日-->
+							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
+						</div>
+						<div class=word1 id=word1>
+								<!--标题-->
+							<a href="/index.php?c=passage&articleid={$news['articleid']}" name=title>{$news['title']}</a>
+							    <!--内容-->
+							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
+							    <!--分区-->
+							<span class=label name=label><?php echo getColumnNameById($news['columnid']) ?></span>
+						</div>
+					</li>
+				</volist>
 			</ul>
 		</div>
 		<div class=change>
-			<a href="">首页</a>
-			<a href="">上一页</a>
-			<a class="page checked" href="">1</a>
-			<a class=page href="">2</a>
-			<a class=page href="">3</a>
-			<a class=page href="">4</a>
-			<a href="">下一页</a>
-			<a href="">尾页</a>
-		</div>
+     	<div id="page" class="page_div"></div>
+    </div>
 	</div>
 </body>
+<script>
+	$("#page").paging({
+		pageNo: {$page.pageNow},
+		totalPage: {$page.pageTotal},
+		totalSize: {$page.pageRows},
+		callback: function(num) {
+			var columnid = {$currentColumn.column_id};
+			window.location.href = '/index.php?c=detailedList&p=' + num + "&columnid=" +columnid;
+		}
+	});
+</script>
 </html>
 <include file="Index/footer"/>

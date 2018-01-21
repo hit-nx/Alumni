@@ -20,11 +20,25 @@ class SimpleListController extends CommonController {
         //得到当前栏目的兄弟栏目（包括自己）
         $brotherColumn = D("SimpleList")->getChildColumns($parentColumn['column_id']);
 
-        //根据栏目id获取文章
-        $newsList = D("Article")->getNewsByColumnId($columnid);
-
         //获取热点新闻
         $hotNewsList = D("Article")->getHotNewsList($columnid);
+
+        //分页
+        $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
+        $pageSize = 6;
+
+        $newsList = D("Article")->getArticle($_GET,$page,$pageSize);
+
+        $count = D("Article")->getArticleCount($_GET);
+
+        // 分页部分 使用插件
+        $pageData = array(
+            'pageNow' => $page,
+            'pageTotal' =>  ceil($count / $pageSize),
+            'pageRows' => $count
+        );
+        $this->assign('page', $pageData);        
+
 
 
         $this->assign("currentColumn",$currentColumn);

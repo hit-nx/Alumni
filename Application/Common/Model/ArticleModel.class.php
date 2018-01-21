@@ -150,7 +150,7 @@ class ArticleModel extends Model {
 
 	}
 
-	public function getNewsList($columns_id){
+	public function getNewsList($columns_id,$page,$pageSize=10){
 
 		if(!is_array($columns_id)) {
 			throw_exception("参数不合法");
@@ -161,8 +161,25 @@ class ArticleModel extends Model {
 			'columnid' => array('in',implode(',', $columns_id)),
 		);
 
-		return $this->_db->where($data)->order('articleid desc')->select();
+        $offset = ($page - 1) * $pageSize;
+        $list = $this->_db->where($data)
+            ->order('articleid desc')
+            ->limit($offset,$pageSize)
+            ->select();
+		return $list;
+	}
 
+	public function getNewsListCount($columns_id){
+		if(!is_array($columns_id)) {
+			throw_exception("参数不合法");
+		}
+
+		$data = array(
+
+			'columnid' => array('in',implode(',', $columns_id)),
+		);
+
+		return $this->_db->where($data)->count();
 	}
 
 	public function getNewsByColumnId($columns_id){
