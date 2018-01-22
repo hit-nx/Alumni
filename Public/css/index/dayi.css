@@ -296,12 +296,16 @@
 .blocktable{
     width: 460px;
     height: 270px;
-
     position: absolute;
     top: 70px;
     left: 0px;
 }
 .blocklinktext{
+    max-width: 350px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    white-space:nowrap;
     font-family:  'Microsoft Yahei';
     font-weight: normal;
     text-decoration: none;
@@ -309,6 +313,8 @@
     color: rgba(0, 0, 0, 1) !important;
 }
 .buttomline{
+    max-width: 350px;
+    overflow: hidden;
     border-bottom: solid;
     border-width: 1px;
     border-bottom-color: rgba(30,20,39,0.2)

@@ -214,8 +214,7 @@ p{
 	line-height: 30px;
 	text-align: center;
 	float: left;
-	margin-left: 10px;
-	margin-right: 30px;
+	margin-left: 30px;
 }
 .time{
 	color: black;
@@ -251,7 +250,7 @@ p{
 .hot h4{
 	display: block;
 	width: 300px;
-	height: 25px;
+	height: 30px;
 	background-color: #E4E4E4;
 	background-image: url(/Public/images/detailedList/hoticon.png);
 	background-repeat: no-repeat;
@@ -279,6 +278,10 @@ p{
 	width: 300px;
     font-size: 14px;
     margin-bottom: 5px;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .first{
@@ -334,14 +337,14 @@ p{
 /*新闻概要*/
 .main{
 	margin-top: 60px;
-	height: 900px;
+	height: 850px;
 	width: 600px;
 	float: left;
 	padding-left: 10px;
 }
 .main li{
 	display: block;
-	height: 140px;
+	height: 130px;
 	width: 650px;
 	border-bottom: 1px #797979 solid;
 	box-sizing: border-box;
@@ -365,11 +368,16 @@ p{
 	margin-left: 25px;
 }
 .word1{
-	height: 113px;
+	height: 100px;
 	width: 450px;
 	float: left;
 }
 .word1 a{
+	width: 400px;
+	display:block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
 	font-size: 20px;
 	font-weight: normal;
 }
@@ -388,9 +396,8 @@ p{
 /*分页*/
 .change{
 	float: left;
-	width: 1000px;
+	width: 750px;
 	height: 70px;
-	padding-left: 100px;
 	font-size: 15px;
 	margin-bottom: 100px;
 }
@@ -405,7 +412,6 @@ p{
 	background-color: white;
 	border: 1px #818181 solid;
 	line-height: 20px;
-	padding-left: 6px;
 }
 .checked{
 	background-color: #818181;
@@ -515,3 +521,13 @@ footer{
 	background-color: #504F4D;
 }
 
+.ahead {
+	background-image: url(/Public/images/organization/ahead.jpg);
+	background-size: 100% 233px;
+	background-repeat: no-repeat;
+	font-size: 30px;
+	color: #0d184e;
+	text-align: center/*水平居中*/;
+	line-height: 233px;/*通过行距设置竖直居中*/
+	overflow: hidden;/*文字超出一行则隐藏*/
+}
