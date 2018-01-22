@@ -390,9 +390,9 @@ p{
 	float: left;
 	width: 1000px;
 	height: 70px;
-	padding-left: 100px;
+	/*padding-left: 50px;*/
 	font-size: 15px;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 .change a{
 	margin-left: 22px;

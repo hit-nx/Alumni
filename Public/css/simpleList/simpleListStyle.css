@@ -374,7 +374,7 @@ p{
 	overflow: hidden;
 	margin-top: 10px;
 	font-size: 15px;
-	width: 400px;
+	width: 500px;
 }
 .word1 .label{
 	position: absolute;
@@ -384,11 +384,11 @@ p{
 /*分页*/
 .change{
     float: left;
-	width: 600px;
+	width: 1000px;
 	height: 70px;
-	padding-left: 100px;
+	/*padding-left: 100px;*/
 	font-size: 15px;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 .change a{
 	margin-left: 22px;

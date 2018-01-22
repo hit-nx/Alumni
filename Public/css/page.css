@@ -29,20 +29,20 @@
 #firstPage,
 #lastPage {
 	width: 50px;
-	color: #0073A9;
-	border: 1px solid #0073A9!important;
+	color: #0D184E;
+	border: 1px solid #0D184E!important;
 }
 
 #prePage,
 #nextPage {
 	width: 70px;
-	color: #0073A9;
-	border: 1px solid #0073A9!important;
+	color: #0D184E;
+	border: 1px solid #0D184E!important;
 }
 
 .page_div .current {
-	background-color: #0073A9;
-	border-color: #0073A9;
+	background-color: #0D184E;
+	border-color: #0D184E;
 	color: #FFFFFF;
 }
 
@@ -52,6 +52,6 @@
 
 .totalPages span,
 .totalSize span {
-	color: #0073A9;
+	color: #0D184E;
 	margin: 0 5px;
 }
