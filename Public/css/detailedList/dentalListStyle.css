@@ -201,6 +201,12 @@ p{
 .cont_title{
 	font-size: 20px;
 	margin-top: 8px;
+	width: 300px;
+	display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
 }
 
 .label{
