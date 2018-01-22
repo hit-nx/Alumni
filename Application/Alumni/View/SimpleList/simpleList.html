@@ -19,23 +19,17 @@
 <body>
 
 	<div class="ahead">——————&nbsp;&nbsp;&nbsp;{$parentColumn.column_name}&nbsp;&nbsp;&nbsp;——————</div>
-
-<!-- 		<div class=toppic>
-			<span class="black"></span>
-			<h1>——— {$parentColumn.column_name} ———</h1>
-		</div> -->
-		
 	<div class=wrap2>
 		<div class="position">
 			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html">{$parentColumn.column_name}</a>><a href="#">{$currentColumn.column_name}</a></p>
 		</div>
 
 		<ul class=class>
-      <foreach name="brotherColumn" item = "brotherColumnItems">
+			<foreach name="brotherColumn" item = "brotherColumnItems">
 				<li>
 					<a href="/index.php?c=simpleList&columnid={$brotherColumnItems.column_id}">{$brotherColumnItems.column_name}</a>
 				</li>
-      </foreach>
+			</foreach>
 		</ul>
 		<div class=hot>
 			<h4>热点新闻</h4>
@@ -72,7 +66,7 @@
 			</ul>
 		</div>
 		<div class=change>
-	 		<div id="page" class="page_div"></div>
+			<div id="page" class="page_div"></div>
 		</div>
 	</div>
 </body>
