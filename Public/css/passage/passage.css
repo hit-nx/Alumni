@@ -61,17 +61,22 @@
     height: auto;
     margin-top: 30px;
 
+
 }
 
 .content {
 
     width: 700px;
     margin: 0 auto;
+}
 
+.content div *{
+    font-family: Microsoft YaHei !important;
+    color: #000 !important;
 }
 
 .content p{
-    line-height: 25px;
+    line-height: 35px;
 }
 
 .content img{
@@ -80,8 +85,8 @@
 
 .name {
     text-align: center;
-
     font-size: 32px;
+    font-family: Microsoft YaHei;
 
 }
 .writer {
@@ -90,11 +95,10 @@
     margin:0 auto;
     font-size: 16px;
     border-bottom:2px solid #999;
+    font-family: Microsoft YaHei;
 }
-.passage {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
+
+
 
 
 /*分享菜单*/
@@ -190,6 +194,7 @@
     padding: 0;
     
 }
+
 .down {
     display: inline-block;
     width: 90px;
