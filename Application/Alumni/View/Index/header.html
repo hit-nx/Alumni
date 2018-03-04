@@ -6,12 +6,20 @@
 	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
+    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div id="headerBackgroundColor">
 	    <div id="logoDivHeaderImg">
         <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
     </div>
+
+    <div id="headerSearch">
+
+        <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="{$searchContent}"/>
+        <img src="../Public/images/search.png" id="headerSearchBar">
+    </div>
+
     <div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
@@ -67,4 +75,17 @@
     </div>
     </div>
 </body>
+<script>
+    var content = document.getElementById("searchContent");
+    
+        document.getElementById("headerSearchBar").onclick=function(){
+            if(content.value.length>0 &&content.value.trim().length>0){
+                window.location.href = '/index.php?c=search&content='+content.value;
+            }
+            else{
+                alert("输入不能为空"); 
+            }
+        };
+   
+</script>
 </html>

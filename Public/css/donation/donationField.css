@@ -112,6 +112,14 @@ a
 	margin: 60px auto 50px auto;
 	font-size: 16px;
 }
+.content p{
+	font-family: Microsoft YaHei !important;
+    color: #000 !important; 
+}
+.content p *{
+	font-family: Microsoft YaHei !important;
+    color: #000 !important;
+}
 b{
 	color: #0d184e;
 }
