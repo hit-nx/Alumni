@@ -70,6 +70,11 @@ a:visited {
 .article p {
 	margin: 0;
 }
+
+.article p span{
+    font-family: Microsoft YaHei !important;
+    color: #000 !important;
+}
 .article .piece {
 	font-weight: bold;
 }
