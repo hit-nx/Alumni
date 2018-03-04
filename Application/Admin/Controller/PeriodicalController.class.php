@@ -48,6 +48,11 @@ class PeriodicalController extends CommonController {
             }else{
                 return show(0,'文件不存在');
             }
+            if($info['picture_url']) {
+                $_POST['picture_url'] = D("Upload")->getPath($info['picture_url']);
+            }else{
+                return show(0,'图片不存在');
+            }
 
             if($_POST['periodicalid']) {
                 return $this->save($_POST);
