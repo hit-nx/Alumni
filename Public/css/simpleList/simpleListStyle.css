@@ -398,14 +398,9 @@ p{
 /*分页*/
 .change{
     float: left;
-<<<<<<< HEAD
 	width: 750px;
 	height: 70px;
-=======
-	width: 1000px;
-	height: 70px;
-	/*padding-left: 100px;*/
->>>>>>> 38828989c9b989fae564165a3644a0c2a072ed02
+
 	font-size: 15px;
 	margin-bottom: 50px;
 }
