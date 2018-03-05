@@ -159,7 +159,7 @@
 }
 .alumnustext{
     width: 220px;
-    height: 8em;
+    height: 10em;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
@@ -191,7 +191,7 @@
 }
 .alumnustext0{
     width: 220px;
-    height: 8em;
+    height:10em;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
@@ -351,10 +351,6 @@
     font-size: 18px;
     font-weight: normal;
     font-family: 'Microsoft Yahei';
-    /*position: absolute;*/
-    /*top: 0px;*/
-    /*left: 0px;*/
-    /*height: 30px;*/
     line-height: 30px;
     width: 120px;
     color: #132478;
@@ -409,7 +405,7 @@
     position: absolute;
     border-collapse:collapse;
     top: 50px;
-    left: 10px;
+    left: 9px;
 }
 .blocklinktext0{
     max-width: 300px;

@@ -6,12 +6,20 @@
 	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
+    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div id="headerBackgroundColor">
 	    <div id="logoDivHeaderImg">
         <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
     </div>
+
+    <div id="headerSearch">
+
+        <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
+        <img src="../Public/images/search.png" id="headerSearchBar">
+    </div>
+
     <div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
@@ -67,81 +75,75 @@
     </div>
     </div>
 </body>
+<script>
+    var content = document.getElementById("searchContent");
+    
+        document.getElementById("headerSearchBar").onclick=function(){
+            if(content.value.length>0 &&content.value.trim().length>0){
+                window.location.href = '/index.php?c=search&title='+content.value;
+            }
+            else{
+                alert("输入不能为空"); 
+            }
+        };
+   
+</script>
 </html>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- 以最高版本ie渲染，chrome版本为1开启chrome frame -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 适应屏幕宽度 -->
-	<link href="/Public/css/simpleList/horizontal.css"  rel="stylesheet" type="text/css" />
-	<link href="/Public/css/simpleList/simpleListStyle.css" rel="stylesheet" type="text/css" />
-	<link href="/Public/css/simpleList/reset.css"  rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="/Public/css/search/search.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
 
-  <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
-	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="/Public/js/alumni/listIndex.js"></script>
-  <script src="/Public/js/paging.js"></script>
-	<title></title>
+    <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+    <script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="/Public/js/alumni/listIndex.js"></script>
+    <script src="/Public/js/paging.js"></script>
 </head>
 <body>
-
-	<div class="ahead">——————&nbsp;&nbsp;&nbsp;<?php echo ($parentColumn["column_name"]); ?>&nbsp;&nbsp;&nbsp;——————</div>
-	<div class=wrap2>
-		<div class="position">
-			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html"><?php echo ($parentColumn["column_name"]); ?></a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
-		</div>
-
-		<ul class=class>
-			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li>
-					<a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a>
-				</li><?php endforeach; endif; ?>
-		</ul>
-		<div class=hot>
-			<h4>热点新闻</h4>
-			<ul>
-				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
-						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
-						<p class=good><?php echo ($news['visitcount']); ?></p>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=main>
-			<span class=line1></span>
-			<span class=line2></span>
-			<span class=line3></span>
-			<span class=line4></span>
-			<h1>新闻概要</h1>
-			<ul>
-				<?php if(is_array($newsList)): $i = 0; $__LIST__ = $newsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<div class=time_area>
-							<span class=time_month><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7)?><br></span>
-							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-						</div>
-						<div class=word1 id=word1>
-							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name=title><?php echo ($news['title']); ?></a>
-							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
-						</div>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=change>
-			<div id="page" class="page_div"></div>
-		</div>
-	</div>
+    <div class="ahead">——————&nbsp;&nbsp;&nbsp;搜索结果&nbsp;&nbsp;&nbsp;——————</div>
+    <input id="title"  class="form-control" name="title" type="hidden" placeholder="文章标题" value="<?php echo ($title); ?>" />
+    <center>
+        <div class="search">
+        <ul>
+            <br>
+            <br>
+            <?php if(is_array($articles)): $i = 0; $__LIST__ = $articles;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
+                    <div class="time_area">
+                        <!--年月-->
+                        <span class="time_month"><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7) ?><br></span>
+                        <!--日-->
+                        <span class="time_date"><?php echo substr($time,8,2) ?>日</span>
+                    </div>
+                    <div class="word1" id="word1">
+                        <!--标题-->
+                        <a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name="title"><?php echo ($news['title']); ?></a>
+                        <!--内容-->
+                        <p name="content"><?php echo $contentes = strip_tags($news['content']) ?></p>
+                    </div>
+                </li>
+                <hr class="line_part"/><?php endforeach; endif; else: echo "" ;endif; ?>
+        </ul>
+        </div>
+        <div class=change>
+            <div id="page" class="page_div"></div>
+        </div>
+    </center>
 </body>
 <script>
-	$("#page").paging({
-		pageNo: <?php echo ($page["pageNow"]); ?>,
-		totalPage: <?php echo ($page["pageTotal"]); ?>,
-		totalSize: <?php echo ($page["pageRows"]); ?>,
-		callback: function(num) {
-			var columnid = <?php echo ($currentColumn["column_id"]); ?>;
-			window.location.href = '/index.php?c=simpleList&p=' + num + "&columnid=" +columnid;
-		}
-	});
+    var title = document.getElementById("title").value;
+    $("#page").paging({
+            pageNo: <?php echo ($page["pageNow"]); ?>,
+            totalPage: <?php echo ($page["pageTotal"]); ?>,
+            totalSize: <?php echo ($page["pageRows"]); ?>,
+            callback: function(num) {
+                window.location.href = '/index.php?c=search&p=' + num + "&title="+title;
+
+            }
+    });
+
 </script>
 </html>
 <!DOCTYPE html>
@@ -162,16 +164,16 @@
             <dd>电话：80008208820</dd>
         </dl>
         <dl class=webs>
-            <dt><a href="" style="text-decoration: none; color: #fff">快速链接</a></dt>
-            <dd><a href="" style="text-decoration: none; color: #fff">学校官网</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">招标信息</a></dd>
+            <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt>
+            <dd><a href="http://www.hitwh.edu.cn/" style="text-decoration: none; color: #fff">学校官网</a></dd>
+            <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
+            <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
         </dl>
         <dl class=others>
-            <dt><a href="" style="text-decoration: none; color: #fff">捐赠</a></dt>
+            <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt>
             <dd><a href="" style="text-decoration: none; color: #fff">管理方法</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
+            <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
 <!--             <dd class=otherweb>
                 <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
                 <ul>

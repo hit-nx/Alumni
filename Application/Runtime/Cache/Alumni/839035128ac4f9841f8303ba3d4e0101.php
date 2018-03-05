@@ -68,81 +68,55 @@
     </div>
 </body>
 </html>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- 以最高版本ie渲染，chrome版本为1开启chrome frame -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 适应屏幕宽度 -->
-	<link href="/Public/css/simpleList/horizontal.css"  rel="stylesheet" type="text/css" />
-	<link href="/Public/css/simpleList/simpleListStyle.css" rel="stylesheet" type="text/css" />
-	<link href="/Public/css/simpleList/reset.css"  rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/Public/css/organization/AlumniOrganization.css" />
+	<link href="/Public/css/passage/passage.css"  rel="stylesheet" type="text/css" />
+	<link href="/Public/css/passage/style.css" rel="stylesheet" type="text/css" />
+	<link href="/Public/css/passage/reset.css"  rel="stylesheet" type="text/css" />
 
-  <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+	<script src="/Public/js/alumni/menuFix.js" type="text/javascript"></script>
 	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="/Public/js/alumni/listIndex.js"></script>
-  <script src="/Public/js/paging.js"></script>
-	<title></title>
+	<script src="/Public/js/alumni/passage.js" type="text/javascript"></script>
 </head>
 <body>
 
 	<div class="ahead">——————&nbsp;&nbsp;&nbsp;<?php echo ($parentColumn["column_name"]); ?>&nbsp;&nbsp;&nbsp;——————</div>
-	<div class=wrap2>
-		<div class="position">
-			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html"><?php echo ($parentColumn["column_name"]); ?></a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
-		</div>
 
-		<ul class=class>
-			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li>
-					<a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a>
-				</li><?php endforeach; endif; ?>
-		</ul>
-		<div class=hot>
-			<h4>热点新闻</h4>
-			<ul>
-				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
-						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
-						<p class=good><?php echo ($news['visitcount']); ?></p>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=main>
-			<span class=line1></span>
-			<span class=line2></span>
-			<span class=line3></span>
-			<span class=line4></span>
-			<h1>新闻概要</h1>
-			<ul>
-				<?php if(is_array($newsList)): $i = 0; $__LIST__ = $newsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<div class=time_area>
-							<span class=time_month><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7)?><br></span>
-							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-						</div>
-						<div class=word1 id=word1>
-							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name=title><?php echo ($news['title']); ?></a>
-							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
-						</div>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=change>
-			<div id="page" class="page_div"></div>
+	<div style="text-align: center;">
+		<div class="class">
+			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li><a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a></li><?php endforeach; endif; ?>
 		</div>
 	</div>
+	<div class="room">
+		<div class="content">
+			<p class="name"><?php echo ($articleInfo["title"]); ?></p>
+
+			<P class="writer"><br>【 作者：<?php echo (getAuthorName($articleInfo["authorid"])); ?> 来源：<?php echo ($articleInfo["source"]); ?> 】 浏览量：<?php echo ($articleInfo["visitcount"]); ?><br><br></P>
+
+			<?php echo ($articleInfo["content"]); ?>
+
+		</div>
+
+		<div class="passageBottom">
+
+			<div class="down">
+				<a herf="">
+					<img src="/Public/images/passage/download.png" >
+
+					<span>下载附件</span>
+				</a>
+			</div>
+			<div class="like">
+				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
+				<span id="like_number"><?php echo ($articleInfo["likecount"]); ?></span>
+				<input type="hidden" id="articleid" value="<?php echo ($articleInfo["articleid"]); ?>"/>
+			</div>
+		</div>
+
 </body>
-<script>
-	$("#page").paging({
-		pageNo: <?php echo ($page["pageNow"]); ?>,
-		totalPage: <?php echo ($page["pageTotal"]); ?>,
-		totalSize: <?php echo ($page["pageRows"]); ?>,
-		callback: function(num) {
-			var columnid = <?php echo ($currentColumn["column_id"]); ?>;
-			window.location.href = '/index.php?c=simpleList&p=' + num + "&columnid=" +columnid;
-		}
-	});
-</script>
 </html>
 <!DOCTYPE html>
 <html lang="en">
