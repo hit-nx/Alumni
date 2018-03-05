@@ -14,6 +14,7 @@
 </head>
 <body>
     <div class="ahead">——————&nbsp;&nbsp;&nbsp;搜索结果&nbsp;&nbsp;&nbsp;——————</div>
+    <input id="title"  class="form-control" name="title" type="hidden" placeholder="文章标题" value="{$title}" />
     <center>
         <div class="search">
         <ul>
@@ -44,14 +45,14 @@
     </center>
 </body>
 <script>
+    var title = document.getElementById("title").value;
     $("#page").paging({
             pageNo: {$page.pageNow},
             totalPage: {$page.pageTotal},
             totalSize: {$page.pageRows},
             callback: function(num) {
-                var title = {$title};
-                alert("点击了");
-                window.location.href = '/index.php?c=search&p=' + num+'&title=哈';
+                window.location.href = '/index.php?c=search&p=' + num + "&title="+title;
+
             }
     });
 
