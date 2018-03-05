@@ -67,6 +67,11 @@
     text-align: center;
 }
 
+/*#headerMenu ul li:hover{
+    border-top: solid 1px #fff;
+    
+}*/
+
 #headerMenu ul li a
 {
     display:block;
@@ -83,7 +88,7 @@
 
 #headerMenu ul li a:hover,a:active
 {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.4);
 }
 
 #headerMenu ul li ul{
