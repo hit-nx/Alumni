@@ -16,6 +16,12 @@
     <div class="ahead">——————&nbsp;&nbsp;&nbsp;搜索结果&nbsp;&nbsp;&nbsp;——————</div>
     <input id="title"  class="form-control" name="title" type="hidden" placeholder="文章标题" value="{$title}" />
     <center>
+
+        <?php if($isNull){
+            echo '<h2>暂无记录！</h2>';
+        }
+        ?>
+
         <div class="search">
         <ul>
             <br>
