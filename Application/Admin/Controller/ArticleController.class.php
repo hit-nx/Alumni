@@ -11,19 +11,12 @@ use Think\Upload;
  */
 class ArticleController extends CommonController {
 
-
     public function index() {
         $conds = array();
         if($_GET['title']) {
             $conds['title'] = $_GET['title'];
             $this->assign("title",$conds['title']);
         }
-
-        // if($_GET['column_parentid']) {
-        //     $conds['column_parentid'] = intval($_GET['column_parentid']);
-
-        //     $this->assign('parentColumn',$conds['column_parentid']);
-        // }
 
         if($_GET['columnid']) {
             $conds['columnid'] = intval($_GET['columnid']);

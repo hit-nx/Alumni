@@ -25,6 +25,27 @@ body
 	line-height: 233px;
 	font-size:30px; 
 }
+
+.class{
+	display: block;
+	margin: 5px auto 35px auto;
+	border-top: 2px #797979 solid;
+	width: 1000px;
+	height: 50px;
+	font-size: 16px;
+	line-height: 50px;
+	text-align: center;
+}
+.class li{
+	display: inline-block;
+	width: 70px;
+	margin: 0px 50px;
+}
+
+.class li:hover{
+	border-bottom: solid 5px #0D184E;
+	
+}
 .nav
 {
 	height: 38px;
@@ -41,6 +62,14 @@ a
 	color: #8F8F8F;
 	text-align: center;
 	text-decoration: none;
+}
+a:link {
+	text-decoration: none;
+	color: #888888;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
 }
 .menu1
 {
@@ -111,6 +140,14 @@ a
 	width: 1000px;
 	margin: 60px auto 50px auto;
 	font-size: 16px;
+}
+.content p{
+	font-family: Microsoft YaHei !important;
+    color: #000 !important; 
+}
+.content p *{
+	font-family: Microsoft YaHei !important;
+    color: #000 !important;
 }
 b{
 	color: #0d184e;
