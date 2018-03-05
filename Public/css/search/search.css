@@ -1,0 +1,55 @@
+.ahead {
+    background-image: url(/Public/images/organization/ahead.jpg);
+    background-size: 100% 233px;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    color: #0d184e;
+    text-align: center/*水平居中*/;
+    line-height: 233px;/*通过行距设置竖直居中*/
+    overflow: hidden;/*文字超出一行则隐藏*/
+}
+li{
+    height: 80px;
+    overflow-y: hidden;
+    margin-bottom: 10px;
+}
+li::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+.search{
+    position: center;
+    width: 580px;
+}
+
+.time_area{
+    height: 113px;
+    width: 130px;
+    float: left;
+}
+.time_month{
+    font-size: 20px;
+    font-weight: bold;
+}
+.time_date{
+    font-size: 33px;
+    font-size: bold;
+}
+
+.word1{
+    height: 30px;
+    width: 450px;
+    float: left;
+}
+.word1 h3{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.word1 p{
+    font-size: 15px;
+    width: 400px;
+}
+.line_part{
+    height:1px;border:none;border-top:1px solid #000;
+}
