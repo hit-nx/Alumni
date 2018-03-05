@@ -21,6 +21,7 @@
     font-family: 'Microsoft Yahei';
     position: relative;
     top: 35px;
+    color: #132478;
 }
 .remindpicnews{
     width: 400px;
@@ -35,11 +36,11 @@
     left: 0px;
     font-family: 'Microsoft Yahei';
     float: left;
-    color: black;
+    color: #132478;
 }
 .remindlink{
     text-decoration: none;
-    color: rgb(13,20,39) !important;
+    color: #132478;
 }
 .remindnews{
     width: 650px;
@@ -49,7 +50,7 @@
     position: absolute;
     top: 120px;
     left: 430px;
-    color: black;
+    color: #132478;
 }
 
 /*工大回忆*/
@@ -62,7 +63,6 @@
     width: 1000px;
     height: 1100px;
     position: relative;
-
 }
 .alumnustitle{
     margin: auto;
@@ -71,6 +71,7 @@
     font-weight: normal;
     font-size: 30px;
     position: relative;
+    color: #132478;
     top: 35px;
 }
 .alumnusoutside{
@@ -97,6 +98,7 @@
     position: absolute;
     top: 0px;
     left: 500px;
+    background: rgba(19,36,120,0.9);
 }
 .alumnusin3{
     height: 300px;
@@ -105,6 +107,7 @@
     position: absolute;
     top: 300px;
     left: 0px;
+    background: rgba(19,36,120,0.9);
 }
 .alumnusin4{
     background-color: rgb(242,242,242);
@@ -131,6 +134,7 @@
     position: absolute;
     top: 600px;
     left: 500px;
+   background: rgba(19,36,120,0.9);
 }
 .alumnuspics{
     width: 200px;
@@ -148,34 +152,65 @@
     width: 450px;
     margin: 0px;
     margin-bottom: 10px;
-    color: black;
+    color: white;
     position: absolute;
     top: 15px;
     left: 35px;
 }
 .alumnustext{
     width: 220px;
-    height: 110px;
+    height: 10em;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
     position: absolute;
     top: 100px;
     left: 260px;
-    color: #727272;
-}
-.alumnuslink{
-    text-decoration: none;
-    color: black;
+    color: white;
 }
 .altime{
     position: absolute;
     top: 50px;
     right: 30px;
     font-size: 15px;
+    color: white;
+}
+.alumnustitle0{
+    font-family: 'Microsoft Yahei';
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: normal;
+    overflow: hidden;
+    width: 450px;
+    margin: 0px;
+    margin-bottom: 10px;
+    color: #132478;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+}
+.alumnustext0{
+    width: 220px;
+    height:10em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    position: absolute;
+    top: 100px;
+    left: 260px;
+    color: #132478;
+}
+.altime0{
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    font-size: 15px;
+    color: #132478;
+}
+.alumnuslink{
+    text-decoration: none;
     color: black;
 }
-
 /*校友人物*/
 .blocks{
     width: 100%;
@@ -184,47 +219,91 @@
 }
 .blockscenter{
     margin: auto;
-    width: 1000px;
+    width: 100%;
     height: 820px;
-    background-color: rgb(243,243,243);
     position: relative;
 }
+.block1_and_block3_background{
+    width: 100%;
+    position: relative;
+    height: 410px;
+    background: rgba(13,24,78,0.85);
+}
+.block1_and_block3_container{
+    position: relative;
+    width: 1000px;
+    height: 410px;
+    margin: 0 auto;
+}
+.block2_and_block4_container{
+    position: relative;
+    width: 1000px;
+    height: 410px;
+    margin: 0 auto;
+}
+.block1_and_block3{
+    background:url(/Public/images/donation/topimage.jpg) 0px 0px no-repeat ;
+    width: 100%;
+    position: relative;
+    height: 410px;
+}
+.block2_and_block4{
+    background-color: rgb(243,243,243);
+    width: 100%;
+    height: 410px;
+}
 .block1{
-    width: 450px;
-    height: 350px;
+    width: 470px;
+    height: 340px;
     position: absolute;
-    top: 50px;
+    top: 25px;
     left: 0px;
+    border: 1px solid white;
 }
 .block2{
-    width: 450px;
-    height: 350px;
+    width: 470px;
+    height: 340px;
     position: absolute;
-    top: 420px;
-    left: 0px;
+    top: 25px;
+    left: 0;
+    border: 1px solid #132478;
 }
 .block3{
-    width: 450px;
-    height: 350px;
+    width: 470px;
+    height: 340px;
     position: absolute;
-    top: 50px;;
-    left: 540px;
+    top: 25px;
+    right: 0px;
+
+    border: 1px solid white;
 }
 .block4{
-    width: 450px;
-    height: 350px;
+    width: 470px;
+    height: 340px;
     position: absolute;
-    top: 420px;
-    left: 540px;
+    top: 25px;
+    right: 0;
 }
+
 .newsweihai{
     margin: 0px;
     font-size: 20px;
     font-weight: normal;
     font-family: 'Microsoft Yahei';
     position: absolute;
-    top: 10px;
-    left: 0px;
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    top: 0px;
+    left:0px;
+    color: #132478;
+    padding-left: 8px;
+    background-color: rgb(243,243,243);
+}
+.newsweihai>img{
+    height: 22px;
+    width: 22px;
+    vertical-align: middle;
 }
 .newsalumnus{
     margin: 0px;
@@ -232,8 +311,19 @@
     font-weight: normal;
     font-family: 'Microsoft Yahei';
     position: absolute;
-    top: 10px;
+    top: 0px;
+    height: 30px;
+    line-height: 30px;
+    width: 120px;
     left: 0px;
+    padding-left: 8px;
+    color: #132478;
+    background-color: rgb(243,243,243);
+}
+.newsalumnus>img{
+    height: 22px;
+    width: 22px;
+    vertical-align: middle;
 }
 .infos{
     margin: 0px;
@@ -241,47 +331,62 @@
     font-weight: normal;
     font-family: 'Microsoft Yahei';
     position: absolute;
-    top: 10px;
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    top: 0px;
+    color: white;
     left: 0px;
+    padding-left: 8px;
+    background-color: #132478;
+}
+.infos>img{
+    height: 20px;
+    width: 22px;
+    vertical-align: middle;
 }
 .donatethanks{
     margin: 0px;
-    font-size: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
     font-weight: normal;
     font-family: 'Microsoft Yahei';
-    position: absolute;
-    top: 10px;
-    left: 0px;
+    line-height: 30px;
+    width: 120px;
+    color: #132478;
+    padding-left: 15px;
+    border: 2px solid #132478;
+    border-radius: 20px;
+    background: url("/Public/images/index/donatethanks.png") 90px center no-repeat;
+    background-size: 20px 20px;
 }
 .b3link{
     font-size: 15px;
     text-decoration: none;
-    color: black;
-
+    color: white;
     font-family: 'Microsoft Yahei';
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 400px;
 }
 .b1link{
     font-size: 15px;
     text-decoration: none;
-    color: black;
-
+    color: white;
     font-family: 'Microsoft Yahei';
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 400px;
 }
 .b2link{
     font-size: 15px;
     text-decoration: none;
-    color: black;
-
+    color: #132478;
     font-family: 'Microsoft Yahei';
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 400px;
+
 }
 .b4link{
     font-size: 15px;
@@ -290,18 +395,20 @@
     font-weight: bold;
     font-family: 'Microsoft Yahei';
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 400px;
+
 }
 .blocktable{
     width: 460px;
     height: 270px;
     position: absolute;
-    top: 70px;
-    left: 0px;
+    border-collapse:collapse;
+    top: 50px;
+    left: 9px;
 }
-.blocklinktext{
-    max-width: 350px;
+.blocklinktext0{
+    max-width: 300px;
     text-overflow: ellipsis;
     overflow: hidden;
     display: block;
@@ -310,14 +417,29 @@
     font-weight: normal;
     text-decoration: none;
     font-size: 15px;
-    color: rgba(0, 0, 0, 1) !important;
+    color: rgba(225, 225,225,1) !important;
+}
+.blocklinktext{
+    max-width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    white-space:nowrap;
+    font-family:  'Microsoft Yahei';
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(19, 36, 120) !important;
 }
 .buttomline{
+     max-width: 350px;
+     overflow: hidden;
+     border-bottom: 1px solid white;
+}
+.buttomline1{
     max-width: 350px;
     overflow: hidden;
-    border-bottom: solid;
-    border-width: 1px;
-    border-bottom-color: rgba(30,20,39,0.2)
+    border-bottom: 1px solid #132478;
 }
 /*头条新闻*/
 .donateList{
@@ -334,9 +456,12 @@
 
 .listName{
     width: 300px;
+    color: #132478;
+    padding-left: 25px;
 }
 .listMoney{
     width: 100px;
+    color: #132478;
 }
 .donateTable tr:nth-child(even){
     background: rgb(243,243,243);

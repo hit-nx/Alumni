@@ -36,8 +36,12 @@
                     <li><a href="/index.php?c=simpleList&columnid=12">人物访谈</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=13">行业精英</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=14">大师风范</a></li>
+<<<<<<< HEAD
                     <li><a href="/index.php?c=simpleList&columnid=15">海外情缘</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=16">校内学子</a></li>
+=======
+                    <li><a href="/index.php?c=simpleList&columnid=16">创业校友</a></li>
+>>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
                 </ul>
             </li>
             <li><a href="/index.php?c=detailedList&columnid=17">工大回忆</a>
@@ -55,11 +59,19 @@
                     <li><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
                 </ul>
             </li>
+<<<<<<< HEAD
             <li><a href="#contact">周年回顾</a>
                 <ul>
                     <li><a href="#about">新闻动态</a></li>
                     <li><a href="#about">活动公告</a></li>
                     <li><a href="#about">30周年回顾</a></li>
+=======
+            <li><a href="/index.php?c=detailedList&columnid=22">周年回顾</a>
+                <ul>
+                    <li><a href="/index.php?c=simpleList&columnid=24">新闻动态</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=25">活动公告</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li>
+>>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
                 </ul>
             </li>
             <li><a href="/index.php?c=communication">校友通讯</a>
@@ -123,6 +135,7 @@
             <dt><a href="" style="text-decoration: none; color: #fff">快速链接</a></dt>
             <dd><a href="" style="text-decoration: none; color: #fff">学校官网</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">招标信息</a></dd>
+<<<<<<< HEAD
             <dd><a href="" style="text-decoration: none; color: #fff">学生管理</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">网络服务</a></dd>
@@ -137,6 +150,23 @@
                 <li><a href="">web2</a></li>
                 <li><a href="">web3</a></li>
             </ul></dd>
+=======
+            <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
+            <dd><a href="" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
+        </dl>
+        <dl class=others>
+            <dt><a href="" style="text-decoration: none; color: #fff">捐赠</a></dt>
+            <dd><a href="" style="text-decoration: none; color: #fff">管理方法</a></dd>
+            <dd><a href="" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
+<!--             <dd class=otherweb>
+                <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
+                <ul>
+                    <li><a href="">web1</a></li>
+                    <li><a href="">web2</a></li>
+                    <li><a href="">web3</a></li>
+                </ul>
+            </dd> -->
+>>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
         </dl>
 
     </div>

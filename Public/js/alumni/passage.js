@@ -10,6 +10,15 @@ function  Togray() {
 
 function  likeit() {
     if(like == false) {
+        $(".bg_good").animate({
+                top:'-75px',
+            },
+            '1200ms',
+            'linear',
+            function(){
+                $(".bg_good").hide()
+            }
+        )
         document.getElementById('like_number').innerText = parseInt(document.getElementById('like_number').innerText) + 1;
         Toblue();
         like = true;

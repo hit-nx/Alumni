@@ -29,9 +29,9 @@
 		<div class="content">
 			<p class="name">{$articleInfo.title}</p>
 
-			<P class="writer"><br>【 作者：{$articleInfo.authorid|getAuthorName} 来源：{$articleInfo.source} 】 浏览量：{$articleInfo.visitcount}<br><br></P>
+			<P class="writer"><br>【 来源：{$articleInfo.source} 】 浏览量：{$articleInfo.visitcount}<br><br></P>
 
-			{$articleInfo.content}
+			<div>{$articleInfo.content}</div>
 
 		</div>
 
@@ -46,6 +46,7 @@
 			</div>
 			<div class="like">
 				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
+				<img class="bg_good" src="/Public/images/passage/havegood.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
 				<span id="like_number">{$articleInfo.likecount}</span>
 				<input type="hidden" id="articleid" value="{$articleInfo.articleid}"/>
 			</div>

@@ -2,7 +2,7 @@
 
 #headerBackgroundColor{
     z-index: 997;
-    height: 90px;
+    height: 120px;
     width: 100%;
     background-color: #0d184e;
 }
@@ -15,10 +15,36 @@
     position: absolute;
 }
 
+#headerSearch{
+    z-index: 999;
+    margin-top: 35px;
+    right: 10px;
+    position: absolute;
+    width: 15%;
+    height: 25px;
+    border-radius: 20px;
+    border: 2px solid #fff
+}
+
+#headerSearch input{
+    margin-left: 10%;
+    width: 60%;
+    height: 25px;
+    color:#fff;
+    margin-top: 0;
+}
+
+#headerSearch img{
+    width: 10%;
+    height: 18px;
+    margin-top: -5px;
+    margin-left: 10%
+}
+
 #headerMenu
 {
-    z-index: 999;
-    padding-top: 50px;
+    z-index: 998;
+    padding-top: 70px;
     right: 10px;
     position: absolute;
 }
@@ -41,6 +67,11 @@
     text-align: center;
 }
 
+/*#headerMenu ul li:hover{
+    border-top: solid 1px #fff;
+    
+}*/
+
 #headerMenu ul li a
 {
     display:block;
@@ -57,7 +88,7 @@
 
 #headerMenu ul li a:hover,a:active
 {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.4);
 }
 
 #headerMenu ul li ul{
