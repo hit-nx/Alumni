@@ -14,8 +14,14 @@ header{
 	margin: 0 auto;
 }
 /*all*/
-a:visited{
-	color: black;
+
+a:link {
+	text-decoration: none;
+	color: #888888;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
 }
 *{
 	color: black;
