@@ -14,8 +14,14 @@ header{
 	margin: 0 auto;
 }
 /*all*/
-a:visited{
-	color: black;
+
+a:link {
+	text-decoration: none;
+	color: #888888;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
 }
 *{
 	color: black;
@@ -140,6 +146,7 @@ p{
 
 .class li:hover{
 	border-bottom: solid 5px #0D184E;
+	
 }
 
 .position img{
@@ -389,7 +396,7 @@ p{
 	font-weight: normal;
 }
 .word1 p{
-	height: 50px;
+	height: 60px;
 	overflow: hidden;
 	margin-top: 10px;
 	font-size: 15px;

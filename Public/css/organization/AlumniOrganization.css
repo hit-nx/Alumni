@@ -40,7 +40,7 @@ a:link {
 }
 a:visited {
 	text-decoration: none;
-	color: #888888;
+	color: #000;
 }
 /*a:hover {*/
 	/*font-size: 20px;*/
@@ -80,4 +80,25 @@ a:visited {
 }
 .footer {
 	width: 100%;
+}
+
+.class{
+	display: block;
+	margin: 5px auto 35px auto;
+	border-top: 2px #797979 solid;
+	width: 1000px;
+	height: 50px;
+	font-size: 16px;
+	line-height: 50px;
+	text-align: center;
+}
+.class li{
+	display: inline-block;
+	width: 70px;
+	margin: 0px 50px;
+}
+
+.class li:hover{
+	border-bottom: solid 5px #0D184E;
+	
 }

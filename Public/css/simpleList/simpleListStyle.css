@@ -14,8 +14,13 @@ header{
 	margin: 0 auto;
 }
 /*all*/
-a:visited{
-	color: black;
+a:link {
+	text-decoration: none;
+	color: #000;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
 }
 *{
 	color: black;
@@ -384,7 +389,7 @@ p{
 	font-weight: normal;
 }
 .word1 p{
-	height: 50px;
+	height: 60px;
 	overflow: hidden;
 	margin-top: 10px;
 	font-size: 15px;
