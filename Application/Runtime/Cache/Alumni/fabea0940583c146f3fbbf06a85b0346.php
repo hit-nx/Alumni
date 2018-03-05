@@ -10,7 +10,7 @@
 <body>
 	<div id="headerBackgroundColor">
 	    <div id="logoDivHeaderImg">
-        <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
+        <img src="/Public/images/index/logo.png" class="headerImg">
     </div>
     <div id="headerMenu">
         <ul id="menuUl">
@@ -22,12 +22,12 @@
                     <li><a href="/index.php?c=simpleList&columnid=4">通知公告</a></li>
                 </ul>
             </li>
-            <li><a href="/index.php?c=organization&contentid=1">校友组织</a>
+            <li><a href="">校友组织</a>
                 <ul>
                     <li><a href="/index.php?c=organization&contentid=1">校友会简介</a></li>
                     <li><a href="/index.php?c=organization&contentid=2">组织机构</a></li>
                     <li><a href="/index.php?c=organization&contentid=3">规章制度</a></li>
-                    <li><a href="/index.php?c=organization&a=organizationList">地方校友组织</a></li>
+                    <li><a href="#">地方校友组织</a></li>
                     <li><a href="/index.php?c=organization&contentid=4">校友创业导师</a></li>
                 </ul>
             </li>
@@ -36,7 +36,8 @@
                     <li><a href="/index.php?c=simpleList&columnid=12">人物访谈</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=13">行业精英</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=14">大师风范</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=16">创业校友</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=15">海外情缘</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=16">校内学子</a></li>
                 </ul>
             </li>
             <li><a href="/index.php?c=detailedList&columnid=17">工大回忆</a>
@@ -46,22 +47,22 @@
                     <li><a href="/index.php?c=simpleList&columnid=20">校园旧闻</a></li>
                 </ul>
             </li>
-            <li><a href="/index.php?c=donationInfo&content_id=5">校友捐赠</a>
+            <li><a href="#about">校友捐赠</a>
                 <ul>
-                    <li><a href="/index.php?c=donationInfo&content_id=5">捐赠领域</a></li>
-                    <li><a href="/index.php?c=donationInfo&content_id=6">鸣谢办法</a></li>
+                    <li><a href="/index.php?c=donationInfo&contentid=5">捐赠领域</a></li>
+                    <li><a href="/index.php?c=donationInfo&contentid=6">鸣谢办法</a></li>
                     <li><a href="/index.php?c=donationInfo&a=donationList">捐赠名录</a></li>
-                    <li><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
+                    <li><a href="/index.php?c=donationInfo&contentid=7">捐赠方式</a></li>
                 </ul>
             </li>
-            <li><a href="/index.php?c=detailedList&columnid=22">周年回顾</a>
+            <li><a href="#contact">周年回顾</a>
                 <ul>
-                    <li><a href="/index.php?c=simpleList&columnid=24">新闻动态</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=25">活动公告</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li>
+                    <li><a href="#about">新闻动态</a></li>
+                    <li><a href="#about">活动公告</a></li>
+                    <li><a href="#about">30周年回顾</a></li>
                 </ul>
             </li>
-            <li><a href="/index.php?c=communication">校友通讯</a>
+            <li><a href="#news">校友通讯</a>
             </li>
         </ul>
     </div>
@@ -77,35 +78,96 @@
 	<link href="/Public/css/simpleList/horizontal.css"  rel="stylesheet" type="text/css" />
 	<link href="/Public/css/simpleList/simpleListStyle.css" rel="stylesheet" type="text/css" />
 	<link href="/Public/css/simpleList/reset.css"  rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
 
-  <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+    <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
 	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="/Public/js/alumni/listIndex.js"></script>
-  <script src="/Public/js/paging.js"></script>
 	<title></title>
 </head>
 <body>
-
-	<div class="ahead">——————&nbsp;&nbsp;&nbsp;<?php echo ($parentColumn["column_name"]); ?>&nbsp;&nbsp;&nbsp;——————</div>
-	<div class=wrap2>
-		<div class="position">
-			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html"><?php echo ($parentColumn["column_name"]); ?></a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
+		<div class=toppic>
+			<span class="black"></span>
+			<h1>——— <?php echo ($parentColumn["column_name"]); ?> ———</h1>
+			<h3>News</h3>
 		</div>
-
+	<div class=wrap2>
+		<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html"><?php echo ($parentColumn["column_name"]); ?></a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
 		<ul class=class>
-			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li>
-					<a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a>
-				</li><?php endforeach; endif; ?>
+
+            <?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li><a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a></li><?php endforeach; endif; ?>
 		</ul>
 		<div class=hot>
 			<h4>热点新闻</h4>
 			<ul>
-				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
-						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
-						<p class=good><?php echo ($news['visitcount']); ?></p>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
+				<span class=first>
+					<img class=fl src="img/book.png">
+					<a class=fl href="passage.html" >{校友爱心捐书活动倡议书}</a> 
+					<p class="fl words">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp峥嵘三十载，桃李遍五洲。哈工大（威海）自建校以来，已...</p>
+					<span class="time1 fl">2017-11-16</span>
+					<p class=good>666</p>
+				</span>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
+				<li>
+					<a class=fl href="passage.html" >校友爱心捐书活动倡议书</a> 
+					<div class="fl">
+						<span class="time1 fl">2017-11-16</span>
+					    <p class=good>666</p>
+					</div>
+				</li>
 			</ul>
 		</div>
 		<div class=main>
@@ -115,34 +177,86 @@
 			<span class=line4></span>
 			<h1>新闻概要</h1>
 			<ul>
-				<?php if(is_array($newsList)): $i = 0; $__LIST__ = $newsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<div class=time_area>
-							<span class=time_month><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7)?><br></span>
-							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-						</div>
-						<div class=word1 id=word1>
-							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name=title><?php echo ($news['title']); ?></a>
-							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
-						</div>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($newsList[0]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($newsList[0]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid=<?php echo ($newsList[0]['articleid']); ?>" name=title><?php echo ($newsList[0]['title']); ?></a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($newsList[0]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($newsList[1]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($newsList[1]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid=<?php echo ($newsList[1]['articleid']); ?>" name=title><?php echo ($newsList[1]['title']); ?></a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($newsList[1]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($newsList[2]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($newsList[2]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid=<?php echo ($newsList[2]['articleid']); ?>" name=title><?php echo ($newsList[2]['title']); ?></a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($newsList[2]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($newsList[3]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($newsList[3]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid=<?php echo ($newsList[3]['articleid']); ?>" name=title><?php echo ($newsList[3]['title']); ?></a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($newsList[3]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($newsList[4]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($newsList[4]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid=<?php echo ($newsList[4]['articleid']); ?>" name=title><?php echo ($newsList[4]['title']); ?></a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($newsList[4]['columnid']) ?></span>
+				</div>
+				</li>
+				<li>
+					<div class=time_area>
+						<span class=time_month><?php echo substr($newsList[5]['publishdate'],0,7) ?><br></span>
+						<span class=time_date><?php echo substr($newsList[5]['publishdate'],8,2) ?>日</span>
+					</div>
+					<div class=word1 id=word1>
+					<a href="/index.php?c=passage&articleid=<?php echo ($newsList[5]['articleid']); ?>" name=title><?php echo ($newsList[5]['title']); ?></a>
+					<p name=content>巴拉巴拉巴拉吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼多撒后即可户口</p>
+					<span class=label name=label><?php echo getColumnNameById($newsList[5]['columnid']) ?></span>
+				</div>
+				</li>
 			</ul>
 		</div>
 		<div class=change>
-			<div id="page" class="page_div"></div>
+			<a href="">首页</a>
+			<a href="">上一页</a>
+			<a class="page checked" href="">1</a>
+			<a class=page href="">2</a>
+			<a class=page href="">3</a>
+			<a class=page href="">4</a>
+			<a href="">下一页</a>
+			<a href="">尾页</a>
 		</div>
 	</div>
 </body>
-<script>
-	$("#page").paging({
-		pageNo: <?php echo ($page["pageNow"]); ?>,
-		totalPage: <?php echo ($page["pageTotal"]); ?>,
-		totalSize: <?php echo ($page["pageRows"]); ?>,
-		callback: function(num) {
-			var columnid = <?php echo ($currentColumn["column_id"]); ?>;
-			window.location.href = '/index.php?c=simpleList&p=' + num + "&columnid=" +columnid;
-		}
-	});
-</script>
 </html>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,21 +279,20 @@
             <dt><a href="" style="text-decoration: none; color: #fff">快速链接</a></dt>
             <dd><a href="" style="text-decoration: none; color: #fff">学校官网</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">招标信息</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
+            <dd><a href="" style="text-decoration: none; color: #fff">学生管理</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
+            <dd><a href="" style="text-decoration: none; color: #fff">网络服务</a></dd>
+            <dd><a href="" style="text-decoration: none; color: #fff">教学在线</a></dd>
         </dl>
         <dl class=others>
             <dt><a href="" style="text-decoration: none; color: #fff">捐赠</a></dt>
-            <dd><a href="" style="text-decoration: none; color: #fff">管理方法</a></dd>
+            <dd><a href="" style="text-decoration: none; color: #fff">捐赠管理方法</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
-<!--             <dd class=otherweb>
-                <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
-                <ul>
-                    <li><a href="">web1</a></li>
-                    <li><a href="">web2</a></li>
-                    <li><a href="">web3</a></li>
-                </ul>
-            </dd> -->
+            <dd class=otherweb><a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a><ul>
+                <li><a href="">web1</a></li>
+                <li><a href="">web2</a></li>
+                <li><a href="">web3</a></li>
+            </ul></dd>
         </dl>
 
     </div>
