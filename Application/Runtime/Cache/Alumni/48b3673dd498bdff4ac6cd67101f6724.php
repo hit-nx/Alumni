@@ -55,11 +55,11 @@
                     <li><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
                 </ul>
             </li>
-            <li><a href="/index.php?c=detailedList&columnid=22">周年回顾</a>
+            <li><a href="#contact">周年回顾</a>
                 <ul>
-                    <li><a href="/index.php?c=simpleList&columnid=24">新闻动态</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=25">活动公告</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li>
+                    <li><a href="#about">新闻动态</a></li>
+                    <li><a href="#about">活动公告</a></li>
+                    <li><a href="#about">30周年回顾</a></li>
                 </ul>
             </li>
             <li><a href="/index.php?c=communication">校友通讯</a>
@@ -72,78 +72,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>校友捐赠</title>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- 以最高版本ie渲染，chrome版本为1开启chrome frame -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 适应屏幕宽度 -->
-	<link href="/Public/css/simpleList/horizontal.css"  rel="stylesheet" type="text/css" />
-	<link href="/Public/css/simpleList/simpleListStyle.css" rel="stylesheet" type="text/css" />
-	<link href="/Public/css/simpleList/reset.css"  rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
-
-  <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/donationField.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/style.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/reset.css">
+	
+	<script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
 	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="/Public/js/alumni/listIndex.js"></script>
-  <script src="/Public/js/paging.js"></script>
-	<title></title>
+	<script src="/Public/js/alumni/js.js"></script>
 </head>
 <body>
 
-	<div class="ahead">——————&nbsp;&nbsp;&nbsp;<?php echo ($parentColumn["column_name"]); ?>&nbsp;&nbsp;&nbsp;——————</div>
-	<div class=wrap2>
-		<div class="position">
-			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html"><?php echo ($parentColumn["column_name"]); ?></a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
-		</div>
-
+	<div class="topimage">­­­­­­——————&nbsp;&nbsp;&nbsp;校友捐赠&nbsp;&nbsp;&nbsp;——————</div>
+	<div>
 		<ul class=class>
-			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li>
-					<a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a>
-				</li><?php endforeach; endif; ?>
+			<li><a href="/index.php?c=donationInfo&content_id=5">捐赠领域</a></li>
+	        <li><a href="/index.php?c=donationInfo&content_id=6">鸣谢办法</a></li>
+			<li><a href="/index.php?c=donationInfo&a=donationList">捐赠名录</a></li>
+			<li><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
 		</ul>
-		<div class=hot>
-			<h4>热点新闻</h4>
-			<ul>
-				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
-						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
-						<p class=good><?php echo ($news['visitcount']); ?></p>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=main>
-			<span class=line1></span>
-			<span class=line2></span>
-			<span class=line3></span>
-			<span class=line4></span>
-			<h1>新闻概要</h1>
-			<ul>
-				<?php if(is_array($newsList)): $i = 0; $__LIST__ = $newsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<div class=time_area>
-							<span class=time_month><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7)?><br></span>
-							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-						</div>
-						<div class=word1 id=word1>
-							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name=title><?php echo ($news['title']); ?></a>
-							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
-						</div>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=change>
-			<div id="page" class="page_div"></div>
-		</div>
 	</div>
+
+<div class="content">
+
+	<?php echo ($donationInfo["content"]); ?>
+	
+</div>
+
 </body>
-<script>
-	$("#page").paging({
-		pageNo: <?php echo ($page["pageNow"]); ?>,
-		totalPage: <?php echo ($page["pageTotal"]); ?>,
-		totalSize: <?php echo ($page["pageRows"]); ?>,
-		callback: function(num) {
-			var columnid = <?php echo ($currentColumn["column_id"]); ?>;
-			window.location.href = '/index.php?c=simpleList&p=' + num + "&columnid=" +columnid;
-		}
-	});
-</script>
 </html>
 <!DOCTYPE html>
 <html lang="en">
