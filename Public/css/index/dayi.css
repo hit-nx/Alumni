@@ -293,6 +293,7 @@
     position: absolute;
     height: 30px;
     width: 120px;
+    line-height: 30px;
     top: 0px;
     left:0px;
     color: #132478;
@@ -312,6 +313,7 @@
     position: absolute;
     top: 0px;
     height: 30px;
+    line-height: 30px;
     width: 120px;
     left: 0px;
     padding-left: 8px;
@@ -331,6 +333,7 @@
     position: absolute;
     height: 30px;
     width: 120px;
+    line-height: 30px;
     top: 0px;
     color: white;
     left: 0px;
@@ -344,24 +347,22 @@
 }
 .donatethanks{
     margin: 0px;
+    box-sizing: border-box;
     font-size: 18px;
     font-weight: normal;
     font-family: 'Microsoft Yahei';
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 30px;
-    width: 110px;
+    /*position: absolute;*/
+    /*top: 0px;*/
+    /*left: 0px;*/
+    /*height: 30px;*/
+    line-height: 30px;
+    width: 120px;
     color: #132478;
     padding-left: 15px;
-    padding-top: 5px;
     border: 2px solid #132478;
     border-radius: 20px;
-}
-.donatethanks>img{
-    height: 20px;
-    width: 20px;
-    vertical-align: middle;
+    background: url("/Public/images/index/donatethanks.png") 90px center no-repeat;
+    background-size: 20px 20px;
 }
 .b3link{
     font-size: 15px;

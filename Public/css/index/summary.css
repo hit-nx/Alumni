@@ -1,11 +1,10 @@
 .summary
 {
-    width: 420px;
-    height: 140px;
+    height: 160px;
     padding: 20px;
     position: absolute;
     left: 180px;
-    bottom: -20px;
+    bottom: 0;
     background: linear-gradient(to right, rgba(13,24,79,0.85), rgba(13,24,79,0.25));
 }
 .s_title
@@ -16,7 +15,7 @@
     width: 420px;
     height: 20px;
     float: left;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .s_writer
 {
@@ -33,4 +32,5 @@
     height: 80px;
     overflow: hidden;
     color: #fff;
+    text-overflow: ellipsis;
 }
