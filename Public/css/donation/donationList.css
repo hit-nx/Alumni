@@ -25,6 +25,9 @@ body
 	line-height: 233px;
 	font-size:30px; 
 }
+.class li:hover{
+	border-bottom: solid 5px #0D184E;
+}
 .nav
 {
 	height: 38px;
@@ -109,8 +112,7 @@ a
 {
 	width: 350px;
 	height: 27px;
-	margin-top: 50px;
-	margin-left: 65%;
+	margin-left: 60%;
 }
 .search
 {
@@ -151,25 +153,25 @@ color:#929292 ;
 .form
 {
 	width:1000px;
-	margin: 50px auto 40px auto;
+	margin: 20px auto 10px auto;
 	text-align: center;
 	border-radius: 10px;
-	font-size:15px; 
-	height:40px;
+	font-size:14px; 
+	height:35px;
 }
 td
 {
-	height:40px;
+	height:35px;
 }
 th
 {
 
-	height: 40px;
+	height: 35px;
 	width: 366px;
 	color: white;
 	background-color: #19376D;
 	border-color: #19376D;
-	font-size:18px; 
+	font-size:15px; 
 }
 .tr1
 {

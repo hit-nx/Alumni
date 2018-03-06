@@ -20,7 +20,9 @@
 		<div class="class">
 			<foreach name="brotherColumn" item = "brotherColumnItems">
 			
-			<li><a href="/index.php?c=simpleList&columnid={$brotherColumnItems.column_id}">{$brotherColumnItems.column_name}</a></li>
+			<li {$brotherColumnItems.column_id|getChooseByArticle}>
+				<a href="/index.php?c=simpleList&columnid={$brotherColumnItems.column_id}">{$brotherColumnItems.column_name}</a>
+			</li>
 
             </foreach>
 		</div>
@@ -29,7 +31,7 @@
 		<div class="content">
 			<p class="name">{$articleInfo.title}</p>
 
-			<P class="writer"><br>【 来源：{$articleInfo.source} 】 浏览量：{$articleInfo.visitcount}<br><br></P>
+			<P class="writer">来源：{$articleInfo.source} 浏览量：{$articleInfo.visitcount}<br></P>
 
 			<div>{$articleInfo.content}</div>
 
@@ -44,12 +46,12 @@
 					<span>下载附件</span>
 				</a>
 			</div>
-			<div class="like">
+<!-- 			<div class="like">
 				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
 				<img class="bg_good" src="/Public/images/passage/havegood.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
 				<span id="like_number">{$articleInfo.likecount}</span>
 				<input type="hidden" id="articleid" value="{$articleInfo.articleid}"/>
-			</div>
+			</div> -->
 		</div>
 
 </body>
