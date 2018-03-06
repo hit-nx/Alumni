@@ -21,6 +21,8 @@ class SearchController extends CommonController {
         $pageSize = 6;
 
         $articles = D("Article")->getArticle($conds,$page,$pageSize);
+        //获取返回记录的总数
+        $isNull = count($articles)==0;
         $count = D("Article")->getArticleCount($conds);
 
         // 分页部分 使用插件
@@ -33,6 +35,7 @@ class SearchController extends CommonController {
         $this->assign('page', $pageData);
         $this->assign('articles',$articles);
         $this->assign('webSiteMenu',D("Column")->getColumn());
+        $this->assign('isNull',$isNull);
 
         $this->display(search);
     }
