@@ -13,7 +13,7 @@ return array(
 
     // 本地数据库
    'DB_TYPE' => 'mysql',
-   'DB_HOST' => '127.0.0.1',
+   'DB_HOST' => 'localhost',
    'DB_USER' => 'root',
    'DB_PWD' => 'lamessi10',
    'DB_PORT' => 3306,
