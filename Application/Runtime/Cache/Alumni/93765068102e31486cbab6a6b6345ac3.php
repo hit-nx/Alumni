@@ -6,7 +6,8 @@
 	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
-    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <!-- <link href="/Public/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
 	<div id="headerBackgroundColor">
@@ -77,16 +78,21 @@
 </body>
 <script>
     var content = document.getElementById("searchContent");
-    
-        document.getElementById("headerSearchBar").onclick=function(){
-            if(content.value.length>0 &&content.value.trim().length>0){
-                window.location.href = '/index.php?c=search&title='+content.value;
-            }
-            else{
-                alert("输入不能为空"); 
-            }
-        };
-   
+
+    $("#headerSearchBar").click(function(){
+        if(content.value.length>0 &&content.value.trim().length>0){
+            window.location.href = '/index.php?c=search&title='+content.value;
+        }
+        else{
+            alert("输入不能为空");
+        }
+    })
+    $('#searchContent').keypress(function(event){
+        var keynum = (event.keyCode ? event.keyCode : event.which);
+        if(keynum == '13'){
+            $("#headerSearchBar").click();
+        }
+    });
 </script>
 </html>
 <!DOCTYPE html>
