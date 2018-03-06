@@ -6,12 +6,20 @@
 	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
+    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div id="headerBackgroundColor">
 	    <div id="logoDivHeaderImg">
         <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
     </div>
+
+    <div id="headerSearch">
+
+        <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
+        <img src="../Public/images/search.png" id="headerSearchBar">
+    </div>
+
     <div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
@@ -36,12 +44,7 @@
                     <li><a href="/index.php?c=simpleList&columnid=12">人物访谈</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=13">行业精英</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=14">大师风范</a></li>
-<<<<<<< HEAD
-                    <li><a href="/index.php?c=simpleList&columnid=15">海外情缘</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=16">校内学子</a></li>
-=======
                     <li><a href="/index.php?c=simpleList&columnid=16">创业校友</a></li>
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
                 </ul>
             </li>
             <li><a href="/index.php?c=detailedList&columnid=17">工大回忆</a>
@@ -72,6 +75,19 @@
     </div>
     </div>
 </body>
+<script>
+    var content = document.getElementById("searchContent");
+    
+        document.getElementById("headerSearchBar").onclick=function(){
+            if(content.value.length>0 &&content.value.trim().length>0){
+                window.location.href = '/index.php?c=search&title='+content.value;
+            }
+            else{
+                alert("输入不能为空"); 
+            }
+        };
+   
+</script>
 </html>
 <!DOCTYPE HTML>
 <html>
@@ -99,9 +115,9 @@
 		<div class="content">
 			<p class="name"><?php echo ($articleInfo["title"]); ?></p>
 
-			<P class="writer"><br>【 作者：<?php echo (getAuthorName($articleInfo["authorid"])); ?> 来源：<?php echo ($articleInfo["source"]); ?> 】 浏览量：<?php echo ($articleInfo["visitcount"]); ?><br><br></P>
+			<P class="writer"><br>【 来源：<?php echo ($articleInfo["source"]); ?> 】 浏览量：<?php echo ($articleInfo["visitcount"]); ?><br><br></P>
 
-			<?php echo ($articleInfo["content"]); ?>
+			<div><?php echo ($articleInfo["content"]); ?></div>
 
 		</div>
 
@@ -116,6 +132,7 @@
 			</div>
 			<div class="like">
 				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
+				<img class="bg_good" src="/Public/images/passage/havegood.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
 				<span id="like_number"><?php echo ($articleInfo["likecount"]); ?></span>
 				<input type="hidden" id="articleid" value="<?php echo ($articleInfo["articleid"]); ?>"/>
 			</div>
@@ -141,32 +158,16 @@
             <dd>电话：80008208820</dd>
         </dl>
         <dl class=webs>
-            <dt><a href="" style="text-decoration: none; color: #fff">快速链接</a></dt>
-            <dd><a href="" style="text-decoration: none; color: #fff">学校官网</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">招标信息</a></dd>
-<<<<<<< HEAD
-            <dd><a href="" style="text-decoration: none; color: #fff">学生管理</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">网络服务</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">教学在线</a></dd>
-        </dl>
-        <dl class=others>
-            <dt><a href="" style="text-decoration: none; color: #fff">捐赠</a></dt>
-            <dd><a href="" style="text-decoration: none; color: #fff">捐赠管理方法</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
-            <dd class=otherweb><a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a><ul>
-                <li><a href="">web1</a></li>
-                <li><a href="">web2</a></li>
-                <li><a href="">web3</a></li>
-            </ul></dd>
-=======
+            <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt>
+            <dd><a href="http://www.hitwh.edu.cn/" style="text-decoration: none; color: #fff">学校官网</a></dd>
+            <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
+            <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
         </dl>
         <dl class=others>
-            <dt><a href="" style="text-decoration: none; color: #fff">捐赠</a></dt>
+            <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt>
             <dd><a href="" style="text-decoration: none; color: #fff">管理方法</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
+            <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
 <!--             <dd class=otherweb>
                 <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
                 <ul>
@@ -175,7 +176,6 @@
                     <li><a href="">web3</a></li>
                 </ul>
             </dd> -->
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
         </dl>
 
     </div>

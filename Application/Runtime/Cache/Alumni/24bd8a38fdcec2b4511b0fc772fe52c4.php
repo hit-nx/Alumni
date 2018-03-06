@@ -6,18 +6,13 @@
 	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
-<<<<<<< HEAD
-=======
     <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
 </head>
 <body>
 	<div id="headerBackgroundColor">
 	    <div id="logoDivHeaderImg">
         <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
     </div>
-<<<<<<< HEAD
-=======
 
     <div id="headerSearch">
 
@@ -25,7 +20,6 @@
         <img src="../Public/images/search.png" id="headerSearchBar">
     </div>
 
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
     <div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
@@ -50,12 +44,7 @@
                     <li><a href="/index.php?c=simpleList&columnid=12">人物访谈</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=13">行业精英</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=14">大师风范</a></li>
-<<<<<<< HEAD
-                    <li><a href="/index.php?c=simpleList&columnid=15">海外情缘</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=16">校内学子</a></li>
-=======
                     <li><a href="/index.php?c=simpleList&columnid=16">创业校友</a></li>
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
                 </ul>
             </li>
             <li><a href="/index.php?c=detailedList&columnid=17">工大回忆</a>
@@ -73,19 +62,11 @@
                     <li><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
                 </ul>
             </li>
-<<<<<<< HEAD
-            <li><a href="#contact">周年回顾</a>
-                <ul>
-                    <li><a href="#about">新闻动态</a></li>
-                    <li><a href="#about">活动公告</a></li>
-                    <li><a href="#about">30周年回顾</a></li>
-=======
             <li><a href="/index.php?c=detailedList&columnid=22">周年回顾</a>
                 <ul>
                     <li><a href="/index.php?c=simpleList&columnid=24">新闻动态</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=25">活动公告</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li>
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
                 </ul>
             </li>
             <li><a href="/index.php?c=communication">校友通讯</a>
@@ -94,8 +75,6 @@
     </div>
     </div>
 </body>
-<<<<<<< HEAD
-=======
 <script>
     var content = document.getElementById("searchContent");
     
@@ -109,7 +88,6 @@
         };
    
 </script>
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
 </html>
 <!DOCTYPE html>
 <html>
@@ -172,81 +150,11 @@
 		<div class=hot>
 			<h4>热点新闻</h4>
 			<ul>
-<<<<<<< HEAD
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[0]['articleid']); ?>" ><?php echo ($hotNewsList[0]['title']); ?></a> 
-					<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[0]['publishdate']) ?></span>
-					<p class=good><?php echo ($hotNewsList[0]['visitcount']); ?></p>
-				</li>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[1]['articleid']); ?>" ><?php echo ($hotNewsList[1]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[1]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[1]['visitcount']); ?></p>
-					</div>
-				</li>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[2]['articleid']); ?>" ><?php echo ($hotNewsList[2]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[2]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[2]['visitcount']); ?></p>
-					</div>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[3]['articleid']); ?>" ><?php echo ($hotNewsList[3]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[3]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[3]['visitcount']); ?></p>
-					</div>
-				</li>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[4]['articleid']); ?>" ><?php echo ($hotNewsList[4]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[4]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[4]['visitcount']); ?></p>
-					</div>
-				</li>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[5]['articleid']); ?>" ><?php echo ($hotNewsList[5]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[5]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[5]['visitcount']); ?></p>
-					</div>
-				</li>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[6]['articleid']); ?>" ><?php echo ($hotNewsList[6]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[6]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[6]['visitcount']); ?></p>
-					</div>
-				</li>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[7]['articleid']); ?>" ><?php echo ($hotNewsList[7]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[7]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[7]['visitcount']); ?></p>
-					</div>
-				</li>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[8]['articleid']); ?>" ><?php echo ($hotNewsList[8]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[8]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[8]['visitcount']); ?></p>
-					</div>
-				</li>
-				<li>
-					<a class=fl href="/index.php?c=passage&articleid=<?php echo ($hotNewsList[9]['articleid']); ?>" ><?php echo ($hotNewsList[9]['title']); ?></a> 
-					<div class="fl">
-						<span class="time1 fl"><?php echo date("Y-m-d",$hotNewsList[9]['publishdate']) ?></span>
-					    <p class=good><?php echo ($hotNewsList[9]['visitcount']); ?></p>
-					</div>
-				</li>
-=======
 				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
 						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
 						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
 						<p class=good><?php echo ($news['visitcount']); ?></p>
 					</li><?php endforeach; endif; else: echo "" ;endif; ?>
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
 			</ul>
 		</div>
 		<div class=main>
@@ -309,25 +217,6 @@
             <dd>电话：80008208820</dd>
         </dl>
         <dl class=webs>
-<<<<<<< HEAD
-            <dt><a href="" style="text-decoration: none; color: #fff">快速链接</a></dt>
-            <dd><a href="" style="text-decoration: none; color: #fff">学校官网</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">招标信息</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">学生管理</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">网络服务</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">教学在线</a></dd>
-        </dl>
-        <dl class=others>
-            <dt><a href="" style="text-decoration: none; color: #fff">捐赠</a></dt>
-            <dd><a href="" style="text-decoration: none; color: #fff">捐赠管理方法</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
-            <dd class=otherweb><a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a><ul>
-                <li><a href="">web1</a></li>
-                <li><a href="">web2</a></li>
-                <li><a href="">web3</a></li>
-            </ul></dd>
-=======
             <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt>
             <dd><a href="http://www.hitwh.edu.cn/" style="text-decoration: none; color: #fff">学校官网</a></dd>
             <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
@@ -346,7 +235,6 @@
                     <li><a href="">web3</a></li>
                 </ul>
             </dd> -->
->>>>>>> fddb912665bafcf2453395c95cb47412de8413b1
         </dl>
 
     </div>

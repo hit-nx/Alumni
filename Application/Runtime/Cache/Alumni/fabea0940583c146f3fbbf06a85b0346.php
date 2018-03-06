@@ -6,12 +6,20 @@
 	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
+    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div id="headerBackgroundColor">
 	    <div id="logoDivHeaderImg">
         <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
     </div>
+
+    <div id="headerSearch">
+
+        <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
+        <img src="../Public/images/search.png" id="headerSearchBar">
+    </div>
+
     <div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
@@ -67,6 +75,19 @@
     </div>
     </div>
 </body>
+<script>
+    var content = document.getElementById("searchContent");
+    
+        document.getElementById("headerSearchBar").onclick=function(){
+            if(content.value.length>0 &&content.value.trim().length>0){
+                window.location.href = '/index.php?c=search&title='+content.value;
+            }
+            else{
+                alert("输入不能为空"); 
+            }
+        };
+   
+</script>
 </html>
 <!DOCTYPE html>
 <html>
@@ -90,7 +111,7 @@
 	<div class="ahead">——————&nbsp;&nbsp;&nbsp;<?php echo ($parentColumn["column_name"]); ?>&nbsp;&nbsp;&nbsp;——————</div>
 	<div class=wrap2>
 		<div class="position">
-			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="detailListIndex.html"><?php echo ($parentColumn["column_name"]); ?></a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
+			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="/index.php?c=detailedList&columnid=<?php echo ($parentColumn["column_id"]); ?>"><?php echo ($parentColumn["column_name"]); ?></a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
 		</div>
 
 		<ul class=class>
@@ -162,16 +183,16 @@
             <dd>电话：80008208820</dd>
         </dl>
         <dl class=webs>
-            <dt><a href="" style="text-decoration: none; color: #fff">快速链接</a></dt>
-            <dd><a href="" style="text-decoration: none; color: #fff">学校官网</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">招标信息</a></dd>
+            <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt>
+            <dd><a href="http://www.hitwh.edu.cn/" style="text-decoration: none; color: #fff">学校官网</a></dd>
+            <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
+            <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
         </dl>
         <dl class=others>
-            <dt><a href="" style="text-decoration: none; color: #fff">捐赠</a></dt>
+            <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt>
             <dd><a href="" style="text-decoration: none; color: #fff">管理方法</a></dd>
-            <dd><a href="" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
+            <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
 <!--             <dd class=otherweb>
                 <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
                 <ul>
