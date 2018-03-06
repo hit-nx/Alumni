@@ -138,6 +138,12 @@ p{
 	width: 100px;
 	margin: 0px 40px;
 }
+.active{
+	border-bottom: solid 5px #0D184E;
+}
+
+
+}
 /*新闻部分*/
 .news{	
 	width: 630px;
