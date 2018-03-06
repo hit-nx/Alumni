@@ -51,6 +51,7 @@ class PeriodicalModel extends Model {
 
     public function find($id) {
         $data = $this->_db->where('periodicalid='.$id)->find();
+
         return $data;
     }
 
