@@ -34,6 +34,7 @@ class IndexController extends CommonController {
         $fourNews = D("Index")->getNewsByColumn(4, $fourPicNew['articleid']);//校友人物
         $fiveNews = D("Index")->getNewsByColumn(5, $fivePicNew['articleid']);//工大回忆
 
+        $alumniList = D("Alumnis")->select();//校友组织
         $periodical = D("Periodical")->getCommunicationList();//通讯录
         $donationsList = D("DonationInfo")->getDonationList();//捐赠列表
 
@@ -48,6 +49,7 @@ class IndexController extends CommonController {
         $this->assign("fourNews", $fourNews);
         $this->assign("fiveNews", $fiveNews);
 
+        $this->assign("alumniList", $alumniList);
         $this->assign("periodical", $periodical);
         $this->assign("donationsList", $donationsList);
 
