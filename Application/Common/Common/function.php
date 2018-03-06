@@ -53,7 +53,6 @@ function getChoose($id){
     }
     return '';
 }
-
 function getChooseByArticle($id){
     $articleid = $_GET['articleid'];
     $now = D("Article")->getColumnIdByArticle($articleid);
@@ -76,6 +75,7 @@ function getChooseByContent_($id){
     }
     return '';
 }
+
 function showKind($status,$data) {
     header('Content-type:application/json;charset=UTF-8');
     if($status==0) {
@@ -152,8 +152,3 @@ function getColumnNameById($id){
     $column = D("Column")->find($id);
     return  $column['column_name'];
 }
-
-
-
-
-
