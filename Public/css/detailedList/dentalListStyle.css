@@ -130,7 +130,8 @@ p{
 }
 .class{
 	display: block;
-	margin: 5px auto 20px auto;
+	
+	margin: 20px auto 20px auto;
 	border-top: 2px #797979 solid;
 	width: 1000px;
 	height: 50px;
@@ -251,7 +252,7 @@ p{
 }
 /*热点新闻*/
 .hot{
-	height: 640px;
+	/*height: 640px;*/
 	width: 300px;
 	float: right;
 }
@@ -342,7 +343,7 @@ p{
 /*新闻概要*/
 .main{
 	margin-top: 60px;
-	height: 750px;
+	/*height: 750px;*/
 	width: 600px;
 	float: left;
 	padding-left: 10px;

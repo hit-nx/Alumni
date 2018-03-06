@@ -28,6 +28,9 @@ body
 .class li:hover{
 	border-bottom: solid 5px #0D184E;
 }
+.active{
+	border-bottom: solid 5px #0D184E;
+}
 .nav
 {
 	height: 38px;

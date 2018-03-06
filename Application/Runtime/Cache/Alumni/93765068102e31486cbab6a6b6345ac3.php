@@ -1,4 +1,103 @@
-<include file="header" />
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>哈尔滨工业大学（威海）校友网</title>
+	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
+	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
+    <script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <!-- <link href="/Public/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+<body>
+	<div id="headerBackgroundColor">
+	    <div id="logoDivHeaderImg">
+        <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
+    </div>
+
+    <div id="navi">
+<div id="headerMenu">
+        <ul id="menuUl">
+            <li><a href="/index.php">首页</a></li>
+            <li><a href="/index.php?c=detailedList&columnid=1">新闻中心</a>
+                <ul>
+                    <li><a href="/index.php?c=simpleList&columnid=2">校友新闻</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=3">校区新闻</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=4">通知公告</a></li>
+                </ul>
+            </li>
+            <li><a href="/index.php?c=organization&contentid=1">校友组织</a>
+                <ul>
+                    <li><a href="/index.php?c=organization&contentid=1">校友会简介</a></li>
+                    <li><a href="/index.php?c=organization&contentid=2">组织机构</a></li>
+                    <li><a href="/index.php?c=organization&contentid=3">规章制度</a></li>
+                    <li><a href="/index.php?c=organization&a=organizationList">地方校友组织</a></li>
+                    <li><a href="/index.php?c=organization&contentid=4">校友创业导师</a></li>
+                </ul>
+            </li>
+            <li><a href="/index.php?c=detailedList&columnid=11">校友人物</a>
+                <ul>
+                    <li><a href="/index.php?c=simpleList&columnid=12">人物访谈</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=13">行业精英</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=14">大师风范</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=16">创业校友</a></li>
+                </ul>
+            </li>
+            <li><a href="/index.php?c=detailedList&columnid=17">工大回忆</a>
+                <ul>
+                    <li><a href="/index.php?c=simpleList&columnid=18">工大美景</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=19">校友旧事</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=20">校园旧闻</a></li>
+                </ul>
+            </li>
+            <li><a href="/index.php?c=donationInfo&content_id=5">校友捐赠</a>
+                <ul>
+                    <li><a href="/index.php?c=donationInfo&content_id=5">捐赠领域</a></li>
+                    <li><a href="/index.php?c=donationInfo&content_id=6">鸣谢办法</a></li>
+                    <li><a href="/index.php?c=donationInfo&a=donationList">捐赠名录</a></li>
+                    <li><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
+                </ul>
+            </li>
+            <li><a href="/index.php?c=detailedList&columnid=22">周年回顾</a>
+                <ul>
+                    <li><a href="/index.php?c=simpleList&columnid=24">新闻动态</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=25">活动公告</a></li>
+                    <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li>
+                </ul>
+            </li>
+            <li><a href="/index.php?c=communication">校友通讯</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="headerSearch">
+            <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
+            <img src="../Public/images/search.png" id="headerSearchBar">
+    </div>
+
+    </div>
+    
+    </div>
+</body>
+<script>
+    var content = document.getElementById("searchContent");
+
+    $("#headerSearchBar").click(function(){
+        if(content.value.length>0 &&content.value.trim().length>0){
+            window.location.href = '/index.php?c=search&title='+content.value;
+        }
+        else{
+            alert("输入不能为空");
+        }
+    })
+    $('#searchContent').keypress(function(event){
+        var keynum = (event.keyCode ? event.keyCode : event.which);
+        if(keynum == '13'){
+            $("#headerSearchBar").click();
+        }
+    });
+</script>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,8 +161,8 @@
 								<a href="/index.php?c=simpleList&columnid=3" class="b1link">+更多</a>
 
 								<div class="display_news">
-									<img class="display_news_picture" src="{$onePicNew.picture_url}" alt="">
-									<a class="display_news_title" href="">{$onePicNew.title}</a>
+									<img class="display_news_picture" src="<?php echo ($onePicNew["picture_url"]); ?>" alt="">
+									<a class="display_news_title" href=""><?php echo ($onePicNew["title"]); ?></a>
 									<div class="display_news_content">
 										<?php echo $contentes = strip_tags($onePicNew['content']) ?>
 									</div>
@@ -74,7 +173,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$oneNews[0]['articleid']}" class="blocklinktext0">{$oneNews[0]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($oneNews[0]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -84,7 +183,7 @@
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$oneNews[1]['articleid']}" class="blocklinktext0">{$oneNews[1]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[1]['articleid']); ?>" class="blocklinktext0"><?php echo ($oneNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -94,7 +193,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$oneNews[2]['articleid']}" class="blocklinktext0">{$oneNews[2]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[2]['articleid']); ?>" class="blocklinktext0"><?php echo ($oneNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -112,8 +211,8 @@
 								<a href="/index.php?c=simpleList&columnid=2" class="b1link">+更多</a>
 
 								<div class="display_news">
-									<img class="display_news_picture" src="{$twoPicNew['picture_url']}" alt="">
-									<a class="display_news_title" href="">{$twoPicNew['title']}</a>
+									<img class="display_news_picture" src="<?php echo ($twoPicNew['picture_url']); ?>" alt="">
+									<a class="display_news_title" href=""><?php echo ($twoPicNew['title']); ?></a>
 									<p class="display_news_content"><?php echo $contentes = strip_tags($twoPicNew['content']) ?></p>
 
 								</div>
@@ -121,7 +220,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$twoNews[0]['articleid']}" class="blocklinktext0">{$twoNews[0]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($twoNews[0]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -131,7 +230,7 @@
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$twoNews[1]['articleid']}" class="blocklinktext0">{$twoNews[1]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[1]['articleid']); ?>" class="blocklinktext0"><?php echo ($twoNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -141,7 +240,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$twoNews[2]['articleid']}" class="blocklinktext0">{$twoNews[2]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[2]['articleid']); ?>" class="blocklinktext0"><?php echo ($twoNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -159,8 +258,8 @@
 								<a href="/index.php?c=simpleList&columnid=4" class="b1link">+更多</a>
 
 								<div class="display_news">
-									<img class="display_news_picture" src="{$threePicNew['picture_url']}" alt="">
-									<a class="display_news_title" href="">{$threePicNew['title']}</a>
+									<img class="display_news_picture" src="<?php echo ($threePicNew['picture_url']); ?>" alt="">
+									<a class="display_news_title" href=""><?php echo ($threePicNew['title']); ?></a>
 									<p class="display_news_content"><?php echo $contentes = strip_tags($threePicNew['content']) ?></p>
 
 								</div>
@@ -168,7 +267,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$threeNews[0]['articleid']}" class="blocklinktext0">{$threeNews[0]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($threeNews[0]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -178,7 +277,7 @@
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$threeNews[1]['articleid']}" class="blocklinktext0">{$threeNews[1]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[1]['articleid']); ?>" class="blocklinktext0"><?php echo ($threeNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -188,7 +287,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$threeNews[2]['articleid']}" class="blocklinktext0">{$threeNews[2]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[2]['articleid']); ?>" class="blocklinktext0"><?php echo ($threeNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -210,7 +309,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[0]['articleid']}" class="blocklinktext0">{$alumniNews[0]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[0]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -220,7 +319,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[1]['articleid']}" class="blocklinktext0">{$alumniNews[1]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[1]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -230,7 +329,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[2]['articleid']}" class="blocklinktext0">{$alumniNews[2]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[2]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -240,7 +339,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[3]['articleid']}" class="blocklinktext0">{$alumniNews[3]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[3]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[3]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -250,7 +349,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[4]['articleid']}" class="blocklinktext0">{$alumniNews[4]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[4]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[4]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -260,7 +359,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[5]['articleid']}" class="blocklinktext0">{$alumniNews[5]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[5]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[5]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -270,7 +369,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[6]['articleid']}" class="blocklinktext0">{$alumniNews[6]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[6]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[6]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -280,7 +379,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[7]['articleid']}" class="blocklinktext0">{$alumniNews[7]['title']}</a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[7]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[7]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -303,7 +402,7 @@
 						<table class="blocktable">
 							<tr>
 								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid={$noticeNews[0]['articleid']}" class="blocklinktext">{$noticeNews[0]['title']}</a>
+									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[0]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[0]['title']); ?></a>
 								</td>
 								<td width="155px" class="buttomline1">
 									<a href="" class="blocklinktext">
@@ -313,7 +412,7 @@
 							</tr>
 							<tr>
 								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid={$noticeNews[1]['articleid']}" class="blocklinktext">{$noticeNews[1]['title']}</a>
+									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[1]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[1]['title']); ?></a>
 								</td>
 								<td width="105px" class="buttomline1">
 									<a href="" class="blocklinktext">
@@ -323,7 +422,7 @@
 							</tr>
 							<tr>
 								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid={$noticeNews[2]['articleid']}" class="blocklinktext">{$noticeNews[2]['title']}</a>
+									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[2]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[2]['title']); ?></a>
 								</td>
 								<td width="105px" class="buttomline1">
 									<a href="" class="blocklinktext">
@@ -333,7 +432,7 @@
 							</tr>
 							<tr>
 								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid={$noticeNews[3]['articleid']}" class="blocklinktext">{$noticeNews[3]['title']}</a>
+									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[3]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[3]['title']); ?></a>
 								</td>
 								<td width="105px" class="buttomline1">
 									<a href="" class="blocklinktext">
@@ -343,7 +442,7 @@
 							</tr>
 							<tr>
 								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid={$noticeNews[4]['articleid']}" class="blocklinktext">{$noticeNews[4]['title']}</a>
+									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[4]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[4]['title']); ?></a>
 								</td>
 								<td width="105px" class="buttomline1">
 									<a href="" class="blocklinktext">
@@ -353,7 +452,7 @@
 							</tr>
 							<tr>
 								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid={$noticeNews[5]['articleid']}" class="blocklinktext">{$noticeNews[5]['title']}</a>
+									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[5]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[5]['title']); ?></a>
 								</td>
 								<td width="105px" class="buttomline1">
 									<a href="" class="blocklinktext">
@@ -363,7 +462,7 @@
 							</tr>
 							<tr>
 								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid={$noticeNews[6]['articleid']}" class="blocklinktext">{$noticeNews[6]['title']}</a>
+									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[6]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[6]['title']); ?></a>
 								</td>
 								<td width="105px" class="buttomline1">
 									<a href="" class="blocklinktext">
@@ -373,7 +472,7 @@
 							</tr>
 							<tr>
 								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid={$noticeNews[7]['articleid']}" class="blocklinktext">{$noticeNews[7]['title']}</a>
+									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[7]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[7]['title']); ?></a>
 								</td>
 								<td width="105px" class="buttomline1">
 									<a href="" class="blocklinktext">
@@ -389,12 +488,10 @@
 							<table class="donateTable" cellspacing="0" cellpadding="0">
 
 								<!--生成捐赠列表-->
-								<foreach name="donationsList" item="donationItems">
-									<tr>
-										<td class="listName">{$donationItems.name}</td>
-										<td class="listMoney">{$donationItems.amount}</td>
-									</tr>
-								</foreach>
+								<?php if(is_array($donationsList)): foreach($donationsList as $key=>$donationItems): ?><tr>
+										<td class="listName"><?php echo ($donationItems["name"]); ?></td>
+										<td class="listMoney"><?php echo ($donationItems["amount"]); ?></td>
+									</tr><?php endforeach; endif; ?>
 
 							</table>
 						</div>
@@ -440,4 +537,45 @@
 </body>
 
 </html>
-<include file="footer" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Public/css/footer/footer.css" type="text/css" />
+</head>
+<body>
+    <footer name=fixwide>
+    <div class=wrap3>
+        <p>校友会的三行介绍，独家会觉得好似独家试爱和第哦啊是京东啊时间阿迪斯教授第哈怂的的巴萨和计划第哦啊是家啊是哦啊是的话就看少i上帝就是电话覅和发河北无办法对你撒娇好的</p>
+        <dl class=connect>
+            <dt>联系方式</dt>
+            <dd>地址：威海市环翠区文化西路2号</dd>
+            <dd>邮编：264209</dd>
+            <dd>电话：80008208820</dd>
+        </dl>
+        <dl class=webs>
+            <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt>
+            <dd><a href="http://www.hitwh.edu.cn/" style="text-decoration: none; color: #fff">学校官网</a></dd>
+            <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
+            <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
+            <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
+        </dl>
+        <dl class=others>
+            <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt>
+            <dd><a href="" style="text-decoration: none; color: #fff">管理方法</a></dd>
+            <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
+<!--             <dd class=otherweb>
+                <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
+                <ul>
+                    <li><a href="">web1</a></li>
+                    <li><a href="">web2</a></li>
+                    <li><a href="">web3</a></li>
+                </ul>
+            </dd> -->
+        </dl>
+
+    </div>
+</footer>
+</body>
+</html>

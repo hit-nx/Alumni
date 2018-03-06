@@ -53,7 +53,6 @@ function getChoose($id){
     }
     return '';
 }
-
 function getChooseByArticle($id){
     $articleid = $_GET['articleid'];
     $now = D("Article")->getColumnIdByArticle($articleid);
@@ -62,6 +61,21 @@ function getChooseByArticle($id){
     }
     return '';
 }
+function getChooseByContent($id){
+    $now = $_GET['contentid'];
+    if($now == $id) {
+        return 'class="active"';
+    }
+    return '';
+}
+function getChooseByContent_($id){
+    $now = $_GET['content_id'];
+    if($now == $id) {
+        return 'class="active"';
+    }
+    return '';
+}
+
 function showKind($status,$data) {
     header('Content-type:application/json;charset=UTF-8');
     if($status==0) {
@@ -138,8 +152,3 @@ function getColumnNameById($id){
     $column = D("Column")->find($id);
     return  $column['column_name'];
 }
-
-
-
-
-

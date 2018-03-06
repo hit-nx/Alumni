@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -15,8 +15,13 @@
         <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
     </div>
 
-    <div id="navi">
-<div id="headerMenu">
+    <div id="headerSearch">
+
+        <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
+        <img src="../Public/images/search.png" id="headerSearchBar">
+    </div>
+
+    <div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
             <li><a href="/index.php?c=detailedList&columnid=1">新闻中心</a>
@@ -69,14 +74,6 @@
             </li>
         </ul>
     </div>
-
-    <div id="headerSearch">
-            <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="{$searchContent}"/>
-            <img src="../Public/images/search.png" id="headerSearchBar">
-    </div>
-
-    </div>
-    
     </div>
 </body>
 <script>
@@ -97,4 +94,82 @@
         }
     });
 </script>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>校友捐赠</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/donationField.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/style.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/reset.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/page.css">
+	
+	<script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="/Public/js/alumni/listIndex.js"></script>
+	<script src="/Public/js/alumni/js.js"></script>
+</head>
+<body>
+
+	<div class="topimage">­­­­­­——————&nbsp;&nbsp;&nbsp;校友捐赠&nbsp;&nbsp;&nbsp;——————</div>
+
+	<div>
+		<ul class=class>
+			<li <?php echo getChooseByContent_(5)?>><a href="/index.php?c=donationInfo&content_id=5">捐赠领域</a></li>
+	        <li <?php echo getChooseByContent_(6)?>><a href="/index.php?c=donationInfo&content_id=6">鸣谢办法</a></li>
+			<li><a href="/index.php?c=donationInfo&a=donationList">捐赠名录</a></li>
+			<li <?php echo getChooseByContent_(7)?>><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
+		</ul>
+	</div>
+
+<div class="content">
+
+	<?php echo (htmlspecialchars_decode($donationInfo["content"])); ?>
+	
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Public/css/footer/footer.css" type="text/css" />
+</head>
+<body>
+    <footer name=fixwide>
+    <div class=wrap3>
+        <p>校友会的三行介绍，独家会觉得好似独家试爱和第哦啊是京东啊时间阿迪斯教授第哈怂的的巴萨和计划第哦啊是家啊是哦啊是的话就看少i上帝就是电话覅和发河北无办法对你撒娇好的</p>
+        <dl class=connect>
+            <dt>联系方式</dt>
+            <dd>地址：威海市环翠区文化西路2号</dd>
+            <dd>邮编：264209</dd>
+            <dd>电话：80008208820</dd>
+        </dl>
+        <dl class=webs>
+            <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt>
+            <dd><a href="http://www.hitwh.edu.cn/" style="text-decoration: none; color: #fff">学校官网</a></dd>
+            <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
+            <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
+            <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
+        </dl>
+        <dl class=others>
+            <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt>
+            <dd><a href="" style="text-decoration: none; color: #fff">管理方法</a></dd>
+            <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
+<!--             <dd class=otherweb>
+                <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
+                <ul>
+                    <li><a href="">web1</a></li>
+                    <li><a href="">web2</a></li>
+                    <li><a href="">web3</a></li>
+                </ul>
+            </dd> -->
+        </dl>
+
+    </div>
+</footer>
+</body>
 </html>

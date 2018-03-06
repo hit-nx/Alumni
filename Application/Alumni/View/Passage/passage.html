@@ -33,7 +33,7 @@
 
 			<P class="writer">来源：{$articleInfo.source} 浏览量：{$articleInfo.visitcount}<br></P>
 
-			<div>{$articleInfo.content}</div>
+			<div>{$articleInfo.content|htmlspecialchars_decode}</div>
 
 		</div>
 
