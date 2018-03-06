@@ -18,7 +18,7 @@ class SearchController extends CommonController {
 
 
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
-        $pageSize = 6;
+        $pageSize = 8;
 
         $articles = D("Article")->getArticle($conds,$page,$pageSize);
         //获取返回记录的总数

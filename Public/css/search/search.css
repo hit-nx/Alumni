@@ -145,5 +145,6 @@ ul .news-tag{
     box-sizing: border-box;
     height: 40px;
     padding-bottom: 10px;
+    font-size: 14px;
     overflow-y: hidden;
 }
