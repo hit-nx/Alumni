@@ -6,7 +6,8 @@
 	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
-    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <!-- <link href="/Public/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
 	<div id="headerBackgroundColor">
@@ -77,16 +78,21 @@
 </body>
 <script>
     var content = document.getElementById("searchContent");
-    
-        document.getElementById("headerSearchBar").onclick=function(){
-            if(content.value.length>0 &&content.value.trim().length>0){
-                window.location.href = '/index.php?c=search&title='+content.value;
-            }
-            else{
-                alert("输入不能为空"); 
-            }
-        };
-   
+
+    $("#headerSearchBar").click(function(){
+        if(content.value.length>0 &&content.value.trim().length>0){
+            window.location.href = '/index.php?c=search&title='+content.value;
+        }
+        else{
+            alert("输入不能为空");
+        }
+    })
+    $('#searchContent').keypress(function(event){
+        var keynum = (event.keyCode ? event.keyCode : event.which);
+        if(keynum == '13'){
+            $("#headerSearchBar").click();
+        }
+    });
 </script>
 </html>
 <!DOCTYPE HTML>
@@ -108,14 +114,16 @@
 
 	<div style="text-align: center;">
 		<div class="class">
-			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li><a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a></li><?php endforeach; endif; ?>
+			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li <?php echo (getChooseByArticle($brotherColumnItems["column_id"])); ?>>
+				<a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a>
+			</li><?php endforeach; endif; ?>
 		</div>
 	</div>
 	<div class="room">
 		<div class="content">
 			<p class="name"><?php echo ($articleInfo["title"]); ?></p>
 
-			<P class="writer"><br>【 来源：<?php echo ($articleInfo["source"]); ?> 】 浏览量：<?php echo ($articleInfo["visitcount"]); ?><br><br></P>
+			<P class="writer">来源：<?php echo ($articleInfo["source"]); ?> 浏览量：<?php echo ($articleInfo["visitcount"]); ?><br></P>
 
 			<div><?php echo ($articleInfo["content"]); ?></div>
 
@@ -130,12 +138,12 @@
 					<span>下载附件</span>
 				</a>
 			</div>
-			<div class="like">
+<!-- 			<div class="like">
 				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
 				<img class="bg_good" src="/Public/images/passage/havegood.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
 				<span id="like_number"><?php echo ($articleInfo["likecount"]); ?></span>
 				<input type="hidden" id="articleid" value="<?php echo ($articleInfo["articleid"]); ?>"/>
-			</div>
+			</div> -->
 		</div>
 
 </body>

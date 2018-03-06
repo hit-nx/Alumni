@@ -6,7 +6,8 @@
 	<link rel="stylesheet" href="/Public/css/header/header.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
-    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <!-- <link href="/Public/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
 	<div id="headerBackgroundColor">
@@ -77,16 +78,21 @@
 </body>
 <script>
     var content = document.getElementById("searchContent");
-    
-        document.getElementById("headerSearchBar").onclick=function(){
-            if(content.value.length>0 &&content.value.trim().length>0){
-                window.location.href = '/index.php?c=search&title='+content.value;
-            }
-            else{
-                alert("输入不能为空"); 
-            }
-        };
-   
+
+    $("#headerSearchBar").click(function(){
+        if(content.value.length>0 &&content.value.trim().length>0){
+            window.location.href = '/index.php?c=search&title='+content.value;
+        }
+        else{
+            alert("输入不能为空");
+        }
+    })
+    $('#searchContent').keypress(function(event){
+        var keynum = (event.keyCode ? event.keyCode : event.which);
+        if(keynum == '13'){
+            $("#headerSearchBar").click();
+        }
+    });
 </script>
 </html>
 <!DOCTYPE html>
@@ -95,7 +101,6 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- 以最高版本ie渲染，chrome版本为1开启chrome frame -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 适应屏幕宽度 -->
-	<link href="/Public/css/detailedList/horizontal.css"  rel="stylesheet" type="text/css" />
 	<link href="/Public/css/detailedList/dentalListStyle.css" rel="stylesheet" type="text/css" />
 	<link href="/Public/css/detailedList/reset.css"  rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
@@ -117,14 +122,17 @@
 		
 	<div class=wrap2>
 		<div class="position">
-			<p><img src="/Public/images/detailedList/position.png">当前位置： <a href="/index.php">首页</a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
+			<p>
+				<img src="/Public/images/detailedList/position.png">当前位置： <a href="/index.php">首页</a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a>
+			</p>
 		</div>
 		
 		<ul class=class>
-
-            <?php if(is_array($childColumns)): foreach($childColumns as $key=>$childColumnsItems): ?><li><a href="/index.php?c=simpleList&columnid=<?php echo ($childColumnsItems["column_id"]); ?>"><?php echo ($childColumnsItems["column_name"]); ?></a></li><?php endforeach; endif; ?>
-
+            <?php if(is_array($childColumns)): foreach($childColumns as $key=>$childColumnsItems): ?><li>
+					<a href="/index.php?c=simpleList&columnid=<?php echo ($childColumnsItems["column_id"]); ?>"><?php echo ($childColumnsItems["column_name"]); ?></a>
+				</li><?php endforeach; endif; ?>
 		</ul>
+
 		<div class=news>
 			<div class=new1>
 				<img src="<?php echo ($getDisplayedNews[0]['picture_url']); ?>">

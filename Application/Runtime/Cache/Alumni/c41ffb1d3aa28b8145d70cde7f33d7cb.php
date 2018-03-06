@@ -95,80 +95,38 @@
     });
 </script>
 </html>
-<!DOCTYPE html>
+<!Doctype html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- 以最高版本ie渲染，chrome版本为1开启chrome frame -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 适应屏幕宽度 -->
-	<link href="/Public/css/simpleList/simpleListStyle.css" rel="stylesheet" type="text/css" />
-	<link href="/Public/css/simpleList/reset.css"  rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="/Public/css/organization/AlumniOrganization.css" />
+		<link rel="stylesheet" type="text/css" href="/Public/css/organization/style.css">
+		<link rel="stylesheet" type="text/css" href="/Public/css/organization/reset.css">
 
-  <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
-	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="/Public/js/alumni/listIndex.js"></script>
-  <script src="/Public/js/paging.js"></script>
-	<title></title>
-</head>
-<body>
+		<script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+		<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+		<title>校友组织</title>
+	</head>
+	<body>
 
-	<div class="ahead">——————&nbsp;&nbsp;&nbsp;<?php echo ($parentColumn["column_name"]); ?>&nbsp;&nbsp;&nbsp;——————</div>
-	<div class=wrap2>
-		<div class="position">
-			<p><img src="/Public/images/simpleList/position.png">当前位置： <a href="/index.php">首页</a> > <a href="/index.php?c=detailedList&columnid=<?php echo ($parentColumn["column_id"]); ?>"><?php echo ($parentColumn["column_name"]); ?></a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a></p>
+		<div class="ahead">——————&nbsp;&nbsp;&nbsp;校友组织&nbsp;&nbsp;&nbsp;——————</div>
+
+		<div>
+			<ul class="class">
+				<li><a href="/index.php?c=organization&contentid=1">校友会简介</a></li>
+				<li><a href="/index.php?c=organization&contentid=2">组织机构</a></li>
+				<li><a href="/index.php?c=organization&contentid=3">规章制度</a></li>
+				<li><a href="/index.php?c=organization&contentid=4">校友创业导师</a></li>
+				<li><a href="/index.php?c=organization&a=organizationList">地方校友组织</a></li>
+			</ul>			
 		</div>
 
-		<ul class=class>
-			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li <?php echo (getChoose($brotherColumnItems["column_id"])); ?>>
-					<a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a>
-				</li><?php endforeach; endif; ?>
-		</ul>
-		<div class=hot>
-			<h4>热点新闻</h4>
-			<ul>
-				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
-						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
-						<p class=good><?php echo ($news['visitcount']); ?></p>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
+		<div class="article">
+			
+			<?php echo ($otherOrganizationContent["content"]); ?>
+
 		</div>
-		<div class=main>
-			<span class=line1></span>
-			<span class=line2></span>
-			<span class=line3></span>
-			<span class=line4></span>
-			<h1>新闻概要</h1>
-			<ul>
-				<?php if(is_array($newsList)): $i = 0; $__LIST__ = $newsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<div class=time_area>
-							<span class=time_month><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7)?><br></span>
-							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-						</div>
-						<div class=word1 id=word1>
-							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name=title><?php echo ($news['title']); ?></a>
-							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
-						</div>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=change>
-			<div id="page" class="page_div"></div>
-		</div>
-	</div>
-</body>
-<script>
-	$("#page").paging({
-		pageNo: <?php echo ($page["pageNow"]); ?>,
-		totalPage: <?php echo ($page["pageTotal"]); ?>,
-		totalSize: <?php echo ($page["pageRows"]); ?>,
-		callback: function(num) {
-			var columnid = <?php echo ($currentColumn["column_id"]); ?>;
-			window.location.href = '/index.php?c=simpleList&p=' + num + "&columnid=" +columnid;
-		}
-	});
-</script>
+	</body>
 </html>
 <!DOCTYPE html>
 <html lang="en">
