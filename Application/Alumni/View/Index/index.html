@@ -62,40 +62,43 @@
 								<a href="/index.php?c=simpleList&columnid=3" class="b1link">+更多</a>
 
 								<div class="display_news">
-									<img class="display_news_picture" src="{$campusNews[0]['picture_url']}" alt="">
-									<a class="display_news_title" href="">{$campusNews[0]['title']}</a>
-									<p class="display_news_content"><?php echo $contentes = strip_tags($campusNews[0]['content']) ?></p>
+									<img class="display_news_picture" src="{$onePicNew.picture_url}" alt="">
+									<a class="display_news_title" href="">{$onePicNew.title}</a>
+									<div class="display_news_content">
+										<?php echo $contentes = strip_tags($onePicNew['content']) ?>
+									</div>
+									
 
 								</div>
 
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[0]['articleid']}" class="blocklinktext0">{$campusNews[0]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$oneNews[0]['articleid']}" class="blocklinktext0">{$oneNews[0]['title']}</a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[0]['publishdate']) ?>
+											<?php echo date("Y-m-d",$oneNews[0]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[1]['articleid']}" class="blocklinktext0">{$campusNews[1]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$oneNews[1]['articleid']}" class="blocklinktext0">{$oneNews[1]['title']}</a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[1]['publishdate']) ?>
+											<?php echo date("Y-m-d",$oneNews[1]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[2]['articleid']}" class="blocklinktext0">{$campusNews[2]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$oneNews[2]['articleid']}" class="blocklinktext0">{$oneNews[2]['title']}</a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[2]['publishdate']) ?>
+											<?php echo date("Y-m-d",$oneNews[2]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
@@ -109,40 +112,40 @@
 								<a href="/index.php?c=simpleList&columnid=2" class="b1link">+更多</a>
 
 								<div class="display_news">
-									<img class="display_news_picture" src="{$alumniNews[0]['picture_url']}" alt="">
-									<a class="display_news_title" href="">{$alumniNews[0]['title']}</a>
-									<p class="display_news_content"><?php echo $contentes = strip_tags($alumniNews[0]['content']) ?></p>
+									<img class="display_news_picture" src="{$twoPicNew['picture_url']}" alt="">
+									<a class="display_news_title" href="">{$twoPicNew['title']}</a>
+									<p class="display_news_content"><?php echo $contentes = strip_tags($twoPicNew['content']) ?></p>
 
 								</div>
 
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[0]['articleid']}" class="blocklinktext0">{$campusNews[0]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$twoNews[0]['articleid']}" class="blocklinktext0">{$twoNews[0]['title']}</a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[0]['publishdate']) ?>
+											<?php echo date("Y-m-d",$twoNews[0]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[1]['articleid']}" class="blocklinktext0">{$campusNews[1]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$twoNews[1]['articleid']}" class="blocklinktext0">{$twoNews[1]['title']}</a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[1]['publishdate']) ?>
+											<?php echo date("Y-m-d",$twoNews[1]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[2]['articleid']}" class="blocklinktext0">{$campusNews[2]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$twoNews[2]['articleid']}" class="blocklinktext0">{$twoNews[2]['title']}</a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[2]['publishdate']) ?>
+											<?php echo date("Y-m-d",$twoNews[2]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
@@ -156,40 +159,40 @@
 								<a href="/index.php?c=simpleList&columnid=4" class="b1link">+更多</a>
 
 								<div class="display_news">
-									<img class="display_news_picture" src="{$noticeNews[0]['picture_url']}" alt="">
-									<a class="display_news_title" href="">{$noticeNews[0]['title']}</a>
-									<p class="display_news_content"><?php echo $contentes = strip_tags($noticeNews[0]['content']) ?></p>
+									<img class="display_news_picture" src="{$threePicNew['picture_url']}" alt="">
+									<a class="display_news_title" href="">{$threePicNew['title']}</a>
+									<p class="display_news_content"><?php echo $contentes = strip_tags($threePicNew['content']) ?></p>
 
 								</div>
 
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[0]['articleid']}" class="blocklinktext0">{$campusNews[0]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$threeNews[0]['articleid']}" class="blocklinktext0">{$threeNews[0]['title']}</a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[0]['publishdate']) ?>
+											<?php echo date("Y-m-d",$threeNews[0]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[1]['articleid']}" class="blocklinktext0">{$campusNews[1]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$threeNews[1]['articleid']}" class="blocklinktext0">{$threeNews[1]['title']}</a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[1]['publishdate']) ?>
+											<?php echo date("Y-m-d",$threeNews[1]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$campusNews[2]['articleid']}" class="blocklinktext0">{$campusNews[2]['title']}</a>
+										<a href="/index.php?c=passage&articleid={$threeNews[2]['articleid']}" class="blocklinktext0">{$threeNews[2]['title']}</a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$campusNews[2]['publishdate']) ?>
+											<?php echo date("Y-m-d",$threeNews[2]['publishdate']) ?>
 										</a>
 									</td>
 								</tr>
@@ -386,7 +389,7 @@
 							<table class="donateTable" cellspacing="0" cellpadding="0">
 
 								<!--生成捐赠列表-->
-								<foreach name="donations" item="donationItems">
+								<foreach name="donationsList" item="donationItems">
 									<tr>
 										<td class="listName">{$donationItems.name}</td>
 										<td class="listMoney">{$donationItems.amount}</td>

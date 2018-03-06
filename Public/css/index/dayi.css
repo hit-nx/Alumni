@@ -425,7 +425,7 @@
     position: absolute;
     color: #fff;
     overflow: hidden;
-    font-size: 14px;
+    font-size: 14px !important;
     text-indent: 2em;
 }
 
