@@ -295,7 +295,8 @@
     font-family: 'Microsoft Yahei';
     font-weight: normal;
     line-height: 30px;
-    text-align: center;
+    float: right;
+    padding-right: 15px;
     cursor: pointer;
 }
 
@@ -307,8 +308,9 @@
     line-height: 30px;
     color: #132478;
     border: 1px rgb(243,243,243) solid;
-    background: rgb(243,243,243) url('/Public/images/index/news_sch_blue.png') no-repeat left;
-    background-size: 20px 20px;
+    background: rgb(243,243,243) url('/Public/images/index/news_sch_blue.png') no-repeat;
+    background-position: 9% 50%;
+    background-size: 15px 15px;
 }
 
 .column_button_normal_sch{
@@ -322,8 +324,9 @@
     line-height: 30px;
     color: rgb(243,243,243);
     border: 1px rgb(243,243,243) solid;
-    background: #0d184e url('/Public/images/index/news_sch_white.png') no-repeat left; 
-    background-size: 20px 20px;
+    background: #0d184e url('/Public/images/index/news_sch_white.png') no-repeat; 
+    background-position: 9% 50%;
+    background-size: 15px 15px;
 
 }
 
@@ -336,7 +339,8 @@
     color: #132478;
     border: 1px rgb(243,243,243) solid;
     background: rgb(243,243,243) url('/Public/images/index/news_mate_blue.png') no-repeat left;
-    background-size: 20px 20px;
+    background-size: 15px 15px;
+    background-position: 9% 50%;
 }
 
 .column_button_normal_mate{
@@ -351,7 +355,8 @@
     color: rgb(243,243,243);
     border: 1px rgb(243,243,243) solid;
     background: #0d184e url('/Public/images/index/news_mate_white.png') no-repeat left; 
-    background-size: 20px 20px;
+    background-size: 15px 15px;
+    background-position: 9% 50%;
 
 }
 
@@ -364,7 +369,8 @@
     color: #132478;
     border: 1px rgb(243,243,243) solid;
     background: rgb(243,243,243) url('/Public/images/index/news_noti_blue.png') no-repeat left;
-    background-size: 20px 20px;
+    background-size: 15px 15px;
+    background-position: 9% 50%;
 }
 
 .column_button_normal_noti{
@@ -379,7 +385,8 @@
     color: rgb(243,243,243);
     border: 1px rgb(243,243,243) solid;
     background: #0d184e url('/Public/images/index/news_noti_white.png') no-repeat left; 
-    background-size: 20px 20px;
+    background-size: 15px 15px;
+    background-position: 9% 50%;
 
 }
 
