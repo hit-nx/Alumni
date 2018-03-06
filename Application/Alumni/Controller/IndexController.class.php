@@ -13,7 +13,7 @@ class IndexController extends CommonController {
     	$hitMemoryList = D("Index")->getHitMemory();
     	$campusBeauty = D("Index")->getCampusBeauty();
     	$alumniPersonList = D("Index")->getAlumniPerson();
-
+//
     	$this->assign("campusNews",$campusNewsList);
 		$this->assign("alumniNews",$alumniNewsList);
 		$this->assign("noticeNews",$noticeNewsList);
