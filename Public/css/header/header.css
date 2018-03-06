@@ -1,28 +1,37 @@
 
-
 #headerBackgroundColor{
     z-index: 997;
-    height: 120px;
+    height: 80px;
     width: 100%;
     background-color: #0d184e;
 }
 
 #logoDivHeaderImg{
     z-index: 999;
-    padding-top: 20px;
+    padding-top: 15px;
     padding-left: 100px;
     height: 57px;
     position: absolute;
 }
 
-#headerSearch{
-    z-index: 999;
-    margin-top: 35px;
-    right: 10px;
+#navi{
     position: absolute;
-    width: 15%;
+    width: 1000px;
+    height: 40px;
+    float: left;
+    left: 900px;
+    top: 30px;
+
+}
+
+#headerSearch{
+    position: absolute;
+    z-index: 999;
+    right: 20px;
+    width: 150px;
     height: 25px;
     border-radius: 20px;
+    margin-top: 5px;
     border: 2px solid #fff
 }
 
@@ -35,18 +44,19 @@
 }
 
 #headerSearch img{
-    width: 10%;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    width: 18px;
     height: 18px;
-    margin-top: -5px;
-    margin-left: 10%
+
 }
 
 #headerMenu
 {
     z-index: 998;
-    padding-top: 70px;
-    right: 10px;
     position: absolute;
+    float: left;
 }
 
 #headerMenu ul {
@@ -108,6 +118,7 @@
     line-height: 37px;
     border-bottom: #000;
 }
+
 
 
 
