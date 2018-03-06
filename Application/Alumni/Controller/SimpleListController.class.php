@@ -25,7 +25,7 @@ class SimpleListController extends CommonController {
 
         //分页
         $page = $_REQUEST['p'] ? $_REQUEST['p'] : 1;
-        $pageSize = 6;
+        $pageSize = 8;
 
         $newsList = D("Article")->getArticle($_GET,$page,$pageSize);
 

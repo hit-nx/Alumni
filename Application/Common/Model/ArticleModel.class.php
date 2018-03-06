@@ -200,6 +200,10 @@ class ArticleModel extends Model {
 		return $this->_db->where($data)->order('VisitCount desc')->limit(10)->select();
 	}
 
+	public function getColumnIdByArticle($articleid){
+		$data = $this->_db->where('articleid = '.$articleid)->find();
+		return $data["columnid"];
+	}
 
 
 }

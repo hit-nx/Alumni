@@ -5,7 +5,6 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- 以最高版本ie渲染，chrome版本为1开启chrome frame -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 适应屏幕宽度 -->
-	<link href="/Public/css/simpleList/horizontal.css"  rel="stylesheet" type="text/css" />
 	<link href="/Public/css/simpleList/simpleListStyle.css" rel="stylesheet" type="text/css" />
 	<link href="/Public/css/simpleList/reset.css"  rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
@@ -26,7 +25,7 @@
 
 		<ul class=class>
 			<foreach name="brotherColumn" item = "brotherColumnItems">
-				<li>
+				<li {$brotherColumnItems.column_id|getChoose}>
 					<a href="/index.php?c=simpleList&columnid={$brotherColumnItems.column_id}">{$brotherColumnItems.column_name}</a>
 				</li>
 			</foreach>

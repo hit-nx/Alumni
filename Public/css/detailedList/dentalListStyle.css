@@ -83,7 +83,7 @@ a:visited {
 /*大图标题*/
 .wrap2{
 	width: 1000px;
-	margin: 0 auto;
+	margin: auto;
 	overflow: hidden;
 	clear: both;
 	color: white;
@@ -126,11 +126,11 @@ a:visited {
 /*衔接部分*/
 p{
 	color: black;
-	font-size: 15px;
+	font-size: 14px;
 }
 .class{
 	display: block;
-	margin: 5px auto 35px auto;
+	margin: 5px auto 20px auto;
 	border-top: 2px #797979 solid;
 	width: 1000px;
 	height: 50px;
@@ -195,20 +195,11 @@ p{
 	position: relative;
 }
 
-.cont h3{
-	font-weight: normal;
-	font-size:20px;
-}
-
-.cont p{
-	font-size: 15px;
-	margin-top: 10px;
-}
 
 .cont_title{
-	font-size: 20px;
+	font-size: 19px;
 	margin-top: 8px;
-	width: 300px;
+	width: 280px;
 	display: block;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -227,7 +218,7 @@ p{
 	line-height: 30px;
 	text-align: center;
 	float: left;
-	margin-left: 30px;
+	/*margin-left: 10px;*/
 }
 .time{
 	color: black;
@@ -242,14 +233,17 @@ p{
 	font-size: 20px;
 }
 .cont p{
+	text-overflow: ellipsis;
 	width: 280px;
-	height: 100px;
+	height: 110px;
+	margin-top: 15px;
 	overflow: hidden;
 	color: black;
-	font-size: 15px;
+	line-height: 23px;
+	font-size: 14px;
 }
 .go{
-	font-size: 15px;
+	font-size: 14px;
 	position: absolute;
 	top:225px;
 	right: 20px;
@@ -279,13 +273,10 @@ p{
 
 .hot li{
 	display: block;
-	height: 77px;
+	height: 65px;
 	border-bottom: 1px #797979 solid;
 	box-sizing: border-box;
 	padding-top: 10px;
-}
-.hot li {
-	margin-bottom: 10px;
 }
 
 .hot a{
@@ -326,7 +317,7 @@ p{
 }
 .time1{
 	color: black;
-	font-size: 16px;
+	font-size: 14px;
 	display: block;
 	height: 20px;
 	line-height: 20px;
@@ -351,14 +342,14 @@ p{
 /*新闻概要*/
 .main{
 	margin-top: 60px;
-	height: 850px;
+	height: 750px;
 	width: 600px;
 	float: left;
 	padding-left: 10px;
 }
 .main li{
 	display: block;
-	height: 130px;
+	height: 115px;
 	width: 650px;
 	border-bottom: 1px #797979 solid;
 	box-sizing: border-box;
@@ -366,20 +357,21 @@ p{
 	position: relative;
 }
 .time_area{
-	height: 113px;
+	padding-top: 5px;
+	height: 80px;
 	width: 130px;
 	float: left;
 }
 .time_month{
-	font-size: 20px;
+	font-size: 18px;
+	top: 100px;
 	font-weight: bold;
 	margin-left: 20px;
 }
 .time_date{
-	font-size: 33px;
-	font-size: bold;
-	margin-top: 20px;
-	margin-left: 25px;
+	font-size: 30px;
+	/*font-weight: bold;*/
+	margin-left: 20px;
 }
 .word1{
 	height: 100px;
@@ -387,25 +379,25 @@ p{
 	float: left;
 }
 .word1 a{
-	width: 400px;
+	width: 410px;
 	display:block;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
-	font-size: 20px;
+	font-size: 19px;
 	font-weight: normal;
 }
 .word1 p{
-	height: 60px;
+	height: 40px;
 	overflow: hidden;
 	margin-top: 10px;
-	font-size: 15px;
-	width: 400px;
+	font-size: 14px;
+	width: 410px;
 }
 .word1 .label{
 	position: absolute;
-	left: 520px;
-	bottom: 60px;
+	left: 550px;
+	bottom: 65px;
 }
 /*分页*/
 .change{

@@ -115,7 +115,9 @@ class PeriodicalModel extends Model {
 
     public function getCommunicationList(){
 
-        $list = $this->_db->where()->order('periodicalid')->select();
+        $conditions = array();
+        $conditions['status'] = array('neq',-1);
+        $list = $this->_db->where($conditions)->order('periodicalid desc')->select();
         
         return $list;
     }

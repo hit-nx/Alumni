@@ -125,11 +125,11 @@ a:visited {
 /*衔接部分*/
 p{
 	color: black;
-	font-size: 15px;
+	font-size: 14px;
 }
 .class{
 	display: block;
-	margin: 5px auto 35px auto;
+	margin: 5px auto 20px auto;
 	border-top: 2px #797979 solid;
 	width: 1000px;
 	height: 50px;
@@ -144,6 +144,10 @@ p{
 }
 
 .class li:hover{
+	border-bottom: solid 5px #0D184E;
+}
+
+.active{
 	border-bottom: solid 5px #0D184E;
 }
 
@@ -204,7 +208,7 @@ p{
 }
 
 .cont_title{
-	font-size: 20px;
+	font-size: 19px;
 	margin-top: 8px;
 	width: 300px;
 	display: block;
@@ -260,7 +264,7 @@ p{
 	width: 300px;
 	height: 30px;
 	background-color: #E4E4E4;
-	background-image: url(/Public/images/simpleList/hoticon.png);
+	background-image: url(/Public/images/detailedList/hoticon.png);
 	background-repeat: no-repeat;
 	background-position: 8px 7px;
 	border-bottom: 4px #0D184E solid;
@@ -273,13 +277,10 @@ p{
 
 .hot li{
 	display: block;
-	height: 77px;
+	height: 65px;
 	border-bottom: 1px #797979 solid;
 	box-sizing: border-box;
 	padding-top: 10px;
-}
-.hot li {
-	margin-bottom: 10px;
 }
 
 .hot a{
@@ -291,7 +292,6 @@ p{
     overflow: hidden;
     white-space: nowrap;
 }
-
 .first{
 	display: block;
 	box-sizing: border-box;
@@ -320,7 +320,7 @@ p{
 }
 .time1{
 	color: black;
-	font-size: 16px;
+	font-size: 14px;
 	display: block;
 	height: 20px;
 	line-height: 20px;
@@ -344,14 +344,14 @@ p{
 }
 /*新闻概要*/
 .main{
-	height: 900px;
+	height: 980px;
 	width: 600px;
 	float: left;
 	padding-left: 10px;
 }
 .main li{
 	display: block;
-	height: 140px;
+	height: 115px;
 	width: 650px;
 	border-bottom: 1px #797979 solid;
 	box-sizing: border-box;
@@ -359,40 +359,41 @@ p{
 	position: relative;
 }
 .time_area{
-	height: 113px;
+	padding-top: 5px;
+	height: 80px;
 	width: 130px;
 	float: left;
 }
 .time_month{
-	font-size: 20px;
+	font-size: 18px;
+	top: 100px;
 	font-weight: bold;
 	margin-left: 20px;
 }
 .time_date{
-	font-size: 33px;
-	font-size: bold;
-	margin-top: 20px;
-	margin-left: 25px;
+	font-size: 30px;
+	/*font-weight: bold;*/
+	margin-left: 20px;
 }
 .word1{
-	height: 113px;
+	height: 100px;
 	width: 450px;
 	float: left;
 }
 .word1 a{
-	width: 450px;
+	width: 500px;
 	display:block;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
-	font-size: 20px;
+	font-size: 19px;
 	font-weight: normal;
 }
 .word1 p{
-	height: 60px;
+	height: 40px;
 	overflow: hidden;
 	margin-top: 10px;
-	font-size: 15px;
+	font-size: 14px;
 	width: 500px;
 }
 .word1 .label{

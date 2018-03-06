@@ -46,6 +46,22 @@ function getActive($navc){
     }
     return '';
 }
+function getChoose($id){
+    $now = $_GET['columnid'];
+    if($now == $id) {
+        return 'class="active"';
+    }
+    return '';
+}
+
+function getChooseByArticle($id){
+    $articleid = $_GET['articleid'];
+    $now = D("Article")->getColumnIdByArticle($articleid);
+    if($now == $id) {
+        return 'class="active"';
+    }
+    return '';
+}
 function showKind($status,$data) {
     header('Content-type:application/json;charset=UTF-8');
     if($status==0) {
