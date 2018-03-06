@@ -15,11 +15,7 @@ return array(
    'DB_TYPE' => 'mysql',
    'DB_HOST' => '127.0.0.1',
    'DB_USER' => 'root',
-<<<<<<< HEAD
    'DB_PWD' => '19970414',
-=======
-   'DB_PWD' => 'lamessi10',
->>>>>>> eddf7ec1fe794ac296fd0244cb3d771abf69a98b
    'DB_PORT' => 3306,
    'DB_NAME' => 'alumni',
    'DB_CHARSET' => 'utf8',
