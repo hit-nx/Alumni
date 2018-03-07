@@ -15,13 +15,8 @@
         <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
     </div>
 
-    <div id="headerSearch">
-
-        <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
-        <img src="../Public/images/search.png" id="headerSearchBar">
-    </div>
-
-    <div id="headerMenu">
+    <div id="navi">
+<div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
             <li><a href="/index.php?c=detailedList&columnid=1">新闻中心</a>
@@ -74,6 +69,14 @@
             </li>
         </ul>
     </div>
+
+    <div id="headerSearch">
+            <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
+            <img src="../Public/images/search.png" id="headerSearchBar">
+    </div>
+
+    </div>
+    
     </div>
 </body>
 <script>

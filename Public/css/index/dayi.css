@@ -436,6 +436,222 @@
     text-indent: 2em;
 }
 
+.display_news_picture{
+    height: 130px;
+    width: 180px;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    background-color: #fff;
+
+}
+
+.display_news_title2{
+    height: 30px;
+    width: 240px;
+    position: absolute;
+    color: #0d184e;
+    font-size: 16px;
+    top: 55px;
+    right: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.display_news_content2{
+    height: 80px;
+    width: 240px;
+    line-height: 20px;
+    top: 90px;
+    right: 15px;
+    position: absolute;
+    color: #0d184e;
+    overflow: hidden;
+    font-size: 14px !important;
+    text-indent: 2em;
+}
+
+.blocklinktext2{
+    max-width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    white-space:nowrap;
+    font-family:  'Microsoft Yahei';
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 15px;
+    color: #0d184e !important;
+}
+
+.buttomline2{
+     max-width: 350px;
+     overflow: hidden;
+     border-top: 1px solid #0d184e;
+}
+
+.b2link{
+    font-size: 15px;
+    text-decoration: none;
+    color: #0d184e;
+    font-family: 'Microsoft Yahei';
+    position: absolute;
+    top: 10px;
+    left: 400px;
+
+}
+
+.blocklinktext3{
+    max-width: 300px;
+    height: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    white-space:nowrap;
+    font-family:  'Microsoft Yahei';
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 15px;
+    color: #0d184e !important;
+}
+
+.blocktable3{
+    width: 460px;
+    height: 300px;
+    position: absolute;
+    border-collapse:collapse;
+    top: 35px;
+    left: 10px;
+}
+
+.column_button_selected_memory{
+    float: left;
+    margin: 0px;
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    color: #132478;
+    border: 1px rgb(243,243,243) solid;
+    background: rgb(243,243,243) url('/Public/images/index/school_blue.png') no-repeat left;
+    background-size: 15px 15px;
+    background-position: 9% 50%;
+}
+
+.column_button_normal_memory{
+    float: left;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Microsoft Yahei';
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    color: rgb(243,243,243);
+    border: 1px rgb(243,243,243) solid;
+    background: #0d184e url('/Public/images/index/school_white.png') no-repeat left; 
+    background-size: 15px 15px;
+    background-position: 9% 50%;
+
+}
+
+.column_button_selected_alumni{
+    float: left;
+    margin: 0px;
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    color: #132478;
+    border: 1px rgb(243,243,243) solid;
+    background: rgb(243,243,243) url('/Public/images/index/alumni_blue.png') no-repeat left;
+    background-size: 15px 15px;
+    background-position: 9% 50%;
+}
+
+.column_button_normal_alumni{
+    float: left;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Microsoft Yahei';
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    color: rgb(243,243,243);
+    border: 1px rgb(243,243,243) solid;
+    background: #0d184e url('/Public/images/index/alumni_white.png') no-repeat left; 
+    background-size: 15px 15px;
+    background-position: 9% 50%;
+
+}
+
+.column_button_normal_organization{
+    float: left;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Microsoft Yahei';
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    color: rgb(243,243,243);
+    border: 1px rgb(243,243,243) solid;
+    background: #0d184e url('/Public/images/index/organization_white.png') no-repeat left; 
+    background-size: 15px 15px;
+    background-position: 9% 50%;
+
+}
+
+.column_button_selected_organization{
+    float: left;
+    margin: 0px;
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    color: #132478;
+    border: 1px rgb(243,243,243) solid;
+    background: rgb(243,243,243) url('/Public/images/index/organization_blue.png') no-repeat left;
+    background-size: 15px 15px;
+    background-position: 9% 50%;
+}
+
+.contact_content{
+    width: 472px;
+    height: 300px;
+    position: absolute;
+    top: 35px;
+}
+
+.contact_picture{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 200px;
+    height: 280px;
+    background: url('/Public/images/index/contact_picture.png') no-repeat;
+    background-size: 100%;
+}
+
+.contact_article{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    width: 200px;
+    height: 280px;
+    overflow: hidden;
+    color: #fff;
+
+}
+
+.contact_article td a{
+    padding:0;
+    margin:0;
+    height: 19px;
+    overflow: hidden;
+    line-height: 18px;
+    color: #fff;
+    font-size: 14px;
+}
 
 
 
@@ -527,16 +743,7 @@
     top: 10px;
     left: 400px;
 }
-.b2link{
-    font-size: 15px;
-    text-decoration: none;
-    color: #132478;
-    font-family: 'Microsoft Yahei';
-    position: absolute;
-    top: 10px;
-    left: 400px;
 
-}
 .b4link{
     font-size: 15px;
     text-decoration: none;

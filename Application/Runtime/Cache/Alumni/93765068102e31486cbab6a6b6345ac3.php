@@ -304,9 +304,26 @@
 
 						<div class="block3">
 							<h1 class="newsalumnus">
-								<img src="/Public/images/index/newsalumnus.png">&nbsp校友通讯</h1>
+								<img src="/Public/images/index/contact.png">&nbsp校友通讯</h1>
 							<a href="/index.php?c=simpleList&columnid=2" class="b3link">+更多</a>
-							<table class="blocktable">
+
+							<div class="contact_content">
+
+								<div class="contact_picture"></div>
+
+								<div class="contact_article">
+
+									<table>
+										<?php if(is_array($periodical)): foreach($periodical as $key=>$periodicalItems): ?><tr>
+											<td>
+												<a href="/index.php?c=address&periodicalid=<?php echo ($periodicalItems["periodicalid"]); ?>"><?php echo ($periodicalItems["title"]); ?></a>
+											</td>
+										</tr><?php endforeach; endif; ?>
+									</table>
+								</div>
+
+							</div>
+							<!-- <table class="blocktable">
 								<tr>
 									<td width="561.5px" class="buttomline">
 										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[0]['title']); ?></a>
@@ -387,7 +404,7 @@
 										</a>
 									</td>
 								</tr>
-							</table>
+							</table> -->
 						</div>
 					</div>
 				</div>
@@ -396,91 +413,134 @@
 			<div class="block2_and_block4">
 				<div class="block2_and_block4_container">
 					<div class="block2">
-						<h1 class="infos">
-							<img src="/Public/images/index/infos.png">&nbsp通知公告</h1>
-						<a href="/index.php?c=simpleList&columnid=4" class="b2link">+更多</a>
-						<table class="blocktable">
-							<tr>
-								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[0]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[0]['title']); ?></a>
-								</td>
-								<td width="155px" class="buttomline1">
-									<a href="" class="blocklinktext">
-										<?php echo date("Y-m-d",$noticeNews[0]['publishdate']) ?>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[1]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[1]['title']); ?></a>
-								</td>
-								<td width="105px" class="buttomline1">
-									<a href="" class="blocklinktext">
-										<?php echo date("Y-m-d",$noticeNews[1]['publishdate']) ?>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[2]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[2]['title']); ?></a>
-								</td>
-								<td width="105px" class="buttomline1">
-									<a href="" class="blocklinktext">
-										<?php echo date("Y-m-d",$noticeNews[2]['publishdate']) ?>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[3]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[3]['title']); ?></a>
-								</td>
-								<td width="105px" class="buttomline1">
-									<a href="" class="blocklinktext">
-										<?php echo date("Y-m-d",$noticeNews[3]['publishdate']) ?>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[4]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[4]['title']); ?></a>
-								</td>
-								<td width="105px" class="buttomline1">
-									<a href="" class="blocklinktext">
-										<?php echo date("Y-m-d",$noticeNews[4]['publishdate']) ?>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[5]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[5]['title']); ?></a>
-								</td>
-								<td width="105px" class="buttomline1">
-									<a href="" class="blocklinktext">
-										<?php echo date("Y-m-d",$noticeNews[5]['publishdate']) ?>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[6]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[6]['title']); ?></a>
-								</td>
-								<td width="105px" class="buttomline1">
-									<a href="" class="blocklinktext">
-										<?php echo date("Y-m-d",$noticeNews[6]['publishdate']) ?>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td width="561.5px" class="buttomline1">
-									<a href="/index.php?c=passage&articleid=<?php echo ($noticeNews[7]['articleid']); ?>" class="blocklinktext"><?php echo ($noticeNews[7]['title']); ?></a>
-								</td>
-								<td width="105px" class="buttomline1">
-									<a href="" class="blocklinktext">
-										<?php echo date("Y-m-d",$noticeNews[7]['publishdate']) ?>
-									</a>
-								</td>
-							</tr>
-						</table>
+						<div class="column_button">
+							<div name="btnChangeCol" class="column_button_selected_alumni" control-div="alumni" normal-state="column_button_normal_alumni" click-state="column_button_selected_alumni" clicked="clicked" onclick="changeColumn(this)">
+									<h1>&nbsp校友人物</h1>
+							</div>
+
+							<div name="btnChangeCol" class="column_button_normal_memory" control-div="hit_memory" normal-state="column_button_normal_memory" click-state="column_button_selected_memory" onclick="changeColumn(this)">
+									<h1>&nbsp工大回忆</h1>
+							</div>
+
+							<div name="btnChangeCol" class="column_button_normal_organization" control-div="alumni_organization" normal-state="column_button_normal_organization" click-state="column_button_selected_organization" onclick="changeColumn(this)">
+									<h1>&nbsp校友组织</h1>
+							</div>
+						</div>
+
+						<!--校友人物-->
+							<div class="column_content" id="alumni">
+								
+								<a href="/index.php?c=detailedList&columnid=11" class="b2link">+更多</a>
+
+								<div class="display_news">
+									<img class="display_news_picture" src="<?php echo ($fourPicNew["picture_url"]); ?>" alt="">
+									<a class="display_news_title2" href=""><?php echo ($fourPicNew["title"]); ?></a>
+									<div class="display_news_content2">
+										<?php echo $contentes = strip_tags($fourPicNew['content']) ?>
+									</div>
+									
+
+								</div>
+
+							<table class="blocktable">
+								<tr>
+									<td width="400px" class="buttomline2">
+										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[0]['articleid']); ?>" class="blocklinktext2"><?php echo ($fourNews[0]['title']); ?></a>
+									</td>
+									<td width="155px" class="buttomline2">
+										<a href="" class="blocklinktext2">
+											<?php echo date("Y-m-d",$fourNews[0]['publishdate']) ?>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="400px" class="buttomline2">
+										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[1]['articleid']); ?>" class="blocklinktext2"><?php echo ($fourNews[1]['title']); ?></a>
+									</td>
+									<td width="155px" class="buttomline2">
+										<a href="" class="blocklinktext2">
+											<?php echo date("Y-m-d",$fourNews[1]['publishdate']) ?>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="561.5px" class="buttomline2">
+										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[2]['articleid']); ?>" class="blocklinktext2"><?php echo ($fourNews[2]['title']); ?></a>
+									</td>
+									<td width="105px" class="buttomline2">
+										<a href="" class="blocklinktext2">
+											<?php echo date("Y-m-d",$fourNews[2]['publishdate']) ?>
+										</a>
+									</td>
+								</tr>
+							</table>
+							</div>
+
+
+							<!--工大回忆-->
+							<div class="column_content" id="hit_memory" style="display:none">
+								
+								<a href="/index.php?c=detailedList&columnid=17" class="b2link">+更多</a>
+
+								<div class="display_news">
+									<img class="display_news_picture" src="<?php echo ($fivePicNew['picture_url']); ?>" alt="">
+									<a class="display_news_title2" href=""><?php echo ($fivePicNew['title']); ?></a>
+									<p class="display_news_content2"><?php echo $contentes = strip_tags($fivePicNew['content']) ?></p>
+
+								</div>
+
+							<table class="blocktable">
+								<tr>
+									<td width="400px" class="buttomline2">
+										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[0]['articleid']); ?>" class="blocklinktext2"><?php echo ($fiveNews[0]['title']); ?></a>
+									</td>
+									<td width="155px" class="buttomline2">
+										<a href="" class="blocklinktext2">
+											<?php echo date("Y-m-d",$fiveNews[0]['publishdate']) ?>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="400px" class="buttomline2">
+										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[1]['articleid']); ?>" class="blocklinktext2"><?php echo ($fiveNews[1]['title']); ?></a>
+									</td>
+									<td width="155px" class="buttomline2">
+										<a href="" class="blocklinktext2">
+											<?php echo date("Y-m-d",$fiveNews[1]['publishdate']) ?>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="561.5px" class="buttomline2">
+										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[2]['articleid']); ?>" class="blocklinktext2"><?php echo ($fiveNews[2]['title']); ?></a>
+									</td>
+									<td width="105px" class="buttomline2">
+										<a href="" class="blocklinktext2">
+											<?php echo date("Y-m-d",$fiveNews[2]['publishdate']) ?>
+										</a>
+									</td>
+								</tr>
+							</table>
+							</div>
+
+
+							<!--校友组织-->
+							<div class="column_content" id="alumni_organization" style="display:none">
+								
+								<a href="/index.php?c=organization&a=organizationList" class="b2link">+更多</a>
+
+								<table class="blocktable3">
+
+									<?php if(is_array($alumniList)): foreach($alumniList as $key=>$alumniItems): ?><tr>
+											<td>
+												<a href="/index.php?c=organization&a=otherOrganizationInfo&alumnis_id=<?php echo ($alumniItems["alumnis_id"]); ?>" class="blocklinktext3"><?php echo ($alumniItems["title"]); ?></a>
+											</td>
+										</tr><?php endforeach; endif; ?>
+
+								</table>
+
+							</div>
+
 					</div>
 					<div class="block4">
 						<h2 class="donatethanks">捐赠鸣谢</h2>
