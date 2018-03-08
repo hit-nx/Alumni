@@ -214,47 +214,47 @@
 /*校友人物*/
 .blocks{
     width: 100%;
-    height: 820px;
+    height: 780px;
     background-color: rgb(243,243,243);
 }
 .blockscenter{
     margin: auto;
     width: 100%;
-    height: 820px;
+    height: 780px;
     position: relative;
 }
 .block1_and_block3_background{
     width: 100%;
     position: relative;
-    height: 410px;
+    height: 390px;
     background: rgba(13,24,78,0.85);
 }
 .block1_and_block3_container{
     position: relative;
     width: 1000px;
-    height: 410px;
+    height: 390px;
     margin: 0 auto;
 }
 .block2_and_block4_container{
     position: relative;
     width: 1000px;
-    height: 410px;
+    height: 390px;
     margin: 0 auto;
 }
 .block1_and_block3{
     background:url(/Public/images/donation/topimage.jpg) 0px 0px no-repeat ;
     width: 100%;
     position: relative;
-    height: 410px;
+    height: 390px;
 }
 .block2_and_block4{
     background-color: rgb(243,243,243);
     width: 100%;
-    height: 410px;
+    height: 390px;
 }
 .block1{
     width: 470px;
-    height: 340px;
+    height: 320px;
     position: absolute;
     top: 25px;
     left: 0px;
@@ -262,7 +262,7 @@
 }
 .block2{
     width: 470px;
-    height: 340px;
+    height: 320px;
     position: absolute;
     top: 25px;
     left: 0;
@@ -270,7 +270,7 @@
 }
 .block3{
     width: 470px;
-    height: 340px;
+    height: 320px;
     position: absolute;
     top: 25px;
     right: 0px;
@@ -279,7 +279,7 @@
 }
 .block4{
     width: 470px;
-    height: 340px;
+    height: 320px;
     position: absolute;
     top: 25px;
     right: 0;
@@ -642,14 +642,14 @@
     top: 10px;
     left: 25px;
     width: 200px;
-    height: 280px;
+    height: 260px;
     background: url('/Public/images/index/contact_picture.png') no-repeat;
     background-size: 100%;
 }
 
 .contact_article{
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 10px;
     width: 200px;
     height: 280px;
@@ -760,8 +760,8 @@
 
 }
 .blocktable{
-    width: 460px;
-    height: 150px;
+    width: 450px;
+    height: 120px;
     position: absolute;
     border-collapse:collapse;
     bottom: 0px;
@@ -807,7 +807,7 @@
     line-height: 40px;
     background-color: white;
     width: 400px;
-    height: 287px;
+    height: 270px;
     font-size: 15px;
     position: absolute;
     top: 50px;

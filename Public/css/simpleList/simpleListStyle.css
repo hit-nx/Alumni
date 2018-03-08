@@ -20,7 +20,7 @@ a:link {
 }
 a:visited {
 	text-decoration: none;
-	color: #000;
+	color: #888888;
 }
 *{
 	color: black;
@@ -394,6 +394,7 @@ p{
 	overflow: hidden;
 	margin-top: 10px;
 	font-size: 14px;
+	line-height: 20px;
 	width: 500px;
 }
 .word1 .label{

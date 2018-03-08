@@ -1,14 +1,14 @@
 footer{
     width: 100%;
-    height: 250px;
+    height: 90px;
     /*margin: 0 auto;*/
     background-color: rgb(13,24,78);
 }
 .wrap3{
-    width: 1200px;
+    width: 900px;
     height: 100%;
     box-sizing: border-box;
-    padding-top: 30px;
+    padding-top: 10px;
     margin: 0 auto;
     position: relative;
     color: #878BB0;
@@ -18,7 +18,7 @@ footer{
 .wrap3 p{
     display: inline-block;
     box-sizing: border-box;
-    padding-top: 80px;
+    padding-top: 60px;
     height: 100%;
     width: 500px;
     background-image: url(../../images/index/logo.png);
@@ -46,12 +46,12 @@ footer{
     font-weight: bold;
     line-height: 25px;
     font-size: 19px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .wrap3 dd{
     color: #878BB0;
-    font-size: 15px;
-    line-height: 30px;
+    font-size: 14px;
+    line-height: 25px;
 }
 .webs{
     display: inline-block;
@@ -63,7 +63,7 @@ footer{
     height: 30px;
     line-height: 30px;
     width: auto;
-    padding-left: 15px;
+    padding-left: 14px;
     background-image: url(../../images/index/whitetrangle.jpg);
     background-position: 0 6px;
     background-repeat: no-repeat;
