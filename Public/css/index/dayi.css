@@ -243,6 +243,8 @@
 }
 .block1_and_block3{
     background:url(/Public/images/donation/topimage.jpg) 0px 0px no-repeat ;
+    background-size:cover;
+    background-position: center;
     width: 100%;
     position: relative;
     height: 390px;
