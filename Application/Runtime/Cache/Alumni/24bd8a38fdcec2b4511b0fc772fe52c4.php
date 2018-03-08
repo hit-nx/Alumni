@@ -33,8 +33,8 @@
                     <li><a href="/index.php?c=organization&contentid=1">校友会简介</a></li>
                     <li><a href="/index.php?c=organization&contentid=2">组织机构</a></li>
                     <li><a href="/index.php?c=organization&contentid=3">规章制度</a></li>
-                    <li><a href="/index.php?c=organization&a=organizationList">地方校友组织</a></li>
-                    <li><a href="/index.php?c=organization&contentid=4">校友创业导师</a></li>
+                    <li><a href="/index.php?c=organization&a=organizationList">地方校友会</a></li>
+                    <li><a href="/index.php?c=organization&contentid=4">创业导师</a></li>
                 </ul>
             </li>
             <li><a href="/index.php?c=detailedList&columnid=11">校友人物</a>
@@ -117,7 +117,7 @@
 	<title></title>
 </head>
 <body>
-		<div class="ahead">——————&nbsp;&nbsp;&nbsp;<?php echo ($currentColumn["column_name"]); ?>&nbsp;&nbsp;&nbsp;——————</div>
+		<div class="ahead">&nbsp;</div>
 
 <!-- 		<div class=toppic>
 			<span class="black"></span>
@@ -221,25 +221,28 @@
 <body>
     <footer name=fixwide>
     <div class=wrap3>
-        <p>校友会的三行介绍，独家会觉得好似独家试爱和第哦啊是京东啊时间阿迪斯教授第哈怂的的巴萨和计划第哦啊是家啊是哦啊是的话就看少i上帝就是电话覅和发河北无办法对你撒娇好的</p>
+        <p></p>
+<!--         <p>校友会的三行介绍，独家会觉得好似独家试爱和第哦啊是京东啊时间阿迪斯教授第哈怂的的巴萨和计划第哦啊是家啊是哦啊是的话就看少i上帝就是电话覅和发河北无办法对你撒娇好的</p> -->
         <dl class=connect>
-            <dt>联系方式</dt>
+            <!-- <dt>联系方式</dt> -->
             <dd>地址：威海市环翠区文化西路2号</dd>
             <dd>邮编：264209</dd>
             <dd>电话：80008208820</dd>
         </dl>
         <dl class=webs>
-            <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt>
+            <!-- <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt> -->
             <dd><a href="http://www.hitwh.edu.cn/" style="text-decoration: none; color: #fff">学校官网</a></dd>
-            <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
+            <dd><a href="/admin.php" style="text-decoration: none; color: #fff">管理入口</a></dd>
+<!--             <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
-            <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
-            <dd><a href="/admin.php" style="text-decoration: none; color: #fff">管理端</a></dd>
+            <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd> -->
+            
         </dl>
-        <dl class=others>
-            <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt>
-            <dd><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">管理方法</a></dd>
-            <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
+        <!-- <dl class=others> -->
+            <!-- <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt> -->
+            <!-- <dd><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">管理方法</a></dd> -->
+            <!-- <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd> -->
+
 <!--             <dd class=otherweb>
                 <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
                 <ul>
@@ -248,7 +251,7 @@
                     <li><a href="">web3</a></li>
                 </ul>
             </dd> -->
-        </dl>
+        <!-- </dl> -->
 
     </div>
 </footer>

@@ -1,6 +1,12 @@
 body{
+<<<<<<< HEAD
     font-size: 0;
 }
+=======
+    overflow-x: hidden;
+}
+
+>>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
 #headerBackgroundColor{
     font-size: 0;
     z-index: 997;
@@ -12,8 +18,18 @@ body{
     display: inline-block;
 }
 
+#navi{
+    width: 100%;
+    height: 60px;
+    margin:0 auto;
+    z-index: 9999;
+    overflow:hidden;
+}
+
 #logoDivHeaderImg{
+    margin-left: 5%;
     padding-top: 15px;
+    width: 30%;
     z-index: 999;
     height: 57px;
     max-height: 57px;
@@ -21,6 +37,7 @@ body{
     float: left;
 }
 
+<<<<<<< HEAD
 #navi{
     display: block;
     width: 80%;
@@ -28,19 +45,33 @@ body{
     margin:0 auto;
     z-index: 9999;
 }
+=======
+>>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
 
 .right_navi{
     width: 60%;
     padding-top: 30px;
+    height: 50px;
+    width: 60%;
     float: right;
     display: inline;
+    position: absolute;
+    
+    right: 0px;
 }
 
 #headerSearch{
+<<<<<<< HEAD
     margin-left: 5%;
     float: left;
     z-index: 999;
     width: 10%;
+=======
+    margin-left: 10px;
+    float: left;
+    z-index: 999;
+    width: 15%;
+>>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
     height: 25px;
     border-radius: 20px;
     margin-top: 5px;
@@ -51,6 +82,7 @@ body{
 #headerSearch input{
     position: absolute;
     line-height: 25px;
+    font-size: 0.9vw;
     left: 10px;
     width: 60%;
     height: 25px;
@@ -68,6 +100,7 @@ body{
 
 #headerMenu
 {
+    width: 80%;
     z-index: 998;
     float: left;
     width: 80%;
@@ -78,9 +111,12 @@ body{
     margin:0;
     padding:0;
     overflow:hidden;
+<<<<<<< HEAD
     width: 100%;
 
 
+=======
+>>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
 }
 
 .headerImg{
@@ -91,6 +127,7 @@ body{
 
 #headerMenu ul li
 {
+    width: 12.5%;
     height: auto;
     float:left;
     text-align: center;
@@ -109,13 +146,18 @@ body{
 #headerMenu ul li a
 {
     display:block;
-    font-size: 16px;
+    font-size: 1vw;
     line-height: 37px;
+<<<<<<< HEAD
     width:100%;
+=======
+    width: 90%;
+>>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
     font-weight:bold;
     color:#FFFFFF;
     text-align:center;
-    padding:0px;
+    margin: auto;
+    padding: auto;
     text-decoration:none;
     text-transform:uppercase;
 }
@@ -132,13 +174,14 @@ body{
 }
 
 #headerMenu ul li.listshow ul{
+    width: 6%;
     display: block;
 }
 
 #headerMenu ul li ul li{
     float: none;
     background-color: rgb(13,24,78);
-    width: 90px;
+    width: 100%;
     margin: 0;
     height: 37px;
     line-height: 37px;
