@@ -98,29 +98,57 @@
     });
 </script>
 </html>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>address</title>
-    <link rel="stylesheet" href="/Public/css/address/address.css" type="text/css" />
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/Public/css/organization/AlumniOrganization.css" />
+	<link href="/Public/css/passage/passage.css"  rel="stylesheet" type="text/css" />
+	<link href="/Public/css/passage/style.css" rel="stylesheet" type="text/css" />
+	<link href="/Public/css/passage/reset.css"  rel="stylesheet" type="text/css" />
+
+	<script src="/Public/js/alumni/menuFix.js" type="text/javascript"></script>
+	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="/Public/js/alumni/passage.js" type="text/javascript"></script>
 </head>
 <body>
-<center>
-    <div class="ahead">——————&nbsp;&nbsp;&nbsp;校友通讯&nbsp;&nbsp;&nbsp;——————</div>
-    <div class="body">
-        <br>
-        <h2 id="big_title"><?php echo ($periodicalDetails["title"]); ?></h2>
 
-        <!--【来源:哈工大威海校友网&nbsp; 浏览：1000&nbsp;-->
-<!--         <h2 id="vice_title">【来源:哈工大威海校友网&nbsp; 浏览：1000&nbsp;录入时间：<?php echo date("Y年m月d日",$periodicalDetails['time']) ?>】</h2> -->
-        <br>
-        <hr>
-        <div class="book">
-            <a href="<?php echo ($periodicalDetails["path"]); ?>"><img src="<?php echo ($periodicalDetails["picture_url"]); ?>"></a>
-        </div>
-    </div>
-</center>
+	<div class="ahead">——————&nbsp;&nbsp;&nbsp;<?php echo ($parentColumn["column_name"]); ?>&nbsp;&nbsp;&nbsp;——————</div>
+
+	<div style="text-align: center;">
+		<div class="class">
+			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li <?php echo (getChooseByArticle($brotherColumnItems["column_id"])); ?>>
+				<a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a>
+			</li><?php endforeach; endif; ?>
+		</div>
+	</div>
+	<div class="room">
+		<div class="content">
+			<p class="name"><?php echo ($articleInfo["title"]); ?></p>
+
+			<P class="writer">来源：<?php echo ($articleInfo["source"]); ?> 浏览量：<?php echo ($articleInfo["visitcount"]); ?><br></P>
+
+			<div><?php echo (htmlspecialchars_decode($articleInfo["content"])); ?></div>
+
+		</div>
+
+		<div class="passageBottom">
+
+			<div class="down">
+				<a herf="">
+					<img src="/Public/images/passage/download.png" >
+
+					<span>下载附件</span>
+				</a>
+			</div>
+<!-- 			<div class="like">
+				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
+				<img class="bg_good" src="/Public/images/passage/havegood.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
+				<span id="like_number"><?php echo ($articleInfo["likecount"]); ?></span>
+				<input type="hidden" id="articleid" value="<?php echo ($articleInfo["articleid"]); ?>"/>
+			</div> -->
+		</div>
+
 </body>
 </html>
 <!DOCTYPE html>

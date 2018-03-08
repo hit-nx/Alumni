@@ -62,7 +62,7 @@
                 <ul>
                     <li><a href="/index.php?c=simpleList&columnid=24">新闻动态</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=25">活动公告</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li>
+                    <!-- <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li> -->
                 </ul>
             </li>
             <li><a href="/index.php?c=communication">校友通讯</a>
@@ -162,7 +162,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($onePicNew["picture_url"]); ?>" alt="">
-									<a class="display_news_title" href=""><?php echo ($onePicNew["title"]); ?></a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($onePicNew["articleid"]); ?>"><?php echo ($onePicNew["title"]); ?></a>
 									<div class="display_news_content">
 										<?php echo $contentes = strip_tags($onePicNew['content']) ?>
 									</div>
@@ -212,7 +212,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($twoPicNew['picture_url']); ?>" alt="">
-									<a class="display_news_title" href=""><?php echo ($twoPicNew['title']); ?></a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($twoPicNew["articleid"]); ?>"><?php echo ($twoPicNew['title']); ?></a>
 									<p class="display_news_content"><?php echo $contentes = strip_tags($twoPicNew['content']) ?></p>
 
 								</div>
@@ -259,7 +259,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($threePicNew['picture_url']); ?>" alt="">
-									<a class="display_news_title" href=""><?php echo ($threePicNew['title']); ?></a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($threePicNew["articleid"]); ?>"><?php echo ($threePicNew['title']); ?></a>
 									<p class="display_news_content"><?php echo $contentes = strip_tags($threePicNew['content']) ?></p>
 
 								</div>
@@ -305,7 +305,7 @@
 						<div class="block3">
 							<h1 class="newsalumnus">
 								<img src="/Public/images/index/contact.png">&nbsp校友通讯</h1>
-							<a href="/index.php?c=simpleList&columnid=2" class="b3link">+更多</a>
+							<a href="/index.php?c=communication" class="b3link">+更多</a>
 
 							<div class="contact_content">
 
@@ -323,88 +323,6 @@
 								</div>
 
 							</div>
-							<!-- <table class="blocktable">
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[0]['title']); ?></a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[0]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[1]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[1]['title']); ?></a>
-									</td>
-									<td width="155px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[1]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[2]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[2]['title']); ?></a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[2]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[3]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[3]['title']); ?></a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[3]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[4]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[4]['title']); ?></a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[4]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[5]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[5]['title']); ?></a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[5]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[6]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[6]['title']); ?></a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[6]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($alumniNews[7]['articleid']); ?>" class="blocklinktext0"><?php echo ($alumniNews[7]['title']); ?></a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[7]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-							</table> -->
 						</div>
 					</div>
 				</div>
@@ -434,7 +352,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($fourPicNew["picture_url"]); ?>" alt="">
-									<a class="display_news_title2" href=""><?php echo ($fourPicNew["title"]); ?></a>
+									<a class="display_news_title2" href="/index.php?c=passage&articleid=<?php echo ($fourPicNew["articleid"]); ?>"><?php echo ($fourPicNew["title"]); ?></a>
 									<div class="display_news_content2">
 										<?php echo $contentes = strip_tags($fourPicNew['content']) ?>
 									</div>
@@ -484,7 +402,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($fivePicNew['picture_url']); ?>" alt="">
-									<a class="display_news_title2" href=""><?php echo ($fivePicNew['title']); ?></a>
+									<a class="display_news_title2" href="/index.php?c=passage&articleid=<?php echo ($fivePicNew["articleid"]); ?>"><?php echo ($fivePicNew['title']); ?></a>
 									<p class="display_news_content2"><?php echo $contentes = strip_tags($fivePicNew['content']) ?></p>
 
 								</div>
@@ -529,7 +447,9 @@
 								
 								<a href="/index.php?c=organization&a=organizationList" class="b2link">+更多</a>
 
-								<table class="blocktable3">
+								<div class="organization_content">
+
+									<table>
 
 									<?php if(is_array($alumniList)): foreach($alumniList as $key=>$alumniItems): ?><tr>
 											<td>
@@ -539,6 +459,7 @@
 
 								</table>
 
+								</div>
 							</div>
 
 					</div>

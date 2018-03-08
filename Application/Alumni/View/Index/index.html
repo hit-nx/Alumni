@@ -63,7 +63,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="{$onePicNew.picture_url}" alt="">
-									<a class="display_news_title" href="">{$onePicNew.title}</a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid={$onePicNew.articleid}">{$onePicNew.title}</a>
 									<div class="display_news_content">
 										<?php echo $contentes = strip_tags($onePicNew['content']) ?>
 									</div>
@@ -113,7 +113,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="{$twoPicNew['picture_url']}" alt="">
-									<a class="display_news_title" href="">{$twoPicNew['title']}</a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid={$twoPicNew.articleid}">{$twoPicNew['title']}</a>
 									<p class="display_news_content"><?php echo $contentes = strip_tags($twoPicNew['content']) ?></p>
 
 								</div>
@@ -160,7 +160,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="{$threePicNew['picture_url']}" alt="">
-									<a class="display_news_title" href="">{$threePicNew['title']}</a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid={$threePicNew.articleid}">{$threePicNew['title']}</a>
 									<p class="display_news_content"><?php echo $contentes = strip_tags($threePicNew['content']) ?></p>
 
 								</div>
@@ -226,88 +226,6 @@
 								</div>
 
 							</div>
-							<!-- <table class="blocktable">
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[0]['articleid']}" class="blocklinktext0">{$alumniNews[0]['title']}</a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[0]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[1]['articleid']}" class="blocklinktext0">{$alumniNews[1]['title']}</a>
-									</td>
-									<td width="155px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[1]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[2]['articleid']}" class="blocklinktext0">{$alumniNews[2]['title']}</a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[2]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[3]['articleid']}" class="blocklinktext0">{$alumniNews[3]['title']}</a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[3]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[4]['articleid']}" class="blocklinktext0">{$alumniNews[4]['title']}</a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[4]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[5]['articleid']}" class="blocklinktext0">{$alumniNews[5]['title']}</a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[5]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[6]['articleid']}" class="blocklinktext0">{$alumniNews[6]['title']}</a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[6]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid={$alumniNews[7]['articleid']}" class="blocklinktext0">{$alumniNews[7]['title']}</a>
-									</td>
-									<td width="105px" class="buttomline">
-										<a href="" class="blocklinktext0">
-											<?php echo date("Y-m-d",$alumniNews[7]['publishdate']) ?>
-										</a>
-									</td>
-								</tr>
-							</table> -->
 						</div>
 					</div>
 				</div>
@@ -337,7 +255,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="{$fourPicNew.picture_url}" alt="">
-									<a class="display_news_title2" href="">{$fourPicNew.title}</a>
+									<a class="display_news_title2" href="/index.php?c=passage&articleid={$fourPicNew.articleid}">{$fourPicNew.title}</a>
 									<div class="display_news_content2">
 										<?php echo $contentes = strip_tags($fourPicNew['content']) ?>
 									</div>
@@ -387,7 +305,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="{$fivePicNew['picture_url']}" alt="">
-									<a class="display_news_title2" href="">{$fivePicNew['title']}</a>
+									<a class="display_news_title2" href="/index.php?c=passage&articleid={$fivePicNew.articleid}">{$fivePicNew['title']}</a>
 									<p class="display_news_content2"><?php echo $contentes = strip_tags($fivePicNew['content']) ?></p>
 
 								</div>
@@ -432,7 +350,9 @@
 								
 								<a href="/index.php?c=organization&a=organizationList" class="b2link">+更多</a>
 
-								<table class="blocktable3">
+								<div class="organization_content">
+
+									<table>
 
 									<foreach name="alumniList" item="alumniItems">
 										<tr>
@@ -444,6 +364,7 @@
 
 								</table>
 
+								</div>
 							</div>
 
 					</div>
