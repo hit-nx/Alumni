@@ -11,12 +11,14 @@
 </head>
 <body>
 	<div id="headerBackgroundColor">
-	    <div id="logoDivHeaderImg">
-        <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
-    </div>
-
+	    
     <div id="navi">
-<div id="headerMenu">
+        <div id="logoDivHeaderImg">
+            <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
+        </div>
+
+        <div class="right_navi">
+        <div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
             <li><a href="/index.php?c=detailedList&columnid=1">新闻中心</a>
@@ -68,15 +70,14 @@
             <li><a href="/index.php?c=communication">校友通讯</a>
             </li>
         </ul>
-    </div>
+        </div>
 
-    <div id="headerSearch">
+        <div id="headerSearch">
             <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="{$searchContent}"/>
             <img src="../Public/images/search.png" id="headerSearchBar">
+        </div>
+        </div>
     </div>
-
-    </div>
-    
     </div>
 </body>
 <script>

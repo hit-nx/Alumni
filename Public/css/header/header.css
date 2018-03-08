@@ -7,41 +7,45 @@
 }
 
 #logoDivHeaderImg{
-    z-index: 999;
     padding-top: 15px;
-    padding-left: 100px;
+    z-index: 999;
     height: 57px;
-    position: absolute;
+    float: left;
 }
 
 #navi{
-    position: absolute;
-    width: 1000px;
-    height: 40px;
-    float: left;
-    /*left: 900px;*/
-    right: 0px;
-    top: 30px;
+    width: 1500px;
+    height: 60px;
+    margin:0 auto;
+    z-index: 9999;
+}
 
+.right_navi{
+    padding-top: 30px;
+    float: right;
+    display: inline;
 }
 
 #headerSearch{
-    position: absolute;
+    margin-left: 20px;
+    float: left;
     z-index: 999;
-    right: 20px;
     width: 150px;
     height: 25px;
     border-radius: 20px;
     margin-top: 5px;
-    border: 2px solid #fff
+    border: 2px solid #fff;
+    position: relative;
 }
 
 #headerSearch input{
-    margin-left: 10%;
+    position: absolute;
+    line-height: 25px;
+    left: 10px;
     width: 60%;
     height: 25px;
     color:#fff;
-    margin-top: 0;
+    float: left;
 }
 
 #headerSearch img{
@@ -50,15 +54,12 @@
     right: 10px;
     width: 18px;
     height: 18px;
-
 }
 
 #headerMenu
 {
     z-index: 998;
-    position: absolute;
-    /*float: left;*/
-    right: 180px;
+    float: left;
 }
 
 #headerMenu ul {
@@ -66,6 +67,8 @@
     margin:0;
     padding:0;
     overflow:hidden;
+
+
 }
 
 .headerImg{
@@ -105,6 +108,8 @@
 
 #headerMenu ul li ul{
     display: none;
+    position: absolute;
+    z-index: 9999;
 }
 
 #headerMenu ul li.listshow ul{

@@ -11,12 +11,14 @@
 </head>
 <body>
 	<div id="headerBackgroundColor">
-	    <div id="logoDivHeaderImg">
-        <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
-    </div>
-
+	    
     <div id="navi">
-<div id="headerMenu">
+        <div id="logoDivHeaderImg">
+            <a href="/index.php"><img src="/Public/images/index/logo.png" class="headerImg"></a>
+        </div>
+
+        <div class="right_navi">
+        <div id="headerMenu">
         <ul id="menuUl">
             <li><a href="/index.php">首页</a></li>
             <li><a href="/index.php?c=detailedList&columnid=1">新闻中心</a>
@@ -68,15 +70,14 @@
             <li><a href="/index.php?c=communication">校友通讯</a>
             </li>
         </ul>
-    </div>
+        </div>
 
-    <div id="headerSearch">
+        <div id="headerSearch">
             <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
             <img src="../Public/images/search.png" id="headerSearchBar">
+        </div>
+        </div>
     </div>
-
-    </div>
-    
     </div>
 </body>
 <script>
@@ -541,10 +542,11 @@
             <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
             <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
             <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd>
+            <dd><a href="/admin.php" style="text-decoration: none; color: #fff">管理端</a></dd>
         </dl>
         <dl class=others>
             <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt>
-            <dd><a href="" style="text-decoration: none; color: #fff">管理方法</a></dd>
+            <dd><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">管理方法</a></dd>
             <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd>
 <!--             <dd class=otherweb>
                 <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
