@@ -1,13 +1,14 @@
 footer{
     width: 100%;
     height: 250px;
+    /*margin: 0 auto;*/
     background-color: rgb(13,24,78);
 }
 .wrap3{
-    width: 1300px;
+    width: 1200px;
     height: 100%;
     box-sizing: border-box;
-    padding-top: 50px;
+    padding-top: 30px;
     margin: 0 auto;
     position: relative;
     color: #878BB0;
@@ -17,7 +18,7 @@ footer{
 .wrap3 p{
     display: inline-block;
     box-sizing: border-box;
-    padding-top: 90px;
+    padding-top: 80px;
     height: 100%;
     width: 500px;
     background-image: url(../../images/index/logo.png);
