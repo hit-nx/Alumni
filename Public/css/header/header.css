@@ -1,36 +1,46 @@
-
+body{
+    font-size: 0;
+}
 #headerBackgroundColor{
+    font-size: 0;
     z-index: 997;
-    height: 80px;
+    height: auto;
+    min-height: 80px;
     width: 100%;
+    max-height: 400px;
     background-color: #0d184e;
+    display: inline-block;
 }
 
 #logoDivHeaderImg{
     padding-top: 15px;
     z-index: 999;
     height: 57px;
+    max-height: 57px;
+    width: 30%;
     float: left;
 }
 
 #navi{
-    width: 1500px;
+    display: block;
+    width: 80%;
     height: 60px;
     margin:0 auto;
     z-index: 9999;
 }
 
 .right_navi{
+    width: 60%;
     padding-top: 30px;
     float: right;
     display: inline;
 }
 
 #headerSearch{
-    margin-left: 20px;
+    margin-left: 5%;
     float: left;
     z-index: 999;
-    width: 150px;
+    width: 10%;
     height: 25px;
     border-radius: 20px;
     margin-top: 5px;
@@ -60,6 +70,7 @@
 {
     z-index: 998;
     float: left;
+    width: 80%;
 }
 
 #headerMenu ul {
@@ -67,12 +78,15 @@
     margin:0;
     padding:0;
     overflow:hidden;
+    width: 100%;
 
 
 }
 
 .headerImg{
-    height: 50px;
+    width: 100%;
+    height:auto;
+    min-width: 200px;
 }
 
 #headerMenu ul li
@@ -87,12 +101,17 @@
     
 }*/
 
+
+#headerMenu ul li{
+    width: 12%;
+}
+
 #headerMenu ul li a
 {
     display:block;
     font-size: 16px;
     line-height: 37px;
-    width:90px;
+    width:100%;
     font-weight:bold;
     color:#FFFFFF;
     text-align:center;
@@ -125,7 +144,6 @@
     line-height: 37px;
     border-bottom: #000;
 }
-
 
 
 
