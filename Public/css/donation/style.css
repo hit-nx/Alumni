@@ -8,7 +8,7 @@ header{
 .title{
 	width: 1000px;
 	height: 165px;
-	background-image: url(../img/头部.png);
+	background-image: url(/Public/images/organization/ahead.jpg);
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-color:  rgb(13,24,78);
@@ -361,107 +361,4 @@ p{
 .checked{
 	background-color: #818181;
 	color: white;
-}
-/*底部*/
-footer{
-	width: 100%;
-	height: 360px;
-	background-color: rgb(13,24,78);
- }
-.wrap3{
-	width: 1000px;
-	height: 360px;
-	box-sizing: border-box;
-	padding-top: 50px;
-	margin: 0 auto;
-	color: #878BB0;
-	font-size: 16px;
-}
-.wrap3 p{
-	display: inline-block;
-	box-sizing: border-box;
-	padding-top: 90px;
-	height: 238px;
-	width: 350px;
-	background-image: url(../img/hit.jpg);
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	font-size: 15px;
-	color: #878BB0;
-	line-height: 30px;
-	margin-right: 50px;
-	font-weight: 500;
-	float: left;
-}
-.connect{
-	display: inline-block;
-	width: 220px;
-	height: 238px;
-	background-image: url(../img/二维码.jpg);
-	background-repeat: no-repeat;
-	background-position: 0 140px;
-	padding-top: 5px;
-	float: left;
-}
-.wrap3 dt{
-	color: white;
-	font-weight: bold;
-	line-height: 22px;
-	font-size: 19px;
-	margin-bottom: 20px;
-}
-.wrap3 dd{
-	color: #878BB0;
-	font-size: 15px;
-	line-height: 30px;
-}
-.webs{
-	display: inline-block;
-	margin-left: 50px;
-	float: left;
-}
-.webs dd{
-	display: block;
-	height: 30px;
-	line-height: 30px;
-	width: 85px;
-	padding-left: 15px;
-	background-image: url(../img/白三角.jpg);
-	background-position: 0 6px;
-	background-repeat: no-repeat;
-}
-.others{
-	margin-left: 45px;
-	display: inline-block;
-}
-.otherweb{
-	margin-top: 25px;
-	display: block;
-	height: 42px;
-	width: 200px;
-	background-color: #504F4D;
-	background-image: url(../img/三角.jpg);
-	background-repeat: no-repeat;
-	background-position:170px 13px;
-	line-height: 42px;
-	font-size: 16px;
-	padding-top: 6px;
-}
-.otherweb a{
-	color: #878BB0;
-}
-.otherweb:hover a{
-	color: white;
-}
-.otherweb ul{
-	display: none;
-}
-.otherweb li{
-	display: block;
-	height: 42px;
-	width: 200px;
-	line-height: 42px;
-	padding-left: 20px;
-	font-size: 16px;
-	background-color: #504F4D;
 }

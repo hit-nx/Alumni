@@ -62,7 +62,7 @@
                 <ul>
                     <li><a href="/index.php?c=simpleList&columnid=24">新闻动态</a></li>
                     <li><a href="/index.php?c=simpleList&columnid=25">活动公告</a></li>
-                    <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li>
+                    <!-- <li><a href="/index.php?c=simpleList&columnid=22">30周年回顾</a></li> -->
                 </ul>
             </li>
             <li><a href="/index.php?c=communication">校友通讯</a>

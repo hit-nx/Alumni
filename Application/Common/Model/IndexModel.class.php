@@ -14,95 +14,58 @@ class IndexModel extends Model {
     }
 
 
-    public function getCampusNews() {
-
-        $list = $this->_db->where('columnid = 3')->order('articleid desc')->limit(8)->select();
-        return $list;
-    }
-
-    public function getAlumniNews(){
-    	$list = $this->_db->where('columnid = 2')->order('articleid desc')->limit(8)->select();
-        return $list; 
-    }
-
-    public function getNoticeNews(){
-    	$list = $this->_db->where('columnid = 4')->order('articleid desc')->limit(8)->select();
-        return $list; 
-    }
-
-    public function getDonations(){
-
-    	$list = $this->_db->where()->select();
-        return $list; 
-    }
-
-    public function getAlumniPerson(){
-
-    	$list = $this->_db->where('( columnid = 12 or columnid = 13 or columnid = 14 ) and picture_url != ""')->order('articleid desc')->limit(6)->select();
-    	
-        return $list; 
-
-    }
-
-    public function getHitMemory(){
-
-
-    	$list = $this->_db->where('columnid = 18 OR columnid = 19 OR columnid = 20 ')->order('articleid desc')->limit(9)->select();
-
-    	return $list;
-
-    }
-
-    public function getCampusBeauty(){
-
-    	$list = $this->_db->where('columnid = 18 and picture_url != ""')->order('articleid desc')->limit(1)->select();
-    	return $list;
-    }
-
     //最新的图片新闻
     public function getPicNewsByColumn($columnid){
 
+        $conditions = array(
+            'picture_url' => array('neq',""),
+        ); 
         switch ($columnid) {
             case 1:
-                $list = $this->_db->where('picture_url != "" and columnid = 3')->order('articleid desc')->limit(1)->select();
+                $conditions['columnid'] = 3;
                 break;
             case 2:
-                $list = $this->_db->where('picture_url != "" and columnid = 2')->order('articleid desc')->limit(1)->select();
+                $conditions['columnid'] = 2;
                 break;
             case 3:
-                $list = $this->_db->where('picture_url != "" and columnid = 4')->order('articleid desc')->limit(1)->select();
+                $conditions['columnid'] = 4;
                 break;
             case 4:
-                $list = $this->_db->where('picture_url != "" and columnid = 12 or columnid = 13 or columnid = 14 or columnid = 16')->order('articleid desc')->limit(1)->select();
+                $conditions['columnid'] = array(array('eq',12),array('eq',13),array('eq',14),array('eq',16), 'or');
                 break;
             case 5:
-                $list = $this->_db->where('picture_url != "" and columnid = 18 or columnid = 19 or columnid = 20')->order('articleid desc')->limit(1)->select();
+                $conditions['columnid'] = array(array('eq',18),array('eq',19),array('eq',20), 'or');
                 break;
         }
 
-        return $list[0];
+        $list = $this->_db->where($conditions)->order('articleid desc')->find();
+        return $list;
     }
 
     //排除第一条图片新闻的前三条
     public function getNewsByColumn($columnid, $picid){
+        $conditions = array(
+            'articleid' => array('neq', $picid),
+        ); 
         switch ($columnid) {
             case 1:
-                $list = $this->_db->where('columnid = 3 and articleid !='.$picid)->order('articleid desc')->limit(3)->select();
+                $conditions['columnid'] = 3;
                 break;
             case 2:
-                $list = $this->_db->where('columnid = 2 and articleid !='.$picid)->order('articleid desc')->limit(3)->select();
+                $conditions['columnid'] = 2;
                 break;
             case 3:
-                $list = $this->_db->where('columnid = 4 and articleid !='.$picid)->order('articleid desc')->limit(3)->select();
+                $conditions['columnid'] = 4;
                 break;
             case 4:
-                $list = $this->_db->where('columnid = 12 or columnid = 13 or columnid = 14 or columnid = 16 and articleid !='.$picid)->order('articleid desc')->limit(3)->select();
+                $conditions['columnid'] = array(array('eq',12),array('eq',13),array('eq',14),array('eq',16), 'or');
                 break;
             case 5:
-                $list = $this->_db->where('columnid = 18 or columnid = 19 or columnid = 20 and articleid !='.$picid)->order('articleid desc')->limit(3)->select();
+                $conditions['columnid'] = array(array('eq',18),array('eq',19),array('eq',20), 'or');
                 break;
         }
 
+        $list = $this->_db->where($conditions)->order('articleid desc')->limit(3)->select();
         return $list;
     }
 

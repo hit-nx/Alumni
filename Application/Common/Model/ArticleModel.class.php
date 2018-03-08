@@ -96,7 +96,6 @@ class ArticleModel extends Model {
 		}
 
 		$data = array(
-
 			'articleid' => array('in',implode(',', $articleIds)),
 		);
 

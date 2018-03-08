@@ -1,11 +1,11 @@
 footer{
     width: 100%;
-    height: 360px;
+    height: 250px;
     background-color: rgb(13,24,78);
 }
 .wrap3{
     width: 1300px;
-    height: 360px;
+    height: 100%;
     box-sizing: border-box;
     padding-top: 50px;
     margin: 0 auto;
@@ -18,7 +18,7 @@ footer{
     display: inline-block;
     box-sizing: border-box;
     padding-top: 90px;
-    height: 238px;
+    height: 100%;
     width: 500px;
     background-image: url(../../images/index/logo.png);
     background-repeat: no-repeat;
@@ -33,8 +33,8 @@ footer{
 .connect{
     display: inline-block;
     width: 220px;
-    height: 260px;
-    background-image: url(../../images/index/erweima.jpg);
+    height: 100%;
+    /*background-image: url(../../images/index/erweima.jpg);*/
     background-repeat: no-repeat;
     background-position: 0 150px;
     padding-top: 0px;

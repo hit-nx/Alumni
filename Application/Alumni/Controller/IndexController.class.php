@@ -6,21 +6,6 @@ use Think\Exception;
 class IndexController extends CommonController {
     public function index(){   
 
-    	$campusNewsList = D("Index")->getCampusNews();
-    	$alumniNewsList = D("Index")->getAlumniNews();
-    	$noticeNewsList = D("Index")->getNoticeNews();
-    	$donationsList = D("Index")->getDonations();
-    	$hitMemoryList = D("Index")->getHitMemory();
-    	$campusBeauty = D("Index")->getCampusBeauty();
-    	$alumniPersonList = D("Index")->getAlumniPerson();
-//
-    	$this->assign("campusNews",$campusNewsList);
-		$this->assign("alumniNews",$alumniNewsList);
-		$this->assign("noticeNews",$noticeNewsList);
-		$this->assign("donations",$donationsList);
-		$this->assign("hitMemory",$hitMemoryList);
-		$this->assign("campusBeauty",$campusBeauty);
-		$this->assign("alumniPerson",$alumniPersonList);
 
         $onePicNew = D("Index")->getPicNewsByColumn(1);//校区新闻
         $twoPicNew = D("Index")->getPicNewsByColumn(2);//校友新闻
@@ -35,7 +20,7 @@ class IndexController extends CommonController {
         $fiveNews = D("Index")->getNewsByColumn(5, $fivePicNew['articleid']);//工大回忆
 
         $alumniList = D("Alumnis")->select();//校友组织
-        $periodical = D("Periodical")->getCommunicationList();//通讯录
+        $periodical = D("Periodical")->select('',6);//通讯录
         $donationsList = D("DonationInfo")->getDonationList();//捐赠列表
 
         $this->assign("onePicNew", $onePicNew);

@@ -625,7 +625,7 @@
 .contact_picture{
     position: absolute;
     top: 10px;
-    left: 15px;
+    left: 25px;
     width: 200px;
     height: 280px;
     background: url('/Public/images/index/contact_picture.png') no-repeat;
@@ -634,8 +634,8 @@
 
 .contact_article{
     position: absolute;
-    top: 10px;
-    right: 30px;
+    top: 20px;
+    right: 10px;
     width: 200px;
     height: 280px;
     overflow: hidden;
@@ -646,23 +646,12 @@
 .contact_article td a{
     padding:0;
     margin:0;
-    height: 19px;
+    height: 25px;
     overflow: hidden;
-    line-height: 18px;
+    line-height: 40px;
     color: #fff;
-    font-size: 14px;
+    font-size: 17px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -806,7 +795,7 @@
     height: 287px;
     font-size: 15px;
     position: absolute;
-    top: 59px;
+    top: 50px;
     left: 25px;
 }
 

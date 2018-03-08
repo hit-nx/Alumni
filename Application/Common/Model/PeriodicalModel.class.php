@@ -15,6 +15,7 @@ class PeriodicalModel extends Model {
     public function select($data = array(), $limit = 100) {
 
         $conditions = $data;
+        $conditions['status'] = array('neq',-1);
         $list = $this->_db->where($conditions)->order('periodicalid desc')->limit($limit)->select();
         return $list;
 
@@ -85,7 +86,6 @@ class PeriodicalModel extends Model {
         }
 
         $data = array(
-
             'periodicalid' => array('in',implode(',', $periodicalIds)),
         );
 
