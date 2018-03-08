@@ -1,12 +1,8 @@
 body{
-<<<<<<< HEAD
-    font-size: 0;
-}
-=======
+
     overflow-x: hidden;
 }
 
->>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
 #headerBackgroundColor{
     font-size: 0;
     z-index: 997;
@@ -37,7 +33,7 @@ body{
     float: left;
 }
 
-<<<<<<< HEAD
+
 #navi{
     display: block;
     width: 80%;
@@ -45,8 +41,6 @@ body{
     margin:0 auto;
     z-index: 9999;
 }
-=======
->>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
 
 .right_navi{
     width: 60%;
@@ -111,12 +105,7 @@ body{
     margin:0;
     padding:0;
     overflow:hidden;
-<<<<<<< HEAD
     width: 100%;
-
-
-=======
->>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
 }
 
 .headerImg{
@@ -148,11 +137,7 @@ body{
     display:block;
     font-size: 1vw;
     line-height: 37px;
-<<<<<<< HEAD
-    width:100%;
-=======
     width: 90%;
->>>>>>> dcc51cd0f22f7e603d8c575925b89e758d0df71b
     font-weight:bold;
     color:#FFFFFF;
     text-align:center;

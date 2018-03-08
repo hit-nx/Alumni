@@ -121,16 +121,11 @@
 
 	<div class="banner">
 		<div class="b-img">
-			<a style="background:url(/Public/images/index/1.jpg) center no-repeat;">
-			</a>
-			<a style="background:url(/Public/images/index/2.jpg) center no-repeat;">
-			</a>
-			<a style="background:url(/Public/images/index/3.jpg) center no-repeat;">
-			</a>
-			<a style="background:url(/Public/images/index/4.jpg) center no-repeat;">
-			</a>
-			<a style="background:url(/Public/images/index/5.jpg) center no-repeat;">
-			</a>
+			<a><img src="/Public/images/index/1.jpg"></a>
+			<a><img src="/Public/images/index/2.jpg"></a>
+			<a><img src="/Public/images/index/3.jpg"></a>
+			<a><img src="/Public/images/index/4.jpg"></a>
+			<a><img src="/Public/images/index/5.jpg"></a>
 		</div>
 		<div class="b-list"></div>
 		<a class="bar bar-left" href="#">
