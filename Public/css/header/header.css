@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 body{
 
     overflow-x: hidden;
 }
+=======
+>>>>>>> parent of dcc51cd... Merge branch 'master' of https://github.com/hit-nx/Alumni
 
 #headerBackgroundColor{
     font-size: 0;
@@ -12,14 +15,6 @@ body{
     max-height: 400px;
     background-color: #0d184e;
     display: inline-block;
-}
-
-#navi{
-    width: 100%;
-    height: 60px;
-    margin:0 auto;
-    z-index: 9999;
-    overflow:hidden;
 }
 
 #logoDivHeaderImg{
@@ -33,6 +28,12 @@ body{
     float: left;
 }
 
+#navi{
+    width: 100%;
+    height: 60px;
+    margin:0 auto;
+    z-index: 9999;
+}
 
 #navi{
     display: block;
@@ -49,9 +50,6 @@ body{
     width: 60%;
     float: right;
     display: inline;
-    position: absolute;
-    
-    right: 0px;
 }
 
 #headerSearch{
