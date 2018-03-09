@@ -103,114 +103,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>校友捐赠</title>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- 以最高版本ie渲染，chrome版本为1开启chrome frame -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 适应屏幕宽度 -->
-	<link href="/Public/css/detailedList/dentalListStyle.css" rel="stylesheet" type="text/css" />
-	<link href="/Public/css/detailedList/reset.css"  rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
-
-
-  <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/donationField.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/style.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/reset.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/page.css">
+	
+	<script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
 	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="/Public/js/alumni/listIndex.js"></script>
-  <script src="/Public/js/paging.js"></script>
-	<title></title>
+	<script src="/Public/js/alumni/js.js"></script>
 </head>
 <body>
-		<div class="ahead">&nbsp;</div>
 
-<!-- 		<div class=toppic>
-			<span class="black"></span>
-			<h1>——— <?php echo ($currentColumn["column_name"]); ?> ———</h1>
-		</div> -->
-		
-	<div class=wrap2>
-<!-- 		<div class="position">
-			<p>
-				<img src="/Public/images/detailedList/position.png">当前位置： <a href="/index.php">首页</a>><a href="#"><?php echo ($currentColumn["column_name"]); ?></a>
-			</p>
-		</div> -->
-		
+	<div class="topimage">­­­­­­&nbsp;</div>
+
+	<div>
 		<ul class=class>
-            <?php if(is_array($childColumns)): foreach($childColumns as $key=>$childColumnsItems): ?><li>
-					<a href="/index.php?c=simpleList&columnid=<?php echo ($childColumnsItems["column_id"]); ?>"><?php echo ($childColumnsItems["column_name"]); ?></a>
-				</li><?php endforeach; endif; ?>
+			<li <?php echo getChooseByContent_(5)?>><a href="/index.php?c=donationInfo&content_id=5">捐赠领域</a></li>
+	        <li <?php echo getChooseByContent_(6)?>><a href="/index.php?c=donationInfo&content_id=6">鸣谢办法</a></li>
+			<li><a href="/index.php?c=donationInfo&a=donationList">捐赠名录</a></li>
+			<li <?php echo getChooseByContent_(7)?>><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
 		</ul>
-
-		<div class=news>
-			<div class=new1>
-				<img src="<?php echo ($getDisplayedNews[0]['picture_url']); ?>">
-				<div class="cont fr">
-					<span class="label fl"><?php echo getColumnNameById($getDisplayedNews[0]['columnid']) ?></span>
-					<span class="time fl"><?php echo date("Y-m-d",$getDisplayedNews[0]['publishdate']) ?></span>
-					<a class="fl cont_title" href="/index.php?c=passage&articleid=<?php echo ($getDisplayedNews[0]['articleid']); ?>"><?php echo ($getDisplayedNews[0]['title']); ?></a>
-					<p class=fl>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $contentes = strip_tags($getDisplayedNews[0]['content']) ?></p>
-					<a class=go href="">查看详情>></a>
-				</div>
-			</div>
-			<div class=new2>
-				<img src="<?php echo ($getDisplayedNews[1]['picture_url']); ?>">
-				<div class="cont fl">
-					<span class="label fl"><?php echo getColumnNameById($getDisplayedNews[1]['columnid']) ?></span>
-					<span class="time fl"><?php echo date("Y-m-d",$getDisplayedNews[1]['publishdate']) ?></span>
-					<a class="fl cont_title" href="/index.php?c=passage&articleid=<?php echo ($getDisplayedNews[1]['articleid']); ?>"><?php echo ($getDisplayedNews[1]['title']); ?></a>
-					<p class=fl>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $contentes = strip_tags($getDisplayedNews[1]['content']) ?></p>
-					<a class=go href="">查看详情>></a>
-				</div>
-			</div>
-		</div>
-		<div class=hot>
-			<h4>热点新闻</h4>
-			<ul>
-				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
-						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
-						<p class=good><?php echo ($news['visitcount']); ?></p>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=main>
-			<span class=line1></span>
-			<span class=line2></span>
-			<span class=line3></span>
-			<span class=line4></span>
-			<h1>新闻概要</h1>
-			<ul>
-				<?php if(is_array($getNewsList)): $i = 0; $__LIST__ = $getNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<div class=time_area>
-							<!--年月-->
-							<span class=time_month><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7) ?><br></span>
-							<!--日-->
-							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
-						</div>
-						<div class=word1 id=word1>
-								<!--标题-->
-							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name=title><?php echo ($news['title']); ?></a>
-							    <!--内容-->
-							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
-							    <!--分区-->
-							<span class=label name=label><?php echo getColumnNameById($news['columnid']) ?></span>
-						</div>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
-		<div class=change>
-     	<div id="page" class="page_div"></div>
-    </div>
 	</div>
+
+<div class="content">
+
+	<?php echo (htmlspecialchars_decode($donationInfo["content"])); ?>
+	
+</div>
+
 </body>
-<script>
-	$("#page").paging({
-		pageNo: <?php echo ($page["pageNow"]); ?>,
-		totalPage: <?php echo ($page["pageTotal"]); ?>,
-		totalSize: <?php echo ($page["pageRows"]); ?>,
-		callback: function(num) {
-			var columnid = <?php echo ($currentColumn["column_id"]); ?>;
-			window.location.href = '/index.php?c=detailedList&p=' + num + "&columnid=" +columnid;
-		}
-	});
-</script>
 </html>
 <!DOCTYPE html>
 <html lang="en">
