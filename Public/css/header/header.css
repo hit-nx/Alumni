@@ -11,7 +11,7 @@ body{
     width: 100%;
     max-height: 400px;
     background-color: #0d184e;
-    display: inline-block;
+    display: block;
 }
 
 #logoDivHeaderImg{
