@@ -20,7 +20,7 @@ center::before {
 .book{
     margin: 30px auto;
     width: 400px;
-    height: 600px;
+    height: 100%;
 }
 img{
     width: 100%;
