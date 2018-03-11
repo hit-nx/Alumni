@@ -249,6 +249,7 @@
 }
 .block2_and_block4{
     background-color: rgb(243,243,243);
+    background:url(/Public/images/index/bg2.jpg) 0px -300px no-repeat ;
     width: 100%;
     height: 390px;
 }
@@ -801,11 +802,11 @@
     overflow: hidden;
     border-bottom: 1px solid #132478;
 }
-/*头条新闻*/
+/*捐赠列表*/
 .donateList{
     overflow: hidden;
     line-height: 40px;
-    background-color: white;
+
     width: 400px;
     height: 270px;
     font-size: 15px;
@@ -824,9 +825,16 @@
     color: #132478;
 }
 .donateTable tr:nth-child(even){
-    background: rgb(243,243,243);
-    border-right-color: rgb(243,243,243); 
+/*    background: rgb(243,243,243);*/
+    background: rgb(211,211,211,0.4);
+    border-right-color: rgb(211,211,211,0.4);
 }
+
+.donateTable tr:nth-child(Odd){
+    background: rgb(211,211,211,0.4);
+    border-right-color: rgb(211,211,211,0.4);
+}
+
 @keyframes round{
     from{
         transform: translate(0,0);
