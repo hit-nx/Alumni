@@ -468,9 +468,9 @@
 					</div>
 					<div class="block4">
 						<h2 class="donatethanks">捐赠鸣谢</h2>
-						<div class="donateList">
-							<table class="donateTable" cellspacing="0" cellpadding="0">
+						<div class="donateList" id="ca">
 
+							<table id="table_1" cellspacing="0" cellpadding="0">
 								<!--生成捐赠列表-->
 								<?php if(is_array($donationsList)): foreach($donationsList as $key=>$donationItems): ?><tr>
 										<td class="listName"><?php echo ($donationItems["name"]); ?></td>
@@ -478,6 +478,9 @@
 									</tr><?php endforeach; endif; ?>
 
 							</table>
+
+							<table id="table_2"></table>
+
 						</div>
 					</div>
 				</div>
@@ -486,6 +489,36 @@
 	</div>
 
 	<script language="javascript" type="text/javascript">
+
+		var t1 = document.getElementById('table_1');
+		var t2 = document.getElementById('table_2');
+		var ca = document.getElementById('ca');
+
+		t2.innerHTML = t1.innerHTML;
+		var cas = null;
+
+		window.onload = function(){
+			marquee();
+
+		}
+		cas = setInterval('marquee()', 50);
+		
+		function marquee(){
+			if(ca.scrollTop >= t1.offsetHeight){
+				ca.scrollTop = 0;
+			}else{
+				ca.scrollTop++;
+			}
+
+			ca.onmouseover = function(){
+				clearInterval(cas);
+			}
+			ca.onmouseout = function(){
+				cas = setInterval('marquee()', 50);
+			}
+
+		}
+
 
         function changeColumn(obj) {
             var col = $(obj);

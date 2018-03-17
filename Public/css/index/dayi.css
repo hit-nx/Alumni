@@ -227,7 +227,7 @@
     width: 100%;
     position: relative;
     height: 390px;
-    background: rgba(13,24,78,0.85);
+    background: rgba(13,24,78,0.65);
 }
 .block1_and_block3_container{
     position: relative;
@@ -284,6 +284,7 @@
     position: absolute;
     top: 25px;
     right: 0;
+    border: 1px solid #132478;
 }
 
 .column_button{
@@ -717,18 +718,15 @@
     font-size: 18px;
     font-weight: normal;
     font-family: 'Microsoft Yahei';
-    /*position: absolute;*/
-    /*top: 0px;*/
-    /*left: 0px;*/
-    /*height: 30px;*/
     line-height: 30px;
     width: 120px;
-    color: #132478;
+    color: #fff;
     padding-left: 15px;
-    border: 2px solid #132478;
-    border-radius: 20px;
-    background: url("/Public/images/index/donatethanks.png") 90px center no-repeat;
-    background-size: 20px 20px;
+    border: 1px solid #132478;
+    background: #0d184e url("/Public/images/index/heart.png") left no-repeat;
+    background-size: 15px 15px;
+    background-position: 9% 50%;
+    text-align: center
 }
 .b3link{
     font-size: 15px;
@@ -806,9 +804,8 @@
 .donateList{
     overflow: hidden;
     line-height: 40px;
-
     width: 400px;
-    height: 270px;
+    height: 250px;
     font-size: 15px;
     position: absolute;
     top: 50px;
@@ -826,16 +823,18 @@
 }
 .donateTable tr:nth-child(even){
 /*    background: rgb(243,243,243);*/
-    background: rgb(211,211,211,0.4);
-    border-right-color: rgb(211,211,211,0.4);
+    background: rgb(211,211,211,0.2);
+    border-right-color: rgb(211,211,211,0.2);
 }
 
 .donateTable tr:nth-child(Odd){
-    background: rgb(211,211,211,0.4);
-    border-right-color: rgb(211,211,211,0.4);
+    background: rgb(211,211,211,0.2);
+    border-right-color: rgb(211,211,211,0.2);
 }
 
-@keyframes round{
+
+/* css设置滚动动画 */
+/* @keyframes round{
     from{
         transform: translate(0,0);
     }
@@ -846,10 +845,10 @@
 .donateTable{
     animation-name: round;
     animation-duration: 22s;
-    animation-direction: alternate;
+    animation-direction: normal;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 .donateTable:hover{
     animation-play-state: paused;
-}
+} */
