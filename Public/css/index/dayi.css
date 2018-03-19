@@ -542,7 +542,7 @@
     border-collapse:collapse;
 }
 
-.column_button_selected_memory{
+.column_button_normal_memory{
     float: left;
     margin: 0px;
     height: 30px;
@@ -555,7 +555,7 @@
     background-position: 9% 50%;
 }
 
-.column_button_normal_memory{
+.column_button_selected_memory{
     float: left;
     margin: 0px;
     font-size: 20px;
@@ -572,7 +572,7 @@
 
 }
 
-.column_button_selected_alumni{
+.column_button_normal_alumni{
     float: left;
     margin: 0px;
     height: 30px;
@@ -585,7 +585,7 @@
     background-position: 9% 50%;
 }
 
-.column_button_normal_alumni{
+.column_button_selected_alumni{
     float: left;
     margin: 0px;
     font-size: 20px;
@@ -602,7 +602,7 @@
 
 }
 
-.column_button_normal_organization{
+.column_button_selected_organization{
     float: left;
     margin: 0px;
     font-size: 20px;
@@ -619,7 +619,7 @@
 
 }
 
-.column_button_selected_organization{
+.column_button_normal_organization{
     float: left;
     margin: 0px;
     height: 30px;

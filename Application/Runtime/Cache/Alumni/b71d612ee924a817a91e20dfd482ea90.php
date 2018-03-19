@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -75,7 +75,7 @@
         </div>
 
         <div id="headerSearch">
-            <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="{$searchContent}"/>
+            <input id="searchContent" name="searchContent" type="text" placeholder="站内搜索" value="<?php echo ($searchContent); ?>"/>
             <img src="../Public/images/search.png" id="headerSearchBar">
         </div>
         </div>
@@ -100,4 +100,74 @@
         }
     });
 </script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>address</title>
+    <link rel="stylesheet" href="/Public/css/address/address.css" type="text/css" />
+</head>
+<body>
+<center>
+    <div class="ahead">&nbsp;</div>
+    <div class="body">
+        <br>
+        <h2 id="big_title"><?php echo ($periodicalDetails["title"]); ?></h2>
+
+        <!--【来源:哈工大威海校友网&nbsp; 浏览：1000&nbsp;-->
+<!--         <h2 id="vice_title">【来源:哈工大威海校友网&nbsp; 浏览：1000&nbsp;录入时间：<?php echo date("Y年m月d日",$periodicalDetails['time']) ?>】</h2> -->
+        <br>
+        <hr>
+        <div class="book">
+            <a href="<?php echo ($periodicalDetails["path"]); ?>"><img src="<?php echo ($periodicalDetails["picture_url"]); ?>"></a>
+        </div>
+    </div>
+</center>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Public/css/footer/footer.css" type="text/css" />
+</head>
+<body>
+    <footer name=fixwide>
+        <div class=wrap3>
+            <p></p>
+    <!--         <p>校友会的三行介绍，独家会觉得好似独家试爱和第哦啊是京东啊时间阿迪斯教授第哈怂的的巴萨和计划第哦啊是家啊是哦啊是的话就看少i上帝就是电话覅和发河北无办法对你撒娇好的</p> -->
+            <dl class=connect>
+                <!-- <dt>联系方式</dt> -->
+                <dd>地址：威海市环翠区文化西路2号</dd>
+                <dd>邮编：264209</dd>
+                <dd>电话：80008208820</dd>
+            </dl>
+            <dl class=webs>
+                <!-- <dt><a style="text-decoration: none; color: #fff">快速链接</a></dt> -->
+                <dd><a href="http://www.hitwh.edu.cn/" style="text-decoration: none; color: #fff">学校官网</a></dd>
+                <dd><a href="/admin.php" style="text-decoration: none; color: #fff">管理入口</a></dd>
+    <!--             <dd><a href="http://news.hitwh.edu.cn/news_list.asp?id=13" style="text-decoration: none; color: #fff">招标信息</a></dd>
+                <dd><a href="" style="text-decoration: none; color: #fff">工大小威</a></dd>
+                <dd><a href="http://bbs.ghtt.net/forum.php" style="text-decoration: none; color: #fff">观海听涛论坛</a></dd> -->
+                
+            </dl>
+            <!-- <dl class=others> -->
+                <!-- <dt><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">捐赠</a></dt> -->
+                <!-- <dd><a href="/index.php?c=donationInfo&content_id=5" style="text-decoration: none; color: #fff">管理方法</a></dd> -->
+                <!-- <dd><a href="/index.php?c=donationInfo&content_id=6" style="text-decoration: none; color: #fff">鸣谢方法</a></dd> -->
+
+                <!-- <dd class=otherweb> -->
+                    <!-- <a href="" style="text-decoration: none; color: #fff"> &nbsp&nbsp&nbsp&nbsp其他校园网链接</a>
+                    <ul>
+                        <li><a href="">web1</a></li>
+                        <li><a href="">web2</a></li>
+                        <li><a href="">web3</a></li>
+                    </ul>
+                </dd> -->
+            <!-- </dl> -->
+        </div>
+    </footer>
+</body>
 </html>

@@ -1,3 +1,7 @@
+body{
+	background-color: #fcfcfc;
+}
+
 /*顶部标题*/
 header{
 	height: 165px;
@@ -437,3 +441,5 @@ p{
 	line-height: 233px;/*通过行距设置竖直居中*/
 	overflow: hidden;/*文字超出一行则隐藏*/
 }
+
+

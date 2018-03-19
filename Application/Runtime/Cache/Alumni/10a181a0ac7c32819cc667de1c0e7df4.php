@@ -8,7 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
     <script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
-<!--     <script src="/Public/js/alumni/menuFix.js"></script> -->
     <!-- <link href="/Public/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
@@ -102,40 +101,75 @@
 </script>
 </html>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>校友捐赠</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/donationField.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/style.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/reset.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/page.css">
-	
-	<script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
-	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="/Public/js/alumni/listIndex.js"></script>
-	<script src="/Public/js/alumni/js.js"></script>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="/Public/css/search/search.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/page.css">
+
+    <script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+    <script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="/Public/js/alumni/listIndex.js"></script>
+    <script src="/Public/js/paging.js"></script>
 </head>
 <body>
+    <div class="ahead">&nbsp;</div>
+    <input id="title"  class="form-control" name="title" type="hidden" placeholder="文章标题" value="<?php echo ($title); ?>" />
+    <center>
 
-	<div class="topimage">­­­­­­&nbsp;</div>
+        <?php if($isNull){ echo '<img src="/Public/images/search/nofound.jpg"><p class="empty-message">咦~怎么神马也没有！</p>'; } ?>
 
-	<div>
-		<ul class=class>
-			<li <?php echo getChooseByContent_(5)?>><a href="/index.php?c=donationInfo&content_id=5">捐赠领域</a></li>
-	        <li <?php echo getChooseByContent_(6)?>><a href="/index.php?c=donationInfo&content_id=6">鸣谢办法</a></li>
-			<li><a href="/index.php?c=donationInfo&a=donationList">捐赠名录</a></li>
-			<li <?php echo getChooseByContent_(7)?>><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
-		</ul>
-	</div>
+        <div class="search">
+        <ul>
+            <br>
+            <br>
 
-<div class="content">
-
-	<?php echo (htmlspecialchars_decode($donationInfo["content"])); ?>
-	
-</div>
-
+            <?php if(is_array($articles)): $i = 0; $__LIST__ = $articles;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li class="news-item">
+                    <div class="left-area">
+                        <label class="year-month"><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7) ?></label>
+                        <label class="day"><?php echo substr($time,8,2) ?>日</label>
+                    </div>
+                    <div class="content-area">
+                        <h2 class="news-title"><a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>"><?php echo ($news['title']); ?></a> </h2>
+                        <p class="article-content"><?php echo $contentes = strip_tags($news['content']) ?></p>
+                    </div>
+                    <label class="news-tag"><?php echo getColumnNameById($news['columnid']) ?></label>
+                    <!--<div class="time_area">-->
+                        <!--&lt;!&ndash;年月&ndash;&gt;-->
+                        <!--<span class="time_month"><?php $time = date("Y-m-d",$news['publishdate']); echo substr($time,0,7) ?><br></span>-->
+                        <!--&lt;!&ndash;日&ndash;&gt;-->
+                        <!--<span class="time_date"><?php echo substr($time,8,2) ?>日</span>-->
+                    <!--</div>-->
+                    <!--<div class="word1" id="word1">-->
+                        <!--&lt;!&ndash;标题&ndash;&gt;-->
+                        <!--<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name="title">/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?></a>-->
+                        <!--&lt;!&ndash;内容&ndash;&gt;-->
+                        <!--<p name="content"><?php echo $contentes = strip_tags($news['content']) ?></p>-->
+                        <!--&lt;!&ndash;分区&ndash;&gt;-->
+                        <!--<span class=label name=label><?php echo getColumnNameById($news['columnid']) ?></span>-->
+                    <!--</div>-->
+                </li><?php endforeach; endif; else: echo "" ;endif; ?>
+        </ul>
+        </div>
+        <div class=change>
+            <div id="page" class="page_div"></div>
+        </div>
+    </center>
 </body>
+<script>
+    var title = document.getElementById("title").value;
+    $("#page").paging({
+            pageNo: <?php echo ($page["pageNow"]); ?>,
+            totalPage: <?php echo ($page["pageTotal"]); ?>,
+            totalSize: <?php echo ($page["pageRows"]); ?>,
+            callback: function(num) {
+                window.location.href = '/index.php?c=search&p=' + num + "&title="+title;
+
+            }
+    });
+
+</script>
 </html>
 <!DOCTYPE html>
 <html lang="en">

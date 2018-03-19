@@ -101,39 +101,55 @@
     });
 </script>
 </html>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<title>校友捐赠</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/donationField.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/style.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/Donation/reset.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/page.css">
-	
-	<script type="text/javascript" src="/Public/js/alumni/menuFix.js"></script>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/Public/css/organization/AlumniOrganization.css" />
+	<link href="/Public/css/passage/passage.css"  rel="stylesheet" type="text/css" />
+	<link href="/Public/css/passage/style.css" rel="stylesheet" type="text/css" />
+	<link href="/Public/css/passage/reset.css"  rel="stylesheet" type="text/css" />
+
+	<script src="/Public/js/alumni/menuFix.js" type="text/javascript"></script>
 	<script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="/Public/js/alumni/listIndex.js"></script>
-	<script src="/Public/js/alumni/js.js"></script>
+	<script src="/Public/js/alumni/passage.js" type="text/javascript"></script>
 </head>
 <body>
 
-	<div class="topimage">­­­­­­&nbsp;</div>
+	<div class="ahead">&nbsp;</div>
 
-	<div>
-		<ul class=class>
-			<li <?php echo getChooseByContent_(5)?>><a href="/index.php?c=donationInfo&content_id=5">捐赠领域</a></li>
-	        <li <?php echo getChooseByContent_(6)?>><a href="/index.php?c=donationInfo&content_id=6">鸣谢办法</a></li>
-			<li><a href="/index.php?c=donationInfo&a=donationList">捐赠名录</a></li>
-			<li <?php echo getChooseByContent_(7)?>><a href="/index.php?c=donationInfo&content_id=7">捐赠方式</a></li>
-		</ul>
+	<div style="text-align: center;">
+		<div class="class">
+			<?php if(is_array($brotherColumn)): foreach($brotherColumn as $key=>$brotherColumnItems): ?><li <?php echo (getChooseByArticle($brotherColumnItems["column_id"])); ?>>
+				<a href="/index.php?c=simpleList&columnid=<?php echo ($brotherColumnItems["column_id"]); ?>"><?php echo ($brotherColumnItems["column_name"]); ?></a>
+			</li><?php endforeach; endif; ?>
+		</div>
 	</div>
+	<div class="room">
+		<div class="content">
+			<p class="name"><?php echo ($articleInfo["title"]); ?></p>
 
-<div class="content">
+			<P class="writer">来源：<?php echo ($articleInfo["source"]); ?> 浏览量：<?php echo ($articleInfo["visitcount"]); ?><br></P>
 
-	<?php echo (htmlspecialchars_decode($donationInfo["content"])); ?>
-	
-</div>
+			<div><?php echo (htmlspecialchars_decode($articleInfo["content"])); ?></div>
+
+		</div>
+
+		<div class="passageBottom">
+
+<!-- 			<div class="down">
+				<a herf="<?php echo ($articleInfo["attachment_url"]); ?>">
+					<img src="/Public/images/passage/download.png">
+					<span>下载附件</span>
+				</a>
+			</div> -->
+<!-- 			<div class="like">
+				<img src="/Public/images/passage/good.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
+				<img class="bg_good" src="/Public/images/passage/havegood.png" id="hand" onmouseover="Toblue()" onmouseout="Togray()" onmousedown="likeit()">
+				<span id="like_number"><?php echo ($articleInfo["likecount"]); ?></span>
+				<input type="hidden" id="articleid" value="<?php echo ($articleInfo["articleid"]); ?>"/>
+			</div> -->
+		</div>
 
 </body>
 </html>
