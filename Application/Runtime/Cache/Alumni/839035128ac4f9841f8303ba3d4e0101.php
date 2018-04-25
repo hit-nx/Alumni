@@ -129,7 +129,7 @@
 		<div class="content">
 			<p class="name"><?php echo ($articleInfo["title"]); ?></p>
 
-			<P class="writer">来源：<?php echo ($articleInfo["source"]); ?> 浏览量：<?php echo ($articleInfo["visitcount"]); ?><br></P>
+			<P class="writer">【作者：<?php echo ($articleInfo["author"]); ?> &nbsp&nbsp&nbsp 来源：<?php echo ($articleInfo["source"]); ?> &nbsp&nbsp&nbsp 浏览量：<?php echo ($articleInfo["visitcount"]); ?>&nbsp&nbsp&nbsp  录入时间：<?php echo date("Y-m-d",$articleInfo['publishdate']) ?>】<br></P>
 
 			<div><?php echo (htmlspecialchars_decode($articleInfo["content"])); ?></div>
 

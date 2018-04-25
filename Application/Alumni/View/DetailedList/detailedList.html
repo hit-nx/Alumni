@@ -45,9 +45,9 @@
 				<div class="cont fr">
 					<span class="label fl"><?php echo getColumnNameById($getDisplayedNews[0]['columnid']) ?></span>
 					<span class="time fl"><?php echo date("Y-m-d",$getDisplayedNews[0]['publishdate']) ?></span>
-					<a class="fl cont_title" href="/index.php?c=passage&articleid={$getDisplayedNews[0]['articleid']}">{$getDisplayedNews[0]['title']}</a>
+					<a class="fl cont_title" href="/index.php?c=passage&articleid={$getDisplayedNews[0]['articleid']}" target="_blank">{$getDisplayedNews[0]['title']}</a>
 					<p class=fl>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $contentes = strip_tags($getDisplayedNews[0]['content']) ?></p>
-					<a class=go href="">查看详情>></a>
+					<a class=go href="/index.php?c=passage&articleid={$getDisplayedNews[0]['articleid']}" target="_blank">查看详情>></a>
 				</div>
 			</div>
 			<div class=new2>
@@ -55,9 +55,9 @@
 				<div class="cont fl">
 					<span class="label fl"><?php echo getColumnNameById($getDisplayedNews[1]['columnid']) ?></span>
 					<span class="time fl"><?php echo date("Y-m-d",$getDisplayedNews[1]['publishdate']) ?></span>
-					<a class="fl cont_title" href="/index.php?c=passage&articleid={$getDisplayedNews[1]['articleid']}">{$getDisplayedNews[1]['title']}</a>
+					<a class="fl cont_title" href="/index.php?c=passage&articleid={$getDisplayedNews[1]['articleid']}" target="_blank">{$getDisplayedNews[1]['title']}</a>
 					<p class=fl>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $contentes = strip_tags($getDisplayedNews[1]['content']) ?></p>
-					<a class=go href="">查看详情>></a>
+					<a class=go href="/index.php?c=passage&articleid={$getDisplayedNews[1]['articleid']}" target="_blank">查看详情>></a>
 				</div>
 			</div>
 		</div>
@@ -66,7 +66,7 @@
 			<ul>
 				<volist name="hotNewsList" id="news"> 
 					<li>
-						<a class=fl href="/index.php?c=passage&articleid={$news['articleid']}" >{$news['title']}</a> 
+						<a class=fl href="/index.php?c=passage&articleid={$news['articleid']}" target="_blank">{$news['title']}</a> 
 						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
 						<p class=good>{$news['visitcount']}</p>
 					</li>
@@ -90,7 +90,7 @@
 						</div>
 						<div class=word1 id=word1>
 								<!--标题-->
-							<a href="/index.php?c=passage&articleid={$news['articleid']}" name=title>{$news['title']}</a>
+							<a href="/index.php?c=passage&articleid={$news['articleid']}" target="_blank" name=title>{$news['title']}</a>
 							    <!--内容-->
 							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
 							    <!--分区-->

@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css"/>
     <script src="/Public/js/alumni/jquery-3.2.1.min.js" type="text/javascript"></script>
+<!--     <script src="/Public/js/alumni/menuFix.js"></script> -->
     <!-- <link href="/Public/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>

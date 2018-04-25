@@ -166,7 +166,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($onePicNew["picture_url"]); ?>" alt="">
-									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($onePicNew["articleid"]); ?>"><?php echo ($onePicNew["title"]); ?></a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($onePicNew["articleid"]); ?>" target="_blank"><?php echo ($onePicNew["title"]); ?></a>
 									<div class="display_news_content">
 										<?php echo $contentes = strip_tags($onePicNew['content']) ?>
 									</div>
@@ -177,7 +177,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($oneNews[0]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[0]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($oneNews[0]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -187,7 +187,7 @@
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[1]['articleid']); ?>" class="blocklinktext0"><?php echo ($oneNews[1]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[1]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($oneNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -197,7 +197,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[2]['articleid']); ?>" class="blocklinktext0"><?php echo ($oneNews[2]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($oneNews[2]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($oneNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -216,7 +216,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($twoPicNew['picture_url']); ?>" alt="">
-									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($twoPicNew["articleid"]); ?>"><?php echo ($twoPicNew['title']); ?></a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($twoPicNew["articleid"]); ?>" target="_blank"><?php echo ($twoPicNew['title']); ?></a>
 									<p class="display_news_content"><?php echo $contentes = strip_tags($twoPicNew['content']) ?></p>
 
 								</div>
@@ -224,7 +224,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($twoNews[0]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[0]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($twoNews[0]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -234,7 +234,7 @@
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[1]['articleid']); ?>" class="blocklinktext0"><?php echo ($twoNews[1]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[1]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($twoNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -244,7 +244,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[2]['articleid']); ?>" class="blocklinktext0"><?php echo ($twoNews[2]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($twoNews[2]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($twoNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -263,7 +263,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($threePicNew['picture_url']); ?>" alt="">
-									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($threePicNew["articleid"]); ?>"><?php echo ($threePicNew['title']); ?></a>
+									<a class="display_news_title" href="/index.php?c=passage&articleid=<?php echo ($threePicNew["articleid"]); ?>" target="_blank"><?php echo ($threePicNew['title']); ?></a>
 									<p class="display_news_content"><?php echo $contentes = strip_tags($threePicNew['content']) ?></p>
 
 								</div>
@@ -271,7 +271,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[0]['articleid']); ?>" class="blocklinktext0"><?php echo ($threeNews[0]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[0]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($threeNews[0]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -281,7 +281,7 @@
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[1]['articleid']); ?>" class="blocklinktext0"><?php echo ($threeNews[1]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[1]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($threeNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -291,7 +291,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline">
-										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[2]['articleid']); ?>" class="blocklinktext0"><?php echo ($threeNews[2]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($threeNews[2]['articleid']); ?>" class="blocklinktext0" target="_blank"><?php echo ($threeNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline">
 										<a href="" class="blocklinktext0">
@@ -320,7 +320,7 @@
 									<table>
 										<?php if(is_array($periodical)): foreach($periodical as $key=>$periodicalItems): ?><tr>
 											<td>
-												<a href="/index.php?c=address&periodicalid=<?php echo ($periodicalItems["periodicalid"]); ?>"><?php echo ($periodicalItems["title"]); ?></a>
+												<a href="/index.php?c=address&periodicalid=<?php echo ($periodicalItems["periodicalid"]); ?>" target="_blank"><?php echo ($periodicalItems["title"]); ?></a>
 											</td>
 										</tr><?php endforeach; endif; ?>
 									</table>
@@ -356,7 +356,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($fourPicNew["picture_url"]); ?>" alt="">
-									<a class="display_news_title2" href="/index.php?c=passage&articleid=<?php echo ($fourPicNew["articleid"]); ?>"><?php echo ($fourPicNew["title"]); ?></a>
+									<a class="display_news_title2" href="/index.php?c=passage&articleid=<?php echo ($fourPicNew["articleid"]); ?>" target="_blank"><?php echo ($fourPicNew["title"]); ?></a>
 									<div class="display_news_content2">
 										<?php echo $contentes = strip_tags($fourPicNew['content']) ?>
 									</div>
@@ -367,7 +367,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline2">
-										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[0]['articleid']); ?>" class="blocklinktext2"><?php echo ($fourNews[0]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[0]['articleid']); ?>" class="blocklinktext2" target="_blank"><?php echo ($fourNews[0]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline2">
 										<a href="" class="blocklinktext2">
@@ -377,7 +377,7 @@
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline2">
-										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[1]['articleid']); ?>" class="blocklinktext2"><?php echo ($fourNews[1]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[1]['articleid']); ?>" class="blocklinktext2" target="_blank"><?php echo ($fourNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline2">
 										<a href="" class="blocklinktext2">
@@ -387,7 +387,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline2">
-										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[2]['articleid']); ?>" class="blocklinktext2"><?php echo ($fourNews[2]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($fourNews[2]['articleid']); ?>" class="blocklinktext2" target="_blank"><?php echo ($fourNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline2">
 										<a href="" class="blocklinktext2">
@@ -406,7 +406,7 @@
 
 								<div class="display_news">
 									<img class="display_news_picture" src="<?php echo ($fivePicNew['picture_url']); ?>" alt="">
-									<a class="display_news_title2" href="/index.php?c=passage&articleid=<?php echo ($fivePicNew["articleid"]); ?>"><?php echo ($fivePicNew['title']); ?></a>
+									<a class="display_news_title2" href="/index.php?c=passage&articleid=<?php echo ($fivePicNew["articleid"]); ?>" target="_blank"><?php echo ($fivePicNew['title']); ?></a>
 									<p class="display_news_content2"><?php echo $contentes = strip_tags($fivePicNew['content']) ?></p>
 
 								</div>
@@ -414,7 +414,7 @@
 							<table class="blocktable">
 								<tr>
 									<td width="400px" class="buttomline2">
-										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[0]['articleid']); ?>" class="blocklinktext2"><?php echo ($fiveNews[0]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[0]['articleid']); ?>" class="blocklinktext2" target="_blank"><?php echo ($fiveNews[0]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline2">
 										<a href="" class="blocklinktext2">
@@ -424,7 +424,7 @@
 								</tr>
 								<tr>
 									<td width="400px" class="buttomline2">
-										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[1]['articleid']); ?>" class="blocklinktext2"><?php echo ($fiveNews[1]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[1]['articleid']); ?>" class="blocklinktext2" target="_blank"><?php echo ($fiveNews[1]['title']); ?></a>
 									</td>
 									<td width="155px" class="buttomline2">
 										<a href="" class="blocklinktext2">
@@ -434,7 +434,7 @@
 								</tr>
 								<tr>
 									<td width="561.5px" class="buttomline2">
-										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[2]['articleid']); ?>" class="blocklinktext2"><?php echo ($fiveNews[2]['title']); ?></a>
+										<a href="/index.php?c=passage&articleid=<?php echo ($fiveNews[2]['articleid']); ?>" class="blocklinktext2" target="_blank"><?php echo ($fiveNews[2]['title']); ?></a>
 									</td>
 									<td width="105px" class="buttomline2">
 										<a href="" class="blocklinktext2">
@@ -453,15 +453,19 @@
 
 								<div class="organization_content">
 
-									<table>
+									<?php if(is_array($alumniList)): foreach($alumniList as $key=>$alumniItems): ?><div class="alumniItemsDiv">
+											<a href="/index.php?c=organization&a=otherOrganizationInfo&alumnis_id=<?php echo ($alumniItems["alumnis_id"]); ?>" class="blocklinktext3" target="_blank"><?php echo ($alumniItems["title"]); ?></a>
+										</div><?php endforeach; endif; ?>
+
+									<!-- <table>
 
 									<?php if(is_array($alumniList)): foreach($alumniList as $key=>$alumniItems): ?><tr>
 											<td>
-												<a href="/index.php?c=organization&a=otherOrganizationInfo&alumnis_id=<?php echo ($alumniItems["alumnis_id"]); ?>" class="blocklinktext3"><?php echo ($alumniItems["title"]); ?></a>
+												<a href="/index.php?c=organization&a=otherOrganizationInfo&alumnis_id=<?php echo ($alumniItems["alumnis_id"]); ?>" class="blocklinktext3" target="_blank"><?php echo ($alumniItems["title"]); ?></a>
 											</td>
 										</tr><?php endforeach; endif; ?>
 
-								</table>
+								</table> -->
 
 								</div>
 							</div>

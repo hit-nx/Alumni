@@ -145,9 +145,9 @@
 				<div class="cont fr">
 					<span class="label fl"><?php echo getColumnNameById($getDisplayedNews[0]['columnid']) ?></span>
 					<span class="time fl"><?php echo date("Y-m-d",$getDisplayedNews[0]['publishdate']) ?></span>
-					<a class="fl cont_title" href="/index.php?c=passage&articleid=<?php echo ($getDisplayedNews[0]['articleid']); ?>"><?php echo ($getDisplayedNews[0]['title']); ?></a>
+					<a class="fl cont_title" href="/index.php?c=passage&articleid=<?php echo ($getDisplayedNews[0]['articleid']); ?>" target="_blank"><?php echo ($getDisplayedNews[0]['title']); ?></a>
 					<p class=fl>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $contentes = strip_tags($getDisplayedNews[0]['content']) ?></p>
-					<a class=go href="">查看详情>></a>
+					<a class=go href="/index.php?c=passage&articleid=<?php echo ($getDisplayedNews[0]['articleid']); ?>" target="_blank">查看详情>></a>
 				</div>
 			</div>
 			<div class=new2>
@@ -155,9 +155,9 @@
 				<div class="cont fl">
 					<span class="label fl"><?php echo getColumnNameById($getDisplayedNews[1]['columnid']) ?></span>
 					<span class="time fl"><?php echo date("Y-m-d",$getDisplayedNews[1]['publishdate']) ?></span>
-					<a class="fl cont_title" href="/index.php?c=passage&articleid=<?php echo ($getDisplayedNews[1]['articleid']); ?>"><?php echo ($getDisplayedNews[1]['title']); ?></a>
+					<a class="fl cont_title" href="/index.php?c=passage&articleid=<?php echo ($getDisplayedNews[1]['articleid']); ?>" target="_blank"><?php echo ($getDisplayedNews[1]['title']); ?></a>
 					<p class=fl>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $contentes = strip_tags($getDisplayedNews[1]['content']) ?></p>
-					<a class=go href="">查看详情>></a>
+					<a class=go href="/index.php?c=passage&articleid=<?php echo ($getDisplayedNews[1]['articleid']); ?>" target="_blank">查看详情>></a>
 				</div>
 			</div>
 		</div>
@@ -165,7 +165,7 @@
 			<h4>热点新闻</h4>
 			<ul>
 				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
+						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" target="_blank"><?php echo ($news['title']); ?></a> 
 						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
 						<p class=good><?php echo ($news['visitcount']); ?></p>
 					</li><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -187,7 +187,7 @@
 						</div>
 						<div class=word1 id=word1>
 								<!--标题-->
-							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name=title><?php echo ($news['title']); ?></a>
+							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" target="_blank" name=title><?php echo ($news['title']); ?></a>
 							    <!--内容-->
 							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
 							    <!--分区-->

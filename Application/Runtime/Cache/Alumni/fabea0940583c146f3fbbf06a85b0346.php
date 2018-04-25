@@ -134,7 +134,7 @@
 			<h4>热点新闻</h4>
 			<ul>
 				<?php if(is_array($hotNewsList)): $i = 0; $__LIST__ = $hotNewsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$news): $mod = ($i % 2 );++$i;?><li>
-						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" ><?php echo ($news['title']); ?></a> 
+						<a class=fl href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" target="_blank"><?php echo ($news['title']); ?></a> 
 						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
 						<p class=good><?php echo ($news['visitcount']); ?></p>
 					</li><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -153,7 +153,7 @@
 							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
 						</div>
 						<div class=word1 id=word1>
-							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" name=title><?php echo ($news['title']); ?></a>
+							<a href="/index.php?c=passage&articleid=<?php echo ($news['articleid']); ?>" target="_blank" name=title><?php echo ($news['title']); ?></a>
 							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
 						</div>
 					</li><?php endforeach; endif; else: echo "" ;endif; ?>

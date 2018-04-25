@@ -527,6 +527,12 @@
     left: 10px;
 }*/
 
+.alumniItemsDiv{
+    float: left;
+    width: 120px;
+    margin-left: 70px; 
+}
+
 .organization_content{
     width: 460px;
     height: 270px;
@@ -534,11 +540,12 @@
     border-collapse:collapse;
     top: 40px;
     left: 10px;
+    overflow: hidden;
 }
 
 .blocktable3 td a{
     width: 460px;
-    height: 20px;
+    height: 35px;
     border-collapse:collapse;
 }
 
