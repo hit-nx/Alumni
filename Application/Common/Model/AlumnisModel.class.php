@@ -15,7 +15,8 @@ class AlumnisModel extends Model {
     public function select($data = array(), $limit = 100) {
 
         $conditions = $data;
-        $list = $this->_db->where($conditions)->order('alumnis_id desc')->limit($limit)->select();
+        $status = 1;
+        $list = $this->_db->where('status =' .$status)->limit($limit)->select();
         return $list;
     }
     public function insert($data = array()) {
@@ -114,7 +115,7 @@ class AlumnisModel extends Model {
 
     public function getOtherOrganizations(){
 
-        $list = $this->_db->where()->select();
+        $list = $this->_db->where('status = 1')->select();
 
         return $list;
     }

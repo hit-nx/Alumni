@@ -49,6 +49,9 @@ class ArticleController extends CommonController {
             if(!isset($_POST['title']) || !$_POST['title']) {
                 return show(0,'标题不存在');
             }
+            if(!isset($_POST['author']) || !$_POST['author']) {
+                return show(0,'作者不存在');
+            }
             if(!isset($_POST['columnid']) || !$_POST['columnid']) {
                 return show(0,'文章栏目不存在');
             }

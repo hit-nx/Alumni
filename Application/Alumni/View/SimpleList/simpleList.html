@@ -35,7 +35,7 @@
 			<ul>
 				<volist name="hotNewsList" id="news"> 
 					<li>
-						<a class=fl href="/index.php?c=passage&articleid={$news['articleid']}" >{$news['title']}</a> 
+						<a class=fl href="/index.php?c=passage&articleid={$news['articleid']}" target="_blank">{$news['title']}</a> 
 						<span class="time1 fl"><?php echo date("Y-m-d",$news['publishdate']) ?></span>
 						<p class=good>{$news['visitcount']}</p>
 					</li>
@@ -57,7 +57,7 @@
 							<span class=time_date><?php echo substr($time,8,2) ?>日</span>
 						</div>
 						<div class=word1 id=word1>
-							<a href="/index.php?c=passage&articleid={$news['articleid']}" name=title>{$news['title']}</a>
+							<a href="/index.php?c=passage&articleid={$news['articleid']}" target="_blank" name=title>{$news['title']}</a>
 							<p name=content><?php echo $contentes = strip_tags($news['content']) ?></p>
 						</div>
 					</li>

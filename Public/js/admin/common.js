@@ -10,7 +10,7 @@ $("#button-add").click(function(){
  * 提交form表单操作
  */
 $("#singcms-button-submit").click(function(){
-	var formData = new FormData($( "#singcms-form" )[0]);  
+	var formData = new FormData($( "#singcms-form" )[0]);
 	// var data = $("#singcms-form").serializeArray();
 	// postData = {};
 	// $(data).each(function(i){

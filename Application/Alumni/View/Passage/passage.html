@@ -31,7 +31,7 @@
 		<div class="content">
 			<p class="name">{$articleInfo.title}</p>
 
-			<P class="writer">来源：{$articleInfo.source} 浏览量：{$articleInfo.visitcount}<br></P>
+			<P class="writer">【作者：{$articleInfo.author} &nbsp&nbsp&nbsp 来源：{$articleInfo.source} &nbsp&nbsp&nbsp 浏览量：{$articleInfo.visitcount}&nbsp&nbsp&nbsp  录入时间：<?php echo date("Y-m-d",$articleInfo['publishdate']) ?>】<br></P>
 
 			<div>{$articleInfo.content|htmlspecialchars_decode}</div>
 
