@@ -15,6 +15,7 @@ class UploadModel extends Model {
     public function __construct() {
         $this->_uploadObj = new  \Think\Upload();
 
+        $this->_uploadObj->maxSize   =  52428800;
         $this->_uploadObj->rootPath = './'.self::UPLOAD.'/';
         $this->_uploadObj->subName = date(Y) . '/' . date(m) .'/' . date(d);
     }
