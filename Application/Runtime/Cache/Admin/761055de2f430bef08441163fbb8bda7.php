@@ -115,6 +115,16 @@
 						</div>
 
 						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">关键字:</label>
+							<div class="col-sm-5">
+								<input type="text" value="<?php echo ($Keywords); ?>" class="form-control" name="keywords" id="inputPassword3" placeholder="请填写关键词">
+								<div>
+									<font color="blue">用来查找相关文章，可输入多个关键字，中间用</font><font color="red">“|”</font><font color="blue">隔开</font>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label for="inputname" class="col-sm-2 control-label">首页图:</label>
 							<div class="col-sm-5">
 								<input accept="image/*" name="picture_url" type="file" multiple="true" value="<?php echo ($picture_url); ?>">
@@ -139,6 +149,13 @@
 						</div>
 
 						<div class="form-group">
+							<label for="inputname" class="col-sm-2 control-label">作者:</label>
+							<div class="col-sm-5">
+								<input type="text" value="<?php echo ($author); ?>" name="author" class="form-control" id="inputauthor" placeholder="请填写作者">
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label for="inputPassword3" class="col-sm-2 control-label">内容:</label>
 							<div class="col-sm-5">
 								<textarea class="input js-editor" id="editor_singcms" name="content" rows="20"><?php echo ($Content); ?></textarea>
@@ -150,12 +167,6 @@
 						<!--<input type="text" class="form-control" name="ArticleID" id="ArticleID" placeholder="描述">-->
 						<!--</div>-->
 						<!--</div>-->
-						<div class="form-group">
-							<label for="inputPassword3" class="col-sm-2 control-label">关键字:</label>
-							<div class="col-sm-5">
-								<input type="text" class="form-control" name="keywords" value='<?php echo ($Keywords); ?>' id="inputPassword3" placeholder="请填写关键词">
-							</div>
-						</div>
 
 						<div class="form-group">
 							<label for="inputname1" class="col-sm-2 control-label">附件:</label>
