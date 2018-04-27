@@ -115,6 +115,7 @@ class ArticleController extends CommonController {
         $this->assign('picture_url',$article['picture_url']);
         $this->assign('Content',$article['content']);
         $this->assign('attachment_url',$article['attachment_url']);
+        $this->assign('author',$article['author']);
 
         $this->display();
     }
