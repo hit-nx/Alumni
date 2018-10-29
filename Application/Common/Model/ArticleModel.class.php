@@ -145,7 +145,7 @@ class ArticleModel extends Model {
 			'columnid' => array('in',implode(',', $columns_id)),'picture_url != ""'
 		);
 
-		return $this->_db->where($data)->order('visitcount desc')->limit(2)->select();
+		return $this->_db->where($data)->order('articleid desc')->limit(2)->select();
 
 	}
 

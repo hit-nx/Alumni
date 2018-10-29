@@ -41,21 +41,20 @@ class PeriodicalController extends CommonController {
             // if(!isset($_POST['content']) || !$_POST['content']) {
             //     return show(0,'内容不存在');
             // }           
-            
+            if($_POST['periodicalid']) {
+                return $this->save($_POST);
+            }
+
             $info = D("Upload")->fileUpload();
             if($info['path']) {
                 $_POST['path'] = D("Upload")->getPath($info['path']);
             }else{
-                return show(0,'文件不存在');
+                return show(0,'通讯录文件不存在');
             }
             if($info['picture_url']) {
                 $_POST['picture_url'] = D("Upload")->getPath($info['picture_url']);
             }else{
-                return show(0,'图片不存在');
-            }
-
-            if($_POST['periodicalid']) {
-                return $this->save($_POST);
+                return show(0,'首页图不存在');
             }
 
             if(D("Periodical")->insert($_POST)) {
@@ -70,10 +69,41 @@ class PeriodicalController extends CommonController {
         }
     }
 
+        public function edit() {
+
+        $periodicalId = $_GET['id'];
+
+        if(!$periodicalId) {
+            // 执行跳转
+            $this->redirect('/admin.php?c=periodical');
+        }
+        $periodical = D("Periodical")->find($periodicalId);
+
+        if(!$periodical) {
+            $this->redirect('/admin.php?c=periodical');
+        }
+
+        $webSiteMenu = D("Column")->getColumn();
+
+        $this->assign('periodicalId', $periodicalId);
+        $this->assign("title",$periodical['title']);
+        $this->assign("path",$periodical['path']);
+        $this->assign('picture_url',$periodical['picture_url']);
+
+        $this->display();
+    }
+
     public function save($data) {
         $periodicalId = $data['periodicalid'];
         unset($data['periodicalid']);
 
+        $info = D("Upload")->fileUpload();
+        if($info['path']) {
+            $data['path'] = D("Upload")->getPath($info['path']);
+        }
+        if($info['picture_url']) {
+            $data['picture_url'] = D("Upload")->getPath($info['picture_url']);
+        }
         try {
             $id = D("Periodical")->updateById($periodicalId, $data);
             if($id === false) {

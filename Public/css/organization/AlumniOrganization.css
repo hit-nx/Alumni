@@ -61,12 +61,19 @@ a:visited {
 }
 .article {
 	width: 800px;
-	font-size: 16px;
+	/*font-size: 16px;*/
 /*	text-indent: 2em;/*首行缩进*/
 	margin: auto;
 	margin-top: 20px;
 	margin-bottom: 50px;
 }
+
+.article div *{
+    font-family: Microsoft YaHei !important;
+    color: #000 !important;
+    font-size: 16px !important;
+}
+
 .article p {
 	margin: 0;
 }

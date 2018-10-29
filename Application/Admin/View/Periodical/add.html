@@ -52,7 +52,7 @@
             </div>
 
             <div class="form-group">
-              <label for="inputname" class="col-sm-2 control-label">通讯图:</label>
+              <label for="inputname" class="col-sm-2 control-label">首页图:</label>
               <div class="col-sm-5">
                 <input accept="image/*" name="picture_url" type="file" multiple="true">
               </div>
@@ -60,45 +60,11 @@
 
 
             <div class="form-group">
-              <label for="inputname1" class="col-sm-2 control-label">文件:</label>
+              <label for="inputname1" class="col-sm-2 control-label">通讯录:</label>
               <div class="col-sm-5">
                 <input name="path" type="file" multiple="true" >
               </div>
             </div>
-
-
-            <div class="form-group">
-              <label for="inputname1" class="col-sm-2 control-label">异步上传:</label>
-              <div class="col-sm-5">
-
-                <!--提交控件-->
-                <input id="fileupload" type="file" name="files[]"  data-url=SCOPE.save_url multiple>
-                <script>
-                  var SCOPE = {
-                    'save_url' : '/admin.php?c=periodical&a=add',
-                    'jump_url' : '/admin.php?c=periodical',
-                  };
-                  var save_url = SCOPE.save_url;
-
-                  document.getElementById('fileupload').setAttribute("data-url",save_url);
-
-                </script>
-
-                <!--进度条-->
-                <div id="progress">
-                    <div class="bar" style="width: 0%;"></div>
-                </div>
-
-              </div>
-            </div>
-
-           <!--  <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">内容:</label>
-              <div class="col-sm-5">
-                <textarea class="input js-editor" id="editor_ningxi" name="content" rows="20" ></textarea>
-              </div>
-            </div> -->
-
 
 
             <div class="form-group">
@@ -122,40 +88,13 @@
 
 </div>
 
-<!-- <script>
-  // 6.2
-  KindEditor.ready(function(K) {
-    window.editor = K.create('#editor_singcms',{
-      uploadJson : '/admin.php?c=upload&a=kindupload',
-      afterBlur : function(){this.sync();}, //
-    });
-  });
-</script> -->
-<!-- /#wrapper -->
-<!-- <script src="/Public/js/admin/upload.js"></script> -->
+<script>
+  var SCOPE = {
+    'save_url' : '/admin.php?c=periodical&a=add',
+    'jump_url' : '/admin.php?c=periodical',
+  };
 
-<script type="text/javascript">
-  $(function(){
-    $('#fileupload').fileupload({
-      dataType:'json',
-      add: function(e, data){
-        data.context = $('<p/>').text("上传中……").appendTo(document.body);
-        data.submit();
-      },
-      done: function(e, data){
-        data.context.text("上传成功！");
-      }
-    });
-  });
-
-  $('#fileupload').fileupload({
-    progessall: function(e, data){
-      var progress = parseInt(data.loaded / data.total * 100, 10);
-      $('#progress .bar').css(
-            'width',
-            progress + '%'
-        );
-    }
-  });
 </script>
+
+
 <include file="Index/footer" />

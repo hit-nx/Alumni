@@ -50,14 +50,14 @@
                   <tr>
                     <td>{$periodical.title}</td>
                     <td>{$periodical.time|date="Y-m-d H:i",###}</td>
-                    <!-- <td>{$periodical.path}</td>
+<!--                     <td>{$periodical.path}</td>
                     <td>
                       <span  attr-status="<if condition="$periodical['status'] eq 1">0<else/>1</if>"  attr-id="{$periodical.periodicalid}" class="sing_cursor singcms-on-off" id="singcms-on-off" >{$periodical.status|status}
                       </span>
                     </td> -->
                     <td>
-                     <!--  <span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$periodical.periodicalid}" >
-                      </span> -->
+                      <span class="sing_cursor glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="{$periodical.periodicalid}" >
+                      </span>
                       <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$periodical.periodicalid}"  attr-message="删除">
                         <span class="glyphicon glyphicon-remove-circle" aria-hidden="true">
                         </span>
