@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	
+
 	<title>哈尔滨工业大学（威海）校友网</title>
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/styles.css" />
 	<link rel="stylesheet" type="text/css" href="/Public/css/index/dayi.css" />
@@ -59,7 +59,7 @@
 							</div>
 							<!--校区新闻-->
 							<div class="column_content" id="news_school">
-								
+
 								<a href="/index.php?c=simpleList&columnid=3" class="b1link">+更多</a>
 
 								<div class="display_news">
@@ -68,7 +68,7 @@
 									<div class="display_news_content">
 										<?php echo $contentes = strip_tags($onePicNew['content']) ?>
 									</div>
-									
+
 
 								</div>
 
@@ -109,7 +109,7 @@
 
 							<!--校友新闻-->
 							<div class="column_content" id="news_mate" style="display:none">
-								
+
 								<a href="/index.php?c=simpleList&columnid=2" class="b1link">+更多</a>
 
 								<div class="display_news">
@@ -156,7 +156,7 @@
 
 							<!--通知公告-->
 							<div class="column_content" id="news_notice" style="display:none">
-								
+
 								<a href="/index.php?c=simpleList&columnid=4" class="b1link">+更多</a>
 
 								<div class="display_news">
@@ -207,23 +207,25 @@
 						<div class="block3">
 							<h1 class="newsalumnus">
 								<img src="/Public/images/index/contact.png">&nbsp校友通讯</h1>
-							<a href="/index.php?c=communication" class="b3link">+更多</a>
+							<a href="/index.php?c=communication" class="b3link">+更多期刊</a>
 
 							<div class="contact_content">
 
-								<div class="contact_picture"></div>
+								<a href="/index.php?c=communication"><div class="contact_picture"></div></a>
 
 								<div class="contact_article">
-
-									<table>
-										<foreach name="periodical" item="periodicalItems">
-										<tr>
-											<td>
-												<a href="/index.php?c=address&periodicalid={$periodicalItems.periodicalid}" target="_blank">{$periodicalItems.title}</a>
-											</td>
-										</tr>
-									</foreach>
-									</table>
+									<a href="/index.php?c=communication">
+									<h1 class="contact_article_title">期刊简介：</h1>
+									<p class="contact_article_brief">《哈尔滨工业大学（威海）校友通讯》于2015年创刊，架起了母校与校友沟通的又一座崭新桥梁。 他将向校友们描绘母校的昨日与今朝，报道母校发展和校友活动的动态信息，为各地校友 会和广大校友提供一个与母校心心相系的窗口，一个尽情抒发情怀、寄托思念的园地， 一个展现校友风采、加强交流互动的平台。</p></a>
+									<!--<table>-->
+										<!--<foreach name="periodical" item="periodicalItems">-->
+										<!--<tr>-->
+											<!--<td>-->
+												<!--<a href="/index.php?c=address&periodicalid={$periodicalItems.periodicalid}" target="_blank">{$periodicalItems.title}</a>-->
+											<!--</td>-->
+										<!--</tr>-->
+									<!--</foreach>-->
+									<!--</table>-->
 								</div>
 
 							</div>
@@ -251,7 +253,7 @@
 
 						<!--校友人物-->
 							<div class="column_content" id="alumni">
-								
+
 								<a href="/index.php?c=detailedList&columnid=11" class="b2link">+更多</a>
 
 								<div class="display_news">
@@ -260,7 +262,7 @@
 									<div class="display_news_content2">
 										<?php echo $contentes = strip_tags($fourPicNew['content']) ?>
 									</div>
-									
+
 
 								</div>
 
@@ -301,7 +303,7 @@
 
 							<!--工大回忆-->
 							<div class="column_content" id="hit_memory" style="display:none">
-								
+
 								<a href="/index.php?c=detailedList&columnid=17" class="b2link">+更多</a>
 
 								<div class="display_news">
@@ -348,17 +350,17 @@
 
 							<!--校友组织-->
 							<div class="column_content" id="alumni_organization" style="display:none">
-								
+
 								<a href="/index.php?c=organization&a=organizationList" class="b2link">+更多</a>
 
 								<div class="organization_content">
 
 									<foreach name="alumniList" item="alumniItems">
-										
+
 										<div class="alumniItemsDiv">
 											<a href="/index.php?c=organization&a=otherOrganizationInfo&alumnis_id={$alumniItems.alumnis_id}" class="blocklinktext3" target="_blank">{$alumniItems.title}</a>
 										</div>
-											
+
 									</foreach>
 
 									<!-- <table>
@@ -378,23 +380,44 @@
 
 					</div>
 					<div class="block4">
-						<h2 class="donatethanks">捐赠鸣谢</h2>
-						<div class="donateList" id="ca">
+						<h2 class="enterprise">校友企业</h2>
+                        <a href="/index.php?c=enterpriseDetail" class="b4link">+更多企业</a>
+						<div class="enterpriseList" id="ca">
+							<table class="enterpriseList11"  id="table_1"  cellspacing="0px" cellpadding="0px">
+								<div class="enterpriseList">
+									<table   cellspacing="0px" cellpadding="0px">
+										<foreach  name="enterpriseListLeft" item="enterpriseItemsLeft" >
 
-							<table id="table_1" cellspacing="0" cellpadding="0">
-								<!--生成捐赠列表-->
-								<foreach name="donationsList" item="donationItems">
-									<tr>
-										<td class="listName">{$donationItems.name}</td>
-										<td class="listMoney">{$donationItems.amount}</td>
-									</tr>
-								</foreach>
+											<tr class="List1" nowrap="nowrap">
+												<a href="{$enterpriseItemsLeft.enterprise_url}">
+													<img class="list_picture" src="{$enterpriseItemsLeft.picture_path}" alt="">
+													<div class="list_name">{$enterpriseItemsLeft.name}</div>
+												</a>
+											</tr>
 
+										</foreach>
+									</table>
+								</div>
+								<div class="enterpriseList2">
+									<table   cellspacing="0px" cellpadding="0px">
+
+										<foreach  name="enterpriseListRight" item="enterpriseItemsRight" >
+
+											<tr class="List2" nowrap="nowrap">
+												<a href="{$enterpriseItemsRight.enterprise_url}">
+													<img class="list_picture" src="{$enterpriseItemsRight.picture_path}" alt="">
+													<div class="list_name">{$enterpriseItemsRight.name}</div>
+												</a>
+											</tr>
+
+										</foreach>
+
+									</table>
+								</div>
 							</table>
-
-							<table id="table_2"></table>
-
+							<table  id="table_2" cellspacing="0" cellpadding="0"></table>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -405,18 +428,18 @@
 
 		var t1 = document.getElementById('table_1');
 		var t2 = document.getElementById('table_2');
+
 		var ca = document.getElementById('ca');
 
 		t2.innerHTML = t1.innerHTML;
-		var cas = null;
+
+		var cas1 = null;
 
 		window.onload = function(){
 			marquee();
 			menuFix();
-
 		}
-		cas = setInterval('marquee()', 50);
-		
+		cas1 = setInterval('marquee()', 50);
 		function marquee(){
 			if(ca.scrollTop >= t1.offsetHeight){
 				ca.scrollTop = 0;
@@ -425,13 +448,14 @@
 			}
 
 			ca.onmouseover = function(){
-				clearInterval(cas);
+				clearInterval(cas1);
 			}
 			ca.onmouseout = function(){
-				cas = setInterval('marquee()', 50);
+				cas1 = setInterval('marquee()', 50);
 			}
 
 		}
+
 
 
         function changeColumn(obj) {

@@ -501,7 +501,6 @@
     position: absolute;
     top: 10px;
     left: 400px;
-
 }
 
 .blocklinktext3{
@@ -666,17 +665,28 @@
     color: #fff;
 
 }
-
-.contact_article td a{
-    padding:0;
-    margin:0;
-    height: 25px;
-    overflow: hidden;
-    line-height: 40px;
-    color: #fff;
-    font-size: 17px;
+.contact_article_brief{
+    padding-top: 8px;
+    font-size: 15px;
+    color: white;
 }
 
+/*.contact_article td a{*/
+    /*padding:0;*/
+    /*margin:0;*/
+    /*height: 25px;*/
+    /*overflow: hidden;*/
+    /*line-height: 40px;*/
+    /*color: #fff;*/
+    /*font-size: 17px;*/
+/*}*/
+.contact_article_title{
+    font-size: 18px;
+    font-family: 'Microsoft Yahei';
+    font-weight: normal;
+    cursor: pointer;
+    color: white;
+}
 
 
 .newsalumnus{
@@ -719,7 +729,7 @@
     width: 22px;
     vertical-align: middle;
 }
-.donatethanks{
+.enterprise{
     margin: 0px;
     box-sizing: border-box;
     font-size: 18px;
@@ -742,8 +752,12 @@
     font-family: 'Microsoft Yahei';
     position: absolute;
     top: 10px;
-    left: 400px;
+    left: 380px;
 }
+.b1link:hover{text-decoration:underline;}
+.b2link:hover{text-decoration:underline;}
+.b3link:hover{text-decoration:underline;}
+.b4link:hover{text-decoration:underline;}
 .b1link{
     font-size: 15px;
     text-decoration: none;
@@ -757,13 +771,11 @@
 .b4link{
     font-size: 15px;
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+    color: #0d184e;
     font-family: 'Microsoft Yahei';
     position: absolute;
     top: 10px;
-    left: 400px;
-
+    left:380px;
 }
 .blocktable{
     width: 450px;
@@ -807,27 +819,75 @@
     overflow: hidden;
     border-bottom: 1px solid #132478;
 }
-/*捐赠列表*/
-.donateList{
+/*校友企业*/
+.enterpriseList{
     overflow: hidden;
     line-height: 40px;
-    width: 400px;
-    height: 250px;
+    width: 472px;
+    height: 260px;
     font-size: 15px;
     position: absolute;
     top: 50px;
-    left: 25px;
+}
+.enterpriseList1{
+    overflow: hidden;
+    line-height: 40px;
+    width: 236px;
+    height: 260px;
+    font-size: 15px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+}
+.enterpriseList2{
+    overflow: hidden;
+    line-height: 40px;
+    width: 236px;
+    height: 260px;
+    font-size: 15px;
+    position: absolute;
+    top: 50px;
+    left: 236px;
+}
+/*校友捐赠*/
+/*.table_1{*/
+    /*width: 472px;*/
+    /*height: 266px;*/
+/*}*/
+
+.list_picture{
+    margin-left: 5px;
+    top: 15px;
+    width: 215px;
+    height: 90px;
+    background-size: 100%;
+}
+.list_name{
+    text-align:center;
+    width: 230px;
+    height: 40px;
+    color: #132478;
+}
+.List1{
+    padding-left: 5px;
+    width: 230px;
+    height: 133px;
+}
+.List1{
+    padding-right: 5px;
+    width: 230px;
+    height: 133px;
 }
 
-.listName{
-    width: 300px;
-    color: #132478;
-    padding-left: 25px;
-}
-.listMoney{
-    width: 100px;
-    color: #132478;
-}
+/*.listName{*/
+    /*width: 300px;*/
+    /*color: #132478;*/
+    /*padding-left: 25px;*/
+/*}*/
+/*.listMoney{*/
+    /*width: 100px;*/
+    /*color: #132478;*/
+/*}*/
 .donateTable tr:nth-child(even){
 /*    background: rgb(243,243,243);*/
     background: rgb(211,211,211,0.2);

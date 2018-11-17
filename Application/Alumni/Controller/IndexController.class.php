@@ -6,8 +6,8 @@ use Think\Exception;
 class IndexController extends CommonController {
     public function index(){   
 
-
-        $onePicNew = D("Index")->getPicNewsByColumn(1);//校区新闻
+        //数据库取数据
+        $onePicNew = D("Index")->getPicNewsByColumn(1);//校区新闻   //D()方法访问模型层
         $twoPicNew = D("Index")->getPicNewsByColumn(2);//校友新闻
         $threePicNew = D("Index")->getPicNewsByColumn(3);//通知公告
         $fourPicNew = D("Index")->getPicNewsByColumn(4);//校友人物
@@ -21,8 +21,12 @@ class IndexController extends CommonController {
 
         $alumniList = D("Alumnis")->select();//校友组织
         $periodical = D("Periodical")->select('',6);//通讯录
-        $donationsList = D("DonationInfo")->getDonationList();//捐赠列表
+        //$donationsList = D("DonationInfo")->getDonationList();//捐赠列表
 
+        $enterpriseListLeft = D("EnterpriseInfo")->getEnterpriseListLeft();
+        $enterpriseListRight = D("EnterpriseInfo")->getEnterpriseListRight();
+
+        //向前端绑定数据
         $this->assign("onePicNew", $onePicNew);
         $this->assign("twoPicNew", $twoPicNew);
         $this->assign("threePicNew", $threePicNew);
@@ -36,8 +40,11 @@ class IndexController extends CommonController {
 
         $this->assign("alumniList", $alumniList);
         $this->assign("periodical", $periodical);
-        $this->assign("donationsList", $donationsList);
+        //$this->assign("donationsList", $donationsList);
 
+        $this->assign("enterpriseListLeft", $enterpriseListLeft);//校友企业
+        $this->assign("enterpriseListRight", $enterpriseListRight);//校友企业
+        //显示对应前端网页
         $this->display();
     }
 

@@ -23,7 +23,7 @@ class PeriodicalModel extends Model {
     public function insert($data = array()) {
         if(!is_array($data) || !$data) {
             return 0;
-        }
+        }+
         $data['time']  = time();
         $data['status'] = 1;
         return $this->_db->add($data);
