@@ -397,6 +397,7 @@
 											</tr>
 										</volist>
 									</table>
+									<table  id="table_2" cellspacing="0px" cellpadding="0px"></table>
 					</div>
 				</div>
 			</div>
@@ -419,9 +420,9 @@
 		window.onload = function(){
 			marquee();
 		}
+
 		cas1 = setInterval('marquee()', 50);
-		    marquee();
-		}
+		  
 		function marquee(){
 			if(ca1.scrollTop >= t1.offsetHeight){
 				ca1.scrollTop = 0;
@@ -431,12 +432,12 @@
 			ca1.onmouseover = function(){
 				clearInterval(cas1);
 			}
-			ca.onmouseout = function(){
+			ca1.onmouseout = function(){
 				cas1 = setInterval('marquee()', 50);
 			}
 
 		}
-		}
+		
 
 
 

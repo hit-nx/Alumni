@@ -478,33 +478,18 @@
 					<div class="block4">
 						<h2 class="enterprise">校友企业</h2>
                         <a href="/index.php?c=enterpriseDetail" class="b4link">+更多企业</a>
-						<div class="enterpriseList" >
-								<div class="enterpriseList1" id="ca1">
-									<table   id="table_1" cellspacing="0px" cellpadding="0px">
-										<?php if(is_array($enterpriseListLeft)): foreach($enterpriseListLeft as $key=>$enterpriseItemsLeft): ?><tr class="List1" nowrap="nowrap">
-												<a href="<?php echo ($enterpriseItemsLeft["enterprise_url"]); ?>">
-													<img class="list_picture" src="<?php echo ($enterpriseItemsLeft["picture_path"]); ?>" alt="">
-													<div class="list_name"><?php echo ($enterpriseItemsLeft["name"]); ?></div>
-												</a>
-											</tr><?php endforeach; endif; ?>
+							<div class="enterpriseList" id="ca1">
+									<table  id="table_1" cellspacing="0px" cellpadding="0px">
+										<?php if(is_array($enterpriseListLeft)): $k = 0; $__LIST__ = $enterpriseListLeft;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$enterpriseItemsLeft): $mod = ($k % 2 );++$k;?><tr>
+												<?php if(is_array($enterpriseList)): $i = 0; $__LIST__ = array_slice($enterpriseList,2*($k-1),2,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$enterpriseItems): $mod = ($i % 2 );++$i;?><td class="List1" nowrap="nowrap">
+														<a href="<?php echo ($enterpriseItems["enterprise_url"]); ?>">
+															<img class="list_picture" src="<?php echo ($enterpriseItems["picture_path"]); ?>" alt="">
+															<div class="list_name"><?php echo ($enterpriseItems["name"]); ?></div>
+														</a>
+													</td><?php endforeach; endif; else: echo "" ;endif; ?>
+											</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 									</table>
-									<table  id="table_2" cellspacing="0" cellpadding="0"></table>
-								</div>
-								<div class="enterpriseList2" id="ca2">
-									<table   id="table_3" cellspacing="0px" cellpadding="0px">
-
-										<?php if(is_array($enterpriseListRight)): foreach($enterpriseListRight as $key=>$enterpriseItemsRight): ?><tr class="List2" nowrap="nowrap">
-												<a href="<?php echo ($enterpriseItemsRight["enterprise_url"]); ?>">
-													<img class="list_picture" src="<?php echo ($enterpriseItemsRight["picture_path"]); ?>" alt="">
-													<div class="list_name"><?php echo ($enterpriseItemsRight["name"]); ?></div>
-												</a>
-											</tr><?php endforeach; endif; ?>
-
-									</table>
-									<table  id="table_4" cellspacing="0" cellpadding="0"></table>
-								</div>
-						</div>
-
+									<table  id="table_2" cellspacing="0px" cellpadding="0px"></table>
 					</div>
 				</div>
 			</div>
@@ -515,63 +500,43 @@
 
 		var t1 = document.getElementById('table_1');
 		var t2 = document.getElementById('table_2');
-		var t3 = document.getElementById('table_3');
-		var t4 = document.getElementById('table_4');
 
 		var ca1 = document.getElementById('ca1');
-		var ca2 = document.getElementById('ca2');
 
 		t2.innerHTML = t1.innerHTML;
-		t4.innerHTML = t3.innerHTML;
+	
 
 		var cas1 = null;
-		var cas2 = null;
+	
 
 		window.onload = function(){
-			marquee1();
-			marquee2();
-			menuFix();
+			marquee();
 		}
-		cas1 = setInterval('marquee1()', 50);
-		cas2 = setInterval('marquee2()', 50);
 
-		function marquee1(){
+		cas1 = setInterval('marquee()', 50);
+		  
+		function marquee(){
 			if(ca1.scrollTop >= t1.offsetHeight){
 				ca1.scrollTop = 0;
 			}else{
 				ca1.scrollTop++;
 			}
-
-			ca.onmouseover = function(){
+			ca1.onmouseover = function(){
 				clearInterval(cas1);
 			}
-			ca.onmouseout = function(){
-				cas1 = setInterval('marquee1()', 50);
+			ca1.onmouseout = function(){
+				cas1 = setInterval('marquee()', 50);
 			}
 
 		}
-		function marquee2(){
-			if(ca2.scrollTop >= t3.offsetHeight){
-				ca2.scrollTop = 0;
-			}else{
-				ca2.scrollTop++;
-			}
-
-			ca.onmouseover = function(){
-				clearInterval(cas2);
-			}
-			ca.onmouseout = function(){
-				cas2 = setInterval('marquee2()', 50);
-			}
-
-		}
+		
 
 
 
         function changeColumn(obj) {
             var col = $(obj);
 
-            // not click
+            //not click
             if (col.prop('clicked') == undefined) {
                 // remove current clicked
                 var divToHide = null;
