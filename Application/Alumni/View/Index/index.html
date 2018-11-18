@@ -382,41 +382,21 @@
 					<div class="block4">
 						<h2 class="enterprise">校友企业</h2>
                         <a href="/index.php?c=enterpriseDetail" class="b4link">+更多企业</a>
-						<div class="enterpriseList" >
-								<div class="enterpriseList1" id="ca1">
-									<table   id="table_1" cellspacing="0px" cellpadding="0px">
-										<foreach  name="enterpriseListLeft" item="enterpriseItemsLeft" >
-
-											<tr class="List1" nowrap="nowrap">
-												<a href="{$enterpriseItemsLeft.enterprise_url}">
-													<img class="list_picture" src="{$enterpriseItemsLeft.picture_path}" alt="">
-													<div class="list_name">{$enterpriseItemsLeft.name}</div>
-												</a>
+							<div class="enterpriseList" id="ca1">
+									<table  id="table_1" cellspacing="0px" cellpadding="0px">
+										<volist  name="enterpriseListLeft" id="enterpriseItemsLeft" key="k">
+											<tr>
+												<volist  name="enterpriseList" id="enterpriseItems" offset="2*($k-1)" length='2'>
+													<td class="List1" nowrap="nowrap">
+														<a href="{$enterpriseItems.enterprise_url}">
+															<img class="list_picture" src="{$enterpriseItems.picture_path}" alt="">
+															<div class="list_name">{$enterpriseItems.name}</div>
+														</a>
+													</td>
+												</volist>
 											</tr>
-
-										</foreach>
+										</volist>
 									</table>
-									<table  id="table_2" cellspacing="0" cellpadding="0"></table>
-								</div>
-								<div class="enterpriseList2" id="ca2">
-									<table   id="table_3" cellspacing="0px" cellpadding="0px">
-
-										<foreach  name="enterpriseListRight" item="enterpriseItemsRight" >
-
-											<tr class="List2" nowrap="nowrap">
-												<a href="{$enterpriseItemsRight.enterprise_url}">
-													<img class="list_picture" src="{$enterpriseItemsRight.picture_path}" alt="">
-													<div class="list_name">{$enterpriseItemsRight.name}</div>
-												</a>
-											</tr>
-
-										</foreach>
-
-									</table>
-									<table  id="table_4" cellspacing="0" cellpadding="0"></table>
-								</div>
-						</div>
-
 					</div>
 				</div>
 			</div>
@@ -427,55 +407,35 @@
 
 		var t1 = document.getElementById('table_1');
 		var t2 = document.getElementById('table_2');
-		var t3 = document.getElementById('table_3');
-		var t4 = document.getElementById('table_4');
 
 		var ca1 = document.getElementById('ca1');
-		var ca2 = document.getElementById('ca2');
 
 		t2.innerHTML = t1.innerHTML;
-		t4.innerHTML = t3.innerHTML;
+	
 
 		var cas1 = null;
-		var cas2 = null;
+	
 
 		window.onload = function(){
-			marquee1();
-			marquee2();
-			menuFix();
+			marquee();
 		}
-		cas1 = setInterval('marquee1()', 50);
-		cas2 = setInterval('marquee2()', 50);
-
-		function marquee1(){
+		cas1 = setInterval('marquee()', 50);
+		    marquee();
+		}
+		function marquee(){
 			if(ca1.scrollTop >= t1.offsetHeight){
 				ca1.scrollTop = 0;
 			}else{
 				ca1.scrollTop++;
 			}
-
-			ca.onmouseover = function(){
+			ca1.onmouseover = function(){
 				clearInterval(cas1);
 			}
 			ca.onmouseout = function(){
-				cas1 = setInterval('marquee1()', 50);
+				cas1 = setInterval('marquee()', 50);
 			}
 
 		}
-		function marquee2(){
-			if(ca2.scrollTop >= t3.offsetHeight){
-				ca2.scrollTop = 0;
-			}else{
-				ca2.scrollTop++;
-			}
-
-			ca.onmouseover = function(){
-				clearInterval(cas2);
-			}
-			ca.onmouseout = function(){
-				cas2 = setInterval('marquee2()', 50);
-			}
-
 		}
 
 
@@ -483,7 +443,7 @@
         function changeColumn(obj) {
             var col = $(obj);
 
-            // not click
+            //not click
             if (col.prop('clicked') == undefined) {
                 // remove current clicked
                 var divToHide = null;

@@ -2,9 +2,9 @@
 return array(
 
     'DB_TYPE' => 'mysql',
-    'DB_HOST' => 'localhost',
+    'DB_HOST' => '39.106.1.159',
     'DB_USER' => 'root',
-    'DB_PWD' => 'root',
+    'DB_PWD' => 'mrssip10',
     'DB_PORT' => 3306,
     'DB_NAME' => 'alumni',
     'DB_CHARSET' => 'utf8',
