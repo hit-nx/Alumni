@@ -382,10 +382,9 @@
 					<div class="block4">
 						<h2 class="enterprise">校友企业</h2>
                         <a href="/index.php?c=enterpriseDetail" class="b4link">+更多企业</a>
-						<div class="enterpriseList" id="ca">
-							<table class="enterpriseList11"  id="table_1"  cellspacing="0px" cellpadding="0px">
-								<div class="enterpriseList">
-									<table   cellspacing="0px" cellpadding="0px">
+						<div class="enterpriseList" >
+								<div class="enterpriseList1" id="ca1">
+									<table   id="table_1" cellspacing="0px" cellpadding="0px">
 										<foreach  name="enterpriseListLeft" item="enterpriseItemsLeft" >
 
 											<tr class="List1" nowrap="nowrap">
@@ -397,9 +396,10 @@
 
 										</foreach>
 									</table>
+									<table  id="table_2" cellspacing="0" cellpadding="0"></table>
 								</div>
-								<div class="enterpriseList2">
-									<table   cellspacing="0px" cellpadding="0px">
+								<div class="enterpriseList2" id="ca2">
+									<table   id="table_3" cellspacing="0px" cellpadding="0px">
 
 										<foreach  name="enterpriseListRight" item="enterpriseItemsRight" >
 
@@ -413,9 +413,8 @@
 										</foreach>
 
 									</table>
+									<table  id="table_4" cellspacing="0" cellpadding="0"></table>
 								</div>
-							</table>
-							<table  id="table_2" cellspacing="0" cellpadding="0"></table>
 						</div>
 
 					</div>
@@ -428,30 +427,53 @@
 
 		var t1 = document.getElementById('table_1');
 		var t2 = document.getElementById('table_2');
+		var t3 = document.getElementById('table_3');
+		var t4 = document.getElementById('table_4');
 
-		var ca = document.getElementById('ca');
+		var ca1 = document.getElementById('ca1');
+		var ca2 = document.getElementById('ca2');
 
 		t2.innerHTML = t1.innerHTML;
+		t4.innerHTML = t3.innerHTML;
 
 		var cas1 = null;
+		var cas2 = null;
 
 		window.onload = function(){
-			marquee();
+			marquee1();
+			marquee2();
 			menuFix();
 		}
-		cas1 = setInterval('marquee()', 50);
-		function marquee(){
-			if(ca.scrollTop >= t1.offsetHeight){
-				ca.scrollTop = 0;
+		cas1 = setInterval('marquee1()', 50);
+		cas2 = setInterval('marquee2()', 50);
+
+		function marquee1(){
+			if(ca1.scrollTop >= t1.offsetHeight){
+				ca1.scrollTop = 0;
 			}else{
-				ca.scrollTop++;
+				ca1.scrollTop++;
 			}
 
 			ca.onmouseover = function(){
 				clearInterval(cas1);
 			}
 			ca.onmouseout = function(){
-				cas1 = setInterval('marquee()', 50);
+				cas1 = setInterval('marquee1()', 50);
+			}
+
+		}
+		function marquee2(){
+			if(ca2.scrollTop >= t3.offsetHeight){
+				ca2.scrollTop = 0;
+			}else{
+				ca2.scrollTop++;
+			}
+
+			ca.onmouseover = function(){
+				clearInterval(cas2);
+			}
+			ca.onmouseout = function(){
+				cas2 = setInterval('marquee2()', 50);
 			}
 
 		}
