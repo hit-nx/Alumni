@@ -22,7 +22,7 @@ class IndexController extends CommonController {
         $alumniList = D("Alumnis")->select();//校友组织
         $periodical = D("Periodical")->select('',6);//通讯录
         //$donationsList = D("DonationInfo")->getDonationList();//捐赠列表
-
+        $enterpriseList = D("EnterpriseInfo")->getEnterpriseList();
         $enterpriseListLeft = D("EnterpriseInfo")->getEnterpriseListLeft();
         $enterpriseListRight = D("EnterpriseInfo")->getEnterpriseListRight();
 
@@ -42,6 +42,7 @@ class IndexController extends CommonController {
         $this->assign("periodical", $periodical);
         //$this->assign("donationsList", $donationsList);
 
+        $this->assign("enterpriseList", $enterpriseList);//校友企业
         $this->assign("enterpriseListLeft", $enterpriseListLeft);//校友企业
         $this->assign("enterpriseListRight", $enterpriseListRight);//校友企业
         //显示对应前端网页
