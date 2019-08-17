@@ -37,10 +37,7 @@ class PeriodicalController extends CommonController {
             if(!isset($_POST['title']) || !$_POST['title']) {
                 return show(0,'标题不存在');
             }
-        
-            // if(!isset($_POST['content']) || !$_POST['content']) {
-            //     return show(0,'内容不存在');
-            // }           
+                
             if($_POST['periodicalid']) {
                 return $this->save($_POST);
             }

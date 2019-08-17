@@ -10,7 +10,7 @@ class IndexModel extends Model {
     private $_db = '';
 
     public function __construct() {
-        $this->_db = M('articles');
+        $this->_db = M('articles');  //指定表名
     }
 
 
